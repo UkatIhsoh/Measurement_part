@@ -1,0 +1,5 @@
+vhdl work "ipcore_dir/DCM_100M.vhd"
+vhdl work "SDRAM_wr.vhd"
+vhdl work "SDRAM_rd.vhd"
+vhdl work "../integ_100_st_fifocheck/SDRAM_ctrl.vhd"
+vhdl work "Measurement.vhd"
