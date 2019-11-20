@@ -1,0 +1,2 @@
+vhdl work "timekeeper.vhd"
+vhdl work "timekeeper_test.vhd"

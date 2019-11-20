@@ -92,6 +92,7 @@ architecture connect of Measurement is
 				rst : in std_logic;
 				
 				tr_sw : in std_logic;
+				adr_in  : in std_logic_vector(19 downto 0);
 				
 				sdr_req : out std_logic;
 				sdr_adr : out std_logic_vector(19 downto 0);
@@ -105,10 +106,26 @@ architecture connect of Measurement is
 				re_sw : in std_logic;
 				ctrl_data : out std_logic_vector(63 downto 0);
 				
+				adr_in : in std_logic_vector(19 downto 0);
+				
 				sdr_req : out std_logic;
 				sdr_adr : out std_logic_vector(19 downto 0);
 				sdr_fin : in std_logic;
 				sdr_data : in std_logic_vector(63 downto 0));
+	end component;
+	
+	component just_measurement is
+	port( clk : in std_logic;
+			rst : in std_logic;
+			
+			msr_start : in std_logic; 
+			
+			sdr_req : out std_logic;
+			ctrl_data : in std_logic_vector(63 downto 0);
+			cite_addr : out std_logic_vector(19 downto 0);
+			
+			rf_pulse : out std_logic;
+			adc_sig : out std_logic);
 	end component;
 	
 	--common
@@ -127,11 +144,18 @@ architecture connect of Measurement is
 	--sdram_wr
 	signal tr_sw : std_logic;
 	signal wr_adr : std_logic_vector(19 downto 0);
+	signal req_adr_w : std_logic_vector(19 downto 0);
 	
 	--sdram_rd
 	signal re_sw : std_logic;
 	signal data64 : std_logic_vector(63 downto 0);
 	signal rd_adr : std_logic_vector(19 downto 0);
+	signal req_adr_r : std_logic_vector(19 downto 0);
+	
+	--just_measuremant
+	signal msr_start : std_logic;
+	signal rf : std_logic;
+	signal adc : std_logic;
 
 begin
 
@@ -174,6 +198,7 @@ begin
 		port map( clk => clk100,
 					 rst => rst,
 					 tr_sw => tr_sw,
+					 adr_in => req_adr_w,
 					 sdr_req => sdr_req_w,
 					 sdr_adr => wr_adr,
 					 sdr_data => data64_i);
@@ -183,32 +208,49 @@ begin
 					 rst => rst,
 					 re_sw => re_sw,
 					 ctrl_data => data64,
+					 adr_in => req_adr_r,
 					 sdr_req => sdr_req_r,
 					 sdr_adr => rd_adr,
 					 sdr_fin => sdr_d_o_valid,
 					 sdr_data => data64_o);
+					 
+	measure : just_measurement 
+		port map( clk => clk100,
+					 rst => rst,
+				
+					 msr_start => msr_start,
+				
+					 sdr_req => re_sw,
+					 ctrl_data => data64,
+					 cite_addr => req_adr_r,
+				
+					 rf_pulse => rf,
+					 adc_sig => adc);
 
 	--読み込みアドレスか書き込みアドレスかの判別
-	process(sdr_req_r,sdr_req_w)
-	begin
-		if sdr_req_r = '1' then
-			sdr_addr <= rd_adr;
-		elsif sdr_req_w = '1' then
-			sdr_addr <= wr_adr;
-		else
-			sdr_addr <= X"00000";
-		end if;	
-	end process;
+--	process(sdr_req_r,sdr_req_w)
+--	begin
+--		if sdr_req_r = '1' then
+--			sdr_addr <= rd_adr;
+--		elsif sdr_req_w = '1' then
+--			sdr_addr <= wr_adr;
+--		else
+--			sdr_addr <= X"00000";
+--		end if;	
+--	end process;
+	
+	req_adr_w <= X"00000";
 	
 	--ピン割り当て
 	DRAM_ADDR(12) <= '0';
 	
 	rst	<= WING_B(0);
-	tr_sw	<= '1';
-	re_sw	<= WING_B(2);
+	tr_sw	<= WING_B(2);
+	msr_start <= WING_B(1);
 	
 	WING_A <= data64(15 downto 0);
-	LED <= tr_sw;
+	WING_B(3) <= rf;
+	LED <= msr_start;
 
 end connect;
 

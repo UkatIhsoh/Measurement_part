@@ -38,6 +38,8 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 --			
 --			re_sw : in std_logic;
 --			ctrl_data : out std_logic_vector(63 downto 0);
+--
+--			adr_in : in std_logic_vector(19 downto 0);
 --			
 --			sdr_req : out std_logic;
 --			sdr_adr : out std_logic_vector(19 downto 0);
@@ -50,6 +52,7 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 --				 rst => ,
 --			    re_sw => ,
 --				 ctrl_data => ,
+--				 adr_in => ,
 --				 sdr_req => ,
 --				 sdr_adr => ,
 --				 sdr_fin => ,
@@ -63,6 +66,8 @@ entity SDRAM_rd is
 			
 			re_sw : in std_logic;
 			ctrl_data : out std_logic_vector(63 downto 0);
+			
+			adr_in : in std_logic_vector(19 downto 0);
 			
 			sdr_req : out std_logic;
 			sdr_adr : out std_logic_vector(19 downto 0);
@@ -92,7 +97,7 @@ begin
 	sdr_adr <= p.adr;
 	ctrl_data <= p.data;
 
-	process(n,p,re_sw,sdr_fin,n.data,n.adr,n.state)
+	process(n,p,adr_in,re_sw,sdr_fin,n.data,n.adr,n.state)
 	begin
 		n <= p;
 		n.state <= p.state;
@@ -102,7 +107,7 @@ begin
 				n.pend <= '1';
 				n.comp <= '1'; 
 				if p.pend = '0' then
-					n.adr <= p.adr +1; --アドレス変更
+					n.adr <= adr_in; --アドレス変更
 					n.state <= sd_request;
 				end if;
 			end if;

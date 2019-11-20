@@ -85,12 +85,13 @@ architecture fetch of data_fetch is
 		addr : std_logic_vector(19 downto 0);
 		f_run : std_logic;	--fetch回路動作中
 		state : state_t;
+		fresh : std_logic;
 	end record;
 
 	signal p : reg;
 	signal n : reg;
 	
-	signal fresh : std_logic:= '1';
+--	signal fresh : std_logic:= '1';
 	
 	constant start_adr : std_logic_vector(19 downto 0):= X"00000";
 
@@ -102,7 +103,7 @@ begin
 	data_req <= p.d_req;
 	sdr_adr <= p.addr; 
 	
-	process(n,p,msr_start,sdr_data,n.state)
+	process(n,p,msr_start,sdr_data,decode_en,n.state)
 	begin
 		n <= p;
 		
@@ -110,9 +111,9 @@ begin
 			if p.f_run = '0' then --fetch回路始動
 				n.d_req <= '1';	--ｓｄｒamへリクエスト
 				n.f_run <= '1';
-				if fresh = '1' then --freshでないならstart_addressを読み込み
+				if p.fresh = '1' then --freshでないならstart_addressを読み込み
 					n.addr <= start_adr;
-					fresh <= '0';
+					n.fresh <= '0';
 				else
 					n.addr <= p.addr +1;
 				end if;
@@ -153,7 +154,7 @@ begin
 			p.addr <= (others => '0');
 			p.f_run <= '0';
 			p.state <= idle;
-			fresh <= '1';
+			p.fresh <= '1';
 		elsif clk' event and clk = '1' then
 			p <= n;
 		end if;

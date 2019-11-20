@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=E:\hoshino_Data\SotsuKen\ISE\measurement_part\Measurement.ncd
-OUTFILE=E:\hoshino_Data\SotsuKen\ISE\measurement_part\Measurement.bit
+INFILE=E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.ncd
+OUTFILE=E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.bit
 FAMILY=Spartan6
 PART=xc6slx9-2tqg144
-WORKINGDIR=E:\hoshino_Data\SotsuKen\ISE\measurement_part
+WORKINGDIR=E:\hoshino_Data\SotsuKen\ISE\measurement_part_git
 LICENSE=WebPack
 USER_INFO=211521278_0_0_438

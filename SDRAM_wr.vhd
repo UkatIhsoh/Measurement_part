@@ -28,6 +28,8 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 --			rst : in std_logic;
 --			
 --			tr_sw : in std_logic;
+--
+--			adr_in : in std_logic_vector(19 downto 0);
 --			
 --			sdr_req : out std_logic;
 --			sdr_adr : out std_logic_vector(19 downto 0);
@@ -38,6 +40,7 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 --	port map( clk => ,
 --				 rst => ,
 --				 tr_sw => ,
+--				 adr_in => ,
 --				 sdr_req => ,
 --				 sdr_adr => ,
 --				 sdr_data => );
@@ -48,6 +51,8 @@ entity SDRAM_wr is
 			
 			tr_sw : in std_logic;
 			
+			adr_in : in std_logic_vector(19 downto 0);
+			
 			sdr_req : out std_logic;
 			sdr_adr : out std_logic_vector(19 downto 0);
 			sdr_data : out std_logic_vector(63 downto 0));
@@ -55,7 +60,7 @@ end SDRAM_wr;
 
 architecture write_sec of SDRAM_wr is
 
-	signal v_data : std_logic_vector(63 downto 0):= X"00000000000F4240"; --1msのカウント値
+	signal v_data : std_logic_vector(63 downto 0):= X"0000000000008110"; --oooのカウント値
 
 	type state_t is (idle, dt_aquire, sd_request, cycle_end); --状態名（アイドル状態、データ取得、sdram動作、処理サイクル終了） 
 
@@ -88,7 +93,7 @@ begin
 				n.pend <= '1';
 				n.comp <= '1';
 				if p.pend = '0' then
-					n.adr <= X"00001"; --p.adr +1; --アドレス変更
+					n.adr <= adr_in; --アドレス変更
 	--				n.state <= dt_aquire;
 					n.data <= v_data; --書き込みデータセット
 					n.state <= sd_request;

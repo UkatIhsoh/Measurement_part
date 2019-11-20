@@ -57,13 +57,13 @@ end timekeeper;
 
 architecture count_time of timekeeper is
 
-	signal counter : std_logic_vector(59 downto 0); 		--カウンター
-	signal count_num : std_logic_vector(59 downto 0);		--カウント上限
+	signal counter : std_logic_vector(63 downto 0); 		--カウンター
+	signal count_num : std_logic_vector(63 downto 0);		--カウント上限
 	signal data_en : std_logic; 									--データがかわっているかのチェック
 	signal en_count : std_logic_vector(7 downto 0); 		--出力がhighになっている時間のカウント
 	signal out_sig : std_logic; 									--出力信号
 
-	constant en_time : std_logic_vector(7 downto 0):= X"05"; --出力high時間
+	constant en_time : std_logic_vector(7 downto 0):= X"86"; --出力high時間
 	
 begin
 
@@ -93,6 +93,7 @@ begin
 						out_sig <= '1';
 					else
 						counter <= counter +1;
+						out_sig <= '0';
 					end if;
 				else
 					out_sig <= '0';
@@ -102,7 +103,7 @@ begin
 		
 		if cnt_start = '1' then --cnt_start(カウントスタート)がイネーブル中にカウント
 			if data_en = '0' then
-				count_num <= data(59 downto 0);
+				count_num <= data;
 				data_en <= '1';
 			end if;
 		else 
