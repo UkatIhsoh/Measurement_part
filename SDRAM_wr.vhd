@@ -60,7 +60,9 @@ end SDRAM_wr;
 
 architecture write_sec of SDRAM_wr is
 
-	signal v_data : std_logic_vector(63 downto 0):= X"0000000000008110"; --oooのカウント値
+	constant smp_data : std_logic_vector(63 downto 0):= X"0000000000008110"; --oooのカウント値
+
+	signal v_data : std_logic_vector(63 downto 0):= smp_data; 
 
 	type state_t is (idle, dt_aquire, sd_request, cycle_end); --状態名（アイドル状態、データ取得、sdram動作、処理サイクル終了） 
 
@@ -81,7 +83,6 @@ begin
 	sdr_req <= p.req;
 	sdr_adr <= p.adr;
 	sdr_data <= p.data;
-
 	
 	process(p,n,tr_sw,n.data,n.adr,n.state)
 	begin
@@ -139,7 +140,7 @@ begin
 			p.pend <= '0';
 			p.state <= idle;
 			p.comp <= '0';
-			v_data <= X"00000000000F4240";
+			v_data <= smp_data;
 		elsif clk' event and clk = '1' then
 			p <= n;
 		end if;

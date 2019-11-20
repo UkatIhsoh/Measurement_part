@@ -254,3 +254,10 @@ map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -reg
 par -w -intstyle ise -ol high -mt off Measurement_map.ncd Measurement.ncd Measurement.pcf 
 trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml Measurement.twx Measurement.ncd -o Measurement.twr Measurement.pcf 
 bitgen -intstyle ise -f Measurement.ut Measurement.ncd 
+xst -intstyle ise -ifn "E:/hoshino_Data/SotsuKen/ISE/measurement_part_git/Measurement.xst" -ofn "E:/hoshino_Data/SotsuKen/ISE/measurement_part_git/Measurement.syr" 
+xst -intstyle ise -ifn "E:/hoshino_Data/SotsuKen/ISE/measurement_part_git/Measurement.xst" -ofn "E:/hoshino_Data/SotsuKen/ISE/measurement_part_git/Measurement.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc E:/hoshino_Data/SotsuKen/ISE/integ_100/SDRAM_top.ucf -p xc6slx9-tqg144-2 Measurement.ngc Measurement.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Measurement_map.ncd Measurement.ngd Measurement.pcf 
+par -w -intstyle ise -ol high -mt off Measurement_map.ncd Measurement.ncd Measurement.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml Measurement.twx Measurement.ncd -o Measurement.twr Measurement.pcf 
+bitgen -intstyle ise -f Measurement.ut Measurement.ncd 
