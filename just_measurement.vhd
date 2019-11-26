@@ -124,6 +124,7 @@ architecture measure of just_measurement is
 	
 	--カウンター用
 	signal c_out : std_logic;
+	signal test_data : std_logic_vector(63 downto 0);
 
 begin
 
@@ -156,9 +157,10 @@ begin
 		port map( clk => clk,
 					 rst => rst,
 					 cnt_start => c_en,
-					 data => d_data, 
+					 data => test_data, 
 					 output => c_out);
 					 
+	test_data <= X"0000000000000811";
 					 
 	sdr_req <= s_req;
 	cite_addr <= addr;

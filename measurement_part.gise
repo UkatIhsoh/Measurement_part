@@ -211,7 +211,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Measurement.lso"/>
       <outfile xil_pn:name="Measurement.ngc"/>
@@ -233,6 +235,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Measurement.bld"/>
       <outfile xil_pn:name="Measurement.ngd"/>
       <outfile xil_pn:name="Measurement_ngdbuild.xrpt"/>
@@ -243,6 +248,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Measurement.pcf"/>
       <outfile xil_pn:name="Measurement_map.map"/>
       <outfile xil_pn:name="Measurement_map.mrp"/>
@@ -257,6 +265,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Measurement.ncd"/>
       <outfile xil_pn:name="Measurement.pad"/>
       <outfile xil_pn:name="Measurement.par"/>
@@ -272,6 +281,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Measurement.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="measurement.bgn"/>
@@ -284,6 +294,7 @@
     <transform xil_pn:end_ts="1574228326" xil_pn:in_ck="-4688634075797550145" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1574228320">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Measurement.twr"/>
       <outfile xil_pn:name="Measurement.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
