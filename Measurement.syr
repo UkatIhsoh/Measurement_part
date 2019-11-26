@@ -340,6 +340,7 @@ Unit <SDRAM_rd> synthesized.
 
 Synthesizing Unit <just_measurement>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd".
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 144: Output port <de_data> of the instance <decode> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <adc_sig> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
@@ -575,6 +576,162 @@ WARNING:Xst:1710 - FF/Latch <r_req_data_write_29> (without init value) has a con
 WARNING:Xst:1710 - FF/Latch <r_req_data_write_30> (without init value) has a constant value of 0 in block <ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <r_req_data_write_31> (without init value) has a constant value of 0 in block <ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <r_req_data_write_32> (without init value) has a constant value of 0 in block <ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <p_data_4> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_5> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_6> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_7> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_8> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_9> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_10> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_11> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_12> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_13> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_14> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_15> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_16> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_17> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_18> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_19> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_20> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_21> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_22> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_23> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_24> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_25> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_26> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_27> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_28> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_29> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_30> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_31> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_32> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_33> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_34> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_35> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_36> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_37> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_38> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_39> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_40> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_41> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_42> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_43> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_44> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_45> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_46> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_47> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_48> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_49> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_50> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_51> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_52> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_53> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_54> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_55> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_56> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_57> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_58> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_59> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_60> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_61> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_62> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <p_data_63> of sequential type is unconnected in block <fetch>.
+WARNING:Xst:2677 - Node <r_data_out_1_0> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_1_1> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_1_2> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_1_3> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_1_4> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_1_5> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_1_6> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_1_7> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_1_8> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_1_9> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_1_10> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_1_11> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_1_12> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_1_13> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_1_14> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_1_15> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_2_0> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_2_1> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_2_2> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_2_3> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_2_4> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_2_5> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_2_6> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_2_7> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_2_8> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_2_9> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_2_10> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_2_11> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_2_12> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_2_13> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_2_14> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_2_15> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_3_0> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_3_1> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_3_2> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_3_3> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_3_4> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_3_5> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_3_6> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_3_7> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_3_8> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_3_9> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_3_10> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_3_11> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_3_12> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_3_13> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_3_14> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <r_data_out_3_15> of sequential type is unconnected in block <ctrl>.
+WARNING:Xst:2677 - Node <p_data_16> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_17> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_18> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_19> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_20> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_21> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_22> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_23> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_24> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_25> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_26> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_27> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_28> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_29> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_30> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_31> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_32> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_33> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_34> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_35> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_36> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_37> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_38> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_39> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_40> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_41> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_42> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_43> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_44> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_45> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_46> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_47> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_48> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_49> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_50> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_51> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_52> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_53> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_54> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_55> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_56> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_57> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_58> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_59> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_60> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_61> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_62> of sequential type is unconnected in block <read_sec>.
+WARNING:Xst:2677 - Node <p_data_63> of sequential type is unconnected in block <read_sec>.
 WARNING:Xst:2404 -  FFs/Latches <p_data<63:16>> (without init value) have a constant value of 0 in block <SDRAM_wr>.
 
 Synthesizing (advanced) Unit <SDRAM_ctrl>.
@@ -697,6 +854,67 @@ Optimizing FSM <read_sec/FSM_2> on signal <p_state[1:2]> with user encoding.
  dt_aquire  | 10
  cycle_end  | 11
 ------------------------
+WARNING:Xst:1710 - FF/Latch <count_num_32> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_31> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_30> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_27> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_29> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_28> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_26> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_25> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_24> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_23> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_22> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_21> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_20> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_19> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_18> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_17> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_16> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_15> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_14> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_13> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_12> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_10> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_9> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_8> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_7> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_6> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_5> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_3> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_2> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_1> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_63> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_60> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_62> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_61> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_59> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_58> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_57> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_56> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_55> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_54> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_53> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_52> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_51> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_50> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_49> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_48> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_47> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_46> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_45> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_44> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_43> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_42> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_41> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_40> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_39> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_38> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_37> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_36> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_35> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_34> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <count_num_33> (without init value) has a constant value of 0 in block <timekeeper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <r_address_0> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_2> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_3> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
@@ -833,6 +1051,54 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_3> (w
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_2> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_1> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_0> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_3_15> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_3_14> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_3_13> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_3_12> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_3_11> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_3_10> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_3_9> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_3_8> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_3_7> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_3_6> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_3_5> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_3_4> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_3_3> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_3_2> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_3_1> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_3_0> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_2_15> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_2_14> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_2_13> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_2_12> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_2_11> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_2_10> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_2_9> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_2_8> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_2_7> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_2_6> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_2_5> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_2_4> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_2_3> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_2_2> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_2_1> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_2_0> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_1_15> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_1_14> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_1_13> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_1_12> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_1_11> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_1_10> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_1_9> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_1_8> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_1_7> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_1_6> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_1_5> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_1_4> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_1_3> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_1_2> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_1_1> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <ctrl/r_data_out_1_0> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/fetch/p_addr_19> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/fetch/p_addr_18> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/fetch/p_addr_17> of sequential type is unconnected in block <Measurement>.
@@ -854,6 +1120,178 @@ WARNING:Xst:2677 - Node <measure/fetch/p_addr_2> of sequential type is unconnect
 WARNING:Xst:2677 - Node <measure/fetch/p_addr_1> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/fetch/p_addr_0> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/fetch/p_fresh> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_63> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_62> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_61> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_60> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_59> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_58> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_57> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_56> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_55> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_54> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_53> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_52> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_51> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_50> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_49> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_48> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_47> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_46> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_45> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_44> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_43> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_42> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_41> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_40> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_39> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_37> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_36> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_35> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_34> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_32> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_31> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_30> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_29> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_28> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_27> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_26> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_25> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_24> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_23> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_22> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_21> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_20> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_19> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_18> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_17> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_16> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_15> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_14> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_13> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_12> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_11> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_10> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_9> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_8> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_7> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_6> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_5> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_4> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_63> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_62> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_61> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_60> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_59> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_58> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_57> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_56> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_55> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_54> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_53> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_52> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_51> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_50> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_49> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_48> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_47> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_46> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_45> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_44> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_43> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_42> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_41> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_40> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_39> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_37> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_36> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_35> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_34> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_32> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_31> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_30> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_29> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_28> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_27> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_26> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_25> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_24> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_23> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_22> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_21> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_20> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_19> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_18> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_17> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_16> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_15> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_14> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_13> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_12> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_11> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_10> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_9> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_8> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_7> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_6> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_5> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_4> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_3> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_2> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_1> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_0> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_63> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_62> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_61> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_60> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_59> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_58> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_57> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_56> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_55> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_54> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_53> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_52> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_51> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_50> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_49> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_48> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_47> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_46> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_45> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_44> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_43> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_42> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_41> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_40> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_39> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_37> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_36> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_35> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_34> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_32> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_31> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_30> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_29> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_28> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_27> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_26> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_25> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_24> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_23> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_22> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_21> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_20> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_19> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_18> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_17> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <read_sec/p_data_16> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_adr_19> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_adr_18> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_adr_17> of sequential type is unconnected in block <Measurement>.
@@ -890,7 +1328,7 @@ INFO:Xst:2261 - The FF/Latch <ctrl/r_req_data_write_15> in Unit <Measurement> is
 Mapping all equations...
 Building and optimizing final netlist ...
 INFO:Xst:2261 - The FF/Latch <ctrl/n_data_w_4> in Unit <Measurement> is equivalent to the following 2 FFs/Latches, which will be removed : <ctrl/n_data_w_8> <ctrl/n_data_w_15> 
-Found area constraint ratio of 100 (+ 5) on block Measurement, actual ratio is 13.
+Found area constraint ratio of 100 (+ 5) on block Measurement, actual ratio is 6.
 WARNING:Xst:1426 - The value init of the FF/Latch ctrl/r_rf_counter_31_LD hinder the constant cleaning in the block Measurement.
    You should achieve better results by setting this init to 0.
 Replicating register ctrl/r_address_10 to handle IOB=TRUE attribute
@@ -908,8 +1346,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 415
- Flip-Flops                                            : 415
+# Registers                                            : 195
+ Flip-Flops                                            : 195
 
 =========================================================================
 
@@ -932,30 +1370,30 @@ Top Level Output File Name         : Measurement.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 628
+# BELS                             : 499
 #      GND                         : 1
-#      INV                         : 17
+#      INV                         : 18
 #      LUT1                        : 22
-#      LUT2                        : 74
-#      LUT3                        : 41
-#      LUT4                        : 14
-#      LUT5                        : 96
-#      LUT6                        : 124
+#      LUT2                        : 72
+#      LUT3                        : 55
+#      LUT4                        : 20
+#      LUT5                        : 21
+#      LUT6                        : 51
 #      MUXCY                       : 127
 #      MUXF7                       : 2
 #      VCC                         : 1
 #      XORCY                       : 109
-# FlipFlops/Latches                : 483
+# FlipFlops/Latches                : 202
 #      FD                          : 3
 #      FD_1                        : 16
 #      FDC                         : 45
-#      FDCE                        : 343
+#      FDCE                        : 123
 #      FDE                         : 4
 #      FDP                         : 4
-#      LD                          : 67
+#      LD                          : 6
 #      ODDR2                       : 1
-# Clock Buffers                    : 4
-#      BUFG                        : 4
+# Clock Buffers                    : 3
+#      BUFG                        : 3
 # IO Buffers                       : 61
 #      IBUF                        : 3
 #      IBUFG                       : 1
@@ -971,16 +1409,16 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             455  out of  11440     3%  
- Number of Slice LUTs:                  388  out of   5720     6%  
-    Number used as Logic:               388  out of   5720     6%  
+ Number of Slice Registers:             174  out of  11440     1%  
+ Number of Slice LUTs:                  259  out of   5720     4%  
+    Number used as Logic:               259  out of   5720     4%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    594
-   Number with an unused Flip Flop:     139  out of    594    23%  
-   Number with an unused LUT:           206  out of    594    34%  
-   Number of fully used LUT-FF pairs:   249  out of    594    41%  
-   Number of unique control sets:        18
+ Number of LUT Flip Flop pairs used:    311
+   Number with an unused Flip Flop:     137  out of    311    44%  
+   Number with an unused LUT:            52  out of    311    16%  
+   Number of fully used LUT-FF pairs:   122  out of    311    39%  
+   Number of unique control sets:        14
 
 IO Utilization: 
  Number of IOs:                          89
@@ -988,7 +1426,7 @@ IO Utilization:
     IOB Flip Flops/Latches:              28
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                4  out of     16    25%  
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
 
 ---------------------------
 Partition Resource Summary:
@@ -1011,9 +1449,9 @@ Clock Information:
 ---------------------------------------------------------------------------------+-----------------------------------+-------+
 Clock Signal                                                                     | Clock buffer(FF name)             | Load  |
 ---------------------------------------------------------------------------------+-----------------------------------+-------+
-clk                                                                              | DCM_SP:CLKFX                      | 417   |
+clk                                                                              | DCM_SP:CLKFX                      | 197   |
 ctrl/statep[8]_GND_36_o_Mux_83_o(ctrl/Mmux_statep[8]_GND_36_o_Mux_83_o11:O)      | NONE(*)(ctrl/n_data_w_4)          | 1     |
-measure/title/rst_data_en_MUX_275_o(measure/title/Mmux_rst_data_en_MUX_275_o11:O)| BUFG(*)(measure/title/count_num_0)| 64    |
+measure/title/rst_data_en_MUX_275_o(measure/title/Mmux_rst_data_en_MUX_275_o11:O)| NONE(*)(measure/title/count_num_0)| 3     |
 WING_B<0>                                                                        | IBUF+BUFG                         | 1     |
 measure/title/data_en_G(measure/title/data_en_G:O)                               | NONE(*)(measure/title/data_en)    | 1     |
 ---------------------------------------------------------------------------------+-----------------------------------+-------+
@@ -1031,7 +1469,7 @@ Timing Summary:
 Speed Grade: -2
 
    Minimum period: 20.478ns (Maximum Frequency: 48.833MHz)
-   Minimum input arrival time before clock: 5.103ns
+   Minimum input arrival time before clock: 5.045ns
    Maximum output required time after clock: 4.618ns
    Maximum combinational path delay: 5.115ns
 
@@ -1042,20 +1480,20 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 20.478ns (frequency: 48.833MHz)
-  Total number of paths / destination ports: 143728 / 739
+  Total number of paths / destination ports: 142490 / 299
 -------------------------------------------------------------------------
 Delay:               6.553ns (Levels of Logic = 88)
-  Source:            measure/title/counter_2 (FF)
+  Source:            measure/title/counter_0 (FF)
   Destination:       measure/title/counter_63 (FF)
   Source Clock:      clk rising 3.1X
   Destination Clock: clk rising 3.1X
 
-  Data Path: measure/title/counter_2 to measure/title/counter_63
+  Data Path: measure/title/counter_0 to measure/title/counter_63
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             2   0.525   0.954  measure/title/counter_2 (measure/title/counter_2)
-     LUT6:I3->O            1   0.235   0.000  measure/title/Mcompar_counter[63]_count_num[63]_equal_4_o_lut<0> (measure/title/Mcompar_counter[63]_count_num[63]_equal_4_o_lut<0>)
+     FDCE:C->Q             2   0.525   0.954  measure/title/counter_0 (measure/title/counter_0)
+     LUT4:I1->O            1   0.235   0.000  measure/title/Mcompar_counter[63]_count_num[63]_equal_4_o_lut<0>1 (measure/title/Mcompar_counter[63]_count_num[63]_equal_4_o_lut<0>)
      MUXCY:S->O            1   0.215   0.000  measure/title/Mcompar_counter[63]_count_num[63]_equal_4_o_cy<0> (measure/title/Mcompar_counter[63]_count_num[63]_equal_4_o_cy<0>)
      MUXCY:CI->O           1   0.023   0.000  measure/title/Mcompar_counter[63]_count_num[63]_equal_4_o_cy<1> (measure/title/Mcompar_counter[63]_count_num[63]_equal_4_o_cy<1>)
      MUXCY:CI->O           1   0.023   0.000  measure/title/Mcompar_counter[63]_count_num[63]_equal_4_o_cy<2> (measure/title/Mcompar_counter[63]_count_num[63]_equal_4_o_cy<2>)
@@ -1151,7 +1589,7 @@ Delay:               6.553ns (Levels of Logic = 88)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'measure/title/rst_data_en_MUX_275_o'
   Clock period: 1.806ns (frequency: 553.710MHz)
-  Total number of paths / destination ports: 64 / 64
+  Total number of paths / destination ports: 3 / 3
 -------------------------------------------------------------------------
 Delay:               1.806ns (Levels of Logic = 1)
   Source:            measure/title/count_num_0 (LATCH)
@@ -1164,7 +1602,7 @@ Delay:               1.806ns (Levels of Logic = 1)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      LD:G->Q               2   0.581   0.954  measure/title/count_num_0 (measure/title/count_num_0)
-     LUT5:I2->O            1   0.235   0.000  measure/title/Mmux_count_num[63]_count_num[63]_MUX_525_o11 (measure/title/count_num[63]_count_num[63]_MUX_525_o)
+     LUT4:I1->O            1   0.235   0.000  measure/title/Mmux_count_num[63]_count_num[63]_MUX_525_o11 (measure/title/count_num[63]_count_num[63]_MUX_525_o)
      LD:D                      0.036          measure/title/count_num_0
     ----------------------------------------
     Total                      1.806ns (0.852ns logic, 0.954ns route)
@@ -1172,10 +1610,10 @@ Delay:               1.806ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'measure/title/data_en_G'
-  Clock period: 2.943ns (frequency: 339.739MHz)
+  Clock period: 1.815ns (frequency: 550.964MHz)
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Delay:               2.943ns (Levels of Logic = 1)
+Delay:               1.815ns (Levels of Logic = 1)
   Source:            measure/title/data_en (LATCH)
   Destination:       measure/title/data_en (LATCH)
   Source Clock:      measure/title/data_en_G falling
@@ -1185,18 +1623,18 @@ Delay:               2.943ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q              69   0.581   2.076  measure/title/data_en (measure/title/data_en)
-     LUT2:I0->O            1   0.250   0.000  measure/title/data_en_D (measure/title/data_en_D)
+     LD:G->Q               8   0.581   0.944  measure/title/data_en (measure/title/data_en)
+     LUT2:I1->O            1   0.254   0.000  measure/title/data_en_D (measure/title/data_en_D)
      LD:D                      0.036          measure/title/data_en
     ----------------------------------------
-    Total                      2.943ns (0.867ns logic, 2.076ns route)
-                                       (29.5% logic, 70.5% route)
+    Total                      1.815ns (0.871ns logic, 0.944ns route)
+                                       (48.0% logic, 52.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 487 / 487
+  Total number of paths / destination ports: 207 / 207
 -------------------------------------------------------------------------
-Offset:              5.103ns (Levels of Logic = 2)
+Offset:              5.045ns (Levels of Logic = 2)
   Source:            WING_B<0> (PAD)
   Destination:       ctrl/p_data_w_15 (FF)
   Destination Clock: clk rising 3.1X
@@ -1205,18 +1643,18 @@ Offset:              5.103ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           462   1.328   2.453  WING_B_0_IBUF (WING_B_0_IBUF)
+     IBUF:I->O           181   1.328   2.395  WING_B_0_IBUF (WING_B_0_IBUF)
      INV:I->O              3   0.255   0.765  ctrl/rst_inv1_INV_0 (ctrl/rst_inv)
      FDE:CE                    0.302          ctrl/p_data_w_4
     ----------------------------------------
-    Total                      5.103ns (1.885ns logic, 3.218ns route)
-                                       (36.9% logic, 63.1% route)
+    Total                      5.045ns (1.885ns logic, 3.160ns route)
+                                       (37.4% logic, 62.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'measure/title/rst_data_en_MUX_275_o'
-  Total number of paths / destination ports: 64 / 64
+  Total number of paths / destination ports: 3 / 3
 -------------------------------------------------------------------------
-Offset:              4.176ns (Levels of Logic = 2)
+Offset:              4.118ns (Levels of Logic = 2)
   Source:            WING_B<0> (PAD)
   Destination:       measure/title/count_num_0 (LATCH)
   Destination Clock: measure/title/rst_data_en_MUX_275_o falling
@@ -1225,12 +1663,12 @@ Offset:              4.176ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           462   1.328   2.562  WING_B_0_IBUF (WING_B_0_IBUF)
-     LUT5:I3->O            1   0.250   0.000  measure/title/Mmux_count_num[63]_count_num[63]_MUX_525_o11 (measure/title/count_num[63]_count_num[63]_MUX_525_o)
+     IBUF:I->O           181   1.328   2.504  WING_B_0_IBUF (WING_B_0_IBUF)
+     LUT4:I2->O            1   0.250   0.000  measure/title/Mmux_count_num[63]_count_num[63]_MUX_525_o11 (measure/title/count_num[63]_count_num[63]_MUX_525_o)
      LD:D                      0.036          measure/title/count_num_0
     ----------------------------------------
-    Total                      4.176ns (1.614ns logic, 2.562ns route)
-                                       (38.7% logic, 61.3% route)
+    Total                      4.118ns (1.614ns logic, 2.504ns route)
+                                       (39.2% logic, 60.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -1280,10 +1718,10 @@ Clock to Setup on destination clock clk
 Source Clock                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------------+---------+---------+---------+---------+
 WING_B<0>                          |         |    4.651|         |         |
-clk                                |    6.553|    1.402|         |         |
+clk                                |    6.553|    1.280|         |         |
 ctrl/statep[8]_GND_36_o_Mux_83_o   |         |    1.420|         |         |
-measure/title/data_en_G            |         |    5.034|         |         |
-measure/title/rst_data_en_MUX_275_o|         |    6.855|         |         |
+measure/title/data_en_G            |         |    4.114|         |         |
+measure/title/rst_data_en_MUX_275_o|         |    6.676|         |         |
 -----------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock ctrl/statep[8]_GND_36_o_Mux_83_o
@@ -1291,7 +1729,7 @@ Clock to Setup on destination clock ctrl/statep[8]_GND_36_o_Mux_83_o
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |         |         |    2.268|         |
+clk            |         |         |    2.218|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock measure/title/data_en_G
@@ -1299,8 +1737,8 @@ Clock to Setup on destination clock measure/title/data_en_G
                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------+---------+---------+---------+---------+
-clk                    |         |         |    2.776|         |
-measure/title/data_en_G|         |         |    2.943|         |
+clk                    |         |         |    1.829|         |
+measure/title/data_en_G|         |         |    1.815|         |
 -----------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock measure/title/rst_data_en_MUX_275_o
@@ -1308,22 +1746,22 @@ Clock to Setup on destination clock measure/title/rst_data_en_MUX_275_o
                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------------+---------+---------+---------+---------+
-clk                                |         |         |    3.206|         |
-measure/title/data_en_G            |         |         |    3.115|         |
+clk                                |         |         |    2.001|         |
+measure/title/data_en_G            |         |         |    1.815|         |
 measure/title/rst_data_en_MUX_275_o|         |         |    1.806|         |
 -----------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 9.55 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 11.15 secs
  
 --> 
 
 Total memory usage is 4526788 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  315 (   0 filtered)
-Number of infos    :   13 (   0 filtered)
+Number of warnings :  752 (   0 filtered)
+Number of infos    :   14 (   0 filtered)
 

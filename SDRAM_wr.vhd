@@ -60,7 +60,7 @@ end SDRAM_wr;
 
 architecture write_sec of SDRAM_wr is
 
-	constant smp_data : std_logic_vector(63 downto 0):= X"0000000000008110"; --oooのカウント値
+	constant smp_data : std_logic_vector(63 downto 0):= X"000000000000FFF0"; --oooのカウント値
 
 	signal v_data : std_logic_vector(63 downto 0):= smp_data; 
 

@@ -63,7 +63,7 @@ architecture count_time of timekeeper is
 	signal en_count : std_logic_vector(7 downto 0); 		--出力がhighになっている時間のカウント
 	signal out_sig : std_logic; 									--出力信号
 
-	constant en_time : std_logic_vector(7 downto 0):= X"86"; --出力high時間
+	constant en_time : std_logic_vector(7 downto 0):= X"FF"; --出力high時間
 	
 begin
 

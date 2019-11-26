@@ -157,10 +157,11 @@ begin
 		port map( clk => clk,
 					 rst => rst,
 					 cnt_start => c_en,
-					 data => test_data, 
+					 --data => d_data, 
+					 data => test_data, 				
 					 output => c_out);
 					 
-	test_data <= X"0000000000000811";
+	test_data <= X"0000000000000FFF";
 					 
 	sdr_req <= s_req;
 	cite_addr <= addr;

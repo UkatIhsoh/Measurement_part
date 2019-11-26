@@ -9,13 +9,13 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>decode - data_decode - decode (E:/hoshino_Data/SotsuKen/ISE/measurement_part_git/data_decode.vhd)</SelectedItem>
+         <SelectedItem>write_sec - SDRAM_wr - write_sec (E:/hoshino_Data/SotsuKen/ISE/measurement_part_git/SDRAM_wr.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001a6000000020000000000000000000000000200000064ffffffff000000810000000300000002000001a60000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>decode - data_decode - decode (E:/hoshino_Data/SotsuKen/ISE/measurement_part_git/data_decode.vhd)</CurrentItem>
+      <CurrentItem>write_sec - SDRAM_wr - write_sec (E:/hoshino_Data/SotsuKen/ISE/measurement_part_git/SDRAM_wr.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
