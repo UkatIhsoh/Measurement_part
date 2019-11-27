@@ -124,7 +124,7 @@ architecture measure of just_measurement is
 	
 	--カウンター用
 	signal c_out : std_logic;
-	signal test_data : std_logic_vector(63 downto 0);
+	signal test_data : std_logic_vector(63 downto 0):= X"00000000000000FF";
 
 begin
 
@@ -156,12 +156,12 @@ begin
 	title : timekeeper 
 		port map( clk => clk,
 					 rst => rst,
-					 cnt_start => c_en,
-					 --data => d_data, 
-					 data => test_data, 				
+					 --cnt_start => c_en,
+					 --cnt_start => msr_start,
+					 cnt_start => '1',
+					 data => d_data, 
+					 --data => test_data, 				
 					 output => c_out);
-					 
-	test_data <= X"0000000000000FFF";
 					 
 	sdr_req <= s_req;
 	cite_addr <= addr;

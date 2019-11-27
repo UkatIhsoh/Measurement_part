@@ -128,6 +128,15 @@ architecture connect of Measurement is
 			adc_sig : out std_logic);
 	end component;
 	
+	component counter is
+		port( clk : in std_logic;
+				rst : in std_logic;
+				
+				start : in std_logic;
+				fin_sig : out std_logic	
+		);
+	end component;
+
 	--common
 	signal rst : std_Logic;
 	signal clk100 : std_logic;
@@ -157,6 +166,10 @@ architecture connect of Measurement is
 	signal rf : std_logic;
 	signal adc : std_logic;
 
+	--counter
+	signal start : std_logic;
+	signal fin_sig : std_logic;
+	
 begin
 
 --	OBUF_inst : OBUF
@@ -226,6 +239,15 @@ begin
 				
 					 rf_pulse => rf,
 					 adc_sig => adc);
+					 
+	count_test : counter 
+		port map( clk => clk100,
+					 rst => rst,
+				
+					 start => start,
+					 fin_sig =>	fin_sig);
+
+
 
 	--読み込みアドレスか書き込みアドレスかの判別
 --	process(sdr_req_r,sdr_req_w)
@@ -247,8 +269,10 @@ begin
 	rst	<= WING_B(0);
 	tr_sw	<= WING_B(2);
 	msr_start <= WING_B(1);
+	start <= WING_A(1);
 	
-	WING_A <= data64(15 downto 0);
+	--WING_A <= data64(15 downto 0);
+	WING_A(0) <= fin_sig;
 	WING_B(3) <= rf;
 	LED <= msr_start;
 

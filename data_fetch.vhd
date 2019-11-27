@@ -91,8 +91,6 @@ architecture fetch of data_fetch is
 	signal p : reg;
 	signal n : reg;
 	
---	signal fresh : std_logic:= '1';
-	
 	constant start_adr : std_logic_vector(19 downto 0):= X"00000";
 
 begin
