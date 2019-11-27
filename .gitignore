@@ -13,7 +13,6 @@ crystal_osc_test/ipcore_dir/
 *.exe
 *.wdb
 *.ini
-*.xise
 *.tcl
 *.in
 *.out
