@@ -69,7 +69,7 @@ Timing constraint: PERIOD analysis for net "DCM/clkfx" derived from  NET
 cycle corrected to HIGH 5 nS  
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 3742 paths analyzed, 540 endpoints analyzed, 0 failing endpoints
+ 3733 paths analyzed, 526 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
  Minimum period is   8.362ns.
 --------------------------------------------------------------------------------
@@ -179,87 +179,87 @@ Hold Paths: PERIOD analysis for net "DCM/clkfx" derived from
 
 --------------------------------------------------------------------------------
 
-Paths for end point write_sec/p_data_4 (SLICE_X14Y34.B5), 1 path
+Paths for end point ctrl/r_req_data_write_15 (SLICE_X11Y38.A6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.399ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               write_sec/p_comp (FF)
-  Destination:          write_sec/p_data_4 (FF)
+Slack (hold path):      0.436ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ctrl/r_req_data_write_15 (FF)
+  Destination:          ctrl/r_req_data_write_15 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.399ns (Levels of Logic = 1)
+  Data Path Delay:      0.436ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk100 rising at 10.000ns
   Destination Clock:    clk100 rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: write_sec/p_comp to write_sec/p_data_4
+  Minimum Data Path at Fast Process Corner: ctrl/r_req_data_write_15 to ctrl/r_req_data_write_15
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X14Y34.BQ      Tcko                  0.200   write_sec/p_comp
-                                                       write_sec/p_comp
-    SLICE_X14Y34.B5      net (fanout=2)        0.078   write_sec/p_comp
-    SLICE_X14Y34.CLK     Tah         (-Th)    -0.121   write_sec/p_comp
-                                                       write_sec/p_data_4_rstpot
-                                                       write_sec/p_data_4
+    SLICE_X11Y38.AQ      Tcko                  0.198   ctrl/r_req_data_write<15>
+                                                       ctrl/r_req_data_write_15
+    SLICE_X11Y38.A6      net (fanout=2)        0.023   ctrl/r_req_data_write<15>
+    SLICE_X11Y38.CLK     Tah         (-Th)    -0.215   ctrl/r_req_data_write<15>
+                                                       ctrl/r_req_data_write_15_rstpot
+                                                       ctrl/r_req_data_write_15
     -------------------------------------------------  ---------------------------
-    Total                                      0.399ns (0.321ns logic, 0.078ns route)
-                                                       (80.5% logic, 19.5% route)
+    Total                                      0.436ns (0.413ns logic, 0.023ns route)
+                                                       (94.7% logic, 5.3% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point count_test/out_sig (SLICE_X10Y6.D6), 1 path
+Paths for end point ctrl/r_rf_counter_8 (SLICE_X17Y38.A6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.417ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               count_test/out_sig (FF)
-  Destination:          count_test/out_sig (FF)
+Slack (hold path):      0.438ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ctrl/r_rf_counter_8 (FF)
+  Destination:          ctrl/r_rf_counter_8 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.417ns (Levels of Logic = 1)
+  Data Path Delay:      0.438ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk100 rising at 10.000ns
   Destination Clock:    clk100 rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: count_test/out_sig to count_test/out_sig
+  Minimum Data Path at Fast Process Corner: ctrl/r_rf_counter_8 to ctrl/r_rf_counter_8
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X10Y6.DQ       Tcko                  0.200   count_test/out_sig
-                                                       count_test/out_sig
-    SLICE_X10Y6.D6       net (fanout=2)        0.027   count_test/out_sig
-    SLICE_X10Y6.CLK      Tah         (-Th)    -0.190   count_test/out_sig
-                                                       count_test/out_sig_rstpot
-                                                       count_test/out_sig
+    SLICE_X17Y38.AQ      Tcko                  0.198   ctrl/r_rf_counter<10>
+                                                       ctrl/r_rf_counter_8
+    SLICE_X17Y38.A6      net (fanout=3)        0.025   ctrl/r_rf_counter<8>
+    SLICE_X17Y38.CLK     Tah         (-Th)    -0.215   ctrl/r_rf_counter<10>
+                                                       ctrl/r_rf_counter_8_rstpot
+                                                       ctrl/r_rf_counter_8
     -------------------------------------------------  ---------------------------
-    Total                                      0.417ns (0.390ns logic, 0.027ns route)
-                                                       (93.5% logic, 6.5% route)
+    Total                                      0.438ns (0.413ns logic, 0.025ns route)
+                                                       (94.3% logic, 5.7% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point ctrl/r_rf_counter_7 (SLICE_X13Y30.D6), 1 path
+Paths for end point ctrl/r_rf_counter_10 (SLICE_X17Y38.D6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.437ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               ctrl/r_rf_counter_7 (FF)
-  Destination:          ctrl/r_rf_counter_7 (FF)
+Slack (hold path):      0.444ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ctrl/r_rf_counter_10 (FF)
+  Destination:          ctrl/r_rf_counter_10 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.437ns (Levels of Logic = 1)
+  Data Path Delay:      0.444ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk100 rising at 10.000ns
   Destination Clock:    clk100 rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: ctrl/r_rf_counter_7 to ctrl/r_rf_counter_7
+  Minimum Data Path at Fast Process Corner: ctrl/r_rf_counter_10 to ctrl/r_rf_counter_10
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y30.DQ      Tcko                  0.198   ctrl/r_rf_counter<7>
-                                                       ctrl/r_rf_counter_7
-    SLICE_X13Y30.D6      net (fanout=3)        0.024   ctrl/r_rf_counter<7>
-    SLICE_X13Y30.CLK     Tah         (-Th)    -0.215   ctrl/r_rf_counter<7>
-                                                       ctrl/r_rf_counter_7_rstpot
-                                                       ctrl/r_rf_counter_7
+    SLICE_X17Y38.DQ      Tcko                  0.198   ctrl/r_rf_counter<10>
+                                                       ctrl/r_rf_counter_10
+    SLICE_X17Y38.D6      net (fanout=3)        0.031   ctrl/r_rf_counter<10>
+    SLICE_X17Y38.CLK     Tah         (-Th)    -0.215   ctrl/r_rf_counter<10>
+                                                       ctrl/r_rf_counter_10_rstpot
+                                                       ctrl/r_rf_counter_10
     -------------------------------------------------  ---------------------------
-    Total                                      0.437ns (0.413ns logic, 0.024ns route)
-                                                       (94.5% logic, 5.5% route)
+    Total                                      0.444ns (0.413ns logic, 0.031ns route)
+                                                       (93.0% logic, 7.0% route)
 
 --------------------------------------------------------------------------------
 
@@ -301,8 +301,8 @@ Derived Constraints for DCM/clkin1
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|DCM/clkin1                     |     31.250ns|     16.000ns|     26.131ns|            0|            0|            0|         3742|
-| DCM/clkfx                     |     10.000ns|      8.362ns|          N/A|            0|            0|         3742|            0|
+|DCM/clkin1                     |     31.250ns|     16.000ns|     26.131ns|            0|            0|            0|         3733|
+| DCM/clkfx                     |     10.000ns|      8.362ns|          N/A|            0|            0|         3733|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 All constraints were met.
@@ -317,7 +317,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    7.118|    4.181|         |         |
+clk            |    7.204|    4.181|         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -326,7 +326,7 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 3742 paths, 0 nets, and 887 connections
+Constraints cover 3733 paths, 0 nets, and 937 connections
 
 Design statistics:
    Minimum period:  16.000ns{1}   (Maximum frequency:  62.500MHz)
@@ -335,14 +335,14 @@ Design statistics:
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed WED 27 NOV 17:35:26 2019 
+Analysis completed WED 27 NOV 17:50:14 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 4573 MB
+Peak Memory Usage: 4574 MB
 
 
 
