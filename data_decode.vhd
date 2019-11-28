@@ -81,6 +81,7 @@ architecture decode of data_decode is
 		d_en : std_logic; --decode_enable
 		cnt_st : std_logic; --counter_start
 		state : state_t;
+		stop : std_logic; --test用
 	end record;
 
 	signal p : reg;
@@ -101,18 +102,22 @@ begin
 			if fetch_fin = '1' then
 				n.d_en <= '0';
 				if p.d_en = '1' then
+				if p.stop = '0' then --test用
 					case data64(3 downto 0) is
 						when cnt =>
 							n.data(63 downto 60) <= X"0";
 							n.data(59 downto 0) <= data64(63 downto 4);
 							n.cnt_st <= '0';
 							n.state <= count;
+							n.stop <= '1'; --test用
 						
 						when others =>
 							n.data <= data64;
 							n.state <= idle;
+							
 					end case;
 				end if;
+				end if; --test用
 			end if;
 			
 			case p.state is
@@ -134,7 +139,9 @@ begin
 		begin
 			if rst = '1' then
 				p.data <= (others => '0');
+				p.cnt_st <= '0';
 				p.state <= idle;
+				p.stop <= '0'; --test用
 			elsif clk' event and clk = '1' then
 				p <= n;
 			end if;

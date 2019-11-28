@@ -109,9 +109,9 @@ begin
 			if p.f_run = '0' then --fetch回路始動
 				n.d_req <= '1';	--ｓｄｒamへリクエスト
 				n.f_run <= '1';
-				if p.fresh = '1' then --freshでないならstart_addressを読み込み
+				if p.fresh = '0' then --freshでないならstart_addressを読み込み
 					n.addr <= start_adr;
-					n.fresh <= '0';
+					n.fresh <= '1';
 				else
 					n.addr <= p.addr +1;
 				end if;
@@ -152,7 +152,7 @@ begin
 			p.addr <= (others => '0');
 			p.f_run <= '0';
 			p.state <= idle;
-			p.fresh <= '1';
+			p.fresh <= '0';
 		elsif clk' event and clk = '1' then
 			p <= n;
 		end if;

@@ -267,8 +267,8 @@ begin
 	DRAM_ADDR(12) <= '0';
 	
 	rst	<= WING_B(0);
-	tr_sw	<= WING_B(2);
-	msr_start <= WING_B(1);
+	tr_sw	<= WING_B(1);
+	msr_start <= WING_B(2);
 	start <= WING_A(1);
 	
 	WING_A(0) <= fin_sig;
