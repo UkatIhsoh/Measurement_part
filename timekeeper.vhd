@@ -58,9 +58,8 @@ end timekeeper;
 architecture count_time of timekeeper is
 
 	signal counter : std_logic_vector(63 downto 0):= (others => '0'); 		--カウンター
-	signal count_num : std_logic_vector(63 downto 0):=X"00000000000186A0";		--カウント上限
+	signal count_num : std_logic_vector(63 downto 0);		--カウント上限
 	signal data_en : std_logic:= '0'; 									--データがかわっているかのチェック
---	signal en_count : std_logic_vector(7 downto 0):=(others => '0'); 		--出力がhighになっている時間のカウント
 	signal out_sig : std_logic:='0'; 									--出力信号
 
 	constant en_time : std_logic_vector(63 downto 0):= X"00000000000186A0"; --出力high時間
@@ -73,21 +72,17 @@ begin
 	begin
 	
 		if rst = '1' then
-			--count_num <= (others => '0');
+			count_num <= (others => '0');
 			data_en <= '0';
-			--en_count <= (others => '0');
 			out_sig <= '0';
 			counter <= (others => '0');
 		elsif clk' event and clk = '1' then
 			if cnt_start = '1' then
 				if out_sig = '1' then
---					if en_count = en_time then --出力信号highの間の時間をカウントし、設定した時間になったら出力をlowにする
-					if counter = en_time then
---						en_count <= (others =>'0');
+					if counter = en_time then	 --出力信号highの間の時間をカウントし、設定した時間になったら出力をlowにする
 						counter <= (others => '0');
 						out_sig <= '0';
 					else
---						en_count <= en_count +1; 
 						counter <= counter +1;
 					end if;
 				else
@@ -101,7 +96,7 @@ begin
 						end if;
 					else
 						counter <= (others => '0');
---						count_num <= data;
+						count_num <= data;
 						out_sig <= '0';
 						data_en <= '1';
 					end if;
@@ -110,17 +105,7 @@ begin
 				data_en <= '0';
 			end if;
 		end if;
-		
---		if cnt_start = '1' then --cnt_start(カウントスタート)がイネーブル中にカウント
---			if data_en = '0' then
---				counter <= (others => '0');
---				--count_num <= data;
---				data_en <= '1';
---			end if;
---		else 
---			data_en <= '0';
---		end if;
-		
+				
 	end process;
 
 end count_time;

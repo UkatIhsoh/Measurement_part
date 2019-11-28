@@ -271,7 +271,6 @@ begin
 	msr_start <= WING_B(1);
 	start <= WING_A(1);
 	
-	--WING_A <= data64(15 downto 0);
 	WING_A(0) <= fin_sig;
 	WING_B(3) <= rf;
 	LED <= msr_start;
