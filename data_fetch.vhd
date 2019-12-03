@@ -91,6 +91,8 @@ architecture fetch of data_fetch is
 	signal p : reg;
 	signal n : reg;
 	
+	signal test : std_logic:= '0'; --テスト用信号 
+	
 	constant start_adr : std_logic_vector(19 downto 0):= X"00000";
 
 begin
@@ -105,7 +107,9 @@ begin
 	begin
 		n <= p;
 		
+		if test = '0' then --テスト用（フェッチを一回だけ行う）
 		if msr_start = '1' then
+		test <= '1'; --テスト用
 			if p.f_run = '0' then --fetch回路始動
 				n.d_req <= '1';	--ｓｄｒamへリクエスト
 				n.f_run <= '1';
@@ -141,6 +145,7 @@ begin
 				end case;					
 			end if;
 		end if;
+	end if; --テスト用
 	end process;
 	
 	process(clk,rst)
