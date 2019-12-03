@@ -165,7 +165,7 @@ begin
 	cite_addr <= addr;
 	rf_pulse <= c_out;
 	
-	test_dout <= d_data;
+	test_dout <= data64;
 
 	end measure;
 
