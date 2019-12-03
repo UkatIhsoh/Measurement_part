@@ -72,6 +72,8 @@ entity just_measurement is
 			ctrl_data : in std_logic_vector(63 downto 0); --制御用データ
 			cite_addr : out std_logic_vector(19 downto 0); --参照アドレス
 			
+			test_dout : out std_logic_vector(63 downto 0); --テスト用LED点灯用
+			
 			rf_pulse : out std_logic; --RFパルス信号
 			adc_sig : out std_logic); --ADC用信号
 end just_measurement;
@@ -162,6 +164,8 @@ begin
 	sdr_req <= s_req;
 	cite_addr <= addr;
 	rf_pulse <= c_out;
+	
+	test_dout <= d_data;
 
 	end measure;
 

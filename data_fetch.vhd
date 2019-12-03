@@ -89,11 +89,11 @@ architecture fetch of data_fetch is
 	end record;
 
 	signal p : reg;
-	signal n : reg;
-	
-	signal test : std_logic:= '0'; --テスト用信号 
+	signal n : reg; 
 	
 	constant start_adr : std_logic_vector(19 downto 0):= X"00000";
+	
+	signal test : std_logic:= '0'; --test
 
 begin
 
@@ -103,21 +103,20 @@ begin
 	data_req <= p.d_req;
 	sdr_adr <= p.addr; 
 	
-	process(n,p,msr_start,sdr_data,decode_en,n.state)
+	process(n,p,msr_start,sdr_data,decode_en)
 	begin
 		n <= p;
 		
-		if test = '0' then --テスト用（フェッチを一回だけ行う）
 		if msr_start = '1' then
-		test <= '1'; --テスト用
 			if p.f_run = '0' then --fetch回路始動
-				n.d_req <= '1';	--ｓｄｒamへリクエスト
 				n.f_run <= '1';
 				if p.fresh = '0' then --freshでないならstart_addressを読み込み
 					n.addr <= start_adr;
+					n.d_req <= '1';	--ｓｄｒamへリクエスト
 					n.fresh <= '1';
 				else
 					n.addr <= p.addr +1;
+					n.d_req <= '1';	--ｓｄｒamへリクエスト
 				end if;
 				n.state <= dt_wait;
 			else
@@ -130,13 +129,17 @@ begin
 						n.state <= dt_aquire;
 						
 					when dt_aquire => 
-						n.data <= sdr_data;
+						n.data <= sdr_data;	
+						if test = '0' then --test
 						n.f_fin <= '1';
+						test <= '1'; --test
+						end if; --test
 						n.state <= prepare;
 						
 					when prepare => 
 						if decode_en = '1' then
 							n.f_run <= '0';
+							n.f_fin <= '0';
 							n.state <= idle;
 						end if;
 						
@@ -145,7 +148,6 @@ begin
 				end case;					
 			end if;
 		end if;
-	end if; --テスト用
 	end process;
 	
 	process(clk,rst)

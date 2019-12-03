@@ -81,7 +81,6 @@ architecture decode of data_decode is
 		d_en : std_logic; --decode_enable
 		cnt_st : std_logic; --counter_start
 		state : state_t;
-		stop : std_logic; --test用
 	end record;
 
 	signal p : reg;
@@ -95,41 +94,39 @@ begin
 	
 	cnt_en <= p.cnt_st;
 
-	process(n,p,data64,fetch_fin,n.state)
+	process(n,p,data64,fetch_fin)
 		begin
 			n <= p;
 			
 			if fetch_fin = '1' then
-				n.d_en <= '0';
-				if p.d_en = '1' then
-				if p.stop = '0' then --test用
+				if p.d_en = '0' then
 					case data64(3 downto 0) is
 						when cnt =>
+							n.d_en <= '1';
 							n.data(63 downto 60) <= X"0";
 							n.data(59 downto 0) <= data64(63 downto 4);
 							n.cnt_st <= '0';
 							n.state <= count;
-							n.stop <= '1'; --test用
 						
 						when others =>
+							n.d_en <= '1';
 							n.data <= data64;
 							n.state <= idle;
 							
 					end case;
 				end if;
-				end if; --test用
 			end if;
 			
 			case p.state is
 				when idle =>
-					n.d_en <= '1';
+					n.d_en <= '0';
 					
 				when count =>
 					n.cnt_st <= '1';
+					n.d_en <= '0';
 					n.state <= idle;
 					
 				when others =>
-					n.d_en <= '0';
 					n.state <= idle;
 				end case;
 		
@@ -140,8 +137,9 @@ begin
 			if rst = '1' then
 				p.data <= (others => '0');
 				p.cnt_st <= '0';
+				p.d_en <= '0';
 				p.state <= idle;
-				p.stop <= '0'; --test用
+				--p.stop <= '0'; --test用
 			elsif clk' event and clk = '1' then
 				p <= n;
 			end if;

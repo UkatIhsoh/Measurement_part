@@ -124,6 +124,8 @@ architecture connect of Measurement is
 			ctrl_data : in std_logic_vector(63 downto 0);
 			cite_addr : out std_logic_vector(19 downto 0);
 			
+			test_dout : out std_logic_vector(63 downto 0);
+			
 			rf_pulse : out std_logic;
 			adc_sig : out std_logic);
 	end component;
@@ -165,6 +167,7 @@ architecture connect of Measurement is
 	signal msr_start : std_logic;
 	signal rf : std_logic;
 	signal adc : std_logic;
+	signal test_d : std_logic_vector(63 downto 0); --テスト用
 
 	--counter
 	signal start : std_logic;
@@ -236,6 +239,8 @@ begin
 					 sdr_req => re_sw,
 					 ctrl_data => data64,
 					 cite_addr => req_adr_r,
+					 
+					 test_dout => test_d, --テスト用
 				
 					 rf_pulse => rf,
 					 adc_sig => adc);
@@ -246,20 +251,6 @@ begin
 				
 					 start => start,
 					 fin_sig =>	fin_sig);
-
-
-
-	--読み込みアドレスか書き込みアドレスかの判別
---	process(sdr_req_r,sdr_req_w)
---	begin
---		if sdr_req_r = '1' then
---			sdr_addr <= rd_adr;
---		elsif sdr_req_w = '1' then
---			sdr_addr <= wr_adr;
---		else
---			sdr_addr <= X"00000";
---		end if;	
---	end process;
 	
 	req_adr_w <= X"00000";
 	
@@ -269,9 +260,10 @@ begin
 	rst	<= WING_B(0);
 	tr_sw	<= WING_B(1);
 	msr_start <= WING_B(2);
-	start <= WING_A(1);
+	--start <= WING_A(1);
 	
-	WING_A(0) <= fin_sig;
+	WING_A(15 downto 0) <= test_d(15 downto 0); --テスト用
+	--WING_A(0) <= fin_sig;
 	WING_B(3) <= rf;
 	LED <= msr_start;
 
