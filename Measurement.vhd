@@ -262,7 +262,7 @@ begin
 	msr_start <= WING_B(2);
 	--start <= WING_A(1);
 	
-	WING_A(15 downto 0) <= test_d(15 downto 0); --テスト用
+	WING_A(15 downto 0) <= data64(63 downto 48); --テスト用
 	--WING_A(0) <= fin_sig;
 	WING_B(3) <= rf;
 	LED <= msr_start;

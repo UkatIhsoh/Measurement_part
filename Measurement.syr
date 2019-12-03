@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Reading design: Measurement.prj
 
@@ -184,6 +184,7 @@ Synthesizing Unit <Measurement>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd".
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 213: Output port <sdr_adr> of the instance <write_sec> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 222: Output port <sdr_adr> of the instance <read_sec> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 233: Output port <test_dout> of the instance <measure> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 233: Output port <adc_sig> of the instance <measure> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 248: Output port <fin_sig> of the instance <count_test> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <sdr_addr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -1033,8 +1034,8 @@ clk            |         |         |    2.695|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 9.67 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.62 secs
  
 --> 
 
@@ -1042,5 +1043,5 @@ Total memory usage is 4526788 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  204 (   0 filtered)
-Number of infos    :   16 (   0 filtered)
+Number of infos    :   17 (   0 filtered)
 
