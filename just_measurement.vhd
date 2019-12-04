@@ -39,6 +39,7 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 --			msr_start : in std_logic; 
 --			
 --			sdr_req : out std_logic;
+--			sdr_fin : in std_logic;
 --			ctrl_data : in std_logic_vector(63 downto 0);
 --			cite_addr : out std_logic_vector(19 downto 0);
 --			
@@ -53,6 +54,7 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 --				 msr_start => ,
 --			
 --				 sdr_req => ,
+--				 sdr_fin => ,
 --				 ctrl_data => ,
 --				 cite_addr => ,
 --			
@@ -69,10 +71,12 @@ entity just_measurement is
 			msr_start : in std_logic; --measurement start
 			
 			sdr_req : out std_logic; --sdram読み込みリクエスト
+			sdr_fin : in std_logic; --sdram読み込み終了
 			ctrl_data : in std_logic_vector(63 downto 0); --制御用データ
 			cite_addr : out std_logic_vector(19 downto 0); --参照アドレス
 			
 			test_dout : out std_logic_vector(63 downto 0); --テスト用LED点灯用
+			test_bit : out std_logic; --テスト用1bit信号
 			
 			rf_pulse : out std_logic; --RFパルス信号
 			adc_sig : out std_logic); --ADC用信号
@@ -89,8 +93,11 @@ architecture measure of just_measurement is
 				fetch_fin : out std_logic; 
 				decode_en : in std_logic;
 				
+				test_pin : out std_logic; --test
+				
 				data_req : out std_logic;
 				sdr_adr : out std_logic_vector(19 downto 0);
+				sdr_fin : in std_logic;
 				sdr_data : in std_logic_vector(63 downto 0));	
 	end component;
 
@@ -117,6 +124,7 @@ architecture measure of just_measurement is
 	
 	--フェッチ-デコード用
 	signal data64 : std_logic_vector(63 downto 0);
+	signal data64_vr : std_logic_vector(63 downto 0); --test
 	signal f_fin : std_logic;
 	signal d_en : std_logic;
 	signal s_req : std_logic;
@@ -126,6 +134,9 @@ architecture measure of just_measurement is
 	
 	--カウンター用
 	signal c_out : std_logic;
+	
+	--テスト用
+	signal test : std_logic;
 
 begin
 
@@ -137,9 +148,12 @@ begin
 					 data64 => data64,
 					 fetch_fin => f_fin, 
 					 decode_en => d_en,
+					 
+					 test_pin => test, --test
 				
 					 data_req => s_req,
 					 sdr_adr => addr,
+					 sdr_fin => sdr_fin,
 					 sdr_data => ctrl_data);	
 
 	decode : data_decode 
@@ -158,14 +172,17 @@ begin
 		port map( clk => clk,
 					 rst => rst,
 					 cnt_start => c_en,
-					 data => d_data, 			
+					 --data => d_data, 
+					 data => data64_vr,
 					 output => c_out);
 					 
 	sdr_req <= s_req;
 	cite_addr <= addr;
 	rf_pulse <= c_out;
 	
-	test_dout <= data64;
+	test_dout <= d_data;
+	test_bit <= c_en;
+	data64_vr <= X"00000000000186A0"; --test
 
 	end measure;
 

@@ -11,40 +11,40 @@ Target Device  : xc6slx9
 Target Package : tqg144
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : TUE 3 DEC 12:4:41 2019
+Mapped Date    : WED 4 DEC 19:29:10 2019
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    3
 Slice Logic Utilization:
-  Number of Slice Registers:                   449 out of  11,440    3%
-    Number used as Flip Flops:                 443
-    Number used as Latches:                      6
+  Number of Slice Registers:                   194 out of  11,440    1%
+    Number used as Flip Flops:                 190
+    Number used as Latches:                      4
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        380 out of   5,720    6%
-    Number used as logic:                      361 out of   5,720    6%
-      Number using O6 output only:             227
+  Number of Slice LUTs:                        322 out of   5,720    5%
+    Number used as logic:                      320 out of   5,720    5%
+      Number using O6 output only:             188
       Number using O5 output only:              83
-      Number using O5 and O6:                   51
+      Number using O5 and O6:                   49
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   1,440    0%
-    Number used exclusively as route-thrus:     19
-      Number with same-slice register load:     17
+    Number used exclusively as route-thrus:      2
+      Number with same-slice register load:      0
       Number with same-slice carry load:         2
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   161 out of   1,430   11%
-  Number of MUXCYs used:                       144 out of   2,860    5%
-  Number of LUT Flip Flop pairs used:          567
-    Number with an unused Flip Flop:           150 out of     567   26%
-    Number with an unused LUT:                 187 out of     567   32%
-    Number of fully used LUT-FF pairs:         230 out of     567   40%
-    Number of unique control sets:              16
+  Number of occupied Slices:                   108 out of   1,430    7%
+  Number of MUXCYs used:                       132 out of   2,860    4%
+  Number of LUT Flip Flop pairs used:          343
+    Number with an unused Flip Flop:           164 out of     343   47%
+    Number with an unused LUT:                  21 out of     343    6%
+    Number of fully used LUT-FF pairs:         158 out of     343   46%
+    Number of unique control sets:              13
     Number of slice register sites lost
-      to control set restrictions:              39 out of  11,440    1%
+      to control set restrictions:              54 out of  11,440    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -55,7 +55,7 @@ Slice Logic Distribution:
 IO Utilization:
   Number of bonded IOBs:                        89 out of     102   87%
     Number of LOCed IOBs:                       89 out of      89  100%
-    IOB Flip Flops:                             42
+    IOB Flip Flops:                             31
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
@@ -72,12 +72,12 @@ Specific Feature Utilization:
   Number of DCM/DCM_CLKGENs:                     1 out of       4   25%
     Number used as DCMs:                         1
     Number used as DCM_CLKGENs:                  0
-  Number of ILOGIC2/ISERDES2s:                  16 out of     200    8%
-    Number used as ILOGIC2s:                    16
+  Number of ILOGIC2/ISERDES2s:                  15 out of     200    7%
+    Number used as ILOGIC2s:                    15
     Number used as ISERDES2s:                    0
   Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     200    0%
-  Number of OLOGIC2/OSERDES2s:                  26 out of     200   13%
-    Number used as OLOGIC2s:                    26
+  Number of OLOGIC2/OSERDES2s:                  16 out of     200    8%
+    Number used as OLOGIC2s:                    16
     Number used as OSERDES2s:                    0
   Number of BSCANs:                              0 out of       4    0%
   Number of BUFHs:                               0 out of     128    0%
@@ -92,11 +92,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                3.69
+Average Fanout of Non-Clock Nets:                3.55
 
-Peak Memory Usage:  4522 MB
-Total REAL time to MAP completion:  9 secs 
-Total CPU time to MAP completion:   9 secs 
+Peak Memory Usage:  4520 MB
+Total REAL time to MAP completion:  8 secs 
+Total CPU time to MAP completion:   8 secs 
 
 Table of Contents
 -----------------
@@ -122,7 +122,7 @@ Section 2 - Warnings
 WARNING:Place:1109 - A clock IOB / BUFGMUX clock component pair have been found
    that are not placed at an optimal clock IOB / BUFGMUX site pair. The clock
    IOB component <WING_B<0>> is placed at site <P99>. The corresponding BUFG
-   component <WING_B_0_IBUF_BUFG> is placed at site <BUFGMUX_X2Y1>. There is
+   component <WING_B_0_IBUF_BUFG> is placed at site <BUFGMUX_X2Y3>. There is
    only a select set of IOBs that can use the fast path to the Clocker buffer,
    and they are not being used. You may want to analyze why this problem exists
    and correct it. This is normally an ERROR but the CLOCK_DEDICATED_ROUTE
@@ -132,7 +132,7 @@ WARNING:Place:1109 - A clock IOB / BUFGMUX clock component pair have been found
    lead to very poor timing results. It is recommended that this error condition
    be corrected in the design.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/fetch/msr_start_p_f_run_AND_10_o is sourced by a combinatorial pin.
+   measure/fetch/msr_start_p_f_run_AND_14_o is sourced by a combinatorial pin.
    This is not good design practice. Use the CE pin to control the loading of
    data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -206,36 +206,25 @@ Section 6 - IOB Properties
 | DRAM_CKE                           | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST |              |          |          |
 | DRAM_CLK                           | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
 | DRAM_CS_N                          | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST |              |          |          |
-| DRAM_DQ<0>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | IFF          |          |          |
-|                                    |                  |           |                      |       |          |      | OFF          |          |          |
+| DRAM_DQ<0>                         | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | OFF          |          |          |
 | DRAM_DQ<1>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | IFF          |          |          |
-|                                    |                  |           |                      |       |          |      | OFF          |          |          |
 | DRAM_DQ<2>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | IFF          |          |          |
-|                                    |                  |           |                      |       |          |      | OFF          |          |          |
 | DRAM_DQ<3>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | IFF          |          |          |
-|                                    |                  |           |                      |       |          |      | OFF          |          |          |
 | DRAM_DQ<4>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | IFF          |          |          |
-|                                    |                  |           |                      |       |          |      | OFF          |          |          |
 | DRAM_DQ<5>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | IFF          |          |          |
 |                                    |                  |           |                      |       |          |      | OFF          |          |          |
 | DRAM_DQ<6>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | IFF          |          |          |
-|                                    |                  |           |                      |       |          |      | OFF          |          |          |
 | DRAM_DQ<7>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | IFF          |          |          |
 |                                    |                  |           |                      |       |          |      | OFF          |          |          |
 | DRAM_DQ<8>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | IFF          |          |          |
-|                                    |                  |           |                      |       |          |      | OFF          |          |          |
 | DRAM_DQ<9>                         | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | IFF          |          |          |
 |                                    |                  |           |                      |       |          |      | OFF          |          |          |
 | DRAM_DQ<10>                        | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | IFF          |          |          |
 |                                    |                  |           |                      |       |          |      | OFF          |          |          |
 | DRAM_DQ<11>                        | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | IFF          |          |          |
-|                                    |                  |           |                      |       |          |      | OFF          |          |          |
 | DRAM_DQ<12>                        | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | IFF          |          |          |
-|                                    |                  |           |                      |       |          |      | OFF          |          |          |
 | DRAM_DQ<13>                        | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | IFF          |          |          |
-|                                    |                  |           |                      |       |          |      | OFF          |          |          |
 | DRAM_DQ<14>                        | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | IFF          |          |          |
-|                                    |                  |           |                      |       |          |      | OFF          |          |          |
 | DRAM_DQ<15>                        | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | IFF          |          |          |
 |                                    |                  |           |                      |       |          |      | OFF          |          |          |
 | DRAM_DQM<0>                        | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | OFF          |          |          |
@@ -262,8 +251,8 @@ Section 6 - IOB Properties
 | WING_B<0>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
 | WING_B<1>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
 | WING_B<2>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
-| WING_B<3>                          | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| WING_B<4>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| WING_B<3>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| WING_B<4>                          | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
 | WING_B<5>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
 | WING_B<6>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
 | WING_B<7>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |

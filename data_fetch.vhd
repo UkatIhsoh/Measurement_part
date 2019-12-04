@@ -43,6 +43,7 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 --			
 --			data_req : out std_logic;
 --			sdr_adr : out std_logic_vector(19 downto 0);
+--			sdr_fin : in std_logic;
 --			sdr_data : in std_logic_vector(63 downto 0));	
 --end component;
 --
@@ -57,6 +58,7 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 --			
 --				 data_req => ,
 --				 sdr_adr => ,
+--				 sdr_fin => ,
 --				 sdr_data => ,);	
 
 
@@ -69,8 +71,11 @@ entity data_fetch is
 			fetch_fin : out std_logic; 
 			decode_en : in std_logic;
 			
+			test_pin : out std_logic; --test
+			
 			data_req : out std_logic;
 			sdr_adr : out std_logic_vector(19 downto 0);
+			sdr_fin : in std_logic;
 			sdr_data : in std_logic_vector(63 downto 0));	
 end data_fetch;
 
@@ -85,6 +90,7 @@ architecture fetch of data_fetch is
 		addr : std_logic_vector(19 downto 0);
 		f_run : std_logic;	--fetch‰ñ˜H“®ì’†
 		state : state_t;
+		d_num : std_logic_vector(1 downto 0); --ƒf[ƒ^‚U‚Sƒrƒbƒg‚ğ‚S•ªŠ„
 		fresh : std_logic;
 	end record;
 
@@ -103,7 +109,9 @@ begin
 	data_req <= p.d_req;
 	sdr_adr <= p.addr; 
 	
-	process(n,p,msr_start,sdr_data,decode_en)
+	test_pin <= test;
+	
+	process(n,p,msr_start,sdr_data,decode_en,n.state)
 	begin
 		n <= p;
 		
@@ -124,17 +132,34 @@ begin
 				case p.state is
 					when idle =>
 						null;
-				
-					when dt_wait => 
-						n.state <= dt_aquire;
+						
+					when dt_wait =>
+						if sdr_fin = '1' then
+							n.state <= dt_aquire;
+						end if;
 						
 					when dt_aquire => 
-						n.data <= sdr_data;	
 						if test = '0' then --test
-						n.f_fin <= '1';
-						test <= '1'; --test
+						if p.d_num = "00" then
+							n.data(15 downto 0) <= sdr_data(15 downto 0);
+							n.d_num <= "01";
+						elsif p.d_num = "01" then
+							n.data(31 downto 16) <= sdr_data(31 downto 16);
+							n.d_num <= "10";
+						elsif p.d_num = "10" then
+							n.data(47 downto 32) <= sdr_data(47 downto 32);
+							n.d_num <= "11";
+						elsif p.d_num = "11" then
+							n.data(63 downto 48) <= sdr_data(63 downto 48);
+							n.d_num <= "00";
+							n.f_fin <= '1';
+							n.state <= prepare;
+							test <= '1'; --test
+						end if;
+						else --test
+							n.f_fin <= '1'; --test
+							n.state <= prepare; --test
 						end if; --test
-						n.state <= prepare;
 						
 					when prepare => 
 						if decode_en = '1' then
@@ -148,6 +173,7 @@ begin
 				end case;					
 			end if;
 		end if;
+	
 	end process;
 	
 	process(clk,rst)
@@ -159,6 +185,7 @@ begin
 			p.addr <= (others => '0');
 			p.f_run <= '0';
 			p.state <= idle;
+			p.d_num <= "00";
 			p.fresh <= '0';
 		elsif clk' event and clk = '1' then
 			p <= n;

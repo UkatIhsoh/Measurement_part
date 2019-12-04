@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-12-03T10:21:13</DateModified>
+  <DateModified>2019-12-04T19:17:44</DateModified>
   <ModuleName>Measurement</ModuleName>
-  <SummaryTimeStamp>2019-10-15T14:10:20</SummaryTimeStamp>
+  <SummaryTimeStamp>2019-12-04T12:58:19</SummaryTimeStamp>
   <SavedFilePath>E:/hoshino_Data/SotsuKen/ISE/measurement_part_git/iseconfig/Measurement.xreport</SavedFilePath>
   <ImplementationReportsDirectory>E:/hoshino_Data/SotsuKen/ISE/measurement_part_git\</ImplementationReportsDirectory>
   <DateInitialized>2019-10-09T12:52:24</DateInitialized>

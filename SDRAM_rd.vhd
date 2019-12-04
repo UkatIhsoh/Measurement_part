@@ -40,6 +40,8 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 --			ctrl_data : out std_logic_vector(63 downto 0);
 --
 --			adr_in : in std_logic_vector(19 downto 0);
+
+--			fetch_en : out std_logic;
 --			
 --			sdr_req : out std_logic;
 --			sdr_adr : out std_logic_vector(19 downto 0);
@@ -53,6 +55,7 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 --			    re_sw => ,
 --				 ctrl_data => ,
 --				 adr_in => ,
+--				 fetch_en => ,
 --				 sdr_req => ,
 --				 sdr_adr => ,
 --				 sdr_fin => ,
@@ -68,6 +71,8 @@ entity SDRAM_rd is
 			ctrl_data : out std_logic_vector(63 downto 0);
 			
 			adr_in : in std_logic_vector(19 downto 0);
+			
+			fetch_en : out std_logic;
 			
 			sdr_req : out std_logic;
 			sdr_adr : out std_logic_vector(19 downto 0);
@@ -86,6 +91,7 @@ architecture read_sec of SDRAM_rd is
 		pend : std_logic; --読み込み可能信号
 		state : state_t; --状態用
 		comp : std_logic; --スイッチを押されるたびにアドレスを返ることを実現
+		f_en : std_logic; --フェッチイネーブル信号
 	end record;
 	
 	signal p : reg; 
@@ -96,6 +102,7 @@ begin
 	sdr_req <= p.req;
 	sdr_adr <= p.adr;
 	ctrl_data <= p.data;
+	fetch_en <= p.f_en;
 
 	process(n,p,adr_in,re_sw,sdr_fin,n.data,n.adr,n.state)
 	begin
@@ -117,7 +124,7 @@ begin
 		
 		case p.state is
 			when idle =>
-				null;
+				n.f_en <= '0';
 				
 			when sd_request =>
 				n.req <= '1';
@@ -132,11 +139,13 @@ begin
 				
 			when cycle_end =>
 				n.pend <= '0';
+				n.f_en <= '1';
 				n.state <= idle;
 				
 			when others =>
 				n.req <= '0';
 				n.pend <= '0';
+				n.f_en <= '0';
 				n.state <= idle;
 		end case;
 	
@@ -152,6 +161,7 @@ begin
 			p.pend <= '0';
 			p.state <= idle;
 			p.comp <= '0';
+			p.f_en <= '0';
 		elsif clk' event and clk = '1' then
 			p <= n;
 		end if;

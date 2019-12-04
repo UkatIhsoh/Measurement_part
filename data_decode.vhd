@@ -72,6 +72,7 @@ end data_decode;
 architecture decode of data_decode is
 
 	type state_t is (idle, count); --状態名（アイドル、カウンター）
+	type state_s is (first, second, third); --パルスシーケンスに相当するようにデータを割り当てる
 	
 	--識別用
 	constant cnt : std_logic_vector(3 downto 0) :=X"0"; --カウンター
@@ -81,6 +82,8 @@ architecture decode of data_decode is
 		d_en : std_logic; --decode_enable
 		cnt_st : std_logic; --counter_start
 		state : state_t;
+		sequence : state_s;
+		d_num : std_logic_vector(1 downto 0);
 	end record;
 
 	signal p : reg;
@@ -100,18 +103,44 @@ begin
 			
 			if fetch_fin = '1' then
 				if p.d_en = '0' then
-					case data64(3 downto 0) is
-						when cnt =>
-							n.d_en <= '1';
-							n.data(63 downto 60) <= X"0";
-							n.data(59 downto 0) <= data64(63 downto 4);
-							n.cnt_st <= '0';
-							n.state <= count;
+					case p.sequence is
+						when first =>
+							if p.d_num = "00" then
+								--n.data(15 downto 0) <= data64(19 downto 4);
+								n.data(15 downto 0) <= data64(15 downto 0);
+								n.d_num <= "01";
+							elsif p.d_num = "01" then
+								--n.data(31 downto 16) <= data64(35 downto 20);
+								n.data(31 downto 16) <= data64(31 downto 16);
+								n.d_num <= "10";
+							elsif p.d_num = "10" then
+								--n.data(47 downto 32) <= data64(51 downto 36);
+								n.data(47 downto 32) <= data64(47 downto 32);
+								n.d_num <= "11";
+							elsif p.d_num = "11" then
+								--n.data(63 downto 48) <= cnt & data64(63 downto 52);
+								n.data(63 downto 48) <= data64(63 downto 48);
+								--n.d_en <= '1';
+								n.cnt_st <= '0';
+								n.d_num <= "00";
+								n.state <= count;
+							end if;
 						
 						when others =>
-							n.d_en <= '1';
-							n.data <= data64;
-							n.state <= idle;
+							if p.d_num = "00" then
+								n.data(15 downto 0) <= data64(15 downto 0);
+								n.d_num <= "01";
+							elsif p.d_num = "01" then
+								n.data(31 downto 16) <= data64(31 downto 16);
+								n.d_num <= "10";
+							elsif p.d_num = "10" then
+								n.data(47 downto 32) <= data64(47 downto 32);
+								n.d_num <= "11";
+							elsif p.d_num = "11" then
+								n.data(63 downto 48) <= data64(63 downto 48);
+								n.d_num <= "00";
+								n.state <= idle;
+							end if;
 							
 					end case;
 				end if;
@@ -123,7 +152,8 @@ begin
 					
 				when count =>
 					n.cnt_st <= '1';
-					n.d_en <= '0';
+					--n.d_en <= '0';
+					n.d_en <= '1';
 					n.state <= idle;
 					
 				when others =>
@@ -139,6 +169,8 @@ begin
 				p.cnt_st <= '0';
 				p.d_en <= '0';
 				p.state <= idle;
+				p.sequence <= first;
+				p.d_num <= "00";
 				--p.stop <= '0'; --test用
 			elsif clk' event and clk = '1' then
 				p <= n;

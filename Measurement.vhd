@@ -108,6 +108,8 @@ architecture connect of Measurement is
 				
 				adr_in : in std_logic_vector(19 downto 0);
 				
+				fetch_en : out std_logic;
+				
 				sdr_req : out std_logic;
 				sdr_adr : out std_logic_vector(19 downto 0);
 				sdr_fin : in std_logic;
@@ -121,10 +123,12 @@ architecture connect of Measurement is
 			msr_start : in std_logic; 
 			
 			sdr_req : out std_logic;
+			sdr_fin : in std_logic;
 			ctrl_data : in std_logic_vector(63 downto 0);
 			cite_addr : out std_logic_vector(19 downto 0);
 			
 			test_dout : out std_logic_vector(63 downto 0);
+			test_bit : out std_logic;
 			
 			rf_pulse : out std_logic;
 			adc_sig : out std_logic);
@@ -162,12 +166,14 @@ architecture connect of Measurement is
 	signal data64 : std_logic_vector(63 downto 0);
 	signal rd_adr : std_logic_vector(19 downto 0);
 	signal req_adr_r : std_logic_vector(19 downto 0);
-	
+	signal f_en : std_logic;
+ 	
 	--just_measuremant
 	signal msr_start : std_logic;
 	signal rf : std_logic;
 	signal adc : std_logic;
 	signal test_d : std_logic_vector(63 downto 0); --テスト用
+	signal test_b : std_logic; --テスト用
 
 	--counter
 	signal start : std_logic;
@@ -225,6 +231,7 @@ begin
 					 re_sw => re_sw,
 					 ctrl_data => data64,
 					 adr_in => req_adr_r,
+					 fetch_en => f_en,
 					 sdr_req => sdr_req_r,
 					 sdr_adr => rd_adr,
 					 sdr_fin => sdr_d_o_valid,
@@ -237,10 +244,12 @@ begin
 					 msr_start => msr_start,
 				
 					 sdr_req => re_sw,
+					 sdr_fin => sdr_d_o_valid,
 					 ctrl_data => data64,
 					 cite_addr => req_adr_r,
 					 
 					 test_dout => test_d, --テスト用
+					 test_bit => test_b, --テスト用
 				
 					 rf_pulse => rf,
 					 adc_sig => adc);
@@ -262,9 +271,11 @@ begin
 	msr_start <= WING_B(2);
 	--start <= WING_A(1);
 	
-	WING_A(15 downto 0) <= data64(63 downto 48); --テスト用
+	WING_A(15 downto 1) <= test_d(15 downto 1); --テスト用
+	WING_A(0) <= test_b; --テスト用
+	--WING_A(15 downto 0) <= data64(15 downto 0); --テスト用
 	--WING_A(0) <= fin_sig;
-	WING_B(3) <= rf;
+	WING_B(4) <= rf;
 	LED <= msr_start;
 
 end connect;

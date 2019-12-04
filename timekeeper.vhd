@@ -61,6 +61,7 @@ architecture count_time of timekeeper is
 	signal count_num : std_logic_vector(63 downto 0);		--カウント上限
 	signal data_en : std_logic:= '0'; 									--データがかわっているかのチェック
 	signal out_sig : std_logic:='0'; 									--出力信号
+	signal d_num : std_logic_vector(1 downto 0);
 
 	constant en_time : std_logic_vector(63 downto 0):= X"00000000000186A0"; --出力high時間
 	
@@ -75,6 +76,7 @@ begin
 			count_num <= (others => '0');
 			data_en <= '0';
 			out_sig <= '0';
+			d_num <= "00";
 			counter <= (others => '0');
 		elsif clk' event and clk = '1' then
 			if cnt_start = '1' then
@@ -95,14 +97,32 @@ begin
 							out_sig <= '0';
 						end if;
 					else
+--						if d_num = "00" then
+--							count_num(15 downto 0) <= data(15 downto 0);
+--							d_num <= "01";
+--						elsif d_num = "01" then
+--							count_num(31 downto 16) <= data(31 downto 16);
+--							d_num <= "10";
+--						elsif d_num = "10" then
+--							count_num(47 downto 32) <= data(47 downto 32);
+--							d_num <= "11";
+--						elsif d_num = "11" then
+--							count_num(63 downto 48) <= data(63 downto 48);
+--							counter <= (others => '0');
+--							out_sig <= '0';
+--							data_en <= '1';
+--							d_num <= "00";
+--						end if;
 						counter <= (others => '0');
 						count_num <= data;
+						--count_num <= X"00000000000186A0";
 						out_sig <= '0';
 						data_en <= '1';
 					end if;
 				end if;
 			else
 				data_en <= '0';
+				out_sig <= '0';
 			end if;
 		end if;
 				

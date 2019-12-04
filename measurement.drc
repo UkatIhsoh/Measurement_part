@@ -1,12 +1,12 @@
 Release 14.7 Drc P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-TUE 3 DEC 12:5:15 2019
+WED 4 DEC 19:29:38 2019
 
 drc -z Measurement.ncd Measurement.pcf
 
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/fetch/msr_start_p_f_run_AND_10_o is sourced by a combinatorial pin.
+   measure/fetch/msr_start_p_f_run_AND_14_o is sourced by a combinatorial pin.
    This is not good design practice. Use the CE pin to control the loading of
    data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
