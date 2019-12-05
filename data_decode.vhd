@@ -106,21 +106,16 @@ begin
 					case p.sequence is
 						when first =>
 							if p.d_num = "00" then
-								--n.data(15 downto 0) <= data64(19 downto 4);
 								n.data(15 downto 0) <= data64(15 downto 0);
 								n.d_num <= "01";
 							elsif p.d_num = "01" then
-								--n.data(31 downto 16) <= data64(35 downto 20);
 								n.data(31 downto 16) <= data64(31 downto 16);
 								n.d_num <= "10";
 							elsif p.d_num = "10" then
-								--n.data(47 downto 32) <= data64(51 downto 36);
 								n.data(47 downto 32) <= data64(47 downto 32);
 								n.d_num <= "11";
 							elsif p.d_num = "11" then
-								--n.data(63 downto 48) <= cnt & data64(63 downto 52);
 								n.data(63 downto 48) <= data64(63 downto 48);
-								--n.d_en <= '1';
 								n.cnt_st <= '0';
 								n.d_num <= "00";
 								n.state <= count;
@@ -152,7 +147,6 @@ begin
 					
 				when count =>
 					n.cnt_st <= '1';
-					--n.d_en <= '0';
 					n.d_en <= '1';
 					n.state <= idle;
 					
@@ -171,7 +165,6 @@ begin
 				p.state <= idle;
 				p.sequence <= first;
 				p.d_num <= "00";
-				--p.stop <= '0'; --test—p
 			elsif clk' event and clk = '1' then
 				p <= n;
 			end if;

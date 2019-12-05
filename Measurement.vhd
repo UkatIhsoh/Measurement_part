@@ -264,7 +264,7 @@ begin
 					 start => start,
 					 fin_sig =>	fin_sig);
 	
-	req_adr_w <= X"00000";
+	req_adr_w <= X"00000"; --test
 	
 	--ƒsƒ“Š„‚è“–‚Ä
 	DRAM_ADDR(12) <= '0';
