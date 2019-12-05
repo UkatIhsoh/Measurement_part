@@ -37,6 +37,7 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 --			rst : in std_logic;
 --			
 --			msr_start : in std_logic; 
+--			str_adr : in std_logic_vector(19 downto 0);
 --			
 --			sdr_req : out std_logic;
 --			sdr_fin : in std_logic;
@@ -52,6 +53,7 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 --				 rst => ,
 --			
 --				 msr_start => ,
+--				 str_dar => ,
 --			
 --				 sdr_req => ,
 --				 sdr_fin => ,
@@ -69,6 +71,7 @@ entity just_measurement is
 			rst : in std_logic;
 			
 			msr_start : in std_logic; --measurement start
+			str_adr : in std_logic_vector(19 downto 0); --フェッチを開始するアドレス指定入力
 			
 			sdr_req : out std_logic; --sdram読み込みリクエスト
 			sdr_fin : in std_logic; --sdram読み込み終了
@@ -87,7 +90,8 @@ architecture measure of just_measurement is
 	component data_fetch is
 		port( clk : in std_logic;
 				rst : in std_logic;
-				msr_start : in std_logic; 
+				msr_start : in std_logic;
+				str_adr : in std_logic_vector(19 downto 0);
 				
 				data64 : out std_logic_vector(63 downto 0);
 				fetch_fin : out std_logic; 
@@ -144,6 +148,7 @@ begin
 		port map( clk => clk,
 					 rst => rst,
 					 msr_start => msr_start, 
+					 str_adr => str_adr,
 				
 					 data64 => data64,
 					 fetch_fin => f_fin, 
@@ -172,8 +177,8 @@ begin
 		port map( clk => clk,
 					 rst => rst,
 					 cnt_start => c_en,
-					 --data => d_data, 
-					 data => data64_vr,
+					 data => d_data, 
+					 --data => data64_vr,
 					 output => c_out);
 					 
 	sdr_req <= s_req;

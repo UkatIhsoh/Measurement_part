@@ -62,7 +62,7 @@ architecture write_sec of SDRAM_wr is
 
 	constant smp_data : std_logic_vector(63 downto 0):= X"00000000000186A0"; --カウント値
 	--constant smp_data : std_logic_vector(63 downto 0):= X"000FFFF05050A0A0"; --テスト用
-	--constant smp_data : std_logic_vector(63 downto 0):= X"FFFFFFFFFFFFFFFF"; --テスト用2
+	--constant smp_data : std_logic_vector(63 downto 0):= X"000000000000C350"; --テスト用2
 
 
 	signal v_data : std_logic_vector(63 downto 0):= smp_data; 
@@ -89,8 +89,8 @@ begin
 	
 	process(p,n,tr_sw,n.data,n.adr,n.state)
 	begin
-		n <= p;               --
-		n.state <= p.state;   --前の状態保持動作
+		n <= p;               
+		n.state <= p.state;   
 	 
 		if tr_sw = '1' then --tr_swが押されるとデータの書き込みが始まる
 			if p.comp = '0' then
@@ -118,7 +118,7 @@ begin
 			when cycle_end =>
 				n.req <= '0';
 				n.pend <= '0';
-				v_data <= v_data;
+				v_data <= v_data; 
 				n.state <= idle;
 				
 			when others =>

@@ -121,6 +121,7 @@ architecture connect of Measurement is
 			rst : in std_logic;
 			
 			msr_start : in std_logic; 
+			str_adr : in std_logic_vector(19 downto 0);
 			
 			sdr_req : out std_logic;
 			sdr_fin : in std_logic;
@@ -170,6 +171,7 @@ architecture connect of Measurement is
  	
 	--just_measuremant
 	signal msr_start : std_logic;
+	signal str_adr : std_logic_vector(19 downto 0);
 	signal rf : std_logic;
 	signal adc : std_logic;
 	signal test_d : std_logic_vector(63 downto 0); --テスト用
@@ -242,6 +244,7 @@ begin
 					 rst => rst,
 				
 					 msr_start => msr_start,
+					 str_adr => str_adr,
 				
 					 sdr_req => re_sw,
 					 sdr_fin => sdr_d_o_valid,

@@ -126,18 +126,18 @@ begin
 			when idle =>
 				n.f_en <= '0';
 				
-			when sd_request =>
+			when sd_request => --SDRAMにリクエストを送る
 				n.req <= '1';
 				n.state <= dt_aquire;
 				
-			when dt_aquire =>
+			when dt_aquire => --sdramのデータを獲得する
 				n.req <= '0';
 				if sdr_fin = '1' then
 					n.data <= sdr_data;
 					n.state <= cycle_end;
 				end if;
 				
-			when cycle_end =>
+			when cycle_end => --獲得したデータが外部でも利用可能になる
 				n.pend <= '0';
 				n.f_en <= '1';
 				n.state <= idle;

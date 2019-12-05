@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-L548H6P::  Wed Dec 04 19:29:20 2019
+DESKTOP-L548H6P::  Thu Dec 05 17:40:23 2019
 
 par -w -intstyle ise -ol high -mt off Measurement_map.ncd Measurement.ncd
 Measurement.pcf 
@@ -22,16 +22,16 @@ Device speed data version:  "PRODUCTION 1.23 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                   194 out of  11,440    1%
-    Number used as Flip Flops:                 190
-    Number used as Latches:                      4
+  Number of Slice Registers:                   451 out of  11,440    3%
+    Number used as Flip Flops:                 448
+    Number used as Latches:                      3
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        322 out of   5,720    5%
-    Number used as logic:                      320 out of   5,720    5%
-      Number using O6 output only:             188
-      Number using O5 output only:              83
-      Number using O5 and O6:                   49
+  Number of Slice LUTs:                        432 out of   5,720    7%
+    Number used as logic:                      430 out of   5,720    7%
+      Number using O6 output only:             298
+      Number using O5 output only:              82
+      Number using O5 and O6:                   50
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   1,440    0%
     Number used exclusively as route-thrus:      2
@@ -40,12 +40,12 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   108 out of   1,430    7%
-  Number of MUXCYs used:                       132 out of   2,860    4%
-  Number of LUT Flip Flop pairs used:          343
-    Number with an unused Flip Flop:           164 out of     343   47%
-    Number with an unused LUT:                  21 out of     343    6%
-    Number of fully used LUT-FF pairs:         158 out of     343   46%
+  Number of occupied Slices:                   179 out of   1,430   12%
+  Number of MUXCYs used:                       144 out of   2,860    5%
+  Number of LUT Flip Flop pairs used:          613
+    Number with an unused Flip Flop:           175 out of     613   28%
+    Number with an unused LUT:                 181 out of     613   29%
+    Number of fully used LUT-FF pairs:         257 out of     613   41%
     Number of slice register sites lost
       to control set restrictions:               0 out of  11,440    0%
 
@@ -58,7 +58,7 @@ Slice Logic Distribution:
 IO Utilization:
   Number of bonded IOBs:                        89 out of     102   87%
     Number of LOCed IOBs:                       89 out of      89  100%
-    IOB Flip Flops:                             31
+    IOB Flip Flops:                             32
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
@@ -75,8 +75,8 @@ Specific Feature Utilization:
   Number of DCM/DCM_CLKGENs:                     1 out of       4   25%
     Number used as DCMs:                         1
     Number used as DCM_CLKGENs:                  0
-  Number of ILOGIC2/ISERDES2s:                  15 out of     200    7%
-    Number used as ILOGIC2s:                    15
+  Number of ILOGIC2/ISERDES2s:                  16 out of     200    8%
+    Number used as ILOGIC2s:                    16
     Number used as ISERDES2s:                    0
   Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     200    0%
   Number of OLOGIC2/OSERDES2s:                  16 out of     200    8%
@@ -133,29 +133,29 @@ WARNING:Par:288 - The signal WING_C<15>_IBUF has no load.  PAR will not attempt 
 Starting Router
 
 
-Phase  1  : 1730 unrouted;      REAL time: 3 secs 
+Phase  1  : 2556 unrouted;      REAL time: 3 secs 
 
-Phase  2  : 1475 unrouted;      REAL time: 4 secs 
+Phase  2  : 2224 unrouted;      REAL time: 4 secs 
 
-Phase  3  : 503 unrouted;      REAL time: 4 secs 
+Phase  3  : 740 unrouted;      REAL time: 5 secs 
 
-Phase  4  : 503 unrouted; (Setup:1447, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+Phase  4  : 751 unrouted; (Setup:263, Hold:0, Component Switching Limit:0)     REAL time: 6 secs 
 
 Updating file: Measurement.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:1447, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
+Phase  5  : 0 unrouted; (Setup:274, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
 
-Phase  6  : 0 unrouted; (Setup:1447, Hold:0, Component Switching Limit:0)     REAL time: 5 secs 
+Phase  6  : 0 unrouted; (Setup:274, Hold:0, Component Switching Limit:0)     REAL time: 7 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 9 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 9 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 9 secs 
 
-Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 secs 
-Total REAL time to Router completion: 6 secs 
-Total CPU time to Router completion: 6 secs 
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 9 secs 
+Total REAL time to Router completion: 9 secs 
+Total CPU time to Router completion: 9 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -173,16 +173,16 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|              clk100 |  BUFGMUX_X2Y2| No   |   97 |  0.754     |  2.145      |
+|              clk100 |  BUFGMUX_X2Y2| No   |  163 |  0.754     |  2.145      |
 +---------------------+--------------+------+------+------------+-------------+
-|  WING_B_0_IBUF_BUFG |  BUFGMUX_X2Y3| No   |    1 |  0.000     |  1.427      |
+|  WING_B_0_IBUF_BUFG |  BUFGMUX_X2Y3| No   |    1 |  0.000     |  1.400      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/fetch/msr_st |              |      |      |            |             |
 |art_p_f_run_AND_14_o |              |      |      |            |             |
 |                     |         Local|      |    1 |  0.000     |  0.350      |
 +---------------------+--------------+------+------+------------+-------------+
 |ctrl/statep[8]_GND_3 |              |      |      |            |             |
-|        6_o_Mux_83_o |         Local|      |    1 |  0.000     |  0.792      |
+|        6_o_Mux_83_o |         Local|      |    1 |  0.000     |  0.578      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -204,8 +204,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  PERIOD analysis for net "DCM/clkfx" deriv | SETUP       |     0.589ns|     8.822ns|       0|           0
-  ed from  NET "DCM/clkin1" PERIOD = 31.25  | HOLD        |     0.415ns|            |       0|           0
+  PERIOD analysis for net "DCM/clkfx" deriv | SETUP       |     0.571ns|     8.858ns|       0|           0
+  ed from  NET "DCM/clkin1" PERIOD = 31.25  | HOLD        |     0.372ns|            |       0|           0
   ns HIGH 50%                               |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
   NET "DCM/clkin1" PERIOD = 31.25 ns HIGH 5 | MINLOWPULSE |    15.250ns|    16.000ns|       0|           0
@@ -223,8 +223,8 @@ Derived Constraints for DCM/clkin1
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|DCM/clkin1                     |     31.250ns|     16.000ns|     27.569ns|            0|            0|            0|        13723|
-| DCM/clkfx                     |     10.000ns|      8.822ns|          N/A|            0|            0|        13723|            0|
+|DCM/clkin1                     |     31.250ns|     16.000ns|     27.681ns|            0|            0|            0|        19063|
+| DCM/clkfx                     |     10.000ns|      8.858ns|          N/A|            0|            0|        19063|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 All constraints were met.
@@ -236,10 +236,10 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 28 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 6 secs 
-Total CPU time to PAR completion: 7 secs 
+Total REAL time to PAR completion: 9 secs 
+Total CPU time to PAR completion: 9 secs 
 
-Peak Memory Usage:  4488 MB
+Peak Memory Usage:  4489 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

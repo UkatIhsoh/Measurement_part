@@ -36,6 +36,7 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 --	port( clk : in std_logic;
 --			rst : in std_logic;
 --			msr_start : in std_logic; 
+--			str_adr : in std_logic_vector(19 downto 0);
 --			
 --			data64 : out std_logic_vector(63 downto 0);
 --			fetch_fin : out std_logic; 
@@ -51,6 +52,7 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 --	port map( clk => ,
 --				 rst => ,
 --				 msr_start => , 
+--				 str_adr => ,
 --			
 --				 data64 => ,
 --				 fetch_fin => , 
@@ -66,6 +68,7 @@ entity data_fetch is
 	port( clk : in std_logic;
 			rst : in std_logic;
 			msr_start : in std_logic; 
+			str_adr : in std_logic_vector(19 downto 0);
 			
 			data64 : out std_logic_vector(63 downto 0);
 			fetch_fin : out std_logic; 
@@ -98,6 +101,8 @@ architecture fetch of data_fetch is
 	signal n : reg; 
 	
 	constant start_adr : std_logic_vector(19 downto 0):= X"00000";
+	constant end_adr : std_logic_vector(19 downto 0):= X"00007";
+	constant ddsdata_adr : std_logic_vector(19 downto 0):= X"00F00";
 	
 	signal test : std_logic:= '0'; --test
 
