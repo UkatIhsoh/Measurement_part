@@ -62,10 +62,13 @@ use work.data_types.all;
 entity master_counter is
 	port( clk : in std_logic;
 			rst : in std_logic;
+			
 			d_fin : in std_logic; --デコードが終わったかどうかみる
 			d_type : in std_logic_vector(3 downto 0); --どのタイプのでーたが来るのかを確認
 			rd_comp : out std_logic; --データの読み取りが終わったかどうか見る
+			data_full : out std_logic; --データが満タンなのを知らせる
 			data : in std_logic_vector(63 downto 0); 
+			
 			output_rf : out std_logic; --出力
 			output_dds : out std_logic;
 			output_ad : out std_logic);
@@ -89,7 +92,6 @@ architecture count_time of master_counter is
 
 	signal counter : std_logic_vector(63 downto 0):= (others => '0'); 		--カウンター
 
-	signal data_en : std_logic:= '0'; 	--データがかわっているかのチェック
 	signal preset : std_logic:= '0'; --プリセットしているかどうかチェック
 	signal dst_1 : std_logic:= '0'; --データセットがどの程度進行しているか
 	signal dst_2 : std_logic:= '0'; 
@@ -109,6 +111,7 @@ architecture count_time of master_counter is
 begin
 
 	rd_comp <= comp_rd;
+	data_full <= full;
 	
 	output_rf <= rf_out;
 	output_dds <= dds_set;
