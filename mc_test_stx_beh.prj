@@ -1,0 +1,3 @@
+vhdl isim_temp "data_types.vhd"
+vhdl isim_temp "master_counter.vhd"
+vhdl isim_temp "mc_test.vhd"

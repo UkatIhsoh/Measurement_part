@@ -26,6 +26,9 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 -- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
 
+library work;
+use work.data_types.all;
+
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
 --library UNISIM;
@@ -102,8 +105,6 @@ architecture count_time of master_counter is
 	signal rf_out : std_logic:='0';	--RFパルス用
 	signal dds_set : std_logic:='0'; --ddsの周波数を変える	
 	signal ad_out : std_logic:='0'; --AD用
-
-
 		
 begin
 
@@ -127,39 +128,36 @@ begin
 			dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
 		elsif clk' event and clk = '1' then
 			if preset = '1' then
-				case counter is
-					when p.t_1 =>	
-						counter <= counter +1;	rf_out <= '1';
-					
-					when p.t_2 =>	
-						counter <= counter +1;	rf_out <= '0';
-					
-					when p.t_3 =>	
-						counter <= counter +1;	dds_set <= '1';
-					
-					when p.t_4 =>	
-						counter <= counter +1;	rf_out <= '1';
-					
-					when p.t_5 =>	
-						counter <= counter +1;	rf_out <= '0';
-					
-					when p.t_6 =>	
-						counter <= counter +1;	dds_set <= '1';
-					
-					when p.t_7 =>	
-						counter <= (others => '0');
-						ad_out <= '1';
-						p <= n;
-						full <= '0';
-					
-					when p.t_0 =>
-						counter <= counter +1;
-					
-					when others => 
-						counter <= counter +1;
-						dds_set <= '0';
-						ad_out <= '0';
-				end case;
+				if counter = p.t_1 then	
+					counter <= counter +1;	
+					rf_out <= '1';
+				elsif counter = p.t_2 then	
+					counter <= counter +1;	
+					rf_out <= '0';
+				elsif counter = p.t_3 then	
+					counter <= counter +1;	
+					dds_set <= '1';
+				elsif counter = p.t_4 then	
+					counter <= counter +1;	
+					rf_out <= '1';
+				elsif counter = p.t_5 then	
+					counter <= counter +1;	
+					rf_out <= '0';
+				elsif counter = p.t_6 then	
+					counter <= counter +1;	
+					dds_set <= '1';	
+				elsif counter = p.t_7 then
+					counter <= (others => '0');
+					ad_out <= '1';
+					p <= n;
+					full <= '0';					
+				elsif counter = p.t_0 then
+					counter <= counter +1;					
+				else	
+					counter <= counter +1;
+					dds_set <= '0';
+					ad_out <= '0';
+				end if;
 			end if;
 		end if;
 		

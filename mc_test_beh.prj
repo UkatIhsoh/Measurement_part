@@ -1,0 +1,3 @@
+vhdl work "data_types.vhd"
+vhdl work "master_counter.vhd"
+vhdl work "mc_test.vhd"
