@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: Measurement.prj
 
@@ -144,7 +144,7 @@ Parsing architecture <connect> of entity <measurement>.
 =========================================================================
 
 Elaborating entity <Measurement> (architecture <connect>) from library <work>.
-WARNING:HDLCompiler:871 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 157: Using initial value "11" for sdr_mask since it is never assigned
+WARNING:HDLCompiler:871 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 158: Using initial value "11" for sdr_mask since it is never assigned
 
 Elaborating entity <DCM_100M> (architecture <xilinx>) from library <work>.
 
@@ -163,22 +163,22 @@ INFO:HDLCompiler:679 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\SDRAM_
 Elaborating entity <just_measurement> (architecture <measure>) from library <work>.
 
 Elaborating entity <data_fetch> (architecture <fetch>) from library <work>.
-WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_fetch.vhd" Line 147: sdr_fin should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_fetch.vhd" Line 152: test should be on the sensitivity list of the process
-INFO:HDLCompiler:679 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_fetch.vhd" Line 181. Case statement is complete. others clause is never selected
+WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_fetch.vhd" Line 163: sdr_fin should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_fetch.vhd" Line 168: test should be on the sensitivity list of the process
+INFO:HDLCompiler:679 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_fetch.vhd" Line 197. Case statement is complete. others clause is never selected
 
 Elaborating entity <data_decode> (architecture <decode>) from library <work>.
 INFO:HDLCompiler:679 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" Line 153. Case statement is complete. others clause is never selected
 
 Elaborating entity <timekeeper> (architecture <count_time>) from library <work>.
 WARNING:HDLCompiler:1127 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\timekeeper.vhd" Line 72: Assignment to d_num ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" Line 190: Assignment to data64_vr ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" Line 195: Assignment to data64_vr ignored, since the identifier is never used
 
 Elaborating entity <counter> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:634 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 156: Net <sdr_addr[19]> does not have a driver.
-WARNING:HDLCompiler:634 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 174: Net <str_adr[19]> does not have a driver.
-WARNING:HDLCompiler:634 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 181: Net <start> does not have a driver.
-WARNING:Xst:2972 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 260. All outputs of instance <count_test> of block <counter> are unconnected in block <Measurement>. Underlying logic will be removed.
+WARNING:HDLCompiler:634 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 157: Net <sdr_addr[19]> does not have a driver.
+WARNING:HDLCompiler:634 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 176: Net <str_adr[19]> does not have a driver.
+WARNING:HDLCompiler:634 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 183: Net <start> does not have a driver.
+WARNING:Xst:2972 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 263. All outputs of instance <count_test> of block <counter> are unconnected in block <Measurement>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -186,11 +186,12 @@ WARNING:Xst:2972 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measuremen
 
 Synthesizing Unit <Measurement>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd".
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 221: Output port <sdr_adr> of the instance <write_sec> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 230: Output port <sdr_adr> of the instance <read_sec> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 230: Output port <fetch_en> of the instance <read_sec> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 242: Output port <adc_sig> of the instance <measure> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 260: Output port <fin_sig> of the instance <count_test> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 223: Output port <sdr_adr> of the instance <write_sec> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 232: Output port <sdr_adr> of the instance <read_sec> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 232: Output port <fetch_en> of the instance <read_sec> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 244: Output port <msr_finish> of the instance <measure> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 244: Output port <adc_sig> of the instance <measure> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 263: Output port <fin_sig> of the instance <count_test> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <sdr_addr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <str_adr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <start> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -357,7 +358,7 @@ Unit <SDRAM_rd> synthesized.
 
 Synthesizing Unit <just_measurement>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd".
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 147: Output port <test_pin> of the instance <fetch> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 150: Output port <test_pin> of the instance <fetch> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <adc_sig> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
@@ -375,6 +376,7 @@ WARNING:Xst:647 - Input <str_adr> is never used. This port will be preserved and
     Found 1-bit register for signal <p_f_run>.
     Found 1-bit register for signal <p_start>.
     Found 1-bit register for signal <p_fresh>.
+    Found 1-bit register for signal <p_finish>.
     Found finite state machine <FSM_3> for signal <p_state>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
@@ -402,13 +404,13 @@ WARNING:Xst:647 - Input <str_adr> is never used. This port will be preserved and
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 20-bit adder for signal <p_addr[19]_GND_119_o_add_2_OUT> created at line 136.
+    Found 20-bit adder for signal <p_addr[19]_GND_119_o_add_6_OUT> created at line 152.
 WARNING:Xst:737 - Found 1-bit latch for signal <test>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  89 D-type flip-flop(s).
+	inferred  90 D-type flip-flop(s).
 	inferred   1 Latch(s).
-	inferred  51 Multiplexer(s).
+	inferred  53 Multiplexer(s).
 	inferred   2 Finite State Machine(s).
 Unit <data_fetch> synthesized.
 
@@ -463,8 +465,8 @@ Macro Statistics
  20-bit adder                                          : 1
  32-bit adder                                          : 1
  64-bit adder                                          : 1
-# Registers                                            : 42
- 1-bit register                                        : 22
+# Registers                                            : 43
+ 1-bit register                                        : 23
  12-bit register                                       : 1
  15-bit register                                       : 1
  16-bit register                                       : 5
@@ -477,11 +479,11 @@ Macro Statistics
 # Comparators                                          : 2
  2-bit comparator equal                                : 1
  64-bit comparator equal                               : 1
-# Multiplexers                                         : 176
+# Multiplexers                                         : 178
  1-bit 2-to-1 multiplexer                              : 158
  12-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 3
- 20-bit 2-to-1 multiplexer                             : 1
+ 20-bit 2-to-1 multiplexer                             : 3
  32-bit 2-to-1 multiplexer                             : 2
  64-bit 2-to-1 multiplexer                             : 6
 # Tristates                                            : 16
@@ -565,29 +567,26 @@ Synthesizing (advanced) Unit <SDRAM_ctrl>.
 The following registers are absorbed into counter <r_init_counter>: 1 register on signal <r_init_counter>.
 Unit <SDRAM_ctrl> synthesized (advanced).
 
-Synthesizing (advanced) Unit <data_fetch>.
-The following registers are absorbed into counter <p_addr>: 1 register on signal <p_addr>.
-Unit <data_fetch> synthesized (advanced).
-
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 2
+# Adders/Subtractors                                   : 3
+ 20-bit adder                                          : 1
  32-bit adder                                          : 1
  64-bit adder                                          : 1
-# Counters                                             : 2
+# Counters                                             : 1
  15-bit down counter                                   : 1
- 20-bit up counter                                     : 1
-# Registers                                            : 591
- Flip-Flops                                            : 591
+# Registers                                            : 612
+ Flip-Flops                                            : 612
 # Comparators                                          : 2
  2-bit comparator equal                                : 1
  64-bit comparator equal                               : 1
-# Multiplexers                                         : 299
+# Multiplexers                                         : 302
  1-bit 2-to-1 multiplexer                              : 284
  12-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 3
+ 20-bit 2-to-1 multiplexer                             : 3
  32-bit 2-to-1 multiplexer                             : 2
  64-bit 2-to-1 multiplexer                             : 4
 # FSMs                                                 : 6
@@ -819,27 +818,6 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_4> (w
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_3> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_2> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_1> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_19> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_18> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_17> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_16> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_15> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_14> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_13> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_12> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_11> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_10> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_9> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_8> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_7> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_6> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_5> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_4> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_3> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_2> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_1> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_addr_0> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_fresh> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_f_en> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_adr_19> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_adr_18> of sequential type is unconnected in block <Measurement>.
@@ -877,7 +855,7 @@ INFO:Xst:2261 - The FF/Latch <ctrl/r_req_data_write_16> in Unit <Measurement> is
 Mapping all equations...
 Building and optimizing final netlist ...
 INFO:Xst:2261 - The FF/Latch <ctrl/n_data_w_5> in Unit <Measurement> is equivalent to the following 4 FFs/Latches, which will be removed : <ctrl/n_data_w_7> <ctrl/n_data_w_9> <ctrl/n_data_w_10> <ctrl/n_data_w_15> 
-Found area constraint ratio of 100 (+ 5) on block Measurement, actual ratio is 14.
+Found area constraint ratio of 100 (+ 5) on block Measurement, actual ratio is 15.
 WARNING:Xst:1426 - The value init of the FF/Latch ctrl/r_rf_counter_31_LD hinder the constant cleaning in the block Measurement.
    You should achieve better results by setting this init to 0.
 Replicating register ctrl/r_address_10 to handle IOB=TRUE attribute
@@ -895,8 +873,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 480
- Flip-Flops                                            : 480
+# Registers                                            : 502
+ Flip-Flops                                            : 502
 
 =========================================================================
 
@@ -919,24 +897,24 @@ Top Level Output File Name         : Measurement.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 704
+# BELS                             : 790
 #      GND                         : 1
-#      INV                         : 19
-#      LUT1                        : 85
+#      INV                         : 20
+#      LUT1                        : 104
 #      LUT2                        : 12
-#      LUT3                        : 39
-#      LUT4                        : 142
-#      LUT5                        : 92
-#      LUT6                        : 80
-#      MUXCY                       : 131
+#      LUT3                        : 40
+#      LUT4                        : 163
+#      LUT5                        : 94
+#      LUT6                        : 83
+#      MUXCY                       : 150
 #      MUXF7                       : 1
 #      VCC                         : 1
-#      XORCY                       : 101
-# FlipFlops/Latches                : 485
-#      FD                          : 1
+#      XORCY                       : 121
+# FlipFlops/Latches                : 507
+#      FD                          : 2
 #      FD_1                        : 16
-#      FDC                         : 52
-#      FDCE                        : 400
+#      FDC                         : 53
+#      FDCE                        : 420
 #      FDE                         : 7
 #      FDP                         : 4
 #      LD                          : 4
@@ -958,16 +936,16 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             454  out of  11440     3%  
- Number of Slice LUTs:                  469  out of   5720     8%  
-    Number used as Logic:               469  out of   5720     8%  
+ Number of Slice Registers:             476  out of  11440     4%  
+ Number of Slice LUTs:                  516  out of   5720     9%  
+    Number used as Logic:               516  out of   5720     9%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    655
-   Number with an unused Flip Flop:     201  out of    655    30%  
-   Number with an unused LUT:           186  out of    655    28%  
-   Number of fully used LUT-FF pairs:   268  out of    655    40%  
-   Number of unique control sets:        18
+ Number of LUT Flip Flop pairs used:    702
+   Number with an unused Flip Flop:     226  out of    702    32%  
+   Number with an unused LUT:           186  out of    702    26%  
+   Number of fully used LUT-FF pairs:   290  out of    702    41%  
+   Number of unique control sets:        19
 
 IO Utilization: 
  Number of IOs:                          89
@@ -998,7 +976,7 @@ Clock Information:
 ---------------------------------------------------------------------------------+----------------------------+-------+
 Clock Signal                                                                     | Clock buffer(FF name)      | Load  |
 ---------------------------------------------------------------------------------+----------------------------+-------+
-clk                                                                              | DCM_SP:CLKFX               | 482   |
+clk                                                                              | DCM_SP:CLKFX               | 504   |
 ctrl/statep[8]_GND_36_o_Mux_83_o(ctrl/Mmux_statep[8]_GND_36_o_Mux_83_o11:O)      | NONE(*)(ctrl/n_data_w_0)   | 2     |
 measure/fetch/p_start_p_f_run_AND_14_o(measure/fetch/p_start_p_f_run_AND_14_o1:O)| NONE(*)(measure/fetch/test)| 1     |
 WING_B<0>                                                                        | IBUF+BUFG                  | 1     |
@@ -1017,9 +995,9 @@ Timing Summary:
 Speed Grade: -2
 
    Minimum period: 20.222ns (Maximum Frequency: 49.451MHz)
-   Minimum input arrival time before clock: 5.212ns
+   Minimum input arrival time before clock: 5.214ns
    Maximum output required time after clock: 5.404ns
-   Maximum combinational path delay: 4.965ns
+   Maximum combinational path delay: 5.043ns
 
 Timing Details:
 ---------------
@@ -1028,7 +1006,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 20.222ns (frequency: 49.451MHz)
-  Total number of paths / destination ports: 19134 / 858
+  Total number of paths / destination ports: 19908 / 900
 -------------------------------------------------------------------------
 Delay:               6.471ns (Levels of Logic = 4)
   Source:            ctrl/r_rf_counter_8 (FF)
@@ -1052,9 +1030,9 @@ Delay:               6.471ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 484 / 484
+  Total number of paths / destination ports: 527 / 526
 -------------------------------------------------------------------------
-Offset:              5.212ns (Levels of Logic = 2)
+Offset:              5.214ns (Levels of Logic = 2)
   Source:            WING_B<0> (PAD)
   Destination:       ctrl/p_data_w_15 (FF)
   Destination Clock: clk rising 3.1X
@@ -1063,11 +1041,11 @@ Offset:              5.212ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           458   1.328   2.452  WING_B_0_IBUF (WING_B_0_IBUF)
+     IBUF:I->O           480   1.328   2.454  WING_B_0_IBUF (WING_B_0_IBUF)
      INV:I->O              6   0.255   0.875  ctrl/rst_inv1_INV_0 (ctrl/rst_inv)
      FDE:CE                    0.302          ctrl/p_data_w_0
     ----------------------------------------
-    Total                      5.212ns (1.885ns logic, 3.327ns route)
+    Total                      5.214ns (1.885ns logic, 3.329ns route)
                                        (36.2% logic, 63.8% route)
 
 =========================================================================
@@ -1093,7 +1071,7 @@ Offset:              5.404ns (Levels of Logic = 1)
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Delay:               4.965ns (Levels of Logic = 2)
+Delay:               5.043ns (Levels of Logic = 2)
   Source:            WING_B<2> (PAD)
   Destination:       LED (PAD)
 
@@ -1101,11 +1079,11 @@ Delay:               4.965ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             2   1.328   0.725  WING_B_2_IBUF (LED_OBUF)
+     IBUF:I->O             4   1.328   0.803  WING_B_2_IBUF (LED_OBUF)
      OBUF:I->O                 2.912          LED_OBUF (LED)
     ----------------------------------------
-    Total                      4.965ns (4.240ns logic, 0.725ns route)
-                                       (85.4% logic, 14.6% route)
+    Total                      5.043ns (4.240ns logic, 0.803ns route)
+                                       (84.1% logic, 15.9% route)
 
 =========================================================================
 
@@ -1135,13 +1113,13 @@ clk            |         |         |    2.644|         |
 
 
 Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 10.20 secs
+Total CPU time to Xst completion: 10.95 secs
  
 --> 
 
 Total memory usage is 4526788 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  253 (   0 filtered)
-Number of infos    :   15 (   0 filtered)
+Number of warnings :  232 (   0 filtered)
+Number of infos    :   16 (   0 filtered)
 

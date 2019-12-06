@@ -71,6 +71,7 @@ entity just_measurement is
 			rst : in std_logic;
 			
 			msr_start : in std_logic; --measurement start
+			msr_finish : out std_logic; --mesurement finish
 			str_adr : in std_logic_vector(19 downto 0); --フェッチを開始するアドレス指定入力
 			
 			sdr_req : out std_logic; --sdram読み込みリクエスト
@@ -91,6 +92,7 @@ architecture measure of just_measurement is
 		port( clk : in std_logic;
 				rst : in std_logic;
 				msr_start : in std_logic;
+				msr_finish : out std_logic;
 				str_adr : in std_logic_vector(19 downto 0);
 				
 				data64 : out std_logic_vector(63 downto 0);
@@ -129,6 +131,7 @@ architecture measure of just_measurement is
 	--フェッチ-デコード用
 	signal data64 : std_logic_vector(63 downto 0);
 	signal data64_vr : std_logic_vector(63 downto 0); --test
+	signal m_fin : std_logic; --msr_finishに対応
 	signal f_fin : std_logic;
 	signal d_en : std_logic;
 	signal s_req : std_logic;
@@ -148,6 +151,7 @@ begin
 		port map( clk => clk,
 					 rst => rst,
 					 msr_start => msr_start, 
+					 msr_finish => m_fin,
 					 str_adr => str_adr,
 				
 					 data64 => data64,
@@ -181,6 +185,7 @@ begin
 					 --data => data64_vr,
 					 output => c_out);
 					 
+	msr_finish <= m_fin;
 	sdr_req <= s_req;
 	cite_addr <= addr;
 	rf_pulse <= c_out;

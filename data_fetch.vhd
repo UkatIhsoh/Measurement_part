@@ -36,6 +36,7 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 --	port( clk : in std_logic;
 --			rst : in std_logic;
 --			msr_start : in std_logic; 
+--			msr_finish : out std_logic;
 --			str_adr : in std_logic_vector(19 downto 0);
 --			
 --			data64 : out std_logic_vector(63 downto 0);
@@ -51,7 +52,8 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 --fetch : data_fetch 
 --	port map( clk => ,
 --				 rst => ,
---				 msr_start => , 
+--				 msr_start => ,
+--				 msr_finish => ,
 --				 str_adr => ,
 --			
 --				 data64 => ,
@@ -68,6 +70,7 @@ entity data_fetch is
 	port( clk : in std_logic;
 			rst : in std_logic;
 			msr_start : in std_logic; 
+			msr_finish : out std_logic;
 			str_adr : in std_logic_vector(19 downto 0);
 			
 			data64 : out std_logic_vector(63 downto 0);
@@ -94,8 +97,9 @@ architecture fetch of data_fetch is
 		f_run : std_logic;	--fetch回路動作中
 		state : state_t;
 		d_num : std_logic_vector(1 downto 0); --データ６４ビットを４分割
-		start : std_logic;
-		fresh : std_logic;
+		start : std_logic; --msr_startに対応
+		finish : std_logic; --msr_finishに対応
+		fresh : std_logic; --最初にスタートアドレスを読み込めるため
 	end record;
 
 	signal p : reg;
@@ -115,6 +119,8 @@ begin
 	data_req <= p.d_req;
 	sdr_adr <= p.addr; 
 	
+	msr_finish <= p.finish;
+	
 	test_pin <= test;
 	
 	process(n,p,msr_start,sdr_data,decode_en,n.state)
@@ -123,6 +129,16 @@ begin
 		
 		if msr_start = '1' then
 			n.start <= '1';
+		else
+			if p.addr = X"FFFFF" then
+				n.start <= '0';
+				if p.finish = '0' then
+					n.finish <= '1';
+				else
+					n.finish <= '0';
+					n.addr <= X"00000";
+				end if;
+			end if;
 		end if;
 		
 		if p.start = '1' then
