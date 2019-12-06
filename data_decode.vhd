@@ -69,7 +69,7 @@ entity data_decode is
 			decode_fin : out std_logic; --master_couterへデコードが終わったことを知らせる
 			data_type : out std_logic_vector(3 downto 0); --master_counterへデータがどこのデータだか伝える
 			read_fin : in std_logic; --master_counterがデータの読み込みを終了したことを知らせる
-			decede_wait : in std_logic; --master_counterは現在データが満タンです
+			decode_wait : in std_logic; --master_counterは現在データが満タンです
 			
 			data_out : out std_logic_vector(63 downto 0)); --change
 end data_decode;
@@ -84,7 +84,7 @@ architecture decode of data_decode is
 		d_en : std_logic; --decode_enable
 		d_fin : std_logic; --decode_fin
 		state : state_t;
-		sequence : state_s;
+		sequence : std_logic_vector(3 downto 0);
 		d_num : std_logic_vector(1 downto 0);
 	end record;
 

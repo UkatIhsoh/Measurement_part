@@ -114,10 +114,12 @@ architecture measure of just_measurement is
 				data64 : in std_logic_vector(63 downto 0);
 				fetch_fin : in std_logic;
 				decode_en : out std_logic;
-				
-				cnt_en : out std_logic;
-				
-				de_data : out std_logic_vector(63 downto 0));
+				decode_fin : out std_logic;
+				data_type : out std_logic_vector(3 downto 0);
+				read_fin : in std_logic;
+				decode_wait : in std_logic;
+
+				data_out : out std_logic_vector(63 downto 0));
 	end component;
 
 	component timekeeper is
@@ -127,13 +129,31 @@ architecture measure of just_measurement is
 				data : in std_logic_vector(63 downto 0); 
 				output : out std_logic);
 	end component;
+		
+	component master_counter is
+		port( clk : in std_logic;
+				rst : in std_logic;
+
+				d_fin : in std_logic; 
+				d_type : in std_logic_vector(3 downto 0); 
+				rd_comp : out std_logic;
+				data_full : out std_logic; 
+				data : in std_logic_vector(63 downto 0); 
+
+				output_rf : out std_logic;
+				output_dds : out std_logic;
+				output_ad : out std_logic);
+	end component;
 	
 	--フェッチ-デコード用
 	signal data64 : std_logic_vector(63 downto 0);
-	signal data64_vr : std_logic_vector(63 downto 0); --test
 	signal m_fin : std_logic; --msr_finishに対応
-	signal f_fin : std_logic;
-	signal d_en : std_logic;
+	signal f_fin : std_logic; --fetch_fin
+	signal d_en : std_logic; --decode_en
+	signal d_fin : std_logic; --decode_fin
+	signal d_type : std_logic_vector(3 downto 0); --data_type
+	signal rd_fin : std_logic; --read_fin
+	signal d_wait : std_logic; --decoede_wait	
 	signal s_req : std_logic;
 	signal addr : std_logic_vector(19 downto 0);
 	signal c_en : std_logic;
@@ -141,6 +161,11 @@ architecture measure of just_measurement is
 	
 	--カウンター用
 	signal c_out : std_logic;
+	
+	--マスターカウンタ用
+	signal rf_out : std_logic;
+	signal dds_set : std_logic;
+	signal ad_out : std_logic;
 	
 	--テスト用
 	signal test : std_logic;
@@ -172,27 +197,41 @@ begin
 					 data64 => data64,
 					 fetch_fin => f_fin,
 					 decode_en => d_en,
+					 decode_fin => d_fin,
+					 data_type => d_type,
+					 read_fin => rd_fin,
+					 decode_wait => d_wait,
 				
-					 cnt_en => c_en,
-				
-					 de_data => d_data);
+					 data_out => d_data);
 
 	title : timekeeper 
 		port map( clk => clk,
 					 rst => rst,
-					 cnt_start => c_en,
-					 data => d_data, 
-					 --data => data64_vr,
+					 cnt_start => '0',
+					 data => (others => '0'), 
 					 output => c_out);
+					 
+	count_time : master_counter 
+		port map( clk => clk,
+					 rst => rst,
+
+					 d_fin => d_fin, 
+					 d_type => d_type,
+					 rd_comp => rd_fin,
+					 data_full => d_wait,
+					 data => d_data, 
+
+					 output_rf => rf_out,
+					 output_dds => dds_set,
+					 output_ad => ad_out);
 					 
 	msr_finish <= m_fin;
 	sdr_req <= s_req;
 	cite_addr <= addr;
-	rf_pulse <= c_out;
+	rf_pulse <= rf_out;
 	
 	test_dout <= d_data;
 	test_bit <= c_en;
-	data64_vr <= X"00000000000186A0"; --test
 
 	end measure;
 

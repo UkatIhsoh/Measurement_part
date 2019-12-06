@@ -38,10 +38,13 @@ use work.data_types.all;
 --component master_counter is
 --	port( clk : in std_logic;
 --			rst : in std_logic;
+--
 --			d_fin : in std_logic; 
 --			d_type : in std_logic_vector(3 downto 0); 
---			rd_comp : out std_logic; 
+--			rd_comp : out std_logic;
+--			data_full : out std_logic; 
 --			data : in std_logic_vector(63 downto 0); 
+--
 --			output_rf : out std_logic;
 --			output_dds : out std_logic;
 --			output_ad : out std_logic);
@@ -50,10 +53,13 @@ use work.data_types.all;
 --count_time : master_counter 
 --	port map( clk => ,
 --				 rst => ,
+--
 --				 d_fin => , 
 --				 d_type => ,
 --				 rd_comp => ,
+--				 data_full => ,
 --				 data => , 
+--
 --				 output_rf => ,
 --				 output_dds => ,
 --				 output_ad => );

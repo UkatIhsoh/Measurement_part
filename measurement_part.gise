@@ -105,6 +105,10 @@
     <transform xil_pn:end_ts="1575629087" xil_pn:in_ck="5468351426492316986" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1575629087">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../integ_100_st_fifocheck/SDRAM_ctrl.vhd"/>
       <outfile xil_pn:name="Measurement.vhd"/>
       <outfile xil_pn:name="SDRAM_rd.vhd"/>
@@ -138,6 +142,11 @@
     <transform xil_pn:end_ts="1575629087" xil_pn:in_ck="5468351426492316986" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1575629087">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../integ_100_st_fifocheck/SDRAM_ctrl.vhd"/>
       <outfile xil_pn:name="Measurement.vhd"/>
       <outfile xil_pn:name="SDRAM_rd.vhd"/>
@@ -158,6 +167,11 @@
     <transform xil_pn:end_ts="1575629091" xil_pn:in_ck="7947482728481760938" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="372724161843070794" xil_pn:start_ts="1575629087">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
@@ -168,6 +182,9 @@
     <transform xil_pn:end_ts="1575629092" xil_pn:in_ck="6951825143424410604" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-6454566814556233833" xil_pn:start_ts="1575629091">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="mc_test_isim_beh.wdb"/>
@@ -201,12 +218,10 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575625225" xil_pn:in_ck="-8470602719487341389" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-5248531395013621828" xil_pn:start_ts="1575625212">
+    <transform xil_pn:end_ts="1575633720" xil_pn:in_ck="-8470602719487341389" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-5248531395013621828" xil_pn:start_ts="1575633654">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="Measurement.lso"/>
       <outfile xil_pn:name="Measurement.ngc"/>
       <outfile xil_pn:name="Measurement.ngr"/>
@@ -228,7 +243,6 @@
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>

@@ -1,5 +1,7 @@
 vhdl work "ipcore_dir/DCM_100M.vhd"
+vhdl work "data_types.vhd"
 vhdl work "timekeeper.vhd"
+vhdl work "master_counter.vhd"
 vhdl work "data_fetch.vhd"
 vhdl work "data_decode.vhd"
 vhdl work "SDRAM_wr.vhd"
