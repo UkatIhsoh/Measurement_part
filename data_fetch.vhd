@@ -94,6 +94,7 @@ architecture fetch of data_fetch is
 		f_run : std_logic;	--fetch‰ñ˜H“®ì’†
 		state : state_t;
 		d_num : std_logic_vector(1 downto 0); --ƒf[ƒ^‚U‚Sƒrƒbƒg‚ğ‚S•ªŠ„
+		start : std_logic;
 		fresh : std_logic;
 	end record;
 
@@ -121,6 +122,10 @@ begin
 		n <= p;
 		
 		if msr_start = '1' then
+			n.start <= '1';
+		end if;
+		
+		if p.start = '1' then
 			if p.f_run = '0' then --fetch‰ñ˜Hn“®
 				n.f_run <= '1';
 				if p.fresh = '0' then --fresh‚Å‚È‚¢‚È‚çstart_address‚ğ“Ç‚İ‚İ
@@ -191,6 +196,7 @@ begin
 			p.f_run <= '0';
 			p.state <= idle;
 			p.d_num <= "00";
+			p.start <= '0';
 			p.fresh <= '0';
 		elsif clk' event and clk = '1' then
 			p <= n;
