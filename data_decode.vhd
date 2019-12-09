@@ -106,11 +106,11 @@ begin
 		begin
 			n <= p;
 			
-			if fetch_fin = '1' then
-				if decode_wait = '0' then
-					if p.d_en = '0' then
-						case p.sequence is
-							when first =>
+			if fetch_fin = '1' then --フェッチが終了していることがデコード開始の条件
+				if decode_wait = '0' then --master_counterがおなか一杯の時は休憩
+					if p.d_en = '0' then --フェッチとのデータのやり取りがぐちゃぐちゃにならないようにするため
+						case p.sequence is --読み込んだ順で処理
+							when first => 
 								n.data(31 downto 0) <= data64(31 downto 0);
 								n.d_type <= first;
 								n.sequence <= second;
@@ -120,7 +120,7 @@ begin
 								n.data(31 downto 0) <= data64(63 downto 32);
 								n.d_type <= second;
 								n.sequence <= third;
-								n.d_en <= '1';
+								n.d_en <= '1'; --フェッチ再開を要求
 								n.state <= count;
 	
 							when third =>
@@ -175,8 +175,8 @@ begin
 					n.d_en <= '0';
 					
 				when count =>
-					if read_fin = '0' then
-						if p.d_fin = '0' then
+					if read_fin = '0' then --master_counterがデータを獲得するまで待機
+						if p.d_fin = '0' then --read_finがクロックと無関係なタイミングで入力されるため
 							n.d_fin <= '1';
 						end if;
 					else
@@ -188,7 +188,7 @@ begin
 					
 				when others =>
 					n.state <= idle;
-				end case;
+			end case;
 		
 		end process;
 
@@ -205,7 +205,7 @@ begin
 				fresh <= '0';
 			elsif clk' event and clk = '1' then
 				p <= n;
-				if fresh = '0' then
+				if fresh = '0' then --データの順番を初期化
 					p.sequence <= first;
 					fresh <= '1';
 				end if;

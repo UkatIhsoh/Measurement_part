@@ -240,6 +240,7 @@ begin
 	sdr_req <= s_req;
 	cite_addr <= addr;
 	rf_pulse <= rf_out;
+	adc_sig <= ad_out;
 	
 	test_dout(31 downto 0) <= c_data;
 	test_bit <= led_blink;
