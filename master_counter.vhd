@@ -96,7 +96,7 @@ architecture count_time of master_counter is
 	signal p : reg;
 	signal n : reg;
 
-	signal counter : std_logic_vector(63 downto 0):= (others => '0'); 		--カウンター
+	signal counter : std_logic_vector(31 downto 0):= (others => '0'); 		--カウンター
 
 	signal preset : std_logic:= '0'; --プリセットしているかどうかチェック
 	signal dst_1 : std_logic:= '0'; --データセットがどの程度進行しているか

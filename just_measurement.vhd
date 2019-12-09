@@ -172,8 +172,8 @@ architecture measure of just_measurement is
 	--テスト用
 	signal test : std_logic:='0';
 	signal led_blink : std_logic:='0';
-
-begin
+	
+	begin
 
 	fetch : data_fetch 
 		port map( clk => clk,
@@ -231,7 +231,7 @@ begin
 					 
 	process(d_fin)
 	begin
-		if d_fin = '1' then
+		if ad_out = '1' then
 			led_blink <= not led_blink;
 		end if;
 	end process;

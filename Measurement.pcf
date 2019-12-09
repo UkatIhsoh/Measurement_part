@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Mon Dec 09 17:11:44 2019
+// Written by: Map P.20131013 on Mon Dec 09 20:46:02 2019
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -22,8 +22,8 @@ COMP "WING_A<7>" LOCATE = SITE "P75" LEVEL 1;
 COMP "WING_C<0>" LOCATE = SITE "P114" LEVEL 1;
 COMP "WING_B<4>" LOCATE = SITE "P84" LEVEL 1;
 COMP "WING_A<8>" LOCATE = SITE "P79" LEVEL 1;
-COMP "WING_B<5>" LOCATE = SITE "P82" LEVEL 1;
 COMP "WING_C<1>" LOCATE = SITE "P115" LEVEL 1;
+COMP "WING_B<5>" LOCATE = SITE "P82" LEVEL 1;
 COMP "WING_A<9>" LOCATE = SITE "P81" LEVEL 1;
 COMP "WING_B<6>" LOCATE = SITE "P80" LEVEL 1;
 COMP "WING_C<2>" LOCATE = SITE "P116" LEVEL 1;

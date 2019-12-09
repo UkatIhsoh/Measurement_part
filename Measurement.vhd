@@ -92,7 +92,7 @@ architecture connect of Measurement is
 				rst : in std_logic;
 				
 				tr_sw : in std_logic;
-				adr_in  : in std_logic_vector(19 downto 0);
+				--adr_in  : in std_logic_vector(19 downto 0);
 				
 				sdr_req : out std_logic;
 				sdr_adr : out std_logic_vector(19 downto 0);
@@ -224,7 +224,7 @@ begin
 		port map( clk => clk100,
 					 rst => rst,
 					 tr_sw => tr_sw,
-					 adr_in => req_adr_w,
+					 --adr_in => req_adr_w,
 					 sdr_req => sdr_req_w,
 					 sdr_adr => wr_adr,
 					 sdr_data => data64_i);
@@ -277,11 +277,12 @@ begin
 	msr_start <= WING_B(2);
 	--start <= WING_A(1);
 	
-	WING_A(15 downto 1) <= test_d(31 downto 17); --テスト用
+	WING_A(15 downto 1) <= test_d(15 downto 1); --テスト用
 	WING_A(0) <= test_b; --テスト用
 	--WING_A(15 downto 0) <= data64(15 downto 0); --テスト用
 	--WING_A(0) <= fin_sig;
 	WING_B(4) <= rf;
+	WING_B(5) <= adc;
 	LED <= msr_start;
 
 end connect;

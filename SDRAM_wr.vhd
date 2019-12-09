@@ -51,7 +51,7 @@ entity SDRAM_wr is
 			
 			tr_sw : in std_logic;
 			
-			adr_in : in std_logic_vector(19 downto 0);
+			--adr_in : in std_logic_vector(19 downto 0);
 			
 			sdr_req : out std_logic;
 			sdr_adr : out std_logic_vector(19 downto 0);
@@ -60,8 +60,8 @@ end SDRAM_wr;
 
 architecture write_sec of SDRAM_wr is
 
-	--constant smp_data : std_logic_vector(63 downto 0):= X"00000000000186A0"; --カウント値
-	constant smp_data : std_logic_vector(63 downto 0):= X"0000FFFF05050A0A"; --テスト用
+	constant smp_data : std_logic_vector(63 downto 0):= X"000186A0000186A0"; --カウント値
+	--constant smp_data : std_logic_vector(63 downto 0):= X"0000FFFF05050A0A"; --テスト用
 	--constant smp_data : std_logic_vector(63 downto 0):= X"000000000000C350"; --テスト用2
 
 
@@ -97,8 +97,8 @@ begin
 				n.pend <= '1';
 				n.comp <= '1';
 				if p.pend = '0' then
-					n.adr <= adr_in; --アドレス変更
-					n.data <= v_data; --書き込みデータセット
+					n.adr <= p.adr +1; --アドレス変更
+					n.data <= p.data + smp_data; --書き込みデータセット
 					n.state <= sd_request;
 				end if;
 			end if;

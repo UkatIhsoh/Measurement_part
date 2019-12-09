@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-L548H6P::  Mon Dec 09 17:11:47 2019
+DESKTOP-L548H6P::  Mon Dec 09 20:46:06 2019
 
 par -w -intstyle ise -ol high -mt off Measurement_map.ncd Measurement.ncd
 Measurement.pcf 
@@ -22,30 +22,30 @@ Device speed data version:  "PRODUCTION 1.23 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                 1,292 out of  11,440   11%
-    Number used as Flip Flops:                 829
-    Number used as Latches:                    463
+  Number of Slice Registers:                 1,486 out of  11,440   12%
+    Number used as Flip Flops:                 978
+    Number used as Latches:                    508
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      1,462 out of   5,720   25%
-    Number used as logic:                    1,455 out of   5,720   25%
-      Number using O6 output only:           1,282
-      Number using O5 output only:             100
-      Number using O5 and O6:                   73
+  Number of Slice LUTs:                      1,569 out of   5,720   27%
+    Number used as logic:                    1,545 out of   5,720   27%
+      Number using O6 output only:           1,310
+      Number using O5 output only:             114
+      Number using O5 and O6:                  121
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   1,440    0%
-    Number used exclusively as route-thrus:      7
-      Number with same-slice register load:      4
-      Number with same-slice carry load:         3
+    Number used exclusively as route-thrus:     24
+      Number with same-slice register load:     20
+      Number with same-slice carry load:         4
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   912 out of   1,430   63%
-  Number of MUXCYs used:                       240 out of   2,860    8%
-  Number of LUT Flip Flop pairs used:        2,045
-    Number with an unused Flip Flop:           783 out of   2,045   38%
-    Number with an unused LUT:                 583 out of   2,045   28%
-    Number of fully used LUT-FF pairs:         679 out of   2,045   33%
+  Number of occupied Slices:                 1,037 out of   1,430   72%
+  Number of MUXCYs used:                       252 out of   2,860    8%
+  Number of LUT Flip Flop pairs used:        2,160
+    Number with an unused Flip Flop:           720 out of   2,160   33%
+    Number with an unused LUT:                 591 out of   2,160   27%
+    Number of fully used LUT-FF pairs:         849 out of   2,160   39%
     Number of slice register sites lost
       to control set restrictions:               0 out of  11,440    0%
 
@@ -104,7 +104,6 @@ Finished initial Timing Analysis.  REAL time: 4 secs
 
 WARNING:Par:288 - The signal WING_B<3>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal WING_C<0>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal WING_B<5>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal WING_C<1>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal WING_B<6>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal WING_C<2>_IBUF has no load.  PAR will not attempt to route this signal.
@@ -133,31 +132,29 @@ WARNING:Par:288 - The signal WING_C<15>_IBUF has no load.  PAR will not attempt 
 Starting Router
 
 
-Phase  1  : 10094 unrouted;      REAL time: 4 secs 
+Phase  1  : 10805 unrouted;      REAL time: 4 secs 
 
-Phase  2  : 9149 unrouted;      REAL time: 5 secs 
+Phase  2  : 9742 unrouted;      REAL time: 5 secs 
 
-Phase  3  : 3501 unrouted;      REAL time: 9 secs 
+Phase  3  : 3689 unrouted;      REAL time: 9 secs 
 
-Phase  4  : 3533 unrouted; (Setup:5483, Hold:0, Component Switching Limit:0)     REAL time: 10 secs 
-
-Updating file: Measurement.ncd with current fully routed design.
-
-Phase  5  : 0 unrouted; (Setup:5641, Hold:0, Component Switching Limit:0)     REAL time: 18 secs 
-
-Phase  6  : 0 unrouted; (Setup:5616, Hold:0, Component Switching Limit:0)     REAL time: 19 secs 
+Phase  4  : 3702 unrouted; (Setup:120, Hold:0, Component Switching Limit:0)     REAL time: 10 secs 
 
 Updating file: Measurement.ncd with current fully routed design.
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 25 secs 
+Phase  5  : 0 unrouted; (Setup:264, Hold:0, Component Switching Limit:0)     REAL time: 17 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 25 secs 
+Phase  6  : 0 unrouted; (Setup:264, Hold:0, Component Switching Limit:0)     REAL time: 17 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 25 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 19 secs 
 
-Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 27 secs 
-Total REAL time to Router completion: 27 secs 
-Total CPU time to Router completion: 28 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 19 secs 
+
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 19 secs 
+
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 21 secs 
+Total REAL time to Router completion: 21 secs 
+Total CPU time to Router completion: 22 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -175,976 +172,1104 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|              clk100 |  BUFGMUX_X2Y2| No   |  607 |  0.748     |  2.139      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/p |              |      |      |            |             |
-|reset_d_fin_AND_220_ |              |      |      |            |             |
-|              o_BUFG | BUFGMUX_X3Y14| No   |    8 |  0.080     |  1.471      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/p |              |      |      |            |             |
-|reset_d_fin_AND_156_ |              |      |      |            |             |
-|              o_BUFG | BUFGMUX_X2Y10| No   |    8 |  0.047     |  1.438      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/p |              |      |      |            |             |
-|reset_d_fin_AND_412_ |              |      |      |            |             |
-|              o_BUFG | BUFGMUX_X2Y12| No   |    8 |  0.081     |  1.471      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/p |              |      |      |            |             |
-|reset_d_fin_AND_284_ |              |      |      |            |             |
-|              o_BUFG |  BUFGMUX_X2Y1| No   |    8 |  0.114     |  1.507      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/p |              |      |      |            |             |
-|reset_d_fin_AND_348_ |              |      |      |            |             |
-|              o_BUFG |  BUFGMUX_X2Y4| No   |    8 |  0.055     |  1.445      |
+|              clk100 |  BUFGMUX_X2Y2| No   |  687 |  0.748     |  2.139      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/p |              |      |      |            |             |
 |reset_d_fin_AND_28_o |              |      |      |            |             |
-|               _BUFG | BUFGMUX_X3Y13| No   |    8 |  0.025     |  1.447      |
+|               _BUFG | BUFGMUX_X3Y13| No   |    8 |  0.052     |  1.507      |
 +---------------------+--------------+------+------+------------+-------------+
-|       WING_B_0_IBUF |         Local|      |  144 |  0.000     |  4.664      |
+|measure/count_time/p |              |      |      |            |             |
+|reset_d_fin_AND_156_ |              |      |      |            |             |
+|              o_BUFG | BUFGMUX_X2Y10| No   |    8 |  0.074     |  1.465      |
 +---------------------+--------------+------+------+------------+-------------+
-|measure/decode/p_d_f |              |      |      |            |             |
-|                  in |         Local|      |  466 |  0.000     |  4.861      |
+|measure/count_time/p |              |      |      |            |             |
+|reset_d_fin_AND_220_ |              |      |      |            |             |
+|              o_BUFG | BUFGMUX_X3Y14| No   |    8 |  0.017     |  1.439      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/p |              |      |      |            |             |
+|reset_d_fin_AND_284_ |              |      |      |            |             |
+|              o_BUFG |  BUFGMUX_X2Y1| No   |    8 |  0.017     |  1.408      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/p |              |      |      |            |             |
+|reset_d_fin_AND_348_ |              |      |      |            |             |
+|              o_BUFG |  BUFGMUX_X2Y4| No   |    8 |  0.014     |  1.404      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/p |              |      |      |            |             |
+|reset_d_fin_AND_412_ |              |      |      |            |             |
+|              o_BUFG | BUFGMUX_X2Y12| No   |    8 |  0.040     |  1.431      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
-| st_1_dst_7_AND_20_o |         Local|      |   11 |  0.000     |  0.567      |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                17_o |         Local|      |    2 |  0.000     |  0.519      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                33_o |         Local|      |    2 |  0.000     |  0.585      |
++---------------------+--------------+------+------+------------+-------------+
+|       WING_B_0_IBUF |         Local|      |  181 |  0.000     |  2.987      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                11_o |         Local|      |    2 |  0.000     |  0.740      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                15_o |         Local|      |    2 |  0.000     |  1.024      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                31_o |         Local|      |    2 |  0.000     |  1.274      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                09_o |         Local|      |    2 |  0.000     |  0.350      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+| st_1_dst_7_AND_20_o |         Local|      |   11 |  0.000     |  2.711      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                13_o |         Local|      |    2 |  0.000     |  0.563      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                29_o |         Local|      |    2 |  0.000     |  0.598      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                91_o |         Local|      |    2 |  0.000     |  0.540      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                07_o |         Local|      |    2 |  0.000     |  0.995      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                11_o |         Local|      |    2 |  0.000     |  0.802      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                89_o |         Local|      |    2 |  0.000     |  0.614      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                05_o |         Local|      |    2 |  0.000     |  0.832      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                09_o |         Local|      |    2 |  0.000     |  0.518      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                71_o |         Local|      |    2 |  0.000     |  0.718      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                87_o |         Local|      |    2 |  0.000     |  0.350      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                03_o |         Local|      |    2 |  0.000     |  0.593      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                69_o |         Local|      |    2 |  0.000     |  0.563      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                85_o |         Local|      |    2 |  0.000     |  0.971      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                01_o |         Local|      |    2 |  0.000     |  0.646      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                83_o |         Local|      |    2 |  0.000     |  1.014      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                99_o |         Local|      |    2 |  0.000     |  0.945      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                81_o |         Local|      |    2 |  0.000     |  1.235      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                97_o |         Local|      |    2 |  0.000     |  0.946      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                75_o |         Local|      |    2 |  0.000     |  0.877      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                79_o |         Local|      |    2 |  0.000     |  1.066      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                95_o |         Local|      |    2 |  0.000     |  0.959      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                73_o |         Local|      |    2 |  0.000     |  0.584      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                77_o |         Local|      |    2 |  0.000     |  1.095      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                93_o |         Local|      |    2 |  0.000     |  1.182      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                55_o |         Local|      |    2 |  0.000     |  0.562      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                71_o |         Local|      |    2 |  0.000     |  1.056      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                75_o |         Local|      |    2 |  0.000     |  0.563      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                53_o |         Local|      |    2 |  0.000     |  0.578      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                69_o |         Local|      |    2 |  0.000     |  0.767      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                73_o |         Local|      |    2 |  0.000     |  0.950      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                35_o |         Local|      |    2 |  0.000     |  0.562      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                51_o |         Local|      |    2 |  0.000     |  0.712      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                67_o |         Local|      |    2 |  0.000     |  0.458      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                33_o |         Local|      |    2 |  0.000     |  0.462      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                49_o |         Local|      |    2 |  0.000     |  0.777      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                65_o |         Local|      |    2 |  0.000     |  0.719      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                47_o |         Local|      |    2 |  0.000     |  0.586      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                63_o |         Local|      |    2 |  0.000     |  0.584      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                45_o |         Local|      |    2 |  0.000     |  0.719      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                61_o |         Local|      |    2 |  0.000     |  0.770      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                39_o |         Local|      |    2 |  0.000     |  0.653      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                43_o |         Local|      |    2 |  0.000     |  1.132      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                59_o |         Local|      |    2 |  0.000     |  0.970      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                37_o |         Local|      |    2 |  0.000     |  0.586      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                41_o |         Local|      |    2 |  0.000     |  0.519      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                57_o |         Local|      |    2 |  0.000     |  0.592      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                19_o |         Local|      |    2 |  0.000     |  1.055      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                35_o |         Local|      |    2 |  0.000     |  0.725      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                39_o |         Local|      |    2 |  0.000     |  1.187      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                17_o |         Local|      |    2 |  0.000     |  0.381      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                33_o |         Local|      |    2 |  0.000     |  1.206      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                37_o |         Local|      |    2 |  0.000     |  0.911      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                99_o |         Local|      |    2 |  0.000     |  0.688      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                15_o |         Local|      |    2 |  0.000     |  0.636      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                31_o |         Local|      |    2 |  0.000     |  0.595      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                97_o |         Local|      |    2 |  0.000     |  0.462      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                13_o |         Local|      |    2 |  0.000     |  0.934      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                29_o |         Local|      |    2 |  0.000     |  0.652      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                11_o |         Local|      |    2 |  0.000     |  0.379      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                27_o |         Local|      |    2 |  0.000     |  0.593      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                09_o |         Local|      |    2 |  0.000     |  0.584      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                25_o |         Local|      |    2 |  0.000     |  0.723      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                03_o |         Local|      |    2 |  0.000     |  0.584      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                07_o |         Local|      |    2 |  0.000     |  0.967      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                23_o |         Local|      |    2 |  0.000     |  0.702      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                01_o |         Local|      |    2 |  0.000     |  0.562      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                05_o |         Local|      |    2 |  0.000     |  0.780      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                21_o |         Local|      |    2 |  0.000     |  0.818      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                83_o |         Local|      |    2 |  0.000     |  0.586      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                99_o |         Local|      |    2 |  0.000     |  0.578      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                03_o |         Local|      |    2 |  0.000     |  0.927      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                81_o |         Local|      |    2 |  0.000     |  0.745      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                97_o |         Local|      |    2 |  0.000     |  0.584      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                01_o |         Local|      |    2 |  0.000     |  0.769      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                63_o |         Local|      |    2 |  0.000     |  0.572      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                79_o |         Local|      |    2 |  0.000     |  0.719      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                95_o |         Local|      |    2 |  0.000     |  0.582      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                61_o |         Local|      |    2 |  0.000     |  0.969      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                77_o |         Local|      |    2 |  0.000     |  1.273      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                93_o |         Local|      |    2 |  0.000     |  0.584      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                75_o |         Local|      |    2 |  0.000     |  0.637      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                91_o |         Local|      |    2 |  0.000     |  0.853      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                73_o |         Local|      |    2 |  0.000     |  1.086      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                89_o |         Local|      |    2 |  0.000     |  0.614      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                67_o |         Local|      |    2 |  0.000     |  0.861      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                71_o |         Local|      |    2 |  0.000     |  0.712      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                87_o |         Local|      |    2 |  0.000     |  0.817      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                65_o |         Local|      |    2 |  0.000     |  1.279      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                69_o |         Local|      |    2 |  0.000     |  1.032      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                85_o |         Local|      |    2 |  0.000     |  1.242      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                47_o |         Local|      |    2 |  0.000     |  0.336      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                63_o |         Local|      |    2 |  0.000     |  0.619      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                67_o |         Local|      |    2 |  0.000     |  0.710      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                45_o |         Local|      |    2 |  0.000     |  0.658      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                61_o |         Local|      |    2 |  0.000     |  0.373      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                65_o |         Local|      |    2 |  0.000     |  0.775      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                27_o |         Local|      |    2 |  0.000     |  1.358      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                43_o |         Local|      |    2 |  0.000     |  1.016      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                59_o |         Local|      |    2 |  0.000     |  1.283      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                25_o |         Local|      |    2 |  0.000     |  0.358      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                41_o |         Local|      |    2 |  0.000     |  0.340      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                57_o |         Local|      |    2 |  0.000     |  0.658      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                39_o |         Local|      |    2 |  0.000     |  0.563      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                55_o |         Local|      |    2 |  0.000     |  0.583      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                37_o |         Local|      |    2 |  0.000     |  0.901      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                53_o |         Local|      |    2 |  0.000     |  0.373      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                35_o |         Local|      |    2 |  0.000     |  1.168      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                51_o |         Local|      |    2 |  0.000     |  0.702      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                33_o |         Local|      |    2 |  0.000     |  0.381      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                49_o |         Local|      |    2 |  0.000     |  1.268      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                31_o |         Local|      |    2 |  0.000     |  0.523      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                29_o |         Local|      |    2 |  0.000     |  0.777      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                01_o |         Local|      |    2 |  0.000     |  0.650      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                03_o |         Local|      |    2 |  0.000     |  0.379      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                21_o |         Local|      |    2 |  0.000     |  0.540      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                05_o |         Local|      |    2 |  0.000     |  0.454      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                41_o |         Local|      |    2 |  0.000     |  0.583      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                23_o |         Local|      |    2 |  0.000     |  0.379      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                07_o |         Local|      |    2 |  0.000     |  0.710      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                51_o |         Local|      |    2 |  0.000     |  0.597      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                43_o |         Local|      |    2 |  0.000     |  0.836      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                25_o |         Local|      |    2 |  0.000     |  1.214      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                41_o |         Local|      |    2 |  0.000     |  1.045      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                21_o |         Local|      |    2 |  0.000     |  0.553      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                13_o |         Local|      |    2 |  0.000     |  0.586      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                61_o |         Local|      |    2 |  0.000     |  0.584      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                53_o |         Local|      |    2 |  0.000     |  1.258      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                45_o |         Local|      |    2 |  0.000     |  0.710      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                27_o |         Local|      |    2 |  0.000     |  0.658      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                19_o |         Local|      |    2 |  0.000     |  0.761      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                51_o |         Local|      |    2 |  0.000     |  0.660      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                43_o |         Local|      |    2 |  0.000     |  0.591      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                35_o |         Local|      |    2 |  0.000     |  0.373      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                31_o |         Local|      |    2 |  0.000     |  0.962      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                23_o |         Local|      |    2 |  0.000     |  0.574      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                15_o |         Local|      |    2 |  0.000     |  0.972      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                63_o |         Local|      |    2 |  0.000     |  0.733      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                55_o |         Local|      |    2 |  0.000     |  0.678      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                47_o |         Local|      |    2 |  0.000     |  1.228      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                71_o |         Local|      |    2 |  0.000     |  0.719      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                61_o |         Local|      |    2 |  0.000     |  1.246      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                45_o |         Local|      |    2 |  0.000     |  0.356      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                53_o |         Local|      |    2 |  0.000     |  0.794      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                37_o |         Local|      |    2 |  0.000     |  0.775      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                25_o |         Local|      |    2 |  0.000     |  0.804      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                17_o |         Local|      |    2 |  0.000     |  1.179      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                65_o |         Local|      |    2 |  0.000     |  0.540      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                57_o |         Local|      |    2 |  0.000     |  0.704      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                49_o |         Local|      |    2 |  0.000     |  0.917      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                81_o |         Local|      |    2 |  0.000     |  0.702      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                73_o |         Local|      |    2 |  0.000     |  1.073      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                47_o |         Local|      |    2 |  0.000     |  0.666      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                63_o |         Local|      |    2 |  0.000     |  0.775      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                55_o |         Local|      |    2 |  0.000     |  0.373      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                39_o |         Local|      |    2 |  0.000     |  0.381      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                27_o |         Local|      |    2 |  0.000     |  0.669      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                19_o |         Local|      |    2 |  0.000     |  0.519      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                11_o |         Local|      |    2 |  0.000     |  1.169      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                67_o |         Local|      |    2 |  0.000     |  0.476      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                59_o |         Local|      |    2 |  0.000     |  0.336      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                83_o |         Local|      |    2 |  0.000     |  0.986      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                91_o |         Local|      |    2 |  0.000     |  0.550      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                75_o |         Local|      |    2 |  0.000     |  0.710      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                65_o |         Local|      |    2 |  0.000     |  0.734      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                57_o |         Local|      |    2 |  0.000     |  0.942      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                49_o |         Local|      |    2 |  0.000     |  0.379      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                29_o |         Local|      |    2 |  0.000     |  0.373      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                41_o |         Local|      |    2 |  0.000     |  0.727      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                21_o |         Local|      |    2 |  0.000     |  1.020      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                13_o |         Local|      |    2 |  0.000     |  0.724      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                05_o |         Local|      |    2 |  0.000     |  1.042      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                93_o |         Local|      |    2 |  0.000     |  0.586      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                85_o |         Local|      |    2 |  0.000     |  0.658      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                77_o |         Local|      |    2 |  0.000     |  0.578      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                69_o |         Local|      |    2 |  0.000     |  0.719      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                67_o |         Local|      |    2 |  0.000     |  0.519      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_6 |              |      |      |            |             |
+|                59_o |         Local|      |    2 |  0.000     |  0.584      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                51_o |         Local|      |    2 |  0.000     |  1.349      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                43_o |         Local|      |    2 |  0.000     |  0.710      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                23_o |         Local|      |    2 |  0.000     |  1.043      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                15_o |         Local|      |    2 |  0.000     |  0.564      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                07_o |         Local|      |    2 |  0.000     |  1.215      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                95_o |         Local|      |    2 |  0.000     |  0.704      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                87_o |         Local|      |    2 |  0.000     |  1.145      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                79_o |         Local|      |    2 |  0.000     |  0.356      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                81_o |         Local|      |    2 |  0.000     |  0.977      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                53_o |         Local|      |    2 |  0.000     |  0.977      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                45_o |         Local|      |    2 |  0.000     |  1.031      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                17_o |         Local|      |    2 |  0.000     |  0.583      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                09_o |         Local|      |    2 |  0.000     |  0.663      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                97_o |         Local|      |    2 |  0.000     |  0.702      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                89_o |         Local|      |    2 |  0.000     |  0.338      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                91_o |         Local|      |    2 |  0.000     |  0.740      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                83_o |         Local|      |    2 |  0.000     |  0.576      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                55_o |         Local|      |    2 |  0.000     |  0.336      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                47_o |         Local|      |    2 |  0.000     |  0.678      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                19_o |         Local|      |    2 |  0.000     |  0.818      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_5 |              |      |      |            |             |
+|                99_o |         Local|      |    2 |  0.000     |  0.584      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                93_o |         Local|      |    2 |  0.000     |  0.696      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                85_o |         Local|      |    2 |  0.000     |  0.587      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                77_o |         Local|      |    2 |  0.000     |  0.767      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                57_o |         Local|      |    2 |  0.000     |  0.584      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                49_o |         Local|      |    2 |  0.000     |  0.562      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                95_o |         Local|      |    2 |  0.000     |  0.606      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                87_o |         Local|      |    2 |  0.000     |  0.336      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                79_o |         Local|      |    2 |  0.000     |  0.702      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_8 |              |      |      |            |             |
+|                59_o |         Local|      |    2 |  0.000     |  0.578      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                71_o |         Local|      |    2 |  0.000     |  0.740      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_7 |              |      |      |            |             |
+|                89_o |         Local|      |    2 |  0.000     |  0.578      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                81_o |         Local|      |    2 |  0.000     |  0.825      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                73_o |         Local|      |    2 |  0.000     |  0.336      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                83_o |         Local|      |    2 |  0.000     |  0.603      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                75_o |         Local|      |    2 |  0.000     |  0.336      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                85_o |         Local|      |    2 |  0.000     |  0.950      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                77_o |         Local|      |    2 |  0.000     |  0.801      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                69_o |         Local|      |    2 |  0.000     |  0.723      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                87_o |         Local|      |    2 |  0.000     |  0.336      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_9 |              |      |      |            |             |
+|                79_o |         Local|      |    2 |  0.000     |  0.379      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/p |              |      |      |            |             |
+|reset_d_fin_AND_92_o |              |      |      |            |             |
+|                     |         Local|      |    8 |  1.269     |  2.600      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
 |st_1_d_type[3]_MUX_6 |              |      |      |            |             |
-|                15_o |         Local|      |    1 |  0.000     |  0.704      |
+|                15_o |         Local|      |    1 |  0.000     |  0.330      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
 |st_1_d_type[3]_MUX_6 |              |      |      |            |             |
-|                24_o |         Local|      |    1 |  0.000     |  1.038      |
+|                33_o |         Local|      |    1 |  0.000     |  0.769      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
 |st_1_d_type[3]_MUX_6 |              |      |      |            |             |
-|                33_o |         Local|      |    1 |  0.000     |  0.585      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|st_1_d_type[3]_MUX_6 |              |      |      |            |             |
-|                42_o |         Local|      |    1 |  0.000     |  0.330      |
+|                42_o |         Local|      |    1 |  0.000     |  0.704      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
 |st_1_d_type[3]_MUX_5 |              |      |      |            |             |
-|                88_o |         Local|      |    1 |  0.000     |  1.002      |
+|                88_o |         Local|      |    1 |  0.000     |  0.330      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
 |st_1_d_type[3]_MUX_5 |              |      |      |            |             |
 |                97_o |         Local|      |    1 |  0.000     |  0.769      |
 +---------------------+--------------+------+------+------------+-------------+
-|measure/fetch/p_star |              |      |      |            |             |
-|  t_p_f_run_AND_14_o |         Local|      |    1 |  0.000     |  0.761      |
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               049_o |         Local|      |    2 |  0.000     |  0.834      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               017_o |         Local|      |    2 |  0.000     |  0.610      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               025_o |         Local|      |    2 |  0.000     |  0.602      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               033_o |         Local|      |    2 |  0.000     |  0.583      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               041_o |         Local|      |    2 |  0.000     |  0.616      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               027_o |         Local|      |    2 |  0.000     |  1.359      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               035_o |         Local|      |    2 |  0.000     |  0.338      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               043_o |         Local|      |    2 |  0.000     |  0.586      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               051_o |         Local|      |    2 |  0.000     |  0.887      |
 +---------------------+--------------+------+------+------------+-------------+
 |ctrl/statep[8]_GND_3 |              |      |      |            |             |
-|        6_o_Mux_83_o |         Local|      |    1 |  0.000     |  0.578      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/p |              |      |      |            |             |
-|reset_d_fin_AND_92_o |              |      |      |            |             |
-|                     |         Local|      |    8 |  0.955     |  1.859      |
+|        6_o_Mux_83_o |         Local|      |    7 |  0.437     |  1.067      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                03_o |         Local|      |    2 |  0.000     |  0.556      |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               037_o |         Local|      |    2 |  0.000     |  0.564      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                01_o |         Local|      |    2 |  0.000     |  0.719      |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               045_o |         Local|      |    2 |  0.000     |  0.335      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                99_o |         Local|      |    2 |  0.000     |  0.831      |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               047_o |         Local|      |    2 |  0.000     |  0.819      |
 +---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                97_o |         Local|      |    2 |  0.000     |  0.482      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                95_o |         Local|      |    2 |  0.000     |  0.614      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                67_o |         Local|      |    2 |  0.000     |  0.338      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                93_o |         Local|      |    2 |  0.000     |  0.737      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                65_o |         Local|      |    2 |  0.000     |  0.584      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                91_o |         Local|      |    2 |  0.000     |  0.791      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                63_o |         Local|      |    2 |  0.000     |  0.584      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                89_o |         Local|      |    2 |  0.000     |  0.715      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                61_o |         Local|      |    2 |  0.000     |  0.798      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                87_o |         Local|      |    2 |  0.000     |  0.593      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                59_o |         Local|      |    2 |  0.000     |  0.336      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                31_o |         Local|      |    2 |  0.000     |  0.951      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                85_o |         Local|      |    2 |  0.000     |  0.946      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                57_o |         Local|      |    2 |  0.000     |  0.379      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                29_o |         Local|      |    2 |  0.000     |  0.562      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                55_o |         Local|      |    2 |  0.000     |  0.562      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                27_o |         Local|      |    2 |  0.000     |  0.881      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                53_o |         Local|      |    2 |  0.000     |  0.676      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                25_o |         Local|      |    2 |  0.000     |  0.340      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                51_o |         Local|      |    2 |  0.000     |  0.850      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                23_o |         Local|      |    2 |  0.000     |  0.858      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                95_o |         Local|      |    2 |  0.000     |  0.336      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                49_o |         Local|      |    2 |  0.000     |  0.660      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                21_o |         Local|      |    2 |  0.000     |  0.830      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                93_o |         Local|      |    2 |  0.000     |  0.584      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                19_o |         Local|      |    2 |  0.000     |  0.336      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                91_o |         Local|      |    2 |  0.000     |  1.074      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                17_o |         Local|      |    2 |  0.000     |  0.583      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                89_o |         Local|      |    2 |  0.000     |  0.700      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                15_o |         Local|      |    2 |  0.000     |  0.910      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                87_o |         Local|      |    2 |  0.000     |  0.746      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                59_o |         Local|      |    2 |  0.000     |  0.583      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                13_o |         Local|      |    2 |  0.000     |  0.913      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                85_o |         Local|      |    2 |  0.000     |  0.646      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                57_o |         Local|      |    2 |  0.000     |  0.743      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                83_o |         Local|      |    2 |  0.000     |  0.614      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                55_o |         Local|      |    2 |  0.000     |  0.982      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                81_o |         Local|      |    2 |  0.000     |  0.827      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                53_o |         Local|      |    2 |  0.000     |  1.239      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                79_o |         Local|      |    2 |  0.000     |  0.668      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                51_o |         Local|      |    2 |  0.000     |  1.096      |
+|measure/fetch/p_star |              |      |      |            |             |
+|  t_p_f_run_AND_14_o |         Local|      |    1 |  0.000     |  0.578      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
 |_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                23_o |         Local|      |    2 |  0.000     |  0.562      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                77_o |         Local|      |    2 |  0.000     |  0.746      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                49_o |         Local|      |    2 |  0.000     |  0.977      |
+|                99_o |         Local|      |    2 |  0.000     |  0.564      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
 |_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                21_o |         Local|      |    2 |  0.000     |  0.583      |
+|                89_o |         Local|      |    2 |  0.000     |  0.599      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                47_o |         Local|      |    2 |  0.000     |  0.645      |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               009_o |         Local|      |    2 |  0.000     |  0.381      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                19_o |         Local|      |    2 |  0.000     |  0.666      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                45_o |         Local|      |    2 |  0.000     |  0.454      |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               001_o |         Local|      |    2 |  0.000     |  0.338      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
 |_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                17_o |         Local|      |    2 |  0.000     |  0.766      |
+|                91_o |         Local|      |    2 |  0.000     |  0.384      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                43_o |         Local|      |    2 |  0.000     |  0.910      |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               019_o |         Local|      |    2 |  0.000     |  0.608      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                15_o |         Local|      |    2 |  0.000     |  0.984      |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               003_o |         Local|      |    2 |  0.000     |  0.587      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                87_o |         Local|      |    2 |  0.000     |  0.777      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                41_o |         Local|      |    2 |  0.000     |  1.181      |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               011_o |         Local|      |    2 |  0.000     |  0.608      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
 |_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                13_o |         Local|      |    2 |  0.000     |  0.978      |
+|                93_o |         Local|      |    2 |  0.000     |  0.576      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               029_o |         Local|      |    2 |  0.000     |  0.608      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               021_o |         Local|      |    2 |  0.000     |  0.381      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               005_o |         Local|      |    2 |  0.000     |  0.601      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               013_o |         Local|      |    2 |  0.000     |  0.608      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
 |_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                85_o |         Local|      |    2 |  0.000     |  0.583      |
+|                95_o |         Local|      |    2 |  0.000     |  0.974      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               039_o |         Local|      |    2 |  0.000     |  0.587      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               023_o |         Local|      |    2 |  0.000     |  0.628      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               031_o |         Local|      |    2 |  0.000     |  0.608      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               007_o |         Local|      |    2 |  0.000     |  0.610      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|_fin_d_type[3]_AND_1 |              |      |      |            |             |
+|               015_o |         Local|      |    2 |  0.000     |  0.588      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
 |_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                11_o |         Local|      |    2 |  0.000     |  0.939      |
+|                97_o |         Local|      |    2 |  0.000     |  0.602      |
 +---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                83_o |         Local|      |    2 |  0.000     |  0.690      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                09_o |         Local|      |    2 |  0.000     |  0.938      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                81_o |         Local|      |    2 |  0.000     |  0.688      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                07_o |         Local|      |    2 |  0.000     |  0.336      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                79_o |         Local|      |    2 |  0.000     |  0.719      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                05_o |         Local|      |    2 |  0.000     |  0.766      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                77_o |         Local|      |    2 |  0.000     |  0.482      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                75_o |         Local|      |    2 |  0.000     |  0.578      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                73_o |         Local|      |    2 |  0.000     |  0.578      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                71_o |         Local|      |    2 |  0.000     |  0.540      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                69_o |         Local|      |    2 |  0.000     |  0.710      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                83_o |         Local|      |    2 |  0.000     |  0.759      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                81_o |         Local|      |    2 |  0.000     |  0.877      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                63_o |         Local|      |    2 |  0.000     |  0.719      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                79_o |         Local|      |    2 |  0.000     |  0.717      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                61_o |         Local|      |    2 |  0.000     |  0.952      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                77_o |         Local|      |    2 |  0.000     |  0.782      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                43_o |         Local|      |    2 |  0.000     |  0.562      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                59_o |         Local|      |    2 |  0.000     |  0.982      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                75_o |         Local|      |    2 |  0.000     |  0.807      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                41_o |         Local|      |    2 |  0.000     |  0.861      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                57_o |         Local|      |    2 |  0.000     |  0.578      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                73_o |         Local|      |    2 |  0.000     |  1.158      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                55_o |         Local|      |    2 |  0.000     |  0.710      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                71_o |         Local|      |    2 |  0.000     |  1.116      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                53_o |         Local|      |    2 |  0.000     |  0.330      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                69_o |         Local|      |    2 |  0.000     |  0.794      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                51_o |         Local|      |    2 |  0.000     |  0.718      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                67_o |         Local|      |    2 |  0.000     |  1.011      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                47_o |         Local|      |    2 |  0.000     |  0.454      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                49_o |         Local|      |    2 |  0.000     |  1.385      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                65_o |         Local|      |    2 |  0.000     |  0.769      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                45_o |         Local|      |    2 |  0.000     |  0.614      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                47_o |         Local|      |    2 |  0.000     |  0.583      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                27_o |         Local|      |    2 |  0.000     |  0.584      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                43_o |         Local|      |    2 |  0.000     |  0.370      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_5 |              |      |      |            |             |
-|                45_o |         Local|      |    2 |  0.000     |  0.614      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                25_o |         Local|      |    2 |  0.000     |  1.038      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                41_o |         Local|      |    2 |  0.000     |  0.584      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                07_o |         Local|      |    2 |  0.000     |  0.926      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                23_o |         Local|      |    2 |  0.000     |  0.928      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                39_o |         Local|      |    2 |  0.000     |  0.756      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                05_o |         Local|      |    2 |  0.000     |  0.562      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                21_o |         Local|      |    2 |  0.000     |  0.474      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                37_o |         Local|      |    2 |  0.000     |  0.578      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                19_o |         Local|      |    2 |  0.000     |  0.701      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                35_o |         Local|      |    2 |  0.000     |  0.544      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                17_o |         Local|      |    2 |  0.000     |  0.336      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                33_o |         Local|      |    2 |  0.000     |  0.722      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                15_o |         Local|      |    2 |  0.000     |  0.718      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                31_o |         Local|      |    2 |  0.000     |  0.591      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                11_o |         Local|      |    2 |  0.000     |  0.462      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                13_o |         Local|      |    2 |  0.000     |  0.614      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                29_o |         Local|      |    2 |  0.000     |  0.336      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                09_o |         Local|      |    2 |  0.000     |  1.067      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                11_o |         Local|      |    2 |  0.000     |  0.700      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                91_o |         Local|      |    2 |  0.000     |  0.919      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                07_o |         Local|      |    2 |  0.000     |  0.562      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                09_o |         Local|      |    2 |  0.000     |  1.032      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                89_o |         Local|      |    2 |  0.000     |  1.041      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                05_o |         Local|      |    2 |  0.000     |  0.519      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                71_o |         Local|      |    2 |  0.000     |  0.604      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                87_o |         Local|      |    2 |  0.000     |  1.015      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                03_o |         Local|      |    2 |  0.000     |  0.336      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                69_o |         Local|      |    2 |  0.000     |  1.059      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                85_o |         Local|      |    2 |  0.000     |  0.482      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                01_o |         Local|      |    2 |  0.000     |  0.766      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                83_o |         Local|      |    2 |  0.000     |  0.646      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                99_o |         Local|      |    2 |  0.000     |  0.340      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                81_o |         Local|      |    2 |  0.000     |  0.336      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                97_o |         Local|      |    2 |  0.000     |  0.805      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                79_o |         Local|      |    2 |  0.000     |  0.583      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                95_o |         Local|      |    2 |  0.000     |  1.510      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                75_o |         Local|      |    2 |  0.000     |  0.794      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                77_o |         Local|      |    2 |  0.000     |  0.740      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                93_o |         Local|      |    2 |  0.000     |  0.482      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                73_o |         Local|      |    2 |  0.000     |  0.519      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                75_o |         Local|      |    2 |  0.000     |  0.735      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                55_o |         Local|      |    2 |  0.000     |  0.794      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                71_o |         Local|      |    2 |  0.000     |  0.604      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_6 |              |      |      |            |             |
-|                73_o |         Local|      |    2 |  0.000     |  0.547      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                53_o |         Local|      |    2 |  0.000     |  0.794      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                69_o |         Local|      |    2 |  0.000     |  0.584      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                35_o |         Local|      |    2 |  0.000     |  0.564      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                51_o |         Local|      |    2 |  0.000     |  0.583      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                67_o |         Local|      |    2 |  0.000     |  1.208      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                33_o |         Local|      |    2 |  0.000     |  0.794      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                49_o |         Local|      |    2 |  0.000     |  0.799      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                65_o |         Local|      |    2 |  0.000     |  0.553      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                47_o |         Local|      |    2 |  0.000     |  0.583      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                63_o |         Local|      |    2 |  0.000     |  0.583      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                45_o |         Local|      |    2 |  0.000     |  0.767      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                61_o |         Local|      |    2 |  0.000     |  0.454      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                43_o |         Local|      |    2 |  0.000     |  0.638      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                59_o |         Local|      |    2 |  0.000     |  0.889      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                39_o |         Local|      |    2 |  0.000     |  0.998      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                41_o |         Local|      |    2 |  0.000     |  0.710      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                57_o |         Local|      |    2 |  0.000     |  0.893      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                37_o |         Local|      |    2 |  0.000     |  0.833      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                39_o |         Local|      |    2 |  0.000     |  0.340      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                19_o |         Local|      |    2 |  0.000     |  1.082      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                35_o |         Local|      |    2 |  0.000     |  0.336      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                37_o |         Local|      |    2 |  0.000     |  0.584      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                17_o |         Local|      |    2 |  0.000     |  0.547      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                33_o |         Local|      |    2 |  0.000     |  0.562      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                99_o |         Local|      |    2 |  0.000     |  1.172      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                15_o |         Local|      |    2 |  0.000     |  0.576      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                31_o |         Local|      |    2 |  0.000     |  1.027      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_7 |              |      |      |            |             |
-|                97_o |         Local|      |    2 |  0.000     |  1.067      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                13_o |         Local|      |    2 |  0.000     |  0.583      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                29_o |         Local|      |    2 |  0.000     |  0.778      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                11_o |         Local|      |    2 |  0.000     |  0.869      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                27_o |         Local|      |    2 |  0.000     |  0.998      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                09_o |         Local|      |    2 |  0.000     |  0.562      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                25_o |         Local|      |    2 |  0.000     |  0.904      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                07_o |         Local|      |    2 |  0.000     |  0.556      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                23_o |         Local|      |    2 |  0.000     |  0.563      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                03_o |         Local|      |    2 |  0.000     |  0.831      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                05_o |         Local|      |    2 |  0.000     |  0.853      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                21_o |         Local|      |    2 |  0.000     |  0.618      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                01_o |         Local|      |    2 |  0.000     |  0.462      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                03_o |         Local|      |    2 |  0.000     |  0.583      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                83_o |         Local|      |    2 |  0.000     |  0.891      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                99_o |         Local|      |    2 |  0.000     |  0.562      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                01_o |         Local|      |    2 |  0.000     |  0.791      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                81_o |         Local|      |    2 |  0.000     |  0.583      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                97_o |         Local|      |    2 |  0.000     |  0.578      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                63_o |         Local|      |    2 |  0.000     |  0.827      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                79_o |         Local|      |    2 |  0.000     |  0.336      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                95_o |         Local|      |    2 |  0.000     |  0.794      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                61_o |         Local|      |    2 |  0.000     |  0.562      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                77_o |         Local|      |    2 |  0.000     |  0.718      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                93_o |         Local|      |    2 |  0.000     |  0.767      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                75_o |         Local|      |    2 |  0.000     |  0.583      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                91_o |         Local|      |    2 |  0.000     |  0.886      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                73_o |         Local|      |    2 |  0.000     |  0.618      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                89_o |         Local|      |    2 |  0.000     |  0.893      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                71_o |         Local|      |    2 |  0.000     |  0.787      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                87_o |         Local|      |    2 |  0.000     |  0.519      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                67_o |         Local|      |    2 |  0.000     |  0.562      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                69_o |         Local|      |    2 |  0.000     |  0.519      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                85_o |         Local|      |    2 |  0.000     |  0.792      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                65_o |         Local|      |    2 |  0.000     |  0.454      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                67_o |         Local|      |    2 |  0.000     |  1.093      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                47_o |         Local|      |    2 |  0.000     |  0.576      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                63_o |         Local|      |    2 |  0.000     |  0.851      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_8 |              |      |      |            |             |
-|                65_o |         Local|      |    2 |  0.000     |  0.820      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                45_o |         Local|      |    2 |  0.000     |  0.778      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                61_o |         Local|      |    2 |  0.000     |  0.583      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                27_o |         Local|      |    2 |  0.000     |  0.338      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                43_o |         Local|      |    2 |  0.000     |  0.562      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                59_o |         Local|      |    2 |  0.000     |  1.032      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                25_o |         Local|      |    2 |  0.000     |  0.583      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                41_o |         Local|      |    2 |  0.000     |  0.481      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                57_o |         Local|      |    2 |  0.000     |  0.719      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                39_o |         Local|      |    2 |  0.000     |  0.583      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                55_o |         Local|      |    2 |  0.000     |  0.482      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                37_o |         Local|      |    2 |  0.000     |  0.977      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                53_o |         Local|      |    2 |  0.000     |  0.794      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                35_o |         Local|      |    2 |  0.000     |  1.171      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                51_o |         Local|      |    2 |  0.000     |  0.680      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                33_o |         Local|      |    2 |  0.000     |  1.132      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                49_o |         Local|      |    2 |  0.000     |  0.592      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                31_o |         Local|      |    2 |  0.000     |  0.604      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/count_time/d |              |      |      |            |             |
-|_fin_d_type[3]_AND_9 |              |      |      |            |             |
-|                29_o |         Local|      |    2 |  0.000     |  0.519      |
+|measure/count_time/a |              |      |      |            |             |
+|               d_out |         Local|      |    4 |  0.000     |  2.352      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/r |              |      |      |            |             |
-|  st_dst_1_MUX_584_o |         Local|      |    1 |  0.000     |  0.371      |
+|  st_dst_1_MUX_584_o |         Local|      |    1 |  0.000     |  0.602      |
 +---------------------+--------------+------+------+------------+-------------+
 |measure/count_time/d |              |      |      |            |             |
 |st_1_d_type[3]_MUX_6 |              |      |      |            |             |
-|                06_o |         Local|      |    1 |  0.000     |  0.373      |
+|                06_o |         Local|      |    1 |  0.000     |  0.578      |
++---------------------+--------------+------+------+------------+-------------+
+|measure/count_time/d |              |      |      |            |             |
+|st_1_d_type[3]_MUX_6 |              |      |      |            |             |
+|                24_o |         Local|      |    1 |  0.000     |  0.578      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -1166,7 +1291,7 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  PERIOD analysis for net "DCM/clkfx" deriv | SETUP       |     0.561ns|     9.439ns|       0|           0
+  PERIOD analysis for net "DCM/clkfx" deriv | SETUP       |     0.564ns|     9.410ns|       0|           0
   ed from  NET "DCM/clkin1" PERIOD = 31.25  | HOLD        |     0.401ns|            |       0|           0
   ns HIGH 50%                               |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
@@ -1185,8 +1310,8 @@ Derived Constraints for DCM/clkin1
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|DCM/clkin1                     |     31.250ns|     16.000ns|     29.497ns|            0|            0|            0|       472511|
-| DCM/clkfx                     |     10.000ns|      9.439ns|          N/A|            0|            0|       472511|            0|
+|DCM/clkin1                     |     31.250ns|     16.000ns|     29.406ns|            0|            0|            0|       380277|
+| DCM/clkfx                     |     10.000ns|      9.410ns|          N/A|            0|            0|       380277|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 All constraints were met.
@@ -1196,19 +1321,19 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-WARNING:Par:283 - There are 28 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+WARNING:Par:283 - There are 27 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 29 secs 
-Total CPU time to PAR completion: 30 secs 
+Total REAL time to PAR completion: 23 secs 
+Total CPU time to PAR completion: 24 secs 
 
-Peak Memory Usage:  4511 MB
+Peak Memory Usage:  4510 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.
 Timing: Completed - No errors found.
 
 Number of error messages: 0
-Number of warning messages: 30
+Number of warning messages: 29
 Number of info messages: 0
 
 Writing design to file Measurement.ncd

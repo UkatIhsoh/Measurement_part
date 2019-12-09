@@ -105,7 +105,7 @@ architecture fetch of data_fetch is
 	signal p : reg;
 	signal n : reg; 
 	
-	constant start_adr : std_logic_vector(19 downto 0):= X"00000";
+	constant start_adr : std_logic_vector(19 downto 0):= X"00001";
 	constant end_adr : std_logic_vector(19 downto 0):= X"00007";
 	constant ddsdata_adr : std_logic_vector(19 downto 0):= X"00F00";
 	
@@ -130,7 +130,7 @@ begin
 		if msr_start = '1' then
 			n.start <= '1';
 		else
-			if p.addr = X"FFFFF" then
+			if p.addr = X"00003" then
 				n.start <= '0';
 				if p.finish = '0' then
 					n.finish <= '1';
