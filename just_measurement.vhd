@@ -138,7 +138,7 @@ architecture measure of just_measurement is
 				d_type : in std_logic_vector(3 downto 0); 
 				rd_comp : out std_logic;
 				data_full : out std_logic; 
-				data : in std_logic_vector(63 downto 0); 
+				data : in std_logic_vector(31 downto 0); 
 
 				output_rf : out std_logic;
 				output_dds : out std_logic;
@@ -168,7 +168,8 @@ architecture measure of just_measurement is
 	signal ad_out : std_logic;
 	
 	--テスト用
-	signal test : std_logic;
+	signal test : std_logic:='0';
+	signal led_blink : std_logic:='0';
 
 begin
 
@@ -219,11 +220,18 @@ begin
 					 d_type => d_type,
 					 rd_comp => rd_fin,
 					 data_full => d_wait,
-					 data => d_data, 
+					 data => d_data(31 downto 0), 
 
 					 output_rf => rf_out,
 					 output_dds => dds_set,
 					 output_ad => ad_out);
+					 
+	process(d_fin)
+	begin
+		if d_fin = '1' then
+			led_blink <= not led_blink;
+		end if;
+	end process;
 					 
 	msr_finish <= m_fin;
 	sdr_req <= s_req;
@@ -231,7 +239,7 @@ begin
 	rf_pulse <= rf_out;
 	
 	test_dout <= d_data;
-	test_bit <= c_en;
+	test_bit <= led_blink;
 
 	end measure;
 

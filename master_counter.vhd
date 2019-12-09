@@ -43,7 +43,7 @@ use work.data_types.all;
 --			d_type : in std_logic_vector(3 downto 0); 
 --			rd_comp : out std_logic;
 --			data_full : out std_logic; 
---			data : in std_logic_vector(63 downto 0); 
+--			data : in std_logic_vector(31 downto 0); 
 --
 --			output_rf : out std_logic;
 --			output_dds : out std_logic;
@@ -73,7 +73,7 @@ entity master_counter is
 			d_type : in std_logic_vector(3 downto 0); --どのタイプのでーたが来るのかを確認
 			rd_comp : out std_logic; --データの読み取りが終わったかどうか見る
 			data_full : out std_logic; --データが満タンなのを知らせる
-			data : in std_logic_vector(63 downto 0); 
+			data : in std_logic_vector(31 downto 0); 
 			
 			output_rf : out std_logic; --出力
 			output_dds : out std_logic;
@@ -83,14 +83,14 @@ end master_counter;
 architecture count_time of master_counter is
 
 	type reg is record
-		t_1 : std_logic_vector(63 downto 0);		--カウント上限
-		t_2 : std_logic_vector(63 downto 0);		--カウント上限
-		t_3 : std_logic_vector(63 downto 0);		--カウント上限
-		t_4 : std_logic_vector(63 downto 0);		--カウント上限
-		t_5 : std_logic_vector(63 downto 0);		--カウント上限
-		t_6 : std_logic_vector(63 downto 0);		--カウント上限
-		t_7 : std_logic_vector(63 downto 0);		--カウント上限
-		t_0 : std_logic_vector(63 downto 0);		--カウント上限
+		t_1 : std_logic_vector(31 downto 0);		--カウント上限
+		t_2 : std_logic_vector(31 downto 0);		--カウント上限
+		t_3 : std_logic_vector(31 downto 0);		--カウント上限
+		t_4 : std_logic_vector(31 downto 0);		--カウント上限
+		t_5 : std_logic_vector(31 downto 0);		--カウント上限
+		t_6 : std_logic_vector(31 downto 0);		--カウント上限
+		t_7 : std_logic_vector(31 downto 0);		--カウント上限
+		t_0 : std_logic_vector(31 downto 0);		--カウント上限
 	end record;	
 	
 	signal p : reg;
@@ -174,28 +174,44 @@ begin
 			if d_fin = '1' then
 				case d_type is
 					when first =>		
-						p.t_1 <= data;	comp_rd <= '1';	dst_1 <= '1';
+						p.t_1 <= data;	
+						comp_rd <= '1';	
+						dst_1 <= '1';
 					
 					when second =>		
-						p.t_2 <= data;	comp_rd <= '1';	dst_2 <= '1';
+						p.t_2 <= data;	
+						comp_rd <= '1';	
+						dst_2 <= '1';
 						
 					when third =>		
-						p.t_3 <= data;	comp_rd <= '1';	dst_3 <= '1';
+						p.t_3 <= data;	
+						comp_rd <= '1';	
+						dst_3 <= '1';
 					
 					when fourth =>		
-						p.t_4 <= data;	comp_rd <= '1';	dst_4 <= '1';
+						p.t_4 <= data;	
+						comp_rd <= '1';	
+						dst_4 <= '1';
 						
 					when fifth =>		
-						p.t_5 <= data;	comp_rd <= '1';	dst_5 <= '1';
+						p.t_5 <= data;
+						comp_rd <= '1';
+						dst_5 <= '1';
 					
 					when sixth =>		
-						p.t_6 <= data;	comp_rd <= '1';	dst_6 <= '1';
+						p.t_6 <= data;	
+						comp_rd <= '1';	
+						dst_6 <= '1';
 						
 					when seventh =>	
-						p.t_7 <= data;	comp_rd <= '1';	dst_7 <= '1';
+						p.t_7 <= data;	
+						comp_rd <= '1';	
+						dst_7 <= '1';
 					
 					when eighth =>		
-						p.t_0 <= data;	comp_rd <= '1';	dst_0 <= '1';
+						p.t_0 <= data;	
+						comp_rd <= '1';	
+						dst_0 <= '1';
 						
 					when others =>		
 						comp_rd <= '1';
@@ -211,28 +227,44 @@ begin
 			if d_fin = '1' then
 				case d_type is
 					when first =>		
-						n.t_1 <= data;	comp_rd <= '1';	dst_1 <= '1';
+						n.t_1 <= data;	
+						comp_rd <= '1';	
+						dst_1 <= '1';
 					
 					when second =>		
-						n.t_2 <= data;	comp_rd <= '1';	dst_2 <= '1';
+						n.t_2 <= data;
+						comp_rd <= '1';	
+						dst_2 <= '1';
 						
 					when third =>		
-						n.t_3 <= data;	comp_rd <= '1';	dst_3 <= '1';
+						n.t_3 <= data;	
+						comp_rd <= '1';	
+						dst_3 <= '1';
 					
 					when fourth =>		
-						n.t_4 <= data;	comp_rd <= '1';	dst_4 <= '1';
+						n.t_4 <= data;
+						comp_rd <= '1';	
+						dst_4 <= '1';
 						
 					when fifth =>		
-						n.t_5 <= data;	comp_rd <= '1';	dst_5 <= '1';
+						n.t_5 <= data;	
+						comp_rd <= '1';	
+						dst_5 <= '1';
 					
 					when sixth =>		
-						n.t_6 <= data;	comp_rd <= '1';	dst_6 <= '1';
+						n.t_6 <= data;	
+						comp_rd <= '1';	
+						dst_6 <= '1';
 						
 					when seventh =>	
-						n.t_7 <= data;	comp_rd <= '1';	dst_7 <= '1';
+						n.t_7 <= data;
+						comp_rd <= '1';	
+						dst_7 <= '1';
 					
 					when eighth =>		
-						n.t_0 <= data;	comp_rd <= '1';	dst_0 <= '1';
+						n.t_0 <= data;	
+						comp_rd <= '1';	
+						dst_0 <= '1';
 						
 					when others =>		
 						comp_rd <= '1';

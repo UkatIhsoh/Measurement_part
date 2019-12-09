@@ -23,7 +23,7 @@ use IEEE.STD_LOGIC_arith.ALL;
 use IEEE.STD_LOGIC_unsigned.ALL;
 
 -- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
+-- arithmetic functions with Signed or Unsigned values 
 --use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
@@ -277,7 +277,7 @@ begin
 	msr_start <= WING_B(2);
 	--start <= WING_A(1);
 	
-	WING_A(15 downto 1) <= test_d(15 downto 1); --テスト用
+	WING_A(15 downto 1) <= test_d(31 downto 17); --テスト用
 	WING_A(0) <= test_b; --テスト用
 	--WING_A(15 downto 0) <= data64(15 downto 0); --テスト用
 	--WING_A(0) <= fin_sig;

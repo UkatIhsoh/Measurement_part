@@ -218,10 +218,12 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575633720" xil_pn:in_ck="-8470602719487341389" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-5248531395013621828" xil_pn:start_ts="1575633654">
+    <transform xil_pn:end_ts="1575875120" xil_pn:in_ck="-8470602719487341389" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-5248531395013621828" xil_pn:start_ts="1575875091">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Measurement.lso"/>
       <outfile xil_pn:name="Measurement.ngc"/>
       <outfile xil_pn:name="Measurement.ngr"/>
@@ -238,27 +240,19 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1575535207" xil_pn:in_ck="-4688634075797550014" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-2890865740508142194" xil_pn:start_ts="1575535201">
+    <transform xil_pn:end_ts="1575875126" xil_pn:in_ck="-4688634075797550014" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-2890865740508142194" xil_pn:start_ts="1575875120">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Measurement.bld"/>
       <outfile xil_pn:name="Measurement.ngd"/>
       <outfile xil_pn:name="Measurement_ngdbuild.xrpt"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1575535222" xil_pn:in_ck="-4688634075797550013" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1448924893915930207" xil_pn:start_ts="1575535207">
+    <transform xil_pn:end_ts="1575875152" xil_pn:in_ck="-4688634075797550013" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1448924893915930207" xil_pn:start_ts="1575875126">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Measurement.pcf"/>
       <outfile xil_pn:name="Measurement_map.map"/>
       <outfile xil_pn:name="Measurement_map.mrp"/>
@@ -269,11 +263,10 @@
       <outfile xil_pn:name="Measurement_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1575535240" xil_pn:in_ck="-2885895770500578084" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="93661965788626211" xil_pn:start_ts="1575535222">
+    <transform xil_pn:end_ts="1575875185" xil_pn:in_ck="-2885895770500578084" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="93661965788626211" xil_pn:start_ts="1575875152">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Measurement.ncd"/>
       <outfile xil_pn:name="Measurement.pad"/>
       <outfile xil_pn:name="Measurement.par"/>
@@ -285,13 +278,10 @@
       <outfile xil_pn:name="Measurement_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1575535250" xil_pn:in_ck="2693278652744572649" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1575535240">
+    <transform xil_pn:end_ts="1575875199" xil_pn:in_ck="2693278652744572649" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1575875185">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Measurement.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="measurement.bgn"/>
@@ -301,10 +291,9 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1575535240" xil_pn:in_ck="-4688634075797550145" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1575535234">
+    <transform xil_pn:end_ts="1575875185" xil_pn:in_ck="-4688634075797550145" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1575875175">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Measurement.twr"/>
       <outfile xil_pn:name="Measurement.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>

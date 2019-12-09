@@ -37,6 +37,10 @@ package data_types is
 	constant sixth : std_logic_vector(3 downto 0):= X"6";
 	constant seventh : std_logic_vector(3 downto 0):= X"7";
 	constant eighth : std_logic_vector(3 downto 0):= X"8";
+	
+	constant dds_A : std_logic_vector(3 downto 0):= X"A";
+	constant dds_B : std_logic_vector(3 downto 0):= X"B";
+	constant dds_C : std_logic_vector(3 downto 0):= X"C";
 
 end data_types;
 

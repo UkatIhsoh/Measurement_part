@@ -71,7 +71,8 @@ entity data_decode is
 			read_fin : in std_logic; --master_counterがデータの読み込みを終了したことを知らせる
 			decode_wait : in std_logic; --master_counterは現在データが満タンです
 			
-			data_out : out std_logic_vector(63 downto 0)); --change
+			d_data_out : out std_logic_vector(39 downto 0); --dds用のデータ
+			c_data_out : out std_logic_vector(31 downto 0)); --マスターカウンタ用のデータ
 end data_decode;
 
 architecture decode of data_decode is
@@ -79,7 +80,7 @@ architecture decode of data_decode is
 	type state_t is (idle, count); --状態名（アイドル、カウンター）
 
 	type reg is record
-		data : std_logic_vector(63 downto 0);
+		data : std_logic_vector(39 downto 0);
 		d_type : std_logic_vector(3 downto 0); --data_type
 		d_en : std_logic; --decode_enable
 		d_fin : std_logic; --decode_fin
@@ -97,7 +98,7 @@ begin
 
 	decode_en <= p.d_en;
 
-	data_out <= p.data;
+	c_data_out <= p.data(31 downto 0);
 	decode_fin <= p.d_fin;
 	data_type <= p.d_type;
 
@@ -111,10 +112,10 @@ begin
 						case p.sequence is
 							when first =>
 								if p.d_num = "00" then
-									n.data(15 downto 0) <= data64(15 downto 0);
+									n.data(31 downto 0) <= data64(31 downto 0);
 									n.d_num <= "01";
 								elsif p.d_num = "01" then
-									n.data(31 downto 16) <= data64(31 downto 16);
+									n.data(63 downto 32) <= data64(63 downto 32);
 									n.d_num <= "10";
 								elsif p.d_num = "10" then
 									n.data(47 downto 32) <= data64(47 downto 32);
