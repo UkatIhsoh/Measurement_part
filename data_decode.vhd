@@ -77,7 +77,7 @@ end data_decode;
 
 architecture decode of data_decode is
 
-	type state_t is (idle, count); --状態名（アイドル、カウンター）
+	type state_t is (idle, count, cycle_end); --状態名（アイドル、カウンター、処理サイクル終了）
 
 	type reg is record
 		data : std_logic_vector(39 downto 0);
@@ -111,134 +111,60 @@ begin
 					if p.d_en = '0' then
 						case p.sequence is
 							when first =>
-								if p.d_num = "00" then
-									n.data(31 downto 0) <= data64(31 downto 0);
-									n.d_num <= "01";
-								elsif p.d_num = "01" then
-									n.data(63 downto 32) <= data64(63 downto 32);
-									n.d_num <= "10";
-								elsif p.d_num = "10" then
-									n.data(47 downto 32) <= data64(47 downto 32);
-									n.d_num <= "11";
-								elsif p.d_num = "11" then
-									n.data(63 downto 48) <= data64(63 downto 48);
-									n.d_type <= first;
-									n.d_num <= "00";
-									n.sequence <= second;
-									n.state <= count;
-								end if;
+								n.data(31 downto 0) <= data64(31 downto 0);
+								n.d_type <= first;
+								n.sequence <= second;
+								n.state <= count;
 								
 							when second =>
-								if p.d_num = "00" then
-									n.data(15 downto 0) <= data64(15 downto 0);
-									n.d_num <= "01";
-								elsif p.d_num = "01" then
-									n.data(31 downto 16) <= data64(31 downto 16);
-									n.d_num <= "10";
-								elsif p.d_num = "10" then
-									n.data(47 downto 32) <= data64(47 downto 32);
-									n.d_num <= "11";
-								elsif p.d_num = "11" then
-									n.data(63 downto 48) <= data64(63 downto 48);
-									n.d_type <= second;
-									n.d_num <= "00";
-									n.sequence <= third;
-									n.state <= count;
-								end if;
-								
+								n.data(31 downto 0) <= data64(63 downto 32);
+								n.d_type <= second;
+								n.sequence <= third;
+								n.d_en <= '1';
+								n.state <= count;
+	
 							when third =>
-								if p.d_num = "00" then
-									n.data(15 downto 0) <= data64(15 downto 0);
-									n.d_num <= "01";
-								elsif p.d_num = "01" then
-									n.data(31 downto 16) <= data64(31 downto 16);
-									n.d_num <= "10";
-								elsif p.d_num = "10" then
-									n.data(47 downto 32) <= data64(47 downto 32);
-									n.d_num <= "11";
-								elsif p.d_num = "11" then
-									n.data(63 downto 48) <= data64(63 downto 48);
-									n.d_type <= third;
-									n.d_num <= "00";
-									n.sequence <= fourth;
-									n.state <= count;
-								end if;
+								n.data(31 downto 0) <= data64(31 downto 0);
+								n.d_type <= third;
+								n.sequence <= fourth;
+								n.state <= count;
 								
 							when fourth =>
-								if p.d_num = "00" then
-									n.data(15 downto 0) <= data64(15 downto 0);
-									n.d_num <= "01";
-								elsif p.d_num = "01" then
-									n.data(31 downto 16) <= data64(31 downto 16);
-									n.d_num <= "10";
-								elsif p.d_num = "10" then
-									n.data(47 downto 32) <= data64(47 downto 32);
-									n.d_num <= "11";
-								elsif p.d_num = "11" then
-									n.data(63 downto 48) <= data64(63 downto 48);
-									n.d_type <= fourth;
-									n.d_num <= "00";
-									n.sequence <= fifth;
-									n.state <= count;
-								end if;
+								n.data(31 downto 0) <= data64(63 downto 32);
+								n.d_type <= fourth;
+								n.sequence <= fifth;
+								n.d_en <= '1';
+								n.state <= count;
 								
 							when fifth =>
-								if p.d_num = "00" then
-									n.data(15 downto 0) <= data64(15 downto 0);
-									n.d_num <= "01";
-								elsif p.d_num = "01" then
-									n.data(31 downto 16) <= data64(31 downto 16);
-									n.d_num <= "10";
-								elsif p.d_num = "10" then
-									n.data(47 downto 32) <= data64(47 downto 32);
-									n.d_num <= "11";
-								elsif p.d_num = "11" then
-									n.data(63 downto 48) <= data64(63 downto 48);
-									n.d_type <= fifth;
-									n.d_num <= "00";
-									n.sequence <= sixth;
-									n.state <= count;
-								end if;
+								n.data(31 downto 0) <= data64(31 downto 0);
+								n.d_type <= fifth;
+								n.sequence <= sixth;
+								n.state <= count;
 								
 							when sixth =>
-								if p.d_num = "00" then
-									n.data(15 downto 0) <= data64(15 downto 0);
-									n.d_num <= "01";
-								elsif p.d_num = "01" then
-									n.data(31 downto 16) <= data64(31 downto 16);
-									n.d_num <= "10";
-								elsif p.d_num = "10" then
-									n.data(47 downto 32) <= data64(47 downto 32);
-									n.d_num <= "11";
-								elsif p.d_num = "11" then
-									n.data(63 downto 48) <= data64(63 downto 48);
-									n.d_type <= sixth;
-									n.d_num <= "00";
-									n.sequence <= seventh;
-									n.state <= count;
-								end if;
+								n.data(31 downto 0) <= data64(63 downto 32);
+								n.d_type <= sixth;
+								n.sequence <= seventh;
+								n.d_en <= '1';
+								n.state <= count;
 								
 							when seventh =>
-								if p.d_num = "00" then
-									n.data(15 downto 0) <= data64(15 downto 0);
-									n.d_num <= "01";
-								elsif p.d_num = "01" then
-									n.data(31 downto 16) <= data64(31 downto 16);
-									n.d_num <= "10";
-								elsif p.d_num = "10" then
-									n.data(47 downto 32) <= data64(47 downto 32);
-									n.d_num <= "11";
-								elsif p.d_num = "11" then
-									n.data(63 downto 48) <= data64(63 downto 48);
-									n.d_type <= seventh;
-									n.d_num <= "00";
-									n.sequence <= first;
-									n.state <= count;
-								end if;
+								n.data(31 downto 0) <= data64(31 downto 0);
+								n.d_type <= seventh;
+								n.sequence <= first;
+								n.d_en <= '1';
+								n.state <= count;
+								
+							when dds_A =>
+							
+							when dds_B =>
+							
+							when dds_C =>
 							
 							when others =>
-									n.sequence <= first;
-									n.state <= idle;	
+								n.sequence <= first;
+								n.state <= idle;	
 						end case;
 					end if;
 				end if;
@@ -250,11 +176,14 @@ begin
 					
 				when count =>
 					if read_fin = '0' then
-						n.d_fin <= '1';
+						if p.d_fin = '0' then
+							n.d_fin <= '1';
+						end if;
 					else
-						n.d_fin <= '0';
-						n.d_en <= '1';
-						n.state <= idle;
+						if p.d_fin = '1' then
+							n.d_fin <= '0';
+							n.state <= idle;
+						end if;
 					end if;
 					
 				when others =>

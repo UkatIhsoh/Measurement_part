@@ -69,19 +69,172 @@ Timing constraint: PERIOD analysis for net "DCM/clkfx" derived from  NET
 cycle corrected to HIGH 5 nS  
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 471965 paths analyzed, 2682 endpoints analyzed, 0 failing endpoints
+ 472511 paths analyzed, 3029 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   9.406ns.
+ Minimum period is   9.439ns.
 --------------------------------------------------------------------------------
 
-Paths for end point read_sec/p_data_0 (SLICE_X4Y42.AX), 1 path
+Paths for end point measure/count_time/p_t_3_28_C_28 (SLICE_X18Y39.BX), 898 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     0.570ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ctrl/captured_0 (FF)
-  Destination:          read_sec/p_data_0 (FF)
+Slack (setup path):     0.561ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               measure/count_time/p_t_5_24_P_24 (FF)
+  Destination:          measure/count_time/p_t_3_28_C_28 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      9.071ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.133ns (0.677 - 0.810)
+  Source Clock:         clk100 rising at 0.000ns
+  Destination Clock:    clk100 rising at 10.000ns
+  Clock Uncertainty:    0.235ns
+
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: measure/count_time/p_t_5_24_P_24 to measure/count_time/p_t_3_28_C_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y10.AQ       Tcko                  0.525   measure/count_time/p_t_5_24_P_24
+                                                       measure/count_time/p_t_5_24_P_24
+    SLICE_X5Y11.B4       net (fanout=2)        1.272   measure/count_time/p_t_5_24_P_24
+    SLICE_X5Y11.B        Tilo                  0.259   measure/count_time/p_t_5_24_C_24
+                                                       measure/count_time/p_t_5_241
+    SLICE_X10Y19.A6      net (fanout=3)        1.153   measure/count_time/p_t_5_24
+    SLICE_X10Y19.COUT    Topcya                0.472   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_9_o_cy<11>
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_9_o_lut<8>
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_9_o_cy<11>
+    SLICE_X10Y20.CIN     net (fanout=1)        0.003   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_9_o_cy<11>
+    SLICE_X10Y20.DMUX    Tcind                 0.267   measure/count_time/counter[63]_GND_190_o_equal_9_o
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_9_o_cy<15>
+    SLICE_X11Y30.D3      net (fanout=15)       1.941   measure/count_time/counter[63]_GND_190_o_equal_9_o
+    SLICE_X11Y30.D       Tilo                  0.259   measure/count_time/p_t_2_0_P_0
+                                                       measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT1101_10
+    SLICE_X17Y39.A3      net (fanout=21)       2.075   measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT11019
+    SLICE_X17Y39.A       Tilo                  0.259   measure/count_time/p_t_3_28_P_28
+                                                       measure/count_time/Mmux_p_t_3[31]_p_t_3[31]_mux_100_OUT421
+    SLICE_X18Y39.BX      net (fanout=1)        0.472   measure/count_time/p_t_3[31]_p_t_3[31]_mux_100_OUT<28>
+    SLICE_X18Y39.CLK     Tdick                 0.114   measure/count_time/p_t_3_28_C_28
+                                                       measure/count_time/p_t_3_28_C_28
+    -------------------------------------------------  ---------------------------
+    Total                                      9.071ns (2.155ns logic, 6.916ns route)
+                                                       (23.8% logic, 76.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.607ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               measure/count_time/p_t_7_0_P_0 (FF)
+  Destination:          measure/count_time/p_t_3_28_C_28 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      9.127ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.031ns (0.677 - 0.708)
+  Source Clock:         clk100 rising at 0.000ns
+  Destination Clock:    clk100 rising at 10.000ns
+  Clock Uncertainty:    0.235ns
+
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: measure/count_time/p_t_7_0_P_0 to measure/count_time/p_t_3_28_C_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y22.CQ      Tcko                  0.430   measure/count_time/p_t_7_0_P_0
+                                                       measure/count_time/p_t_7_0_P_0
+    SLICE_X15Y22.B3      net (fanout=2)        0.584   measure/count_time/p_t_7_0_P_0
+    SLICE_X15Y22.B       Tilo                  0.259   measure/count_time/p_t_7_0_C_0
+                                                       measure/count_time/p_t_7_01
+    SLICE_X16Y20.A4      net (fanout=3)        1.551   measure/count_time/p_t_7_0
+    SLICE_X16Y20.COUT    Topcya                0.474   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<3>
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_lut<0>
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<3>
+    SLICE_X16Y21.CIN     net (fanout=1)        0.003   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<3>
+    SLICE_X16Y21.COUT    Tbyp                  0.093   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<7>
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<7>
+    SLICE_X16Y22.CIN     net (fanout=1)        0.003   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<7>
+    SLICE_X16Y22.COUT    Tbyp                  0.093   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<11>
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<11>
+    SLICE_X16Y23.CIN     net (fanout=1)        0.003   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<11>
+    SLICE_X16Y23.DMUX    Tcind                 0.305   measure/count_time/GND_190_o_PWR_39_o_MUX_511_o
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<15>
+    SLICE_X11Y30.D2      net (fanout=14)       2.150   measure/count_time/GND_190_o_PWR_39_o_MUX_511_o
+    SLICE_X11Y30.D       Tilo                  0.259   measure/count_time/p_t_2_0_P_0
+                                                       measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT1101_10
+    SLICE_X17Y39.A3      net (fanout=21)       2.075   measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT11019
+    SLICE_X17Y39.A       Tilo                  0.259   measure/count_time/p_t_3_28_P_28
+                                                       measure/count_time/Mmux_p_t_3[31]_p_t_3[31]_mux_100_OUT421
+    SLICE_X18Y39.BX      net (fanout=1)        0.472   measure/count_time/p_t_3[31]_p_t_3[31]_mux_100_OUT<28>
+    SLICE_X18Y39.CLK     Tdick                 0.114   measure/count_time/p_t_3_28_C_28
+                                                       measure/count_time/p_t_3_28_C_28
+    -------------------------------------------------  ---------------------------
+    Total                                      9.127ns (2.286ns logic, 6.841ns route)
+                                                       (25.0% logic, 75.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.659ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               measure/count_time/p_t_7_0_C_0 (FF)
+  Destination:          measure/count_time/p_t_3_28_C_28 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      9.075ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.031ns (0.677 - 0.708)
+  Source Clock:         clk100 rising at 0.000ns
+  Destination Clock:    clk100 rising at 10.000ns
+  Clock Uncertainty:    0.235ns
+
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: measure/count_time/p_t_7_0_C_0 to measure/count_time/p_t_3_28_C_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y22.AQ      Tcko                  0.430   measure/count_time/p_t_7_0_C_0
+                                                       measure/count_time/p_t_7_0_C_0
+    SLICE_X15Y22.B1      net (fanout=2)        0.532   measure/count_time/p_t_7_0_C_0
+    SLICE_X15Y22.B       Tilo                  0.259   measure/count_time/p_t_7_0_C_0
+                                                       measure/count_time/p_t_7_01
+    SLICE_X16Y20.A4      net (fanout=3)        1.551   measure/count_time/p_t_7_0
+    SLICE_X16Y20.COUT    Topcya                0.474   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<3>
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_lut<0>
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<3>
+    SLICE_X16Y21.CIN     net (fanout=1)        0.003   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<3>
+    SLICE_X16Y21.COUT    Tbyp                  0.093   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<7>
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<7>
+    SLICE_X16Y22.CIN     net (fanout=1)        0.003   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<7>
+    SLICE_X16Y22.COUT    Tbyp                  0.093   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<11>
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<11>
+    SLICE_X16Y23.CIN     net (fanout=1)        0.003   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<11>
+    SLICE_X16Y23.DMUX    Tcind                 0.305   measure/count_time/GND_190_o_PWR_39_o_MUX_511_o
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_13_o_cy<15>
+    SLICE_X11Y30.D2      net (fanout=14)       2.150   measure/count_time/GND_190_o_PWR_39_o_MUX_511_o
+    SLICE_X11Y30.D       Tilo                  0.259   measure/count_time/p_t_2_0_P_0
+                                                       measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT1101_10
+    SLICE_X17Y39.A3      net (fanout=21)       2.075   measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT11019
+    SLICE_X17Y39.A       Tilo                  0.259   measure/count_time/p_t_3_28_P_28
+                                                       measure/count_time/Mmux_p_t_3[31]_p_t_3[31]_mux_100_OUT421
+    SLICE_X18Y39.BX      net (fanout=1)        0.472   measure/count_time/p_t_3[31]_p_t_3[31]_mux_100_OUT<28>
+    SLICE_X18Y39.CLK     Tdick                 0.114   measure/count_time/p_t_3_28_C_28
+                                                       measure/count_time/p_t_3_28_C_28
+    -------------------------------------------------  ---------------------------
+    Total                                      9.075ns (2.286ns logic, 6.789ns route)
+                                                       (25.2% logic, 74.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ctrl/r_data_out_1_8 (SLICE_X3Y44.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     0.576ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ctrl/captured_8 (FF)
+  Destination:          ctrl/r_data_out_1_8 (FF)
   Requirement:          5.000ns
-  Data Path Delay:      3.523ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.672ns (0.630 - 1.302)
+  Data Path Delay:      3.576ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.613ns (0.730 - 1.343)
   Source Clock:         clk100 falling at 5.000ns
   Destination Clock:    clk100 rising at 10.000ns
   Clock Uncertainty:    0.235ns
@@ -92,29 +245,29 @@ Slack (setup path):     0.570ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.400ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: ctrl/captured_0 to read_sec/p_data_0
+  Maximum Data Path at Slow Process Corner: ctrl/captured_8 to ctrl/r_data_out_1_8
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    ILOGIC_X0Y46.Q4      Tickq                 1.778   ctrl/captured<0>
-                                                       ctrl/captured_0
-    SLICE_X4Y42.AX       net (fanout=2)        1.660   ctrl/captured<0>
-    SLICE_X4Y42.CLK      Tdick                 0.085   read_sec/p_data<3>
-                                                       read_sec/p_data_0
+    ILOGIC_X0Y30.Q4      Tickq                 1.778   ctrl/captured<8>
+                                                       ctrl/captured_8
+    SLICE_X3Y44.AX       net (fanout=4)        1.684   ctrl/captured<8>
+    SLICE_X3Y44.CLK      Tdick                 0.114   ctrl/r_data_out_1<11>
+                                                       ctrl/r_data_out_1_8
     -------------------------------------------------  ---------------------------
-    Total                                      3.523ns (1.863ns logic, 1.660ns route)
+    Total                                      3.576ns (1.892ns logic, 1.684ns route)
                                                        (52.9% logic, 47.1% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point measure/count_time/p_t_6_1_P_1 (SLICE_X9Y8.AX), 898 paths
+Paths for end point measure/count_time/p_t_7_9_C_9 (SLICE_X19Y9.AX), 898 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     0.594ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               measure/count_time/p_t_1_3_C_3 (FF)
-  Destination:          measure/count_time/p_t_6_1_P_1 (FF)
+Slack (setup path):     0.579ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               measure/count_time/p_t_1_26_C_26 (FF)
+  Destination:          measure/count_time/p_t_7_9_C_9 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      9.232ns (Levels of Logic = 7)
-  Clock Path Skew:      0.061ns (0.680 - 0.619)
+  Data Path Delay:      9.180ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.006ns (0.742 - 0.748)
   Source Clock:         clk100 rising at 0.000ns
   Destination Clock:    clk100 rising at 10.000ns
   Clock Uncertainty:    0.235ns
@@ -125,94 +278,42 @@ Slack (setup path):     0.594ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.400ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: measure/count_time/p_t_1_3_C_3 to measure/count_time/p_t_6_1_P_1
+  Maximum Data Path at Slow Process Corner: measure/count_time/p_t_1_26_C_26 to measure/count_time/p_t_7_9_C_9
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y26.CQ      Tcko                  0.430   measure/count_time/p_t_1_3_C_3
-                                                       measure/count_time/p_t_1_3_C_3
-    SLICE_X19Y26.B1      net (fanout=2)        0.715   measure/count_time/p_t_1_3_C_3
-    SLICE_X19Y26.B       Tilo                  0.259   measure/count_time/p_t_1_3_C_3
-                                                       measure/count_time/p_t_1_32
-    SLICE_X18Y26.B1      net (fanout=3)        1.753   measure/count_time/p_t_1_3
-    SLICE_X18Y26.COUT    Topcyb                0.448   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<3>
-                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_lut<1>
-                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<3>
-    SLICE_X18Y27.CIN     net (fanout=1)        0.003   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<3>
-    SLICE_X18Y27.COUT    Tbyp                  0.091   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<7>
-                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<7>
-    SLICE_X18Y28.CIN     net (fanout=1)        0.003   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<7>
-    SLICE_X18Y28.COUT    Tbyp                  0.091   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<11>
+    SLICE_X5Y42.AQ       Tcko                  0.430   measure/count_time/p_t_1_26_C_26
+                                                       measure/count_time/p_t_1_26_C_26
+    SLICE_X4Y42.B5       net (fanout=2)        1.151   measure/count_time/p_t_1_26_C_26
+    SLICE_X4Y42.B        Tilo                  0.254   measure/count_time/p_t_1_26_P_26
+                                                       measure/count_time/p_t_1_261
+    SLICE_X4Y31.A5       net (fanout=3)        1.170   measure/count_time/p_t_1_26
+    SLICE_X4Y31.COUT     Topcya                0.474   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<11>
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_lut<8>
                                                        measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<11>
-    SLICE_X18Y29.CIN     net (fanout=1)        0.003   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<11>
-    SLICE_X18Y29.DMUX    Tcind                 0.267   measure/count_time/counter[63]_GND_190_o_equal_1_o
+    SLICE_X4Y32.CIN      net (fanout=1)        0.135   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<11>
+    SLICE_X4Y32.DMUX     Tcind                 0.305   measure/count_time/counter[63]_GND_190_o_equal_1_o
                                                        measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<15>
-    SLICE_X15Y15.A5      net (fanout=79)       1.844   measure/count_time/counter[63]_GND_190_o_equal_1_o
-    SLICE_X15Y15.A       Tilo                  0.259   measure/count_time/p_t_6_15_P_15
-                                                       measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT1011_2
-    SLICE_X5Y9.A6        net (fanout=19)       1.896   measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT10111
-    SLICE_X5Y9.A         Tilo                  0.259   measure/count_time/p_t_6_1_C_1
-                                                       measure/count_time/Mmux_p_t_6[31]_p_t_6[31]_mux_103_OUT241
-    SLICE_X9Y8.AX        net (fanout=1)        0.797   measure/count_time/p_t_6[31]_p_t_6[31]_mux_103_OUT<1>
-    SLICE_X9Y8.CLK       Tdick                 0.114   measure/count_time/p_t_6_1_P_1
-                                                       measure/count_time/p_t_6_1_P_1
+    SLICE_X13Y23.A6      net (fanout=79)       1.868   measure/count_time/counter[63]_GND_190_o_equal_1_o
+    SLICE_X13Y23.A       Tilo                  0.259   measure/count_time/p_t_7_27_P_27
+                                                       measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT1011_1
+    SLICE_X14Y11.C6      net (fanout=19)       1.911   measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT1011
+    SLICE_X14Y11.C       Tilo                  0.235   measure/count_time/p_t_7_9_P_9
+                                                       measure/count_time/Mmux_p_t_7[31]_p_t_7[31]_mux_104_OUT641
+    SLICE_X19Y9.AX       net (fanout=1)        0.874   measure/count_time/p_t_7[31]_p_t_7[31]_mux_104_OUT<9>
+    SLICE_X19Y9.CLK      Tdick                 0.114   measure/count_time/p_t_7_9_C_9
+                                                       measure/count_time/p_t_7_9_C_9
     -------------------------------------------------  ---------------------------
-    Total                                      9.232ns (2.218ns logic, 7.014ns route)
-                                                       (24.0% logic, 76.0% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     0.830ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               measure/count_time/p_t_1_27_P_27 (FF)
-  Destination:          measure/count_time/p_t_6_1_P_1 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      8.987ns (Levels of Logic = 5)
-  Clock Path Skew:      0.052ns (0.768 - 0.716)
-  Source Clock:         clk100 rising at 0.000ns
-  Destination Clock:    clk100 rising at 10.000ns
-  Clock Uncertainty:    0.235ns
-
-  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.400ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: measure/count_time/p_t_1_27_P_27 to measure/count_time/p_t_6_1_P_1
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X21Y37.AQ      Tcko                  0.430   measure/count_time/p_t_1_27_P_27
-                                                       measure/count_time/p_t_1_27_P_27
-    SLICE_X20Y37.B5      net (fanout=2)        1.151   measure/count_time/p_t_1_27_P_27
-    SLICE_X20Y37.B       Tilo                  0.254   measure/count_time/p_t_1_27_C_27
-                                                       measure/count_time/p_t_1_271
-    SLICE_X18Y28.B5      net (fanout=3)        1.265   measure/count_time/p_t_1_27
-    SLICE_X18Y28.COUT    Topcyb                0.448   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<11>
-                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_lut<9>
-                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<11>
-    SLICE_X18Y29.CIN     net (fanout=1)        0.003   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<11>
-    SLICE_X18Y29.DMUX    Tcind                 0.267   measure/count_time/counter[63]_GND_190_o_equal_1_o
-                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<15>
-    SLICE_X15Y15.A5      net (fanout=79)       1.844   measure/count_time/counter[63]_GND_190_o_equal_1_o
-    SLICE_X15Y15.A       Tilo                  0.259   measure/count_time/p_t_6_15_P_15
-                                                       measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT1011_2
-    SLICE_X5Y9.A6        net (fanout=19)       1.896   measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT10111
-    SLICE_X5Y9.A         Tilo                  0.259   measure/count_time/p_t_6_1_C_1
-                                                       measure/count_time/Mmux_p_t_6[31]_p_t_6[31]_mux_103_OUT241
-    SLICE_X9Y8.AX        net (fanout=1)        0.797   measure/count_time/p_t_6[31]_p_t_6[31]_mux_103_OUT<1>
-    SLICE_X9Y8.CLK       Tdick                 0.114   measure/count_time/p_t_6_1_P_1
-                                                       measure/count_time/p_t_6_1_P_1
-    -------------------------------------------------  ---------------------------
-    Total                                      8.987ns (2.031ns logic, 6.956ns route)
+    Total                                      9.180ns (2.071ns logic, 7.109ns route)
                                                        (22.6% logic, 77.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     0.868ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               measure/count_time/p_t_1_19_P_19 (FF)
-  Destination:          measure/count_time/p_t_6_1_P_1 (FF)
+Slack (setup path):     0.753ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               measure/count_time/p_t_1_29_P_29 (FF)
+  Destination:          measure/count_time/p_t_7_9_C_9 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      8.947ns (Levels of Logic = 6)
-  Clock Path Skew:      0.050ns (0.680 - 0.630)
+  Data Path Delay:      9.009ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.003ns (0.742 - 0.745)
   Source Clock:         clk100 rising at 0.000ns
   Destination Clock:    clk100 rising at 10.000ns
   Clock Uncertainty:    0.235ns
@@ -223,49 +324,43 @@ Slack (setup path):     0.868ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.400ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: measure/count_time/p_t_1_19_P_19 to measure/count_time/p_t_6_1_P_1
+  Maximum Data Path at Slow Process Corner: measure/count_time/p_t_1_29_P_29 to measure/count_time/p_t_7_9_C_9
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y29.AQ      Tcko                  0.430   measure/count_time/p_t_1_19_P_19
-                                                       measure/count_time/p_t_1_19_P_19
-    SLICE_X20Y29.B5      net (fanout=2)        1.151   measure/count_time/p_t_1_19_P_19
-    SLICE_X20Y29.B       Tilo                  0.254   measure/count_time/p_t_1_19_C_19
-                                                       measure/count_time/p_t_1_191
-    SLICE_X18Y27.C2      net (fanout=3)        1.254   measure/count_time/p_t_1_19
-    SLICE_X18Y27.COUT    Topcyc                0.325   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<7>
-                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_lut<6>
-                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<7>
-    SLICE_X18Y28.CIN     net (fanout=1)        0.003   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<7>
-    SLICE_X18Y28.COUT    Tbyp                  0.091   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<11>
+    SLICE_X4Y41.AQ       Tcko                  0.525   measure/count_time/p_t_1_29_P_29
+                                                       measure/count_time/p_t_1_29_P_29
+    SLICE_X4Y41.B2       net (fanout=2)        0.535   measure/count_time/p_t_1_29_P_29
+    SLICE_X4Y41.B        Tilo                  0.254   measure/count_time/p_t_1_29_P_29
+                                                       measure/count_time/p_t_1_291
+    SLICE_X4Y31.B6       net (fanout=3)        1.511   measure/count_time/p_t_1_29
+    SLICE_X4Y31.COUT     Topcyb                0.483   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<11>
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_lut<9>
                                                        measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<11>
-    SLICE_X18Y29.CIN     net (fanout=1)        0.003   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<11>
-    SLICE_X18Y29.DMUX    Tcind                 0.267   measure/count_time/counter[63]_GND_190_o_equal_1_o
+    SLICE_X4Y32.CIN      net (fanout=1)        0.135   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<11>
+    SLICE_X4Y32.DMUX     Tcind                 0.305   measure/count_time/counter[63]_GND_190_o_equal_1_o
                                                        measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<15>
-    SLICE_X15Y15.A5      net (fanout=79)       1.844   measure/count_time/counter[63]_GND_190_o_equal_1_o
-    SLICE_X15Y15.A       Tilo                  0.259   measure/count_time/p_t_6_15_P_15
-                                                       measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT1011_2
-    SLICE_X5Y9.A6        net (fanout=19)       1.896   measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT10111
-    SLICE_X5Y9.A         Tilo                  0.259   measure/count_time/p_t_6_1_C_1
-                                                       measure/count_time/Mmux_p_t_6[31]_p_t_6[31]_mux_103_OUT241
-    SLICE_X9Y8.AX        net (fanout=1)        0.797   measure/count_time/p_t_6[31]_p_t_6[31]_mux_103_OUT<1>
-    SLICE_X9Y8.CLK       Tdick                 0.114   measure/count_time/p_t_6_1_P_1
-                                                       measure/count_time/p_t_6_1_P_1
+    SLICE_X13Y23.A6      net (fanout=79)       1.868   measure/count_time/counter[63]_GND_190_o_equal_1_o
+    SLICE_X13Y23.A       Tilo                  0.259   measure/count_time/p_t_7_27_P_27
+                                                       measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT1011_1
+    SLICE_X14Y11.C6      net (fanout=19)       1.911   measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT1011
+    SLICE_X14Y11.C       Tilo                  0.235   measure/count_time/p_t_7_9_P_9
+                                                       measure/count_time/Mmux_p_t_7[31]_p_t_7[31]_mux_104_OUT641
+    SLICE_X19Y9.AX       net (fanout=1)        0.874   measure/count_time/p_t_7[31]_p_t_7[31]_mux_104_OUT<9>
+    SLICE_X19Y9.CLK      Tdick                 0.114   measure/count_time/p_t_7_9_C_9
+                                                       measure/count_time/p_t_7_9_C_9
     -------------------------------------------------  ---------------------------
-    Total                                      8.947ns (1.999ns logic, 6.948ns route)
-                                                       (22.3% logic, 77.7% route)
+    Total                                      9.009ns (2.175ns logic, 6.834ns route)
+                                                       (24.1% logic, 75.9% route)
 
 --------------------------------------------------------------------------------
-
-Paths for end point ctrl/r_data_out_3_2 (SLICE_X4Y43.CX), 1 path
---------------------------------------------------------------------------------
-Slack (setup path):     0.609ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ctrl/captured_2 (FF)
-  Destination:          ctrl/r_data_out_3_2 (FF)
-  Requirement:          5.000ns
-  Data Path Delay:      3.484ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.672ns (0.633 - 1.305)
-  Source Clock:         clk100 falling at 5.000ns
+Slack (setup path):     0.773ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               measure/count_time/counter_14 (FF)
+  Destination:          measure/count_time/p_t_7_9_C_9 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      9.028ns (Levels of Logic = 5)
+  Clock Path Skew:      0.036ns (0.654 - 0.618)
+  Source Clock:         clk100 rising at 0.000ns
   Destination Clock:    clk100 rising at 10.000ns
   Clock Uncertainty:    0.235ns
 
@@ -275,18 +370,34 @@ Slack (setup path):     0.609ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.400ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: ctrl/captured_2 to ctrl/r_data_out_3_2
+  Maximum Data Path at Slow Process Corner: measure/count_time/counter_14 to measure/count_time/p_t_7_9_C_9
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    ILOGIC_X0Y44.Q4      Tickq                 1.778   ctrl/captured<2>
-                                                       ctrl/captured_2
-    SLICE_X4Y43.CX       net (fanout=2)        1.621   ctrl/captured<2>
-    SLICE_X4Y43.CLK      Tdick                 0.085   ctrl/r_data_out_3<3>
-                                                       ctrl/r_data_out_3_2
+    SLICE_X13Y21.AQ      Tcko                  0.430   measure/count_time/counter<17>
+                                                       measure/count_time/counter_14
+    SLICE_X4Y30.A2       net (fanout=8)        2.327   measure/count_time/counter<14>
+    SLICE_X4Y30.COUT     Topcya                0.474   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<7>
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_lut<4>
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<7>
+    SLICE_X4Y31.CIN      net (fanout=1)        0.003   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<7>
+    SLICE_X4Y31.COUT     Tbyp                  0.093   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<11>
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<11>
+    SLICE_X4Y32.CIN      net (fanout=1)        0.135   measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<11>
+    SLICE_X4Y32.DMUX     Tcind                 0.305   measure/count_time/counter[63]_GND_190_o_equal_1_o
+                                                       measure/count_time/Mcompar_counter[63]_GND_190_o_equal_1_o_cy<15>
+    SLICE_X13Y23.A6      net (fanout=79)       1.868   measure/count_time/counter[63]_GND_190_o_equal_1_o
+    SLICE_X13Y23.A       Tilo                  0.259   measure/count_time/p_t_7_27_P_27
+                                                       measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT1011_1
+    SLICE_X14Y11.C6      net (fanout=19)       1.911   measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT1011
+    SLICE_X14Y11.C       Tilo                  0.235   measure/count_time/p_t_7_9_P_9
+                                                       measure/count_time/Mmux_p_t_7[31]_p_t_7[31]_mux_104_OUT641
+    SLICE_X19Y9.AX       net (fanout=1)        0.874   measure/count_time/p_t_7[31]_p_t_7[31]_mux_104_OUT<9>
+    SLICE_X19Y9.CLK      Tdick                 0.114   measure/count_time/p_t_7_9_C_9
+                                                       measure/count_time/p_t_7_9_C_9
     -------------------------------------------------  ---------------------------
-    Total                                      3.484ns (1.863ns logic, 1.621ns route)
-                                                       (53.5% logic, 46.5% route)
+    Total                                      9.028ns (1.910ns logic, 7.118ns route)
+                                                       (21.2% logic, 78.8% route)
 
 --------------------------------------------------------------------------------
 
@@ -296,87 +407,86 @@ Hold Paths: PERIOD analysis for net "DCM/clkfx" derived from
 
 --------------------------------------------------------------------------------
 
-Paths for end point measure/count_time/p_t_5_29_C_29 (SLICE_X6Y33.A6), 1 path
+Paths for end point read_sec/p_data_34 (SLICE_X7Y46.CX), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.413ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               measure/count_time/p_t_5_29_C_29 (FF)
-  Destination:          measure/count_time/p_t_5_29_C_29 (FF)
+Slack (hold path):      0.401ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ctrl/r_data_out_2_2 (FF)
+  Destination:          read_sec/p_data_34 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.413ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      0.403ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.044 - 0.042)
   Source Clock:         clk100 rising at 10.000ns
   Destination Clock:    clk100 rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: measure/count_time/p_t_5_29_C_29 to measure/count_time/p_t_5_29_C_29
+  Minimum Data Path at Fast Process Corner: ctrl/r_data_out_2_2 to read_sec/p_data_34
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y33.AQ       Tcko                  0.200   measure/count_time/p_t_5_29_C_29
-                                                       measure/count_time/p_t_5_29_C_29
-    SLICE_X6Y33.A6       net (fanout=2)        0.023   measure/count_time/p_t_5_29_C_29
-    SLICE_X6Y33.CLK      Tah         (-Th)    -0.190   measure/count_time/p_t_5_29_C_29
-                                                       measure/count_time/Mmux_p_t_5[31]_p_t_5[31]_mux_102_OUT441
-                                                       measure/count_time/p_t_5_29_C_29
+    SLICE_X6Y46.CQ       Tcko                  0.200   ctrl/r_data_out_2<3>
+                                                       ctrl/r_data_out_2_2
+    SLICE_X7Y46.CX       net (fanout=1)        0.144   ctrl/r_data_out_2<2>
+    SLICE_X7Y46.CLK      Tckdi       (-Th)    -0.059   read_sec/p_data<35>
+                                                       read_sec/p_data_34
     -------------------------------------------------  ---------------------------
-    Total                                      0.413ns (0.390ns logic, 0.023ns route)
-                                                       (94.4% logic, 5.6% route)
+    Total                                      0.403ns (0.259ns logic, 0.144ns route)
+                                                       (64.3% logic, 35.7% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point measure/count_time/p_t_5_4_P_4 (SLICE_X2Y21.A6), 1 path
+Paths for end point measure/fetch/p_data_27 (SLICE_X6Y48.C6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.414ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               measure/count_time/p_t_5_4_P_4 (FF)
-  Destination:          measure/count_time/p_t_5_4_P_4 (FF)
+Slack (hold path):      0.404ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               read_sec/p_data_27 (FF)
+  Destination:          measure/fetch/p_data_27 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.406ns (Levels of Logic = 1)
+  Clock Path Skew:      0.002ns (0.045 - 0.043)
+  Source Clock:         clk100 rising at 10.000ns
+  Destination Clock:    clk100 rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: read_sec/p_data_27 to measure/fetch/p_data_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y48.DQ       Tcko                  0.198   read_sec/p_data<27>
+                                                       read_sec/p_data_27
+    SLICE_X6Y48.C6       net (fanout=1)        0.018   read_sec/p_data<27>
+    SLICE_X6Y48.CLK      Tah         (-Th)    -0.190   measure/fetch/p_data<28>
+                                                       measure/fetch/mux1911
+                                                       measure/fetch/p_data_27
+    -------------------------------------------------  ---------------------------
+    Total                                      0.406ns (0.388ns logic, 0.018ns route)
+                                                       (95.6% logic, 4.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point read_sec/p_state_FSM_FFd2 (SLICE_X14Y57.B6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.412ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               read_sec/p_comp (FF)
+  Destination:          read_sec/p_state_FSM_FFd2 (FF)
   Requirement:          0.000ns
   Data Path Delay:      0.414ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
+  Clock Path Skew:      0.002ns (0.034 - 0.032)
   Source Clock:         clk100 rising at 10.000ns
   Destination Clock:    clk100 rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: measure/count_time/p_t_5_4_P_4 to measure/count_time/p_t_5_4_P_4
+  Minimum Data Path at Fast Process Corner: read_sec/p_comp to read_sec/p_state_FSM_FFd2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X2Y21.AQ       Tcko                  0.200   measure/count_time/p_t_5_4_P_4
-                                                       measure/count_time/p_t_5_4_P_4
-    SLICE_X2Y21.A6       net (fanout=2)        0.024   measure/count_time/p_t_5_4_P_4
-    SLICE_X2Y21.CLK      Tah         (-Th)    -0.190   measure/count_time/p_t_5_4_P_4
-                                                       measure/count_time/Mmux_p_t_5[31]_p_t_5[31]_mux_102_OUT541
-                                                       measure/count_time/p_t_5_4_P_4
+    SLICE_X15Y57.AQ      Tcko                  0.198   read_sec/p_pend
+                                                       read_sec/p_comp
+    SLICE_X14Y57.B6      net (fanout=3)        0.026   read_sec/p_comp
+    SLICE_X14Y57.CLK     Tah         (-Th)    -0.190   read_sec/p_state_FSM_FFd2
+                                                       read_sec/p_state_FSM_FFd2-In1
+                                                       read_sec/p_state_FSM_FFd2
     -------------------------------------------------  ---------------------------
-    Total                                      0.414ns (0.390ns logic, 0.024ns route)
-                                                       (94.2% logic, 5.8% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point measure/fetch/p_data_21 (SLICE_X6Y37.A6), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.414ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               measure/fetch/p_data_21 (FF)
-  Destination:          measure/fetch/p_data_21 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.414ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
-  Source Clock:         clk100 rising at 10.000ns
-  Destination Clock:    clk100 rising at 10.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: measure/fetch/p_data_21 to measure/fetch/p_data_21
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X6Y37.AQ       Tcko                  0.200   measure/fetch/p_data<24>
-                                                       measure/fetch/p_data_21
-    SLICE_X6Y37.A6       net (fanout=2)        0.024   measure/fetch/p_data<21>
-    SLICE_X6Y37.CLK      Tah         (-Th)    -0.190   measure/fetch/p_data<24>
-                                                       measure/fetch/mux1311
-                                                       measure/fetch/p_data_21
-    -------------------------------------------------  ---------------------------
-    Total                                      0.414ns (0.390ns logic, 0.024ns route)
-                                                       (94.2% logic, 5.8% route)
+    Total                                      0.414ns (0.388ns logic, 0.026ns route)
+                                                       (93.7% logic, 6.3% route)
 
 --------------------------------------------------------------------------------
 
@@ -418,8 +528,8 @@ Derived Constraints for DCM/clkin1
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|DCM/clkin1                     |     31.250ns|     16.000ns|     29.394ns|            0|            0|            0|       471965|
-| DCM/clkfx                     |     10.000ns|      9.406ns|          N/A|            0|            0|       471965|            0|
+|DCM/clkin1                     |     31.250ns|     16.000ns|     29.497ns|            0|            0|            0|       472511|
+| DCM/clkfx                     |     10.000ns|      9.439ns|          N/A|            0|            0|       472511|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 All constraints were met.
@@ -434,7 +544,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    9.406|    4.430|         |         |
+clk            |    9.439|    4.424|         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -443,7 +553,7 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 471965 paths, 0 nets, and 7461 connections
+Constraints cover 472511 paths, 0 nets, and 7760 connections
 
 Design statistics:
    Minimum period:  16.000ns{1}   (Maximum frequency:  62.500MHz)
@@ -452,7 +562,7 @@ Design statistics:
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed MON 9 DEC 16:6:24 2019 
+Analysis completed MON 9 DEC 17:12:28 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:

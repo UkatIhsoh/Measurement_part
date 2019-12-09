@@ -10,7 +10,7 @@ Total CPU time to Xst completion: 0.11 secs
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: Measurement.prj
 
@@ -174,7 +174,6 @@ WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data
 INFO:HDLCompiler:679 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_fetch.vhd" Line 197. Case statement is complete. others clause is never selected
 
 Elaborating entity <data_decode> (architecture <decode>) from library <work>.
-INFO:HDLCompiler:679 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" Line 259. Case statement is complete. others clause is never selected
 
 Elaborating entity <timekeeper> (architecture <count_time>) from library <work>.
 WARNING:HDLCompiler:1127 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\timekeeper.vhd" Line 72: Assignment to d_num ignored, since the identifier is never used
@@ -184,13 +183,13 @@ WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\mast
 WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\master_counter.vhd" Line 221: dst_1 should be on the sensitivity list of the process
 WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\master_counter.vhd" Line 274: dst_1 should be on the sensitivity list of the process
 WARNING:HDLCompiler:1127 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\master_counter.vhd" Line 126: Assignment to dst_0 ignored, since the identifier is never used
-WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" Line 232: led_blink should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" Line 235: led_blink should be on the sensitivity list of the process
 
 Elaborating entity <counter> (architecture <Behavioral>) from library <work>.
 WARNING:HDLCompiler:634 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 157: Net <sdr_addr[19]> does not have a driver.
 WARNING:HDLCompiler:634 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 176: Net <str_adr[19]> does not have a driver.
 WARNING:HDLCompiler:634 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 183: Net <start> does not have a driver.
-WARNING:Xst:2972 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 208. All outputs of instance <title> of block <timekeeper> are unconnected in block <just_measurement>. Underlying logic will be removed.
+WARNING:Xst:2972 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 211. All outputs of instance <title> of block <timekeeper> are unconnected in block <just_measurement>. Underlying logic will be removed.
 WARNING:Xst:2972 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 263. All outputs of instance <count_test> of block <counter> are unconnected in block <Measurement>. Underlying logic will be removed.
 
 =========================================================================
@@ -371,10 +370,12 @@ Unit <SDRAM_rd> synthesized.
 
 Synthesizing Unit <just_measurement>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd".
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 176: Output port <test_pin> of the instance <fetch> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 208: Output port <output> of the instance <title> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 215: Output port <output_dds> of the instance <count_time> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 215: Output port <output_ad> of the instance <count_time> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 178: Output port <test_pin> of the instance <fetch> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 196: Output port <d_data_out> of the instance <decode> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 211: Output port <output> of the instance <title> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 218: Output port <output_dds> of the instance <count_time> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 218: Output port <output_ad> of the instance <count_time> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <test_dout<63:32>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <adc_sig> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:737 - Found 1-bit latch for signal <led_blink>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
@@ -433,33 +434,35 @@ Unit <data_fetch> synthesized.
 
 Synthesizing Unit <data_decode>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd".
+WARNING:Xst:653 - Signal <d_data_out> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 32-bit register for signal <c_data_out>.
     Found 4-bit register for signal <p_d_type>.
-    Found 2-bit register for signal <p_d_num>.
-    Found 64-bit register for signal <p_data>.
+    Found 2-bit register for signal <p_state>.
     Found 4-bit register for signal <p_sequence>.
     Found 1-bit register for signal <p_d_en>.
     Found 1-bit register for signal <p_d_fin>.
-    Found 1-bit register for signal <p_state>.
     Found 1-bit register for signal <fresh>.
-    Found finite state machine <FSM_5> for signal <p_d_num>.
+INFO:Xst:1799 - State cycle_end is never reached in FSM <p_state>.
+    Found finite state machine <FSM_5> for signal <p_state>.
     -----------------------------------------------------------------------
-    | States             | 4                                              |
-    | Transitions        | 30                                             |
-    | Inputs             | 7                                              |
-    | Outputs            | 4                                              |
+    | States             | 3                                              |
+    | Transitions        | 27                                             |
+    | Inputs             | 9                                              |
+    | Outputs            | 1                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | asynchronous                                   |
-    | Reset State        | 00                                             |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Found finite state machine <FSM_6> for signal <p_sequence>.
     -----------------------------------------------------------------------
     | States             | 7                                              |
-    | Transitions        | 49                                             |
-    | Inputs             | 6                                              |
-    | Outputs            | 3                                              |
+    | Transitions        | 35                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 8                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | asynchronous                                   |
@@ -467,9 +470,10 @@ Synthesizing Unit <data_decode>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
+    WARNING:Xst:2404 -  FFs/Latches <p_data<39:32>> (without init value) have a constant value of 0 in block <data_decode>.
     Summary:
-	inferred  72 D-type flip-flop(s).
-	inferred 106 Multiplexer(s).
+	inferred  39 D-type flip-flop(s).
+	inferred   5 Multiplexer(s).
 	inferred   2 Finite State Machine(s).
 Unit <data_decode> synthesized.
 
@@ -1026,29 +1030,29 @@ Macro Statistics
  20-bit adder                                          : 1
  32-bit adder                                          : 1
  64-bit adder                                          : 1
-# Registers                                            : 301
- 1-bit register                                        : 282
+# Registers                                            : 300
+ 1-bit register                                        : 281
  12-bit register                                       : 1
  15-bit register                                       : 1
  16-bit register                                       : 5
  2-bit register                                        : 1
  20-bit register                                       : 3
- 32-bit register                                       : 1
+ 32-bit register                                       : 2
  4-bit register                                        : 1
- 64-bit register                                       : 6
+ 64-bit register                                       : 5
 # Latches                                              : 282
  1-bit latch                                           : 282
 # Comparators                                          : 9
  2-bit comparator equal                                : 1
  64-bit comparator equal                               : 8
-# Multiplexers                                         : 342
- 1-bit 2-to-1 multiplexer                              : 222
+# Multiplexers                                         : 241
+ 1-bit 2-to-1 multiplexer                              : 134
  12-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 3
  20-bit 2-to-1 multiplexer                             : 3
- 32-bit 2-to-1 multiplexer                             : 82
- 4-bit 2-to-1 multiplexer                              : 14
- 64-bit 2-to-1 multiplexer                             : 12
+ 32-bit 2-to-1 multiplexer                             : 84
+ 4-bit 2-to-1 multiplexer                              : 3
+ 64-bit 2-to-1 multiplexer                             : 8
 # Tristates                                            : 16
  1-bit tristate buffer                                 : 16
 # FSMs                                                 : 7
@@ -1120,19 +1124,19 @@ Macro Statistics
  64-bit adder                                          : 1
 # Counters                                             : 1
  15-bit down counter                                   : 1
-# Registers                                            : 840
- Flip-Flops                                            : 840
+# Registers                                            : 807
+ Flip-Flops                                            : 807
 # Comparators                                          : 9
  2-bit comparator equal                                : 1
  64-bit comparator equal                               : 8
-# Multiplexers                                         : 404
- 1-bit 2-to-1 multiplexer                              : 285
+# Multiplexers                                         : 334
+ 1-bit 2-to-1 multiplexer                              : 229
  12-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 3
  20-bit 2-to-1 multiplexer                             : 3
- 32-bit 2-to-1 multiplexer                             : 82
- 4-bit 2-to-1 multiplexer                              : 14
- 64-bit 2-to-1 multiplexer                             : 11
+ 32-bit 2-to-1 multiplexer                             : 83
+ 4-bit 2-to-1 multiplexer                              : 3
+ 64-bit 2-to-1 multiplexer                             : 7
 # FSMs                                                 : 7
 
 =========================================================================
@@ -1190,28 +1194,27 @@ Optimizing FSM <measure/fetch/FSM_3> on signal <p_state[1:2]> with user encoding
  prepare   | 11
 -----------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <measure/decode/FSM_6> on signal <p_sequence[1:3]> with sequential encoding.
+Optimizing FSM <measure/decode/FSM_6> on signal <p_sequence[1:4]> with user encoding.
 -------------------
  State | Encoding
 -------------------
- 0001  | 000
- 0010  | 001
- 0011  | 010
- 0100  | 011
- 0101  | 100
- 0110  | 101
- 0111  | 110
+ 0001  | 0001
+ 0010  | 0010
+ 0011  | 0011
+ 0100  | 0100
+ 0101  | 0101
+ 0110  | 0110
+ 0111  | 0111
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <measure/decode/FSM_5> on signal <p_d_num[1:2]> with user encoding.
--------------------
- State | Encoding
--------------------
- 00    | 00
- 01    | 01
- 10    | 10
- 11    | 11
--------------------
+Optimizing FSM <measure/decode/FSM_5> on signal <p_state[1:1]> with sequential encoding.
+-----------------------
+ State     | Encoding
+-----------------------
+ idle      | 0
+ count     | 1
+ cycle_end | unreached
+-----------------------
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <write_sec/FSM_1> on signal <p_state[1:2]> with user encoding.
 ------------------------
@@ -1263,6 +1266,7 @@ Optimizing FSM <read_sec/FSM_2> on signal <p_state[1:2]> with user encoding.
  dt_aquire  | 10
  cycle_end  | 11
 ------------------------
+WARNING:Xst:1710 - FF/Latch <p_d_type_3> (without init value) has a constant value of 0 in block <data_decode>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <r_address_0> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_2> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_3> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
@@ -1562,7 +1566,6 @@ Optimizing unit <Measurement> ...
 Optimizing unit <data_fetch> ...
 
 Optimizing unit <data_decode> ...
-WARNING:Xst:1710 - FF/Latch <p_d_type_3> (without init value) has a constant value of 0 in block <data_decode>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <master_counter> ...
 
@@ -1609,102 +1612,6 @@ WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_31> (without init value) has 
 WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_30> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_29> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_28> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_15> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_14> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_13> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_12> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_11> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_10> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_9> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_8> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_7> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_6> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_5> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_4> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_3> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_2> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_1> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_0> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_1_15> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_1_14> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_1_13> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_1_12> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_1_11> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_1_10> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_1_9> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_1_8> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_1_7> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_1_6> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_1_5> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_1_4> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_1_3> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_1_2> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_1_1> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_1_0> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_63> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_62> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_61> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_60> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_59> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_58> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_57> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_56> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_55> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_54> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_53> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_52> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_51> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_50> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_49> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_48> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_47> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_46> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_45> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_44> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_43> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_42> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_41> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_40> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_39> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_38> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_37> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_36> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_35> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_33> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_32> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_63> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_62> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_61> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_60> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_59> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_58> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_57> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_56> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_55> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_54> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_53> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_52> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_51> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_50> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_49> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_48> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_47> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_46> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_45> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_44> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_43> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_42> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_41> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_40> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_39> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_38> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_37> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_36> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_35> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_33> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_data_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_0_0> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/ad_out> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/dds_set> of sequential type is unconnected in block <Measurement>.
@@ -1772,38 +1679,6 @@ WARNING:Xst:2677 - Node <measure/count_time/p_t_0_27> of sequential type is unco
 WARNING:Xst:2677 - Node <measure/count_time/p_t_0_30> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_0_31> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_f_en> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_63> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_62> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_61> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_60> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_59> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_58> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_57> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_56> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_55> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_54> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_53> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_52> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_51> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_50> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_49> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_48> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_47> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_46> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_45> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_44> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_43> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_42> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_41> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_40> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_39> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_38> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_37> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_36> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_35> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_33> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_adr_19> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_adr_18> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_adr_17> of sequential type is unconnected in block <Measurement>.
@@ -1842,7 +1717,7 @@ Building and optimizing final netlist ...
 INFO:Xst:2261 - The FF/Latch <ctrl/n_data_w_0> in Unit <Measurement> is equivalent to the following 3 FFs/Latches, which will be removed : <ctrl/n_data_w_2> <ctrl/n_data_w_8> <ctrl/n_data_w_10> 
 INFO:Xst:2261 - The FF/Latch <ctrl/n_data_w_1> in Unit <Measurement> is equivalent to the following 3 FFs/Latches, which will be removed : <ctrl/n_data_w_3> <ctrl/n_data_w_9> <ctrl/n_data_w_11> 
 INFO:Xst:2261 - The FF/Latch <ctrl/n_data_w_4> in Unit <Measurement> is equivalent to the following 7 FFs/Latches, which will be removed : <ctrl/n_data_w_5> <ctrl/n_data_w_7> <ctrl/n_data_w_6> <ctrl/n_data_w_12> <ctrl/n_data_w_13> <ctrl/n_data_w_14> <ctrl/n_data_w_15> 
-Found area constraint ratio of 100 (+ 5) on block Measurement, actual ratio is 29.
+Found area constraint ratio of 100 (+ 5) on block Measurement, actual ratio is 30.
 WARNING:Xst:1426 - The value init of the FF/Latch ctrl/r_rf_counter_31_LD hinder the constant cleaning in the block Measurement.
    You should achieve better results by setting this init to 0.
 Replicating register ctrl/r_address_10 to handle IOB=TRUE attribute
@@ -1860,8 +1735,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 776
- Flip-Flops                                            : 776
+# Registers                                            : 870
+ Flip-Flops                                            : 870
 
 =========================================================================
 
@@ -1884,26 +1759,26 @@ Top Level Output File Name         : Measurement.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1842
+# BELS                             : 1870
 #      GND                         : 1
 #      INV                         : 20
 #      LUT1                        : 104
 #      LUT2                        : 12
-#      LUT3                        : 281
-#      LUT4                        : 165
-#      LUT5                        : 53
-#      LUT6                        : 854
+#      LUT3                        : 263
+#      LUT4                        : 184
+#      LUT5                        : 56
+#      LUT6                        : 878
 #      MUXCY                       : 228
 #      MUXF7                       : 2
 #      VCC                         : 1
 #      XORCY                       : 121
-# FlipFlops/Latches                : 1240
+# FlipFlops/Latches                : 1334
 #      FD                          : 2
 #      FD_1                        : 16
-#      FDC                         : 283
-#      FDCE                        : 229
+#      FDC                         : 280
+#      FDCE                        : 325
 #      FDE                         : 17
-#      FDP                         : 229
+#      FDP                         : 230
 #      LD                          : 238
 #      LDC                         : 225
 #      ODDR2                       : 1
@@ -1924,16 +1799,16 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1199  out of  11440    10%  
- Number of Slice LUTs:                 1489  out of   5720    26%  
-    Number used as Logic:              1489  out of   5720    26%  
+ Number of Slice Registers:            1293  out of  11440    11%  
+ Number of Slice LUTs:                 1517  out of   5720    26%  
+    Number used as Logic:              1517  out of   5720    26%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   2222
-   Number with an unused Flip Flop:    1023  out of   2222    46%  
-   Number with an unused LUT:           733  out of   2222    32%  
-   Number of fully used LUT-FF pairs:   466  out of   2222    20%  
-   Number of unique control sets:       706
+ Number of LUT Flip Flop pairs used:   2313
+   Number with an unused Flip Flop:    1020  out of   2313    44%  
+   Number with an unused LUT:           796  out of   2313    34%  
+   Number of fully used LUT-FF pairs:   497  out of   2313    21%  
+   Number of unique control sets:       708
 
 IO Utilization: 
  Number of IOs:                          89
@@ -1961,255 +1836,255 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------------------------------------------------------------------------+-----------------------------------------+-------+
-Clock Signal                                                                                         | Clock buffer(FF name)                   | Load  |
------------------------------------------------------------------------------------------------------+-----------------------------------------+-------+
-measure/decode/p_d_fin                                                                               | NONE(measure/led_blink)                 | 1     |
-clk                                                                                                  | DCM_SP:CLKFX                            | 778   |
-ctrl/statep[8]_GND_36_o_Mux_83_o(ctrl/Mmux_statep[8]_GND_36_o_Mux_83_o11:O)                          | NONE(*)(ctrl/n_data_w_0)                | 3     |
-measure/fetch/p_start_p_f_run_AND_14_o(measure/fetch/p_start_p_f_run_AND_14_o1:O)                    | NONE(*)(measure/fetch/test)             | 1     |
-measure/count_time/dst_1_d_type[3]_MUX_1182_o(measure/count_time/Mmux_dst_1_d_type[3]_MUX_1182_o11:O)| NONE(*)(measure/count_time/dst_7)       | 1     |
-measure/count_time/dst_1_d_type[3]_MUX_1164_o(measure/count_time/Mmux_dst_1_d_type[3]_MUX_1164_o11:O)| NONE(*)(measure/count_time/dst_5)       | 1     |
-measure/count_time/dst_1_d_type[3]_MUX_1155_o(measure/count_time/Mmux_dst_1_d_type[3]_MUX_1155_o11:O)| NONE(*)(measure/count_time/dst_4)       | 1     |
-measure/count_time/dst_1_d_type[3]_MUX_1173_o(measure/count_time/Mmux_dst_1_d_type[3]_MUX_1173_o11:O)| NONE(*)(measure/count_time/dst_6)       | 1     |
-measure/count_time/dst_1_d_type[3]_MUX_1137_o(measure/count_time/Mmux_dst_1_d_type[3]_MUX_1137_o11:O)| NONE(*)(measure/count_time/dst_2)       | 1     |
-measure/count_time/dst_1_d_type[3]_MUX_1128_o(measure/count_time/Mmux_dst_1_d_type[3]_MUX_1128_o11:O)| NONE(*)(measure/count_time/dst_1)       | 1     |
-measure/count_time/dst_1_d_type[3]_MUX_1146_o(measure/count_time/Mmux_dst_1_d_type[3]_MUX_1146_o11:O)| NONE(*)(measure/count_time/dst_3)       | 1     |
-measure/count_time/rst_dst_1_MUX_1124_o(measure/count_time/Mmux_rst_dst_1_MUX_1124_o12:O)            | NONE(*)(measure/count_time/preset)      | 1     |
-measure/count_time/preset_d_fin_AND_348_o(measure/count_time/preset_d_fin_AND_348_o1:O)              | BUFG(*)(measure/count_time/n_t_6_0)     | 32    |
-measure/count_time/preset_d_fin_AND_284_o(measure/count_time/preset_d_fin_AND_284_o1:O)              | BUFG(*)(measure/count_time/n_t_5_0)     | 32    |
-measure/count_time/preset_d_fin_AND_412_o(measure/count_time/preset_d_fin_AND_412_o1:O)              | BUFG(*)(measure/count_time/n_t_7_0)     | 32    |
-measure/count_time/preset_d_fin_AND_220_o(measure/count_time/preset_d_fin_AND_220_o1:O)              | BUFG(*)(measure/count_time/n_t_4_0)     | 32    |
-measure/count_time/preset_d_fin_AND_156_o(measure/count_time/preset_d_fin_AND_156_o1:O)              | BUFG(*)(measure/count_time/n_t_3_0)     | 32    |
-measure/count_time/preset_d_fin_AND_28_o(measure/count_time/preset_d_fin_AND_28_o1:O)                | BUFG(*)(measure/count_time/n_t_1_0)     | 32    |
-measure/count_time/preset_d_fin_AND_92_o(measure/count_time/preset_d_fin_AND_92_o1:O)                | NONE(*)(measure/count_time/n_t_2_0)     | 32    |
-WING_B<0>                                                                                            | IBUF                                    | 1     |
-measure/count_time/d_fin_d_type[3]_AND_731_o(measure/count_time/d_fin_d_type[3]_AND_731_o1:O)        | NONE(*)(measure/count_time/p_t_3_0_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_987_o(measure/count_time/d_fin_d_type[3]_AND_987_o1:O)        | NONE(*)(measure/count_time/p_t_7_0_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_923_o(measure/count_time/d_fin_d_type[3]_AND_923_o1:O)        | NONE(*)(measure/count_time/p_t_6_0_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_859_o(measure/count_time/d_fin_d_type[3]_AND_859_o1:O)        | NONE(*)(measure/count_time/p_t_5_0_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_795_o(measure/count_time/d_fin_d_type[3]_AND_795_o1:O)        | NONE(*)(measure/count_time/p_t_4_0_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_667_o(measure/count_time/d_fin_d_type[3]_AND_667_o1:O)        | NONE(*)(measure/count_time/p_t_2_0_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_603_o(measure/count_time/d_fin_d_type[3]_AND_603_o1:O)        | NONE(*)(measure/count_time/p_t_1_0_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_985_o(measure/count_time/d_fin_d_type[3]_AND_985_o1:O)        | NONE(*)(measure/count_time/p_t_7_1_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_983_o(measure/count_time/d_fin_d_type[3]_AND_983_o1:O)        | NONE(*)(measure/count_time/p_t_7_2_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_981_o(measure/count_time/d_fin_d_type[3]_AND_981_o1:O)        | NONE(*)(measure/count_time/p_t_7_3_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_979_o(measure/count_time/d_fin_d_type[3]_AND_979_o1:O)        | NONE(*)(measure/count_time/p_t_7_4_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_975_o(measure/count_time/d_fin_d_type[3]_AND_975_o1:O)        | NONE(*)(measure/count_time/p_t_7_6_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_973_o(measure/count_time/d_fin_d_type[3]_AND_973_o1:O)        | NONE(*)(measure/count_time/p_t_7_7_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_977_o(measure/count_time/d_fin_d_type[3]_AND_977_o1:O)        | NONE(*)(measure/count_time/p_t_7_5_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_971_o(measure/count_time/d_fin_d_type[3]_AND_971_o1:O)        | NONE(*)(measure/count_time/p_t_7_8_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_969_o(measure/count_time/d_fin_d_type[3]_AND_969_o1:O)        | NONE(*)(measure/count_time/p_t_7_9_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_965_o(measure/count_time/d_fin_d_type[3]_AND_965_o1:O)        | NONE(*)(measure/count_time/p_t_7_11_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_963_o(measure/count_time/d_fin_d_type[3]_AND_963_o1:O)        | NONE(*)(measure/count_time/p_t_7_12_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_967_o(measure/count_time/d_fin_d_type[3]_AND_967_o1:O)        | NONE(*)(measure/count_time/p_t_7_10_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_961_o(measure/count_time/d_fin_d_type[3]_AND_961_o1:O)        | NONE(*)(measure/count_time/p_t_7_13_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_959_o(measure/count_time/d_fin_d_type[3]_AND_959_o1:O)        | NONE(*)(measure/count_time/p_t_7_14_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_955_o(measure/count_time/d_fin_d_type[3]_AND_955_o1:O)        | NONE(*)(measure/count_time/p_t_7_16_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_953_o(measure/count_time/d_fin_d_type[3]_AND_953_o1:O)        | NONE(*)(measure/count_time/p_t_7_17_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_957_o(measure/count_time/d_fin_d_type[3]_AND_957_o1:O)        | NONE(*)(measure/count_time/p_t_7_15_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_951_o(measure/count_time/d_fin_d_type[3]_AND_951_o1:O)        | NONE(*)(measure/count_time/p_t_7_18_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_949_o(measure/count_time/d_fin_d_type[3]_AND_949_o1:O)        | NONE(*)(measure/count_time/p_t_7_19_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_945_o(measure/count_time/d_fin_d_type[3]_AND_945_o1:O)        | NONE(*)(measure/count_time/p_t_7_21_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_943_o(measure/count_time/d_fin_d_type[3]_AND_943_o1:O)        | NONE(*)(measure/count_time/p_t_7_22_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_947_o(measure/count_time/d_fin_d_type[3]_AND_947_o1:O)        | NONE(*)(measure/count_time/p_t_7_20_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_941_o(measure/count_time/d_fin_d_type[3]_AND_941_o1:O)        | NONE(*)(measure/count_time/p_t_7_23_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_939_o(measure/count_time/d_fin_d_type[3]_AND_939_o1:O)        | NONE(*)(measure/count_time/p_t_7_24_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_935_o(measure/count_time/d_fin_d_type[3]_AND_935_o1:O)        | NONE(*)(measure/count_time/p_t_7_26_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_933_o(measure/count_time/d_fin_d_type[3]_AND_933_o1:O)        | NONE(*)(measure/count_time/p_t_7_27_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_937_o(measure/count_time/d_fin_d_type[3]_AND_937_o1:O)        | NONE(*)(measure/count_time/p_t_7_25_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_931_o(measure/count_time/d_fin_d_type[3]_AND_931_o1:O)        | NONE(*)(measure/count_time/p_t_7_28_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_929_o(measure/count_time/d_fin_d_type[3]_AND_929_o1:O)        | NONE(*)(measure/count_time/p_t_7_29_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_925_o(measure/count_time/d_fin_d_type[3]_AND_925_o1:O)        | NONE(*)(measure/count_time/p_t_7_31_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_927_o(measure/count_time/d_fin_d_type[3]_AND_927_o1:O)        | NONE(*)(measure/count_time/p_t_7_30_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_921_o(measure/count_time/d_fin_d_type[3]_AND_921_o1:O)        | NONE(*)(measure/count_time/p_t_6_1_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_919_o(measure/count_time/d_fin_d_type[3]_AND_919_o1:O)        | NONE(*)(measure/count_time/p_t_6_2_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_915_o(measure/count_time/d_fin_d_type[3]_AND_915_o1:O)        | NONE(*)(measure/count_time/p_t_6_4_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_913_o(measure/count_time/d_fin_d_type[3]_AND_913_o1:O)        | NONE(*)(measure/count_time/p_t_6_5_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_917_o(measure/count_time/d_fin_d_type[3]_AND_917_o1:O)        | NONE(*)(measure/count_time/p_t_6_3_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_911_o(measure/count_time/d_fin_d_type[3]_AND_911_o1:O)        | NONE(*)(measure/count_time/p_t_6_6_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_909_o(measure/count_time/d_fin_d_type[3]_AND_909_o1:O)        | NONE(*)(measure/count_time/p_t_6_7_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_905_o(measure/count_time/d_fin_d_type[3]_AND_905_o1:O)        | NONE(*)(measure/count_time/p_t_6_9_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_903_o(measure/count_time/d_fin_d_type[3]_AND_903_o1:O)        | NONE(*)(measure/count_time/p_t_6_10_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_907_o(measure/count_time/d_fin_d_type[3]_AND_907_o1:O)        | NONE(*)(measure/count_time/p_t_6_8_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_901_o(measure/count_time/d_fin_d_type[3]_AND_901_o1:O)        | NONE(*)(measure/count_time/p_t_6_11_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_899_o(measure/count_time/d_fin_d_type[3]_AND_899_o1:O)        | NONE(*)(measure/count_time/p_t_6_12_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_895_o(measure/count_time/d_fin_d_type[3]_AND_895_o1:O)        | NONE(*)(measure/count_time/p_t_6_14_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_893_o(measure/count_time/d_fin_d_type[3]_AND_893_o1:O)        | NONE(*)(measure/count_time/p_t_6_15_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_897_o(measure/count_time/d_fin_d_type[3]_AND_897_o1:O)        | NONE(*)(measure/count_time/p_t_6_13_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_891_o(measure/count_time/d_fin_d_type[3]_AND_891_o1:O)        | NONE(*)(measure/count_time/p_t_6_16_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_889_o(measure/count_time/d_fin_d_type[3]_AND_889_o1:O)        | NONE(*)(measure/count_time/p_t_6_17_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_885_o(measure/count_time/d_fin_d_type[3]_AND_885_o1:O)        | NONE(*)(measure/count_time/p_t_6_19_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_883_o(measure/count_time/d_fin_d_type[3]_AND_883_o1:O)        | NONE(*)(measure/count_time/p_t_6_20_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_887_o(measure/count_time/d_fin_d_type[3]_AND_887_o1:O)        | NONE(*)(measure/count_time/p_t_6_18_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_881_o(measure/count_time/d_fin_d_type[3]_AND_881_o1:O)        | NONE(*)(measure/count_time/p_t_6_21_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_879_o(measure/count_time/d_fin_d_type[3]_AND_879_o1:O)        | NONE(*)(measure/count_time/p_t_6_22_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_875_o(measure/count_time/d_fin_d_type[3]_AND_875_o1:O)        | NONE(*)(measure/count_time/p_t_6_24_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_873_o(measure/count_time/d_fin_d_type[3]_AND_873_o1:O)        | NONE(*)(measure/count_time/p_t_6_25_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_877_o(measure/count_time/d_fin_d_type[3]_AND_877_o1:O)        | NONE(*)(measure/count_time/p_t_6_23_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_871_o(measure/count_time/d_fin_d_type[3]_AND_871_o1:O)        | NONE(*)(measure/count_time/p_t_6_26_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_869_o(measure/count_time/d_fin_d_type[3]_AND_869_o1:O)        | NONE(*)(measure/count_time/p_t_6_27_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_865_o(measure/count_time/d_fin_d_type[3]_AND_865_o1:O)        | NONE(*)(measure/count_time/p_t_6_29_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_863_o(measure/count_time/d_fin_d_type[3]_AND_863_o1:O)        | NONE(*)(measure/count_time/p_t_6_30_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_867_o(measure/count_time/d_fin_d_type[3]_AND_867_o1:O)        | NONE(*)(measure/count_time/p_t_6_28_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_857_o(measure/count_time/d_fin_d_type[3]_AND_857_o1:O)        | NONE(*)(measure/count_time/p_t_5_1_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_861_o(measure/count_time/d_fin_d_type[3]_AND_861_o1:O)        | NONE(*)(measure/count_time/p_t_6_31_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_853_o(measure/count_time/d_fin_d_type[3]_AND_853_o1:O)        | NONE(*)(measure/count_time/p_t_5_3_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_851_o(measure/count_time/d_fin_d_type[3]_AND_851_o1:O)        | NONE(*)(measure/count_time/p_t_5_4_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_855_o(measure/count_time/d_fin_d_type[3]_AND_855_o1:O)        | NONE(*)(measure/count_time/p_t_5_2_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_849_o(measure/count_time/d_fin_d_type[3]_AND_849_o1:O)        | NONE(*)(measure/count_time/p_t_5_5_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_847_o(measure/count_time/d_fin_d_type[3]_AND_847_o1:O)        | NONE(*)(measure/count_time/p_t_5_6_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_843_o(measure/count_time/d_fin_d_type[3]_AND_843_o1:O)        | NONE(*)(measure/count_time/p_t_5_8_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_841_o(measure/count_time/d_fin_d_type[3]_AND_841_o1:O)        | NONE(*)(measure/count_time/p_t_5_9_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_845_o(measure/count_time/d_fin_d_type[3]_AND_845_o1:O)        | NONE(*)(measure/count_time/p_t_5_7_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_839_o(measure/count_time/d_fin_d_type[3]_AND_839_o1:O)        | NONE(*)(measure/count_time/p_t_5_10_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_837_o(measure/count_time/d_fin_d_type[3]_AND_837_o1:O)        | NONE(*)(measure/count_time/p_t_5_11_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_833_o(measure/count_time/d_fin_d_type[3]_AND_833_o1:O)        | NONE(*)(measure/count_time/p_t_5_13_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_831_o(measure/count_time/d_fin_d_type[3]_AND_831_o1:O)        | NONE(*)(measure/count_time/p_t_5_14_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_835_o(measure/count_time/d_fin_d_type[3]_AND_835_o1:O)        | NONE(*)(measure/count_time/p_t_5_12_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_829_o(measure/count_time/d_fin_d_type[3]_AND_829_o1:O)        | NONE(*)(measure/count_time/p_t_5_15_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_827_o(measure/count_time/d_fin_d_type[3]_AND_827_o1:O)        | NONE(*)(measure/count_time/p_t_5_16_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_823_o(measure/count_time/d_fin_d_type[3]_AND_823_o1:O)        | NONE(*)(measure/count_time/p_t_5_18_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_821_o(measure/count_time/d_fin_d_type[3]_AND_821_o1:O)        | NONE(*)(measure/count_time/p_t_5_19_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_825_o(measure/count_time/d_fin_d_type[3]_AND_825_o1:O)        | NONE(*)(measure/count_time/p_t_5_17_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_819_o(measure/count_time/d_fin_d_type[3]_AND_819_o1:O)        | NONE(*)(measure/count_time/p_t_5_20_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_817_o(measure/count_time/d_fin_d_type[3]_AND_817_o1:O)        | NONE(*)(measure/count_time/p_t_5_21_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_813_o(measure/count_time/d_fin_d_type[3]_AND_813_o1:O)        | NONE(*)(measure/count_time/p_t_5_23_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_811_o(measure/count_time/d_fin_d_type[3]_AND_811_o1:O)        | NONE(*)(measure/count_time/p_t_5_24_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_815_o(measure/count_time/d_fin_d_type[3]_AND_815_o1:O)        | NONE(*)(measure/count_time/p_t_5_22_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_809_o(measure/count_time/d_fin_d_type[3]_AND_809_o1:O)        | NONE(*)(measure/count_time/p_t_5_25_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_807_o(measure/count_time/d_fin_d_type[3]_AND_807_o1:O)        | NONE(*)(measure/count_time/p_t_5_26_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_803_o(measure/count_time/d_fin_d_type[3]_AND_803_o1:O)        | NONE(*)(measure/count_time/p_t_5_28_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_801_o(measure/count_time/d_fin_d_type[3]_AND_801_o1:O)        | NONE(*)(measure/count_time/p_t_5_29_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_805_o(measure/count_time/d_fin_d_type[3]_AND_805_o1:O)        | NONE(*)(measure/count_time/p_t_5_27_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_799_o(measure/count_time/d_fin_d_type[3]_AND_799_o1:O)        | NONE(*)(measure/count_time/p_t_5_30_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_797_o(measure/count_time/d_fin_d_type[3]_AND_797_o1:O)        | NONE(*)(measure/count_time/p_t_5_31_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_793_o(measure/count_time/d_fin_d_type[3]_AND_793_o1:O)        | NONE(*)(measure/count_time/p_t_4_1_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_791_o(measure/count_time/d_fin_d_type[3]_AND_791_o1:O)        | NONE(*)(measure/count_time/p_t_4_2_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_789_o(measure/count_time/d_fin_d_type[3]_AND_789_o1:O)        | NONE(*)(measure/count_time/p_t_4_3_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_787_o(measure/count_time/d_fin_d_type[3]_AND_787_o1:O)        | NONE(*)(measure/count_time/p_t_4_4_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_783_o(measure/count_time/d_fin_d_type[3]_AND_783_o1:O)        | NONE(*)(measure/count_time/p_t_4_6_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_781_o(measure/count_time/d_fin_d_type[3]_AND_781_o1:O)        | NONE(*)(measure/count_time/p_t_4_7_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_785_o(measure/count_time/d_fin_d_type[3]_AND_785_o1:O)        | NONE(*)(measure/count_time/p_t_4_5_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_779_o(measure/count_time/d_fin_d_type[3]_AND_779_o1:O)        | NONE(*)(measure/count_time/p_t_4_8_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_777_o(measure/count_time/d_fin_d_type[3]_AND_777_o1:O)        | NONE(*)(measure/count_time/p_t_4_9_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_773_o(measure/count_time/d_fin_d_type[3]_AND_773_o1:O)        | NONE(*)(measure/count_time/p_t_4_11_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_771_o(measure/count_time/d_fin_d_type[3]_AND_771_o1:O)        | NONE(*)(measure/count_time/p_t_4_12_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_775_o(measure/count_time/d_fin_d_type[3]_AND_775_o1:O)        | NONE(*)(measure/count_time/p_t_4_10_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_769_o(measure/count_time/d_fin_d_type[3]_AND_769_o1:O)        | NONE(*)(measure/count_time/p_t_4_13_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_767_o(measure/count_time/d_fin_d_type[3]_AND_767_o1:O)        | NONE(*)(measure/count_time/p_t_4_14_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_763_o(measure/count_time/d_fin_d_type[3]_AND_763_o1:O)        | NONE(*)(measure/count_time/p_t_4_16_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_761_o(measure/count_time/d_fin_d_type[3]_AND_761_o1:O)        | NONE(*)(measure/count_time/p_t_4_17_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_765_o(measure/count_time/d_fin_d_type[3]_AND_765_o1:O)        | NONE(*)(measure/count_time/p_t_4_15_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_759_o(measure/count_time/d_fin_d_type[3]_AND_759_o1:O)        | NONE(*)(measure/count_time/p_t_4_18_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_757_o(measure/count_time/d_fin_d_type[3]_AND_757_o1:O)        | NONE(*)(measure/count_time/p_t_4_19_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_753_o(measure/count_time/d_fin_d_type[3]_AND_753_o1:O)        | NONE(*)(measure/count_time/p_t_4_21_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_751_o(measure/count_time/d_fin_d_type[3]_AND_751_o1:O)        | NONE(*)(measure/count_time/p_t_4_22_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_755_o(measure/count_time/d_fin_d_type[3]_AND_755_o1:O)        | NONE(*)(measure/count_time/p_t_4_20_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_749_o(measure/count_time/d_fin_d_type[3]_AND_749_o1:O)        | NONE(*)(measure/count_time/p_t_4_23_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_747_o(measure/count_time/d_fin_d_type[3]_AND_747_o1:O)        | NONE(*)(measure/count_time/p_t_4_24_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_743_o(measure/count_time/d_fin_d_type[3]_AND_743_o1:O)        | NONE(*)(measure/count_time/p_t_4_26_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_741_o(measure/count_time/d_fin_d_type[3]_AND_741_o1:O)        | NONE(*)(measure/count_time/p_t_4_27_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_745_o(measure/count_time/d_fin_d_type[3]_AND_745_o1:O)        | NONE(*)(measure/count_time/p_t_4_25_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_739_o(measure/count_time/d_fin_d_type[3]_AND_739_o1:O)        | NONE(*)(measure/count_time/p_t_4_28_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_737_o(measure/count_time/d_fin_d_type[3]_AND_737_o1:O)        | NONE(*)(measure/count_time/p_t_4_29_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_733_o(measure/count_time/d_fin_d_type[3]_AND_733_o1:O)        | NONE(*)(measure/count_time/p_t_4_31_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_735_o(measure/count_time/d_fin_d_type[3]_AND_735_o1:O)        | NONE(*)(measure/count_time/p_t_4_30_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_729_o(measure/count_time/d_fin_d_type[3]_AND_729_o1:O)        | NONE(*)(measure/count_time/p_t_3_1_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_727_o(measure/count_time/d_fin_d_type[3]_AND_727_o1:O)        | NONE(*)(measure/count_time/p_t_3_2_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_723_o(measure/count_time/d_fin_d_type[3]_AND_723_o1:O)        | NONE(*)(measure/count_time/p_t_3_4_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_721_o(measure/count_time/d_fin_d_type[3]_AND_721_o1:O)        | NONE(*)(measure/count_time/p_t_3_5_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_725_o(measure/count_time/d_fin_d_type[3]_AND_725_o1:O)        | NONE(*)(measure/count_time/p_t_3_3_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_719_o(measure/count_time/d_fin_d_type[3]_AND_719_o1:O)        | NONE(*)(measure/count_time/p_t_3_6_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_717_o(measure/count_time/d_fin_d_type[3]_AND_717_o1:O)        | NONE(*)(measure/count_time/p_t_3_7_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_713_o(measure/count_time/d_fin_d_type[3]_AND_713_o1:O)        | NONE(*)(measure/count_time/p_t_3_9_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_711_o(measure/count_time/d_fin_d_type[3]_AND_711_o1:O)        | NONE(*)(measure/count_time/p_t_3_10_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_715_o(measure/count_time/d_fin_d_type[3]_AND_715_o1:O)        | NONE(*)(measure/count_time/p_t_3_8_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_709_o(measure/count_time/d_fin_d_type[3]_AND_709_o1:O)        | NONE(*)(measure/count_time/p_t_3_11_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_707_o(measure/count_time/d_fin_d_type[3]_AND_707_o1:O)        | NONE(*)(measure/count_time/p_t_3_12_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_703_o(measure/count_time/d_fin_d_type[3]_AND_703_o1:O)        | NONE(*)(measure/count_time/p_t_3_14_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_701_o(measure/count_time/d_fin_d_type[3]_AND_701_o1:O)        | NONE(*)(measure/count_time/p_t_3_15_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_705_o(measure/count_time/d_fin_d_type[3]_AND_705_o1:O)        | NONE(*)(measure/count_time/p_t_3_13_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_697_o(measure/count_time/d_fin_d_type[3]_AND_697_o1:O)        | NONE(*)(measure/count_time/p_t_3_17_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_695_o(measure/count_time/d_fin_d_type[3]_AND_695_o1:O)        | NONE(*)(measure/count_time/p_t_3_18_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_699_o(measure/count_time/d_fin_d_type[3]_AND_699_o1:O)        | NONE(*)(measure/count_time/p_t_3_16_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_691_o(measure/count_time/d_fin_d_type[3]_AND_691_o1:O)        | NONE(*)(measure/count_time/p_t_3_20_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_689_o(measure/count_time/d_fin_d_type[3]_AND_689_o1:O)        | NONE(*)(measure/count_time/p_t_3_21_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_693_o(measure/count_time/d_fin_d_type[3]_AND_693_o1:O)        | NONE(*)(measure/count_time/p_t_3_19_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_687_o(measure/count_time/d_fin_d_type[3]_AND_687_o1:O)        | NONE(*)(measure/count_time/p_t_3_22_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_685_o(measure/count_time/d_fin_d_type[3]_AND_685_o1:O)        | NONE(*)(measure/count_time/p_t_3_23_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_681_o(measure/count_time/d_fin_d_type[3]_AND_681_o1:O)        | NONE(*)(measure/count_time/p_t_3_25_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_679_o(measure/count_time/d_fin_d_type[3]_AND_679_o1:O)        | NONE(*)(measure/count_time/p_t_3_26_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_683_o(measure/count_time/d_fin_d_type[3]_AND_683_o1:O)        | NONE(*)(measure/count_time/p_t_3_24_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_677_o(measure/count_time/d_fin_d_type[3]_AND_677_o1:O)        | NONE(*)(measure/count_time/p_t_3_27_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_675_o(measure/count_time/d_fin_d_type[3]_AND_675_o1:O)        | NONE(*)(measure/count_time/p_t_3_28_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_671_o(measure/count_time/d_fin_d_type[3]_AND_671_o1:O)        | NONE(*)(measure/count_time/p_t_3_30_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_669_o(measure/count_time/d_fin_d_type[3]_AND_669_o1:O)        | NONE(*)(measure/count_time/p_t_3_31_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_673_o(measure/count_time/d_fin_d_type[3]_AND_673_o1:O)        | NONE(*)(measure/count_time/p_t_3_29_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_665_o(measure/count_time/d_fin_d_type[3]_AND_665_o1:O)        | NONE(*)(measure/count_time/p_t_2_1_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_661_o(measure/count_time/d_fin_d_type[3]_AND_661_o1:O)        | NONE(*)(measure/count_time/p_t_2_3_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_659_o(measure/count_time/d_fin_d_type[3]_AND_659_o1:O)        | NONE(*)(measure/count_time/p_t_2_4_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_663_o(measure/count_time/d_fin_d_type[3]_AND_663_o1:O)        | NONE(*)(measure/count_time/p_t_2_2_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_657_o(measure/count_time/d_fin_d_type[3]_AND_657_o1:O)        | NONE(*)(measure/count_time/p_t_2_5_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_655_o(measure/count_time/d_fin_d_type[3]_AND_655_o1:O)        | NONE(*)(measure/count_time/p_t_2_6_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_651_o(measure/count_time/d_fin_d_type[3]_AND_651_o1:O)        | NONE(*)(measure/count_time/p_t_2_8_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_649_o(measure/count_time/d_fin_d_type[3]_AND_649_o1:O)        | NONE(*)(measure/count_time/p_t_2_9_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_653_o(measure/count_time/d_fin_d_type[3]_AND_653_o1:O)        | NONE(*)(measure/count_time/p_t_2_7_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_647_o(measure/count_time/d_fin_d_type[3]_AND_647_o1:O)        | NONE(*)(measure/count_time/p_t_2_10_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_645_o(measure/count_time/d_fin_d_type[3]_AND_645_o1:O)        | NONE(*)(measure/count_time/p_t_2_11_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_641_o(measure/count_time/d_fin_d_type[3]_AND_641_o1:O)        | NONE(*)(measure/count_time/p_t_2_13_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_639_o(measure/count_time/d_fin_d_type[3]_AND_639_o1:O)        | NONE(*)(measure/count_time/p_t_2_14_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_643_o(measure/count_time/d_fin_d_type[3]_AND_643_o1:O)        | NONE(*)(measure/count_time/p_t_2_12_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_637_o(measure/count_time/d_fin_d_type[3]_AND_637_o1:O)        | NONE(*)(measure/count_time/p_t_2_15_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_635_o(measure/count_time/d_fin_d_type[3]_AND_635_o1:O)        | NONE(*)(measure/count_time/p_t_2_16_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_631_o(measure/count_time/d_fin_d_type[3]_AND_631_o1:O)        | NONE(*)(measure/count_time/p_t_2_18_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_629_o(measure/count_time/d_fin_d_type[3]_AND_629_o1:O)        | NONE(*)(measure/count_time/p_t_2_19_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_633_o(measure/count_time/d_fin_d_type[3]_AND_633_o1:O)        | NONE(*)(measure/count_time/p_t_2_17_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_627_o(measure/count_time/d_fin_d_type[3]_AND_627_o1:O)        | NONE(*)(measure/count_time/p_t_2_20_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_625_o(measure/count_time/d_fin_d_type[3]_AND_625_o1:O)        | NONE(*)(measure/count_time/p_t_2_21_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_621_o(measure/count_time/d_fin_d_type[3]_AND_621_o1:O)        | NONE(*)(measure/count_time/p_t_2_23_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_619_o(measure/count_time/d_fin_d_type[3]_AND_619_o1:O)        | NONE(*)(measure/count_time/p_t_2_24_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_623_o(measure/count_time/d_fin_d_type[3]_AND_623_o1:O)        | NONE(*)(measure/count_time/p_t_2_22_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_615_o(measure/count_time/d_fin_d_type[3]_AND_615_o1:O)        | NONE(*)(measure/count_time/p_t_2_26_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_613_o(measure/count_time/d_fin_d_type[3]_AND_613_o1:O)        | NONE(*)(measure/count_time/p_t_2_27_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_617_o(measure/count_time/d_fin_d_type[3]_AND_617_o1:O)        | NONE(*)(measure/count_time/p_t_2_25_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_609_o(measure/count_time/d_fin_d_type[3]_AND_609_o1:O)        | NONE(*)(measure/count_time/p_t_2_29_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_607_o(measure/count_time/d_fin_d_type[3]_AND_607_o1:O)        | NONE(*)(measure/count_time/p_t_2_30_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_611_o(measure/count_time/d_fin_d_type[3]_AND_611_o1:O)        | NONE(*)(measure/count_time/p_t_2_28_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_605_o(measure/count_time/d_fin_d_type[3]_AND_605_o1:O)        | NONE(*)(measure/count_time/p_t_2_31_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_599_o(measure/count_time/d_fin_d_type[3]_AND_599_o1:O)        | NONE(*)(measure/count_time/p_t_1_2_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_597_o(measure/count_time/d_fin_d_type[3]_AND_597_o1:O)        | NONE(*)(measure/count_time/p_t_1_3_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_601_o(measure/count_time/d_fin_d_type[3]_AND_601_o1:O)        | NONE(*)(measure/count_time/p_t_1_1_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_595_o(measure/count_time/d_fin_d_type[3]_AND_595_o1:O)        | NONE(*)(measure/count_time/p_t_1_4_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_593_o(measure/count_time/d_fin_d_type[3]_AND_593_o1:O)        | NONE(*)(measure/count_time/p_t_1_5_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_589_o(measure/count_time/d_fin_d_type[3]_AND_589_o1:O)        | NONE(*)(measure/count_time/p_t_1_7_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_587_o(measure/count_time/d_fin_d_type[3]_AND_587_o1:O)        | NONE(*)(measure/count_time/p_t_1_8_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_591_o(measure/count_time/d_fin_d_type[3]_AND_591_o1:O)        | NONE(*)(measure/count_time/p_t_1_6_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_585_o(measure/count_time/d_fin_d_type[3]_AND_585_o1:O)        | NONE(*)(measure/count_time/p_t_1_9_LDC) | 1     |
-measure/count_time/d_fin_d_type[3]_AND_583_o(measure/count_time/d_fin_d_type[3]_AND_583_o1:O)        | NONE(*)(measure/count_time/p_t_1_10_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_579_o(measure/count_time/d_fin_d_type[3]_AND_579_o1:O)        | NONE(*)(measure/count_time/p_t_1_12_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_577_o(measure/count_time/d_fin_d_type[3]_AND_577_o1:O)        | NONE(*)(measure/count_time/p_t_1_13_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_581_o(measure/count_time/d_fin_d_type[3]_AND_581_o1:O)        | NONE(*)(measure/count_time/p_t_1_11_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_575_o(measure/count_time/d_fin_d_type[3]_AND_575_o1:O)        | NONE(*)(measure/count_time/p_t_1_14_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_573_o(measure/count_time/d_fin_d_type[3]_AND_573_o1:O)        | NONE(*)(measure/count_time/p_t_1_15_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_569_o(measure/count_time/d_fin_d_type[3]_AND_569_o1:O)        | NONE(*)(measure/count_time/p_t_1_17_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_567_o(measure/count_time/d_fin_d_type[3]_AND_567_o1:O)        | NONE(*)(measure/count_time/p_t_1_18_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_571_o(measure/count_time/d_fin_d_type[3]_AND_571_o1:O)        | NONE(*)(measure/count_time/p_t_1_16_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_565_o(measure/count_time/d_fin_d_type[3]_AND_565_o1:O)        | NONE(*)(measure/count_time/p_t_1_19_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_563_o(measure/count_time/d_fin_d_type[3]_AND_563_o1:O)        | NONE(*)(measure/count_time/p_t_1_20_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_559_o(measure/count_time/d_fin_d_type[3]_AND_559_o1:O)        | NONE(*)(measure/count_time/p_t_1_22_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_557_o(measure/count_time/d_fin_d_type[3]_AND_557_o1:O)        | NONE(*)(measure/count_time/p_t_1_23_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_561_o(measure/count_time/d_fin_d_type[3]_AND_561_o1:O)        | NONE(*)(measure/count_time/p_t_1_21_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_555_o(measure/count_time/d_fin_d_type[3]_AND_555_o1:O)        | NONE(*)(measure/count_time/p_t_1_24_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_553_o(measure/count_time/d_fin_d_type[3]_AND_553_o1:O)        | NONE(*)(measure/count_time/p_t_1_25_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_549_o(measure/count_time/d_fin_d_type[3]_AND_549_o1:O)        | NONE(*)(measure/count_time/p_t_1_27_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_547_o(measure/count_time/d_fin_d_type[3]_AND_547_o1:O)        | NONE(*)(measure/count_time/p_t_1_28_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_551_o(measure/count_time/d_fin_d_type[3]_AND_551_o1:O)        | NONE(*)(measure/count_time/p_t_1_26_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_545_o(measure/count_time/d_fin_d_type[3]_AND_545_o1:O)        | NONE(*)(measure/count_time/p_t_1_29_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_543_o(measure/count_time/d_fin_d_type[3]_AND_543_o1:O)        | NONE(*)(measure/count_time/p_t_1_30_LDC)| 1     |
-measure/count_time/d_fin_d_type[3]_AND_541_o(measure/count_time/d_fin_d_type[3]_AND_541_o1:O)        | NONE(*)(measure/count_time/p_t_1_31_LDC)| 1     |
-measure/count_time/dst_1_dst_7_AND_20_o(measure/count_time/dst_1_dst_7_AND_20_o:O)                   | NONE(*)(measure/count_time/full_LDC)    | 1     |
------------------------------------------------------------------------------------------------------+-----------------------------------------+-------+
+---------------------------------------------------------------------------------------------------+-----------------------------------------+-------+
+Clock Signal                                                                                       | Clock buffer(FF name)                   | Load  |
+---------------------------------------------------------------------------------------------------+-----------------------------------------+-------+
+measure/decode/p_d_fin                                                                             | NONE(measure/led_blink)                 | 1     |
+clk                                                                                                | DCM_SP:CLKFX                            | 872   |
+ctrl/statep[8]_GND_36_o_Mux_83_o(ctrl/Mmux_statep[8]_GND_36_o_Mux_83_o11:O)                        | NONE(*)(ctrl/n_data_w_0)                | 3     |
+measure/fetch/p_start_p_f_run_AND_14_o(measure/fetch/p_start_p_f_run_AND_14_o1:O)                  | NONE(*)(measure/fetch/test)             | 1     |
+measure/count_time/dst_1_d_type[3]_MUX_642_o(measure/count_time/Mmux_dst_1_d_type[3]_MUX_642_o11:O)| NONE(*)(measure/count_time/dst_7)       | 1     |
+measure/count_time/dst_1_d_type[3]_MUX_624_o(measure/count_time/Mmux_dst_1_d_type[3]_MUX_624_o11:O)| NONE(*)(measure/count_time/dst_5)       | 1     |
+measure/count_time/dst_1_d_type[3]_MUX_615_o(measure/count_time/Mmux_dst_1_d_type[3]_MUX_615_o11:O)| NONE(*)(measure/count_time/dst_4)       | 1     |
+measure/count_time/dst_1_d_type[3]_MUX_633_o(measure/count_time/Mmux_dst_1_d_type[3]_MUX_633_o11:O)| NONE(*)(measure/count_time/dst_6)       | 1     |
+measure/count_time/dst_1_d_type[3]_MUX_597_o(measure/count_time/Mmux_dst_1_d_type[3]_MUX_597_o11:O)| NONE(*)(measure/count_time/dst_2)       | 1     |
+measure/count_time/dst_1_d_type[3]_MUX_588_o(measure/count_time/Mmux_dst_1_d_type[3]_MUX_588_o11:O)| NONE(*)(measure/count_time/dst_1)       | 1     |
+measure/count_time/dst_1_d_type[3]_MUX_606_o(measure/count_time/Mmux_dst_1_d_type[3]_MUX_606_o11:O)| NONE(*)(measure/count_time/dst_3)       | 1     |
+measure/count_time/rst_dst_1_MUX_584_o(measure/count_time/Mmux_rst_dst_1_MUX_584_o12:O)            | NONE(*)(measure/count_time/preset)      | 1     |
+measure/count_time/preset_d_fin_AND_348_o(measure/count_time/preset_d_fin_AND_348_o1:O)            | BUFG(*)(measure/count_time/n_t_6_0)     | 32    |
+measure/count_time/preset_d_fin_AND_284_o(measure/count_time/preset_d_fin_AND_284_o1:O)            | BUFG(*)(measure/count_time/n_t_5_0)     | 32    |
+measure/count_time/preset_d_fin_AND_412_o(measure/count_time/preset_d_fin_AND_412_o1:O)            | BUFG(*)(measure/count_time/n_t_7_0)     | 32    |
+measure/count_time/preset_d_fin_AND_220_o(measure/count_time/preset_d_fin_AND_220_o1:O)            | BUFG(*)(measure/count_time/n_t_4_0)     | 32    |
+measure/count_time/preset_d_fin_AND_156_o(measure/count_time/preset_d_fin_AND_156_o1:O)            | BUFG(*)(measure/count_time/n_t_3_0)     | 32    |
+measure/count_time/preset_d_fin_AND_28_o(measure/count_time/preset_d_fin_AND_28_o1:O)              | BUFG(*)(measure/count_time/n_t_1_0)     | 32    |
+measure/count_time/preset_d_fin_AND_92_o(measure/count_time/preset_d_fin_AND_92_o1:O)              | NONE(*)(measure/count_time/n_t_2_0)     | 32    |
+WING_B<0>                                                                                          | IBUF                                    | 1     |
+measure/count_time/d_fin_d_type[3]_AND_731_o(measure/count_time/d_fin_d_type[3]_AND_731_o1:O)      | NONE(*)(measure/count_time/p_t_3_0_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_987_o(measure/count_time/d_fin_d_type[3]_AND_987_o1:O)      | NONE(*)(measure/count_time/p_t_7_0_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_923_o(measure/count_time/d_fin_d_type[3]_AND_923_o1:O)      | NONE(*)(measure/count_time/p_t_6_0_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_859_o(measure/count_time/d_fin_d_type[3]_AND_859_o1:O)      | NONE(*)(measure/count_time/p_t_5_0_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_795_o(measure/count_time/d_fin_d_type[3]_AND_795_o1:O)      | NONE(*)(measure/count_time/p_t_4_0_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_667_o(measure/count_time/d_fin_d_type[3]_AND_667_o1:O)      | NONE(*)(measure/count_time/p_t_2_0_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_603_o(measure/count_time/d_fin_d_type[3]_AND_603_o1:O)      | NONE(*)(measure/count_time/p_t_1_0_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_985_o(measure/count_time/d_fin_d_type[3]_AND_985_o1:O)      | NONE(*)(measure/count_time/p_t_7_1_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_983_o(measure/count_time/d_fin_d_type[3]_AND_983_o1:O)      | NONE(*)(measure/count_time/p_t_7_2_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_981_o(measure/count_time/d_fin_d_type[3]_AND_981_o1:O)      | NONE(*)(measure/count_time/p_t_7_3_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_979_o(measure/count_time/d_fin_d_type[3]_AND_979_o1:O)      | NONE(*)(measure/count_time/p_t_7_4_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_975_o(measure/count_time/d_fin_d_type[3]_AND_975_o1:O)      | NONE(*)(measure/count_time/p_t_7_6_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_973_o(measure/count_time/d_fin_d_type[3]_AND_973_o1:O)      | NONE(*)(measure/count_time/p_t_7_7_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_977_o(measure/count_time/d_fin_d_type[3]_AND_977_o1:O)      | NONE(*)(measure/count_time/p_t_7_5_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_971_o(measure/count_time/d_fin_d_type[3]_AND_971_o1:O)      | NONE(*)(measure/count_time/p_t_7_8_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_969_o(measure/count_time/d_fin_d_type[3]_AND_969_o1:O)      | NONE(*)(measure/count_time/p_t_7_9_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_965_o(measure/count_time/d_fin_d_type[3]_AND_965_o1:O)      | NONE(*)(measure/count_time/p_t_7_11_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_963_o(measure/count_time/d_fin_d_type[3]_AND_963_o1:O)      | NONE(*)(measure/count_time/p_t_7_12_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_967_o(measure/count_time/d_fin_d_type[3]_AND_967_o1:O)      | NONE(*)(measure/count_time/p_t_7_10_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_961_o(measure/count_time/d_fin_d_type[3]_AND_961_o1:O)      | NONE(*)(measure/count_time/p_t_7_13_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_959_o(measure/count_time/d_fin_d_type[3]_AND_959_o1:O)      | NONE(*)(measure/count_time/p_t_7_14_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_955_o(measure/count_time/d_fin_d_type[3]_AND_955_o1:O)      | NONE(*)(measure/count_time/p_t_7_16_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_953_o(measure/count_time/d_fin_d_type[3]_AND_953_o1:O)      | NONE(*)(measure/count_time/p_t_7_17_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_957_o(measure/count_time/d_fin_d_type[3]_AND_957_o1:O)      | NONE(*)(measure/count_time/p_t_7_15_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_951_o(measure/count_time/d_fin_d_type[3]_AND_951_o1:O)      | NONE(*)(measure/count_time/p_t_7_18_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_949_o(measure/count_time/d_fin_d_type[3]_AND_949_o1:O)      | NONE(*)(measure/count_time/p_t_7_19_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_945_o(measure/count_time/d_fin_d_type[3]_AND_945_o1:O)      | NONE(*)(measure/count_time/p_t_7_21_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_943_o(measure/count_time/d_fin_d_type[3]_AND_943_o1:O)      | NONE(*)(measure/count_time/p_t_7_22_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_947_o(measure/count_time/d_fin_d_type[3]_AND_947_o1:O)      | NONE(*)(measure/count_time/p_t_7_20_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_941_o(measure/count_time/d_fin_d_type[3]_AND_941_o1:O)      | NONE(*)(measure/count_time/p_t_7_23_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_939_o(measure/count_time/d_fin_d_type[3]_AND_939_o1:O)      | NONE(*)(measure/count_time/p_t_7_24_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_935_o(measure/count_time/d_fin_d_type[3]_AND_935_o1:O)      | NONE(*)(measure/count_time/p_t_7_26_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_933_o(measure/count_time/d_fin_d_type[3]_AND_933_o1:O)      | NONE(*)(measure/count_time/p_t_7_27_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_937_o(measure/count_time/d_fin_d_type[3]_AND_937_o1:O)      | NONE(*)(measure/count_time/p_t_7_25_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_931_o(measure/count_time/d_fin_d_type[3]_AND_931_o1:O)      | NONE(*)(measure/count_time/p_t_7_28_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_929_o(measure/count_time/d_fin_d_type[3]_AND_929_o1:O)      | NONE(*)(measure/count_time/p_t_7_29_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_925_o(measure/count_time/d_fin_d_type[3]_AND_925_o1:O)      | NONE(*)(measure/count_time/p_t_7_31_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_927_o(measure/count_time/d_fin_d_type[3]_AND_927_o1:O)      | NONE(*)(measure/count_time/p_t_7_30_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_921_o(measure/count_time/d_fin_d_type[3]_AND_921_o1:O)      | NONE(*)(measure/count_time/p_t_6_1_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_919_o(measure/count_time/d_fin_d_type[3]_AND_919_o1:O)      | NONE(*)(measure/count_time/p_t_6_2_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_915_o(measure/count_time/d_fin_d_type[3]_AND_915_o1:O)      | NONE(*)(measure/count_time/p_t_6_4_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_913_o(measure/count_time/d_fin_d_type[3]_AND_913_o1:O)      | NONE(*)(measure/count_time/p_t_6_5_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_917_o(measure/count_time/d_fin_d_type[3]_AND_917_o1:O)      | NONE(*)(measure/count_time/p_t_6_3_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_911_o(measure/count_time/d_fin_d_type[3]_AND_911_o1:O)      | NONE(*)(measure/count_time/p_t_6_6_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_909_o(measure/count_time/d_fin_d_type[3]_AND_909_o1:O)      | NONE(*)(measure/count_time/p_t_6_7_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_905_o(measure/count_time/d_fin_d_type[3]_AND_905_o1:O)      | NONE(*)(measure/count_time/p_t_6_9_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_903_o(measure/count_time/d_fin_d_type[3]_AND_903_o1:O)      | NONE(*)(measure/count_time/p_t_6_10_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_907_o(measure/count_time/d_fin_d_type[3]_AND_907_o1:O)      | NONE(*)(measure/count_time/p_t_6_8_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_901_o(measure/count_time/d_fin_d_type[3]_AND_901_o1:O)      | NONE(*)(measure/count_time/p_t_6_11_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_899_o(measure/count_time/d_fin_d_type[3]_AND_899_o1:O)      | NONE(*)(measure/count_time/p_t_6_12_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_895_o(measure/count_time/d_fin_d_type[3]_AND_895_o1:O)      | NONE(*)(measure/count_time/p_t_6_14_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_893_o(measure/count_time/d_fin_d_type[3]_AND_893_o1:O)      | NONE(*)(measure/count_time/p_t_6_15_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_897_o(measure/count_time/d_fin_d_type[3]_AND_897_o1:O)      | NONE(*)(measure/count_time/p_t_6_13_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_891_o(measure/count_time/d_fin_d_type[3]_AND_891_o1:O)      | NONE(*)(measure/count_time/p_t_6_16_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_889_o(measure/count_time/d_fin_d_type[3]_AND_889_o1:O)      | NONE(*)(measure/count_time/p_t_6_17_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_885_o(measure/count_time/d_fin_d_type[3]_AND_885_o1:O)      | NONE(*)(measure/count_time/p_t_6_19_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_883_o(measure/count_time/d_fin_d_type[3]_AND_883_o1:O)      | NONE(*)(measure/count_time/p_t_6_20_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_887_o(measure/count_time/d_fin_d_type[3]_AND_887_o1:O)      | NONE(*)(measure/count_time/p_t_6_18_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_881_o(measure/count_time/d_fin_d_type[3]_AND_881_o1:O)      | NONE(*)(measure/count_time/p_t_6_21_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_879_o(measure/count_time/d_fin_d_type[3]_AND_879_o1:O)      | NONE(*)(measure/count_time/p_t_6_22_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_875_o(measure/count_time/d_fin_d_type[3]_AND_875_o1:O)      | NONE(*)(measure/count_time/p_t_6_24_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_873_o(measure/count_time/d_fin_d_type[3]_AND_873_o1:O)      | NONE(*)(measure/count_time/p_t_6_25_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_877_o(measure/count_time/d_fin_d_type[3]_AND_877_o1:O)      | NONE(*)(measure/count_time/p_t_6_23_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_871_o(measure/count_time/d_fin_d_type[3]_AND_871_o1:O)      | NONE(*)(measure/count_time/p_t_6_26_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_869_o(measure/count_time/d_fin_d_type[3]_AND_869_o1:O)      | NONE(*)(measure/count_time/p_t_6_27_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_865_o(measure/count_time/d_fin_d_type[3]_AND_865_o1:O)      | NONE(*)(measure/count_time/p_t_6_29_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_863_o(measure/count_time/d_fin_d_type[3]_AND_863_o1:O)      | NONE(*)(measure/count_time/p_t_6_30_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_867_o(measure/count_time/d_fin_d_type[3]_AND_867_o1:O)      | NONE(*)(measure/count_time/p_t_6_28_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_857_o(measure/count_time/d_fin_d_type[3]_AND_857_o1:O)      | NONE(*)(measure/count_time/p_t_5_1_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_861_o(measure/count_time/d_fin_d_type[3]_AND_861_o1:O)      | NONE(*)(measure/count_time/p_t_6_31_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_853_o(measure/count_time/d_fin_d_type[3]_AND_853_o1:O)      | NONE(*)(measure/count_time/p_t_5_3_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_851_o(measure/count_time/d_fin_d_type[3]_AND_851_o1:O)      | NONE(*)(measure/count_time/p_t_5_4_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_855_o(measure/count_time/d_fin_d_type[3]_AND_855_o1:O)      | NONE(*)(measure/count_time/p_t_5_2_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_849_o(measure/count_time/d_fin_d_type[3]_AND_849_o1:O)      | NONE(*)(measure/count_time/p_t_5_5_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_847_o(measure/count_time/d_fin_d_type[3]_AND_847_o1:O)      | NONE(*)(measure/count_time/p_t_5_6_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_843_o(measure/count_time/d_fin_d_type[3]_AND_843_o1:O)      | NONE(*)(measure/count_time/p_t_5_8_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_841_o(measure/count_time/d_fin_d_type[3]_AND_841_o1:O)      | NONE(*)(measure/count_time/p_t_5_9_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_845_o(measure/count_time/d_fin_d_type[3]_AND_845_o1:O)      | NONE(*)(measure/count_time/p_t_5_7_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_839_o(measure/count_time/d_fin_d_type[3]_AND_839_o1:O)      | NONE(*)(measure/count_time/p_t_5_10_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_837_o(measure/count_time/d_fin_d_type[3]_AND_837_o1:O)      | NONE(*)(measure/count_time/p_t_5_11_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_833_o(measure/count_time/d_fin_d_type[3]_AND_833_o1:O)      | NONE(*)(measure/count_time/p_t_5_13_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_831_o(measure/count_time/d_fin_d_type[3]_AND_831_o1:O)      | NONE(*)(measure/count_time/p_t_5_14_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_835_o(measure/count_time/d_fin_d_type[3]_AND_835_o1:O)      | NONE(*)(measure/count_time/p_t_5_12_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_829_o(measure/count_time/d_fin_d_type[3]_AND_829_o1:O)      | NONE(*)(measure/count_time/p_t_5_15_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_827_o(measure/count_time/d_fin_d_type[3]_AND_827_o1:O)      | NONE(*)(measure/count_time/p_t_5_16_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_823_o(measure/count_time/d_fin_d_type[3]_AND_823_o1:O)      | NONE(*)(measure/count_time/p_t_5_18_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_821_o(measure/count_time/d_fin_d_type[3]_AND_821_o1:O)      | NONE(*)(measure/count_time/p_t_5_19_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_825_o(measure/count_time/d_fin_d_type[3]_AND_825_o1:O)      | NONE(*)(measure/count_time/p_t_5_17_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_819_o(measure/count_time/d_fin_d_type[3]_AND_819_o1:O)      | NONE(*)(measure/count_time/p_t_5_20_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_817_o(measure/count_time/d_fin_d_type[3]_AND_817_o1:O)      | NONE(*)(measure/count_time/p_t_5_21_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_813_o(measure/count_time/d_fin_d_type[3]_AND_813_o1:O)      | NONE(*)(measure/count_time/p_t_5_23_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_811_o(measure/count_time/d_fin_d_type[3]_AND_811_o1:O)      | NONE(*)(measure/count_time/p_t_5_24_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_815_o(measure/count_time/d_fin_d_type[3]_AND_815_o1:O)      | NONE(*)(measure/count_time/p_t_5_22_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_809_o(measure/count_time/d_fin_d_type[3]_AND_809_o1:O)      | NONE(*)(measure/count_time/p_t_5_25_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_807_o(measure/count_time/d_fin_d_type[3]_AND_807_o1:O)      | NONE(*)(measure/count_time/p_t_5_26_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_803_o(measure/count_time/d_fin_d_type[3]_AND_803_o1:O)      | NONE(*)(measure/count_time/p_t_5_28_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_801_o(measure/count_time/d_fin_d_type[3]_AND_801_o1:O)      | NONE(*)(measure/count_time/p_t_5_29_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_805_o(measure/count_time/d_fin_d_type[3]_AND_805_o1:O)      | NONE(*)(measure/count_time/p_t_5_27_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_799_o(measure/count_time/d_fin_d_type[3]_AND_799_o1:O)      | NONE(*)(measure/count_time/p_t_5_30_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_797_o(measure/count_time/d_fin_d_type[3]_AND_797_o1:O)      | NONE(*)(measure/count_time/p_t_5_31_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_793_o(measure/count_time/d_fin_d_type[3]_AND_793_o1:O)      | NONE(*)(measure/count_time/p_t_4_1_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_791_o(measure/count_time/d_fin_d_type[3]_AND_791_o1:O)      | NONE(*)(measure/count_time/p_t_4_2_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_789_o(measure/count_time/d_fin_d_type[3]_AND_789_o1:O)      | NONE(*)(measure/count_time/p_t_4_3_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_787_o(measure/count_time/d_fin_d_type[3]_AND_787_o1:O)      | NONE(*)(measure/count_time/p_t_4_4_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_783_o(measure/count_time/d_fin_d_type[3]_AND_783_o1:O)      | NONE(*)(measure/count_time/p_t_4_6_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_781_o(measure/count_time/d_fin_d_type[3]_AND_781_o1:O)      | NONE(*)(measure/count_time/p_t_4_7_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_785_o(measure/count_time/d_fin_d_type[3]_AND_785_o1:O)      | NONE(*)(measure/count_time/p_t_4_5_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_779_o(measure/count_time/d_fin_d_type[3]_AND_779_o1:O)      | NONE(*)(measure/count_time/p_t_4_8_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_777_o(measure/count_time/d_fin_d_type[3]_AND_777_o1:O)      | NONE(*)(measure/count_time/p_t_4_9_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_773_o(measure/count_time/d_fin_d_type[3]_AND_773_o1:O)      | NONE(*)(measure/count_time/p_t_4_11_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_771_o(measure/count_time/d_fin_d_type[3]_AND_771_o1:O)      | NONE(*)(measure/count_time/p_t_4_12_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_775_o(measure/count_time/d_fin_d_type[3]_AND_775_o1:O)      | NONE(*)(measure/count_time/p_t_4_10_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_769_o(measure/count_time/d_fin_d_type[3]_AND_769_o1:O)      | NONE(*)(measure/count_time/p_t_4_13_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_767_o(measure/count_time/d_fin_d_type[3]_AND_767_o1:O)      | NONE(*)(measure/count_time/p_t_4_14_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_763_o(measure/count_time/d_fin_d_type[3]_AND_763_o1:O)      | NONE(*)(measure/count_time/p_t_4_16_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_761_o(measure/count_time/d_fin_d_type[3]_AND_761_o1:O)      | NONE(*)(measure/count_time/p_t_4_17_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_765_o(measure/count_time/d_fin_d_type[3]_AND_765_o1:O)      | NONE(*)(measure/count_time/p_t_4_15_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_759_o(measure/count_time/d_fin_d_type[3]_AND_759_o1:O)      | NONE(*)(measure/count_time/p_t_4_18_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_757_o(measure/count_time/d_fin_d_type[3]_AND_757_o1:O)      | NONE(*)(measure/count_time/p_t_4_19_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_753_o(measure/count_time/d_fin_d_type[3]_AND_753_o1:O)      | NONE(*)(measure/count_time/p_t_4_21_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_751_o(measure/count_time/d_fin_d_type[3]_AND_751_o1:O)      | NONE(*)(measure/count_time/p_t_4_22_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_755_o(measure/count_time/d_fin_d_type[3]_AND_755_o1:O)      | NONE(*)(measure/count_time/p_t_4_20_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_749_o(measure/count_time/d_fin_d_type[3]_AND_749_o1:O)      | NONE(*)(measure/count_time/p_t_4_23_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_747_o(measure/count_time/d_fin_d_type[3]_AND_747_o1:O)      | NONE(*)(measure/count_time/p_t_4_24_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_743_o(measure/count_time/d_fin_d_type[3]_AND_743_o1:O)      | NONE(*)(measure/count_time/p_t_4_26_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_741_o(measure/count_time/d_fin_d_type[3]_AND_741_o1:O)      | NONE(*)(measure/count_time/p_t_4_27_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_745_o(measure/count_time/d_fin_d_type[3]_AND_745_o1:O)      | NONE(*)(measure/count_time/p_t_4_25_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_739_o(measure/count_time/d_fin_d_type[3]_AND_739_o1:O)      | NONE(*)(measure/count_time/p_t_4_28_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_737_o(measure/count_time/d_fin_d_type[3]_AND_737_o1:O)      | NONE(*)(measure/count_time/p_t_4_29_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_733_o(measure/count_time/d_fin_d_type[3]_AND_733_o1:O)      | NONE(*)(measure/count_time/p_t_4_31_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_735_o(measure/count_time/d_fin_d_type[3]_AND_735_o1:O)      | NONE(*)(measure/count_time/p_t_4_30_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_729_o(measure/count_time/d_fin_d_type[3]_AND_729_o1:O)      | NONE(*)(measure/count_time/p_t_3_1_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_727_o(measure/count_time/d_fin_d_type[3]_AND_727_o1:O)      | NONE(*)(measure/count_time/p_t_3_2_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_723_o(measure/count_time/d_fin_d_type[3]_AND_723_o1:O)      | NONE(*)(measure/count_time/p_t_3_4_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_721_o(measure/count_time/d_fin_d_type[3]_AND_721_o1:O)      | NONE(*)(measure/count_time/p_t_3_5_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_725_o(measure/count_time/d_fin_d_type[3]_AND_725_o1:O)      | NONE(*)(measure/count_time/p_t_3_3_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_719_o(measure/count_time/d_fin_d_type[3]_AND_719_o1:O)      | NONE(*)(measure/count_time/p_t_3_6_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_717_o(measure/count_time/d_fin_d_type[3]_AND_717_o1:O)      | NONE(*)(measure/count_time/p_t_3_7_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_713_o(measure/count_time/d_fin_d_type[3]_AND_713_o1:O)      | NONE(*)(measure/count_time/p_t_3_9_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_711_o(measure/count_time/d_fin_d_type[3]_AND_711_o1:O)      | NONE(*)(measure/count_time/p_t_3_10_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_715_o(measure/count_time/d_fin_d_type[3]_AND_715_o1:O)      | NONE(*)(measure/count_time/p_t_3_8_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_709_o(measure/count_time/d_fin_d_type[3]_AND_709_o1:O)      | NONE(*)(measure/count_time/p_t_3_11_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_707_o(measure/count_time/d_fin_d_type[3]_AND_707_o1:O)      | NONE(*)(measure/count_time/p_t_3_12_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_703_o(measure/count_time/d_fin_d_type[3]_AND_703_o1:O)      | NONE(*)(measure/count_time/p_t_3_14_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_701_o(measure/count_time/d_fin_d_type[3]_AND_701_o1:O)      | NONE(*)(measure/count_time/p_t_3_15_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_705_o(measure/count_time/d_fin_d_type[3]_AND_705_o1:O)      | NONE(*)(measure/count_time/p_t_3_13_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_697_o(measure/count_time/d_fin_d_type[3]_AND_697_o1:O)      | NONE(*)(measure/count_time/p_t_3_17_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_695_o(measure/count_time/d_fin_d_type[3]_AND_695_o1:O)      | NONE(*)(measure/count_time/p_t_3_18_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_699_o(measure/count_time/d_fin_d_type[3]_AND_699_o1:O)      | NONE(*)(measure/count_time/p_t_3_16_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_691_o(measure/count_time/d_fin_d_type[3]_AND_691_o1:O)      | NONE(*)(measure/count_time/p_t_3_20_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_689_o(measure/count_time/d_fin_d_type[3]_AND_689_o1:O)      | NONE(*)(measure/count_time/p_t_3_21_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_693_o(measure/count_time/d_fin_d_type[3]_AND_693_o1:O)      | NONE(*)(measure/count_time/p_t_3_19_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_687_o(measure/count_time/d_fin_d_type[3]_AND_687_o1:O)      | NONE(*)(measure/count_time/p_t_3_22_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_685_o(measure/count_time/d_fin_d_type[3]_AND_685_o1:O)      | NONE(*)(measure/count_time/p_t_3_23_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_681_o(measure/count_time/d_fin_d_type[3]_AND_681_o1:O)      | NONE(*)(measure/count_time/p_t_3_25_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_679_o(measure/count_time/d_fin_d_type[3]_AND_679_o1:O)      | NONE(*)(measure/count_time/p_t_3_26_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_683_o(measure/count_time/d_fin_d_type[3]_AND_683_o1:O)      | NONE(*)(measure/count_time/p_t_3_24_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_677_o(measure/count_time/d_fin_d_type[3]_AND_677_o1:O)      | NONE(*)(measure/count_time/p_t_3_27_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_675_o(measure/count_time/d_fin_d_type[3]_AND_675_o1:O)      | NONE(*)(measure/count_time/p_t_3_28_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_671_o(measure/count_time/d_fin_d_type[3]_AND_671_o1:O)      | NONE(*)(measure/count_time/p_t_3_30_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_669_o(measure/count_time/d_fin_d_type[3]_AND_669_o1:O)      | NONE(*)(measure/count_time/p_t_3_31_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_673_o(measure/count_time/d_fin_d_type[3]_AND_673_o1:O)      | NONE(*)(measure/count_time/p_t_3_29_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_665_o(measure/count_time/d_fin_d_type[3]_AND_665_o1:O)      | NONE(*)(measure/count_time/p_t_2_1_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_661_o(measure/count_time/d_fin_d_type[3]_AND_661_o1:O)      | NONE(*)(measure/count_time/p_t_2_3_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_659_o(measure/count_time/d_fin_d_type[3]_AND_659_o1:O)      | NONE(*)(measure/count_time/p_t_2_4_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_663_o(measure/count_time/d_fin_d_type[3]_AND_663_o1:O)      | NONE(*)(measure/count_time/p_t_2_2_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_657_o(measure/count_time/d_fin_d_type[3]_AND_657_o1:O)      | NONE(*)(measure/count_time/p_t_2_5_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_655_o(measure/count_time/d_fin_d_type[3]_AND_655_o1:O)      | NONE(*)(measure/count_time/p_t_2_6_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_651_o(measure/count_time/d_fin_d_type[3]_AND_651_o1:O)      | NONE(*)(measure/count_time/p_t_2_8_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_649_o(measure/count_time/d_fin_d_type[3]_AND_649_o1:O)      | NONE(*)(measure/count_time/p_t_2_9_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_653_o(measure/count_time/d_fin_d_type[3]_AND_653_o1:O)      | NONE(*)(measure/count_time/p_t_2_7_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_647_o(measure/count_time/d_fin_d_type[3]_AND_647_o1:O)      | NONE(*)(measure/count_time/p_t_2_10_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_645_o(measure/count_time/d_fin_d_type[3]_AND_645_o1:O)      | NONE(*)(measure/count_time/p_t_2_11_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_641_o(measure/count_time/d_fin_d_type[3]_AND_641_o1:O)      | NONE(*)(measure/count_time/p_t_2_13_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_639_o(measure/count_time/d_fin_d_type[3]_AND_639_o1:O)      | NONE(*)(measure/count_time/p_t_2_14_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_643_o(measure/count_time/d_fin_d_type[3]_AND_643_o1:O)      | NONE(*)(measure/count_time/p_t_2_12_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_637_o(measure/count_time/d_fin_d_type[3]_AND_637_o1:O)      | NONE(*)(measure/count_time/p_t_2_15_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_635_o(measure/count_time/d_fin_d_type[3]_AND_635_o1:O)      | NONE(*)(measure/count_time/p_t_2_16_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_631_o(measure/count_time/d_fin_d_type[3]_AND_631_o1:O)      | NONE(*)(measure/count_time/p_t_2_18_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_629_o(measure/count_time/d_fin_d_type[3]_AND_629_o1:O)      | NONE(*)(measure/count_time/p_t_2_19_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_633_o(measure/count_time/d_fin_d_type[3]_AND_633_o1:O)      | NONE(*)(measure/count_time/p_t_2_17_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_627_o(measure/count_time/d_fin_d_type[3]_AND_627_o1:O)      | NONE(*)(measure/count_time/p_t_2_20_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_625_o(measure/count_time/d_fin_d_type[3]_AND_625_o1:O)      | NONE(*)(measure/count_time/p_t_2_21_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_621_o(measure/count_time/d_fin_d_type[3]_AND_621_o1:O)      | NONE(*)(measure/count_time/p_t_2_23_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_619_o(measure/count_time/d_fin_d_type[3]_AND_619_o1:O)      | NONE(*)(measure/count_time/p_t_2_24_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_623_o(measure/count_time/d_fin_d_type[3]_AND_623_o1:O)      | NONE(*)(measure/count_time/p_t_2_22_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_615_o(measure/count_time/d_fin_d_type[3]_AND_615_o1:O)      | NONE(*)(measure/count_time/p_t_2_26_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_613_o(measure/count_time/d_fin_d_type[3]_AND_613_o1:O)      | NONE(*)(measure/count_time/p_t_2_27_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_617_o(measure/count_time/d_fin_d_type[3]_AND_617_o1:O)      | NONE(*)(measure/count_time/p_t_2_25_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_609_o(measure/count_time/d_fin_d_type[3]_AND_609_o1:O)      | NONE(*)(measure/count_time/p_t_2_29_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_607_o(measure/count_time/d_fin_d_type[3]_AND_607_o1:O)      | NONE(*)(measure/count_time/p_t_2_30_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_611_o(measure/count_time/d_fin_d_type[3]_AND_611_o1:O)      | NONE(*)(measure/count_time/p_t_2_28_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_605_o(measure/count_time/d_fin_d_type[3]_AND_605_o1:O)      | NONE(*)(measure/count_time/p_t_2_31_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_599_o(measure/count_time/d_fin_d_type[3]_AND_599_o1:O)      | NONE(*)(measure/count_time/p_t_1_2_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_597_o(measure/count_time/d_fin_d_type[3]_AND_597_o1:O)      | NONE(*)(measure/count_time/p_t_1_3_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_601_o(measure/count_time/d_fin_d_type[3]_AND_601_o1:O)      | NONE(*)(measure/count_time/p_t_1_1_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_595_o(measure/count_time/d_fin_d_type[3]_AND_595_o1:O)      | NONE(*)(measure/count_time/p_t_1_4_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_593_o(measure/count_time/d_fin_d_type[3]_AND_593_o1:O)      | NONE(*)(measure/count_time/p_t_1_5_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_589_o(measure/count_time/d_fin_d_type[3]_AND_589_o1:O)      | NONE(*)(measure/count_time/p_t_1_7_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_587_o(measure/count_time/d_fin_d_type[3]_AND_587_o1:O)      | NONE(*)(measure/count_time/p_t_1_8_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_591_o(measure/count_time/d_fin_d_type[3]_AND_591_o1:O)      | NONE(*)(measure/count_time/p_t_1_6_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_585_o(measure/count_time/d_fin_d_type[3]_AND_585_o1:O)      | NONE(*)(measure/count_time/p_t_1_9_LDC) | 1     |
+measure/count_time/d_fin_d_type[3]_AND_583_o(measure/count_time/d_fin_d_type[3]_AND_583_o1:O)      | NONE(*)(measure/count_time/p_t_1_10_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_579_o(measure/count_time/d_fin_d_type[3]_AND_579_o1:O)      | NONE(*)(measure/count_time/p_t_1_12_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_577_o(measure/count_time/d_fin_d_type[3]_AND_577_o1:O)      | NONE(*)(measure/count_time/p_t_1_13_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_581_o(measure/count_time/d_fin_d_type[3]_AND_581_o1:O)      | NONE(*)(measure/count_time/p_t_1_11_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_575_o(measure/count_time/d_fin_d_type[3]_AND_575_o1:O)      | NONE(*)(measure/count_time/p_t_1_14_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_573_o(measure/count_time/d_fin_d_type[3]_AND_573_o1:O)      | NONE(*)(measure/count_time/p_t_1_15_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_569_o(measure/count_time/d_fin_d_type[3]_AND_569_o1:O)      | NONE(*)(measure/count_time/p_t_1_17_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_567_o(measure/count_time/d_fin_d_type[3]_AND_567_o1:O)      | NONE(*)(measure/count_time/p_t_1_18_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_571_o(measure/count_time/d_fin_d_type[3]_AND_571_o1:O)      | NONE(*)(measure/count_time/p_t_1_16_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_565_o(measure/count_time/d_fin_d_type[3]_AND_565_o1:O)      | NONE(*)(measure/count_time/p_t_1_19_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_563_o(measure/count_time/d_fin_d_type[3]_AND_563_o1:O)      | NONE(*)(measure/count_time/p_t_1_20_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_559_o(measure/count_time/d_fin_d_type[3]_AND_559_o1:O)      | NONE(*)(measure/count_time/p_t_1_22_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_557_o(measure/count_time/d_fin_d_type[3]_AND_557_o1:O)      | NONE(*)(measure/count_time/p_t_1_23_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_561_o(measure/count_time/d_fin_d_type[3]_AND_561_o1:O)      | NONE(*)(measure/count_time/p_t_1_21_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_555_o(measure/count_time/d_fin_d_type[3]_AND_555_o1:O)      | NONE(*)(measure/count_time/p_t_1_24_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_553_o(measure/count_time/d_fin_d_type[3]_AND_553_o1:O)      | NONE(*)(measure/count_time/p_t_1_25_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_549_o(measure/count_time/d_fin_d_type[3]_AND_549_o1:O)      | NONE(*)(measure/count_time/p_t_1_27_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_547_o(measure/count_time/d_fin_d_type[3]_AND_547_o1:O)      | NONE(*)(measure/count_time/p_t_1_28_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_551_o(measure/count_time/d_fin_d_type[3]_AND_551_o1:O)      | NONE(*)(measure/count_time/p_t_1_26_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_545_o(measure/count_time/d_fin_d_type[3]_AND_545_o1:O)      | NONE(*)(measure/count_time/p_t_1_29_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_543_o(measure/count_time/d_fin_d_type[3]_AND_543_o1:O)      | NONE(*)(measure/count_time/p_t_1_30_LDC)| 1     |
+measure/count_time/d_fin_d_type[3]_AND_541_o(measure/count_time/d_fin_d_type[3]_AND_541_o1:O)      | NONE(*)(measure/count_time/p_t_1_31_LDC)| 1     |
+measure/count_time/dst_1_dst_7_AND_20_o(measure/count_time/dst_1_dst_7_AND_20_o:O)                 | NONE(*)(measure/count_time/full_LDC)    | 1     |
+---------------------------------------------------------------------------------------------------+-----------------------------------------+-------+
 (*) These 242 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
@@ -2224,7 +2099,7 @@ Timing Summary:
 Speed Grade: -2
 
    Minimum period: 23.771ns (Maximum Frequency: 42.068MHz)
-   Minimum input arrival time before clock: 5.886ns
+   Minimum input arrival time before clock: 5.895ns
    Maximum output required time after clock: 4.794ns
    Maximum combinational path delay: 5.043ns
 
@@ -2257,7 +2132,7 @@ Delay:               2.278ns (Levels of Logic = 1)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 23.771ns (frequency: 42.068MHz)
-  Total number of paths / destination ports: 471965 / 1356
+  Total number of paths / destination ports: 472511 / 1546
 -------------------------------------------------------------------------
 Delay:               7.607ns (Levels of Logic = 20)
   Source:            measure/count_time/p_t_1_2_C_2 (FF)
@@ -2296,22 +2171,22 @@ Delay:               7.607ns (Levels of Logic = 20)
                                        (31.1% logic, 68.9% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'measure/count_time/rst_dst_1_MUX_1124_o'
+Timing constraint: Default period analysis for Clock 'measure/count_time/rst_dst_1_MUX_584_o'
   Clock period: 3.083ns (frequency: 324.347MHz)
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
 Delay:               3.083ns (Levels of Logic = 1)
   Source:            measure/count_time/preset (LATCH)
   Destination:       measure/count_time/preset (LATCH)
-  Source Clock:      measure/count_time/rst_dst_1_MUX_1124_o falling
-  Destination Clock: measure/count_time/rst_dst_1_MUX_1124_o falling
+  Source Clock:      measure/count_time/rst_dst_1_MUX_584_o falling
+  Destination Clock: measure/count_time/rst_dst_1_MUX_584_o falling
 
   Data Path: measure/count_time/preset to measure/count_time/preset
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      LD:G->Q              87   0.581   2.216  measure/count_time/preset (measure/count_time/preset)
-     LUT3:I1->O            1   0.250   0.000  measure/count_time/Mmux_rst_dst_1_MUX_1124_o111 (measure/count_time/Mmux_rst_dst_1_MUX_1124_o11)
+     LUT3:I1->O            1   0.250   0.000  measure/count_time/Mmux_rst_dst_1_MUX_584_o111 (measure/count_time/Mmux_rst_dst_1_MUX_584_o11)
      LD:D                      0.036          measure/count_time/preset
     ----------------------------------------
     Total                      3.083ns (0.867ns logic, 2.216ns route)
@@ -7471,9 +7346,9 @@ Delay:               4.404ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 800 / 799
+  Total number of paths / destination ports: 894 / 893
 -------------------------------------------------------------------------
-Offset:              5.886ns (Levels of Logic = 3)
+Offset:              5.895ns (Levels of Logic = 3)
   Source:            WING_B<0> (PAD)
   Destination:       measure/count_time/p_t_3_0_C_0 (FF)
   Destination Clock: clk rising 3.1X
@@ -7482,19 +7357,19 @@ Offset:              5.886ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           316   1.328   2.715  WING_B_0_IBUF (WING_B_0_IBUF)
+     IBUF:I->O           410   1.328   2.724  WING_B_0_IBUF (WING_B_0_IBUF)
      LUT4:I0->O           19   0.254   1.261  measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT1011 (measure/count_time/Mmux_p_t_0[31]_p_t_0[31]_mux_105_OUT101)
      LUT6:I5->O            2   0.254   0.000  measure/count_time/Mmux_p_t_7[31]_p_t_7[31]_mux_104_OUT21 (measure/count_time/p_t_7[31]_p_t_7[31]_mux_104_OUT<0>)
      FDC:D                     0.074          measure/count_time/p_t_7_0_C_0
     ----------------------------------------
-    Total                      5.886ns (1.910ns logic, 3.976ns route)
-                                       (32.5% logic, 67.5% route)
+    Total                      5.895ns (1.910ns logic, 3.985ns route)
+                                       (32.4% logic, 67.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'measure/count_time/dst_1_dst_7_AND_20_o'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              5.205ns (Levels of Logic = 2)
+Offset:              5.214ns (Levels of Logic = 2)
   Source:            WING_B<0> (PAD)
   Destination:       measure/count_time/full_LDC (LATCH)
   Destination Clock: measure/count_time/dst_1_dst_7_AND_20_o falling
@@ -7503,12 +7378,12 @@ Offset:              5.205ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           316   1.328   2.439  WING_B_0_IBUF (WING_B_0_IBUF)
+     IBUF:I->O           410   1.328   2.448  WING_B_0_IBUF (WING_B_0_IBUF)
      LUT2:I1->O            2   0.254   0.725  measure/count_time/rst_dst_1_AND_540_o1 (measure/count_time/rst_dst_1_AND_540_o)
      LDC:CLR                   0.459          measure/count_time/full_LDC
     ----------------------------------------
-    Total                      5.205ns (2.041ns logic, 3.164ns route)
-                                       (39.2% logic, 60.8% route)
+    Total                      5.214ns (2.041ns logic, 3.173ns route)
+                                       (39.1% logic, 60.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -7572,262 +7447,262 @@ Cross Clock Domains Report:
 --------------------------
 
 Clock to Setup on destination clock clk
----------------------------------------------+---------+---------+---------+---------+
-                                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------------------------------------+---------+---------+---------+---------+
-WING_B<0>                                    |         |    5.309|         |         |
-clk                                          |    7.607|    1.324|         |         |
-ctrl/statep[8]_GND_36_o_Mux_83_o             |         |    1.598|         |         |
-measure/count_time/d_fin_d_type[3]_AND_541_o |         |    7.430|         |         |
-measure/count_time/d_fin_d_type[3]_AND_543_o |         |    7.326|         |         |
-measure/count_time/d_fin_d_type[3]_AND_545_o |         |    7.559|         |         |
-measure/count_time/d_fin_d_type[3]_AND_547_o |         |    7.454|         |         |
-measure/count_time/d_fin_d_type[3]_AND_549_o |         |    7.350|         |         |
-measure/count_time/d_fin_d_type[3]_AND_551_o |         |    7.582|         |         |
-measure/count_time/d_fin_d_type[3]_AND_553_o |         |    7.477|         |         |
-measure/count_time/d_fin_d_type[3]_AND_555_o |         |    7.373|         |         |
-measure/count_time/d_fin_d_type[3]_AND_557_o |         |    7.605|         |         |
-measure/count_time/d_fin_d_type[3]_AND_559_o |         |    7.500|         |         |
-measure/count_time/d_fin_d_type[3]_AND_561_o |         |    7.396|         |         |
-measure/count_time/d_fin_d_type[3]_AND_563_o |         |    7.628|         |         |
-measure/count_time/d_fin_d_type[3]_AND_565_o |         |    7.523|         |         |
-measure/count_time/d_fin_d_type[3]_AND_567_o |         |    7.419|         |         |
-measure/count_time/d_fin_d_type[3]_AND_569_o |         |    7.652|         |         |
-measure/count_time/d_fin_d_type[3]_AND_571_o |         |    7.547|         |         |
-measure/count_time/d_fin_d_type[3]_AND_573_o |         |    7.443|         |         |
-measure/count_time/d_fin_d_type[3]_AND_575_o |         |    7.675|         |         |
-measure/count_time/d_fin_d_type[3]_AND_577_o |         |    7.570|         |         |
-measure/count_time/d_fin_d_type[3]_AND_579_o |         |    7.466|         |         |
-measure/count_time/d_fin_d_type[3]_AND_581_o |         |    7.698|         |         |
-measure/count_time/d_fin_d_type[3]_AND_583_o |         |    7.593|         |         |
-measure/count_time/d_fin_d_type[3]_AND_585_o |         |    7.489|         |         |
-measure/count_time/d_fin_d_type[3]_AND_587_o |         |    7.721|         |         |
-measure/count_time/d_fin_d_type[3]_AND_589_o |         |    7.616|         |         |
-measure/count_time/d_fin_d_type[3]_AND_591_o |         |    7.512|         |         |
-measure/count_time/d_fin_d_type[3]_AND_593_o |         |    7.745|         |         |
-measure/count_time/d_fin_d_type[3]_AND_595_o |         |    7.640|         |         |
-measure/count_time/d_fin_d_type[3]_AND_597_o |         |    7.536|         |         |
-measure/count_time/d_fin_d_type[3]_AND_599_o |         |    7.768|         |         |
-measure/count_time/d_fin_d_type[3]_AND_601_o |         |    7.663|         |         |
-measure/count_time/d_fin_d_type[3]_AND_603_o |         |    7.559|         |         |
-measure/count_time/d_fin_d_type[3]_AND_605_o |         |    7.326|         |         |
-measure/count_time/d_fin_d_type[3]_AND_607_o |         |    7.222|         |         |
-measure/count_time/d_fin_d_type[3]_AND_609_o |         |    7.455|         |         |
-measure/count_time/d_fin_d_type[3]_AND_611_o |         |    7.350|         |         |
-measure/count_time/d_fin_d_type[3]_AND_613_o |         |    7.246|         |         |
-measure/count_time/d_fin_d_type[3]_AND_615_o |         |    7.478|         |         |
-measure/count_time/d_fin_d_type[3]_AND_617_o |         |    7.373|         |         |
-measure/count_time/d_fin_d_type[3]_AND_619_o |         |    7.269|         |         |
-measure/count_time/d_fin_d_type[3]_AND_621_o |         |    7.501|         |         |
-measure/count_time/d_fin_d_type[3]_AND_623_o |         |    7.396|         |         |
-measure/count_time/d_fin_d_type[3]_AND_625_o |         |    7.292|         |         |
-measure/count_time/d_fin_d_type[3]_AND_627_o |         |    7.524|         |         |
-measure/count_time/d_fin_d_type[3]_AND_629_o |         |    7.419|         |         |
-measure/count_time/d_fin_d_type[3]_AND_631_o |         |    7.315|         |         |
-measure/count_time/d_fin_d_type[3]_AND_633_o |         |    7.548|         |         |
-measure/count_time/d_fin_d_type[3]_AND_635_o |         |    7.443|         |         |
-measure/count_time/d_fin_d_type[3]_AND_637_o |         |    7.339|         |         |
-measure/count_time/d_fin_d_type[3]_AND_639_o |         |    7.571|         |         |
-measure/count_time/d_fin_d_type[3]_AND_641_o |         |    7.466|         |         |
-measure/count_time/d_fin_d_type[3]_AND_643_o |         |    7.362|         |         |
-measure/count_time/d_fin_d_type[3]_AND_645_o |         |    7.594|         |         |
-measure/count_time/d_fin_d_type[3]_AND_647_o |         |    7.489|         |         |
-measure/count_time/d_fin_d_type[3]_AND_649_o |         |    7.385|         |         |
-measure/count_time/d_fin_d_type[3]_AND_651_o |         |    7.617|         |         |
-measure/count_time/d_fin_d_type[3]_AND_653_o |         |    7.512|         |         |
-measure/count_time/d_fin_d_type[3]_AND_655_o |         |    7.408|         |         |
-measure/count_time/d_fin_d_type[3]_AND_657_o |         |    7.641|         |         |
-measure/count_time/d_fin_d_type[3]_AND_659_o |         |    7.536|         |         |
-measure/count_time/d_fin_d_type[3]_AND_661_o |         |    7.432|         |         |
-measure/count_time/d_fin_d_type[3]_AND_663_o |         |    7.664|         |         |
-measure/count_time/d_fin_d_type[3]_AND_665_o |         |    7.559|         |         |
-measure/count_time/d_fin_d_type[3]_AND_667_o |         |    7.455|         |         |
-measure/count_time/d_fin_d_type[3]_AND_669_o |         |    6.692|         |         |
-measure/count_time/d_fin_d_type[3]_AND_671_o |         |    6.588|         |         |
-measure/count_time/d_fin_d_type[3]_AND_673_o |         |    6.820|         |         |
-measure/count_time/d_fin_d_type[3]_AND_675_o |         |    6.716|         |         |
-measure/count_time/d_fin_d_type[3]_AND_677_o |         |    6.612|         |         |
-measure/count_time/d_fin_d_type[3]_AND_679_o |         |    6.844|         |         |
-measure/count_time/d_fin_d_type[3]_AND_681_o |         |    6.739|         |         |
-measure/count_time/d_fin_d_type[3]_AND_683_o |         |    6.635|         |         |
-measure/count_time/d_fin_d_type[3]_AND_685_o |         |    6.867|         |         |
-measure/count_time/d_fin_d_type[3]_AND_687_o |         |    6.762|         |         |
-measure/count_time/d_fin_d_type[3]_AND_689_o |         |    6.658|         |         |
-measure/count_time/d_fin_d_type[3]_AND_691_o |         |    6.890|         |         |
-measure/count_time/d_fin_d_type[3]_AND_693_o |         |    6.785|         |         |
-measure/count_time/d_fin_d_type[3]_AND_695_o |         |    6.681|         |         |
-measure/count_time/d_fin_d_type[3]_AND_697_o |         |    6.914|         |         |
-measure/count_time/d_fin_d_type[3]_AND_699_o |         |    6.809|         |         |
-measure/count_time/d_fin_d_type[3]_AND_701_o |         |    6.705|         |         |
-measure/count_time/d_fin_d_type[3]_AND_703_o |         |    6.937|         |         |
-measure/count_time/d_fin_d_type[3]_AND_705_o |         |    6.832|         |         |
-measure/count_time/d_fin_d_type[3]_AND_707_o |         |    6.728|         |         |
-measure/count_time/d_fin_d_type[3]_AND_709_o |         |    6.960|         |         |
-measure/count_time/d_fin_d_type[3]_AND_711_o |         |    6.855|         |         |
-measure/count_time/d_fin_d_type[3]_AND_713_o |         |    6.751|         |         |
-measure/count_time/d_fin_d_type[3]_AND_715_o |         |    6.983|         |         |
-measure/count_time/d_fin_d_type[3]_AND_717_o |         |    6.878|         |         |
-measure/count_time/d_fin_d_type[3]_AND_719_o |         |    6.774|         |         |
-measure/count_time/d_fin_d_type[3]_AND_721_o |         |    7.007|         |         |
-measure/count_time/d_fin_d_type[3]_AND_723_o |         |    6.902|         |         |
-measure/count_time/d_fin_d_type[3]_AND_725_o |         |    6.798|         |         |
-measure/count_time/d_fin_d_type[3]_AND_727_o |         |    7.030|         |         |
-measure/count_time/d_fin_d_type[3]_AND_729_o |         |    6.925|         |         |
-measure/count_time/d_fin_d_type[3]_AND_731_o |         |    6.821|         |         |
-measure/count_time/d_fin_d_type[3]_AND_733_o |         |    6.615|         |         |
-measure/count_time/d_fin_d_type[3]_AND_735_o |         |    6.511|         |         |
-measure/count_time/d_fin_d_type[3]_AND_737_o |         |    6.744|         |         |
-measure/count_time/d_fin_d_type[3]_AND_739_o |         |    6.639|         |         |
-measure/count_time/d_fin_d_type[3]_AND_741_o |         |    6.535|         |         |
-measure/count_time/d_fin_d_type[3]_AND_743_o |         |    6.767|         |         |
-measure/count_time/d_fin_d_type[3]_AND_745_o |         |    6.662|         |         |
-measure/count_time/d_fin_d_type[3]_AND_747_o |         |    6.558|         |         |
-measure/count_time/d_fin_d_type[3]_AND_749_o |         |    6.790|         |         |
-measure/count_time/d_fin_d_type[3]_AND_751_o |         |    6.685|         |         |
-measure/count_time/d_fin_d_type[3]_AND_753_o |         |    6.581|         |         |
-measure/count_time/d_fin_d_type[3]_AND_755_o |         |    6.813|         |         |
-measure/count_time/d_fin_d_type[3]_AND_757_o |         |    6.708|         |         |
-measure/count_time/d_fin_d_type[3]_AND_759_o |         |    6.604|         |         |
-measure/count_time/d_fin_d_type[3]_AND_761_o |         |    6.837|         |         |
-measure/count_time/d_fin_d_type[3]_AND_763_o |         |    6.732|         |         |
-measure/count_time/d_fin_d_type[3]_AND_765_o |         |    6.628|         |         |
-measure/count_time/d_fin_d_type[3]_AND_767_o |         |    6.860|         |         |
-measure/count_time/d_fin_d_type[3]_AND_769_o |         |    6.755|         |         |
-measure/count_time/d_fin_d_type[3]_AND_771_o |         |    6.651|         |         |
-measure/count_time/d_fin_d_type[3]_AND_773_o |         |    6.883|         |         |
-measure/count_time/d_fin_d_type[3]_AND_775_o |         |    6.778|         |         |
-measure/count_time/d_fin_d_type[3]_AND_777_o |         |    6.674|         |         |
-measure/count_time/d_fin_d_type[3]_AND_779_o |         |    6.906|         |         |
-measure/count_time/d_fin_d_type[3]_AND_781_o |         |    6.801|         |         |
-measure/count_time/d_fin_d_type[3]_AND_783_o |         |    6.697|         |         |
-measure/count_time/d_fin_d_type[3]_AND_785_o |         |    6.930|         |         |
-measure/count_time/d_fin_d_type[3]_AND_787_o |         |    6.825|         |         |
-measure/count_time/d_fin_d_type[3]_AND_789_o |         |    6.721|         |         |
-measure/count_time/d_fin_d_type[3]_AND_791_o |         |    6.953|         |         |
-measure/count_time/d_fin_d_type[3]_AND_793_o |         |    6.848|         |         |
-measure/count_time/d_fin_d_type[3]_AND_795_o |         |    6.744|         |         |
-measure/count_time/d_fin_d_type[3]_AND_797_o |         |    6.797|         |         |
-measure/count_time/d_fin_d_type[3]_AND_799_o |         |    6.693|         |         |
-measure/count_time/d_fin_d_type[3]_AND_801_o |         |    6.926|         |         |
-measure/count_time/d_fin_d_type[3]_AND_803_o |         |    6.821|         |         |
-measure/count_time/d_fin_d_type[3]_AND_805_o |         |    6.717|         |         |
-measure/count_time/d_fin_d_type[3]_AND_807_o |         |    6.949|         |         |
-measure/count_time/d_fin_d_type[3]_AND_809_o |         |    6.844|         |         |
-measure/count_time/d_fin_d_type[3]_AND_811_o |         |    6.740|         |         |
-measure/count_time/d_fin_d_type[3]_AND_813_o |         |    6.972|         |         |
-measure/count_time/d_fin_d_type[3]_AND_815_o |         |    6.867|         |         |
-measure/count_time/d_fin_d_type[3]_AND_817_o |         |    6.763|         |         |
-measure/count_time/d_fin_d_type[3]_AND_819_o |         |    6.995|         |         |
-measure/count_time/d_fin_d_type[3]_AND_821_o |         |    6.890|         |         |
-measure/count_time/d_fin_d_type[3]_AND_823_o |         |    6.786|         |         |
-measure/count_time/d_fin_d_type[3]_AND_825_o |         |    7.019|         |         |
-measure/count_time/d_fin_d_type[3]_AND_827_o |         |    6.914|         |         |
-measure/count_time/d_fin_d_type[3]_AND_829_o |         |    6.810|         |         |
-measure/count_time/d_fin_d_type[3]_AND_831_o |         |    7.042|         |         |
-measure/count_time/d_fin_d_type[3]_AND_833_o |         |    6.937|         |         |
-measure/count_time/d_fin_d_type[3]_AND_835_o |         |    6.833|         |         |
-measure/count_time/d_fin_d_type[3]_AND_837_o |         |    7.065|         |         |
-measure/count_time/d_fin_d_type[3]_AND_839_o |         |    6.960|         |         |
-measure/count_time/d_fin_d_type[3]_AND_841_o |         |    6.856|         |         |
-measure/count_time/d_fin_d_type[3]_AND_843_o |         |    7.088|         |         |
-measure/count_time/d_fin_d_type[3]_AND_845_o |         |    6.983|         |         |
-measure/count_time/d_fin_d_type[3]_AND_847_o |         |    6.879|         |         |
-measure/count_time/d_fin_d_type[3]_AND_849_o |         |    7.112|         |         |
-measure/count_time/d_fin_d_type[3]_AND_851_o |         |    7.007|         |         |
-measure/count_time/d_fin_d_type[3]_AND_853_o |         |    6.903|         |         |
-measure/count_time/d_fin_d_type[3]_AND_855_o |         |    7.135|         |         |
-measure/count_time/d_fin_d_type[3]_AND_857_o |         |    7.030|         |         |
-measure/count_time/d_fin_d_type[3]_AND_859_o |         |    6.926|         |         |
-measure/count_time/d_fin_d_type[3]_AND_861_o |         |    6.990|         |         |
-measure/count_time/d_fin_d_type[3]_AND_863_o |         |    6.886|         |         |
-measure/count_time/d_fin_d_type[3]_AND_865_o |         |    7.119|         |         |
-measure/count_time/d_fin_d_type[3]_AND_867_o |         |    7.014|         |         |
-measure/count_time/d_fin_d_type[3]_AND_869_o |         |    6.910|         |         |
-measure/count_time/d_fin_d_type[3]_AND_871_o |         |    7.142|         |         |
-measure/count_time/d_fin_d_type[3]_AND_873_o |         |    7.037|         |         |
-measure/count_time/d_fin_d_type[3]_AND_875_o |         |    6.933|         |         |
-measure/count_time/d_fin_d_type[3]_AND_877_o |         |    7.165|         |         |
-measure/count_time/d_fin_d_type[3]_AND_879_o |         |    7.060|         |         |
-measure/count_time/d_fin_d_type[3]_AND_881_o |         |    6.956|         |         |
-measure/count_time/d_fin_d_type[3]_AND_883_o |         |    7.188|         |         |
-measure/count_time/d_fin_d_type[3]_AND_885_o |         |    7.083|         |         |
-measure/count_time/d_fin_d_type[3]_AND_887_o |         |    6.979|         |         |
-measure/count_time/d_fin_d_type[3]_AND_889_o |         |    7.212|         |         |
-measure/count_time/d_fin_d_type[3]_AND_891_o |         |    7.107|         |         |
-measure/count_time/d_fin_d_type[3]_AND_893_o |         |    7.003|         |         |
-measure/count_time/d_fin_d_type[3]_AND_895_o |         |    7.235|         |         |
-measure/count_time/d_fin_d_type[3]_AND_897_o |         |    7.130|         |         |
-measure/count_time/d_fin_d_type[3]_AND_899_o |         |    7.026|         |         |
-measure/count_time/d_fin_d_type[3]_AND_901_o |         |    7.258|         |         |
-measure/count_time/d_fin_d_type[3]_AND_903_o |         |    7.153|         |         |
-measure/count_time/d_fin_d_type[3]_AND_905_o |         |    7.049|         |         |
-measure/count_time/d_fin_d_type[3]_AND_907_o |         |    7.281|         |         |
-measure/count_time/d_fin_d_type[3]_AND_909_o |         |    7.176|         |         |
-measure/count_time/d_fin_d_type[3]_AND_911_o |         |    7.072|         |         |
-measure/count_time/d_fin_d_type[3]_AND_913_o |         |    7.305|         |         |
-measure/count_time/d_fin_d_type[3]_AND_915_o |         |    7.200|         |         |
-measure/count_time/d_fin_d_type[3]_AND_917_o |         |    7.096|         |         |
-measure/count_time/d_fin_d_type[3]_AND_919_o |         |    7.328|         |         |
-measure/count_time/d_fin_d_type[3]_AND_921_o |         |    7.223|         |         |
-measure/count_time/d_fin_d_type[3]_AND_923_o |         |    7.119|         |         |
-measure/count_time/d_fin_d_type[3]_AND_925_o |         |    6.836|         |         |
-measure/count_time/d_fin_d_type[3]_AND_927_o |         |    6.732|         |         |
-measure/count_time/d_fin_d_type[3]_AND_929_o |         |    6.964|         |         |
-measure/count_time/d_fin_d_type[3]_AND_931_o |         |    6.860|         |         |
-measure/count_time/d_fin_d_type[3]_AND_933_o |         |    6.756|         |         |
-measure/count_time/d_fin_d_type[3]_AND_935_o |         |    6.988|         |         |
-measure/count_time/d_fin_d_type[3]_AND_937_o |         |    6.883|         |         |
-measure/count_time/d_fin_d_type[3]_AND_939_o |         |    6.779|         |         |
-measure/count_time/d_fin_d_type[3]_AND_941_o |         |    7.011|         |         |
-measure/count_time/d_fin_d_type[3]_AND_943_o |         |    6.906|         |         |
-measure/count_time/d_fin_d_type[3]_AND_945_o |         |    6.802|         |         |
-measure/count_time/d_fin_d_type[3]_AND_947_o |         |    7.034|         |         |
-measure/count_time/d_fin_d_type[3]_AND_949_o |         |    6.929|         |         |
-measure/count_time/d_fin_d_type[3]_AND_951_o |         |    6.825|         |         |
-measure/count_time/d_fin_d_type[3]_AND_953_o |         |    7.058|         |         |
-measure/count_time/d_fin_d_type[3]_AND_955_o |         |    6.953|         |         |
-measure/count_time/d_fin_d_type[3]_AND_957_o |         |    6.849|         |         |
-measure/count_time/d_fin_d_type[3]_AND_959_o |         |    7.081|         |         |
-measure/count_time/d_fin_d_type[3]_AND_961_o |         |    6.976|         |         |
-measure/count_time/d_fin_d_type[3]_AND_963_o |         |    6.872|         |         |
-measure/count_time/d_fin_d_type[3]_AND_965_o |         |    7.104|         |         |
-measure/count_time/d_fin_d_type[3]_AND_967_o |         |    6.999|         |         |
-measure/count_time/d_fin_d_type[3]_AND_969_o |         |    6.895|         |         |
-measure/count_time/d_fin_d_type[3]_AND_971_o |         |    7.127|         |         |
-measure/count_time/d_fin_d_type[3]_AND_973_o |         |    7.022|         |         |
-measure/count_time/d_fin_d_type[3]_AND_975_o |         |    6.918|         |         |
-measure/count_time/d_fin_d_type[3]_AND_977_o |         |    7.151|         |         |
-measure/count_time/d_fin_d_type[3]_AND_979_o |         |    7.046|         |         |
-measure/count_time/d_fin_d_type[3]_AND_981_o |         |    6.942|         |         |
-measure/count_time/d_fin_d_type[3]_AND_983_o |         |    7.174|         |         |
-measure/count_time/d_fin_d_type[3]_AND_985_o |         |    7.069|         |         |
-measure/count_time/d_fin_d_type[3]_AND_987_o |         |    6.965|         |         |
-measure/count_time/dst_1_d_type[3]_MUX_1128_o|         |    5.064|         |         |
-measure/count_time/dst_1_d_type[3]_MUX_1137_o|         |    5.168|         |         |
-measure/count_time/dst_1_d_type[3]_MUX_1146_o|         |    4.232|         |         |
-measure/count_time/dst_1_d_type[3]_MUX_1155_o|         |    4.337|         |         |
-measure/count_time/dst_1_d_type[3]_MUX_1164_o|         |    4.404|         |         |
-measure/count_time/dst_1_d_type[3]_MUX_1173_o|         |    4.558|         |         |
-measure/count_time/dst_1_d_type[3]_MUX_1182_o|         |    4.583|         |         |
-measure/count_time/dst_1_dst_7_AND_20_o      |         |    4.580|         |         |
-measure/count_time/preset_d_fin_AND_156_o    |         |    2.046|         |         |
-measure/count_time/preset_d_fin_AND_220_o    |         |    2.046|         |         |
-measure/count_time/preset_d_fin_AND_284_o    |         |    2.046|         |         |
-measure/count_time/preset_d_fin_AND_28_o     |         |    2.046|         |         |
-measure/count_time/preset_d_fin_AND_348_o    |         |    2.046|         |         |
-measure/count_time/preset_d_fin_AND_412_o    |         |    2.046|         |         |
-measure/count_time/preset_d_fin_AND_92_o     |         |    2.046|         |         |
-measure/count_time/rst_dst_1_MUX_1124_o      |         |    4.741|         |         |
-measure/fetch/p_start_p_f_run_AND_14_o       |         |    3.927|         |         |
----------------------------------------------+---------+---------+---------+---------+
+--------------------------------------------+---------+---------+---------+---------+
+                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------------------+---------+---------+---------+---------+
+WING_B<0>                                   |         |    5.309|         |         |
+clk                                         |    7.607|    1.402|         |         |
+ctrl/statep[8]_GND_36_o_Mux_83_o            |         |    1.598|         |         |
+measure/count_time/d_fin_d_type[3]_AND_541_o|         |    7.430|         |         |
+measure/count_time/d_fin_d_type[3]_AND_543_o|         |    7.326|         |         |
+measure/count_time/d_fin_d_type[3]_AND_545_o|         |    7.559|         |         |
+measure/count_time/d_fin_d_type[3]_AND_547_o|         |    7.454|         |         |
+measure/count_time/d_fin_d_type[3]_AND_549_o|         |    7.350|         |         |
+measure/count_time/d_fin_d_type[3]_AND_551_o|         |    7.582|         |         |
+measure/count_time/d_fin_d_type[3]_AND_553_o|         |    7.477|         |         |
+measure/count_time/d_fin_d_type[3]_AND_555_o|         |    7.373|         |         |
+measure/count_time/d_fin_d_type[3]_AND_557_o|         |    7.605|         |         |
+measure/count_time/d_fin_d_type[3]_AND_559_o|         |    7.500|         |         |
+measure/count_time/d_fin_d_type[3]_AND_561_o|         |    7.396|         |         |
+measure/count_time/d_fin_d_type[3]_AND_563_o|         |    7.628|         |         |
+measure/count_time/d_fin_d_type[3]_AND_565_o|         |    7.523|         |         |
+measure/count_time/d_fin_d_type[3]_AND_567_o|         |    7.419|         |         |
+measure/count_time/d_fin_d_type[3]_AND_569_o|         |    7.652|         |         |
+measure/count_time/d_fin_d_type[3]_AND_571_o|         |    7.547|         |         |
+measure/count_time/d_fin_d_type[3]_AND_573_o|         |    7.443|         |         |
+measure/count_time/d_fin_d_type[3]_AND_575_o|         |    7.675|         |         |
+measure/count_time/d_fin_d_type[3]_AND_577_o|         |    7.570|         |         |
+measure/count_time/d_fin_d_type[3]_AND_579_o|         |    7.466|         |         |
+measure/count_time/d_fin_d_type[3]_AND_581_o|         |    7.698|         |         |
+measure/count_time/d_fin_d_type[3]_AND_583_o|         |    7.593|         |         |
+measure/count_time/d_fin_d_type[3]_AND_585_o|         |    7.489|         |         |
+measure/count_time/d_fin_d_type[3]_AND_587_o|         |    7.721|         |         |
+measure/count_time/d_fin_d_type[3]_AND_589_o|         |    7.616|         |         |
+measure/count_time/d_fin_d_type[3]_AND_591_o|         |    7.512|         |         |
+measure/count_time/d_fin_d_type[3]_AND_593_o|         |    7.745|         |         |
+measure/count_time/d_fin_d_type[3]_AND_595_o|         |    7.640|         |         |
+measure/count_time/d_fin_d_type[3]_AND_597_o|         |    7.536|         |         |
+measure/count_time/d_fin_d_type[3]_AND_599_o|         |    7.768|         |         |
+measure/count_time/d_fin_d_type[3]_AND_601_o|         |    7.663|         |         |
+measure/count_time/d_fin_d_type[3]_AND_603_o|         |    7.559|         |         |
+measure/count_time/d_fin_d_type[3]_AND_605_o|         |    7.326|         |         |
+measure/count_time/d_fin_d_type[3]_AND_607_o|         |    7.222|         |         |
+measure/count_time/d_fin_d_type[3]_AND_609_o|         |    7.455|         |         |
+measure/count_time/d_fin_d_type[3]_AND_611_o|         |    7.350|         |         |
+measure/count_time/d_fin_d_type[3]_AND_613_o|         |    7.246|         |         |
+measure/count_time/d_fin_d_type[3]_AND_615_o|         |    7.478|         |         |
+measure/count_time/d_fin_d_type[3]_AND_617_o|         |    7.373|         |         |
+measure/count_time/d_fin_d_type[3]_AND_619_o|         |    7.269|         |         |
+measure/count_time/d_fin_d_type[3]_AND_621_o|         |    7.501|         |         |
+measure/count_time/d_fin_d_type[3]_AND_623_o|         |    7.396|         |         |
+measure/count_time/d_fin_d_type[3]_AND_625_o|         |    7.292|         |         |
+measure/count_time/d_fin_d_type[3]_AND_627_o|         |    7.524|         |         |
+measure/count_time/d_fin_d_type[3]_AND_629_o|         |    7.419|         |         |
+measure/count_time/d_fin_d_type[3]_AND_631_o|         |    7.315|         |         |
+measure/count_time/d_fin_d_type[3]_AND_633_o|         |    7.548|         |         |
+measure/count_time/d_fin_d_type[3]_AND_635_o|         |    7.443|         |         |
+measure/count_time/d_fin_d_type[3]_AND_637_o|         |    7.339|         |         |
+measure/count_time/d_fin_d_type[3]_AND_639_o|         |    7.571|         |         |
+measure/count_time/d_fin_d_type[3]_AND_641_o|         |    7.466|         |         |
+measure/count_time/d_fin_d_type[3]_AND_643_o|         |    7.362|         |         |
+measure/count_time/d_fin_d_type[3]_AND_645_o|         |    7.594|         |         |
+measure/count_time/d_fin_d_type[3]_AND_647_o|         |    7.489|         |         |
+measure/count_time/d_fin_d_type[3]_AND_649_o|         |    7.385|         |         |
+measure/count_time/d_fin_d_type[3]_AND_651_o|         |    7.617|         |         |
+measure/count_time/d_fin_d_type[3]_AND_653_o|         |    7.512|         |         |
+measure/count_time/d_fin_d_type[3]_AND_655_o|         |    7.408|         |         |
+measure/count_time/d_fin_d_type[3]_AND_657_o|         |    7.641|         |         |
+measure/count_time/d_fin_d_type[3]_AND_659_o|         |    7.536|         |         |
+measure/count_time/d_fin_d_type[3]_AND_661_o|         |    7.432|         |         |
+measure/count_time/d_fin_d_type[3]_AND_663_o|         |    7.664|         |         |
+measure/count_time/d_fin_d_type[3]_AND_665_o|         |    7.559|         |         |
+measure/count_time/d_fin_d_type[3]_AND_667_o|         |    7.455|         |         |
+measure/count_time/d_fin_d_type[3]_AND_669_o|         |    6.692|         |         |
+measure/count_time/d_fin_d_type[3]_AND_671_o|         |    6.588|         |         |
+measure/count_time/d_fin_d_type[3]_AND_673_o|         |    6.820|         |         |
+measure/count_time/d_fin_d_type[3]_AND_675_o|         |    6.716|         |         |
+measure/count_time/d_fin_d_type[3]_AND_677_o|         |    6.612|         |         |
+measure/count_time/d_fin_d_type[3]_AND_679_o|         |    6.844|         |         |
+measure/count_time/d_fin_d_type[3]_AND_681_o|         |    6.739|         |         |
+measure/count_time/d_fin_d_type[3]_AND_683_o|         |    6.635|         |         |
+measure/count_time/d_fin_d_type[3]_AND_685_o|         |    6.867|         |         |
+measure/count_time/d_fin_d_type[3]_AND_687_o|         |    6.762|         |         |
+measure/count_time/d_fin_d_type[3]_AND_689_o|         |    6.658|         |         |
+measure/count_time/d_fin_d_type[3]_AND_691_o|         |    6.890|         |         |
+measure/count_time/d_fin_d_type[3]_AND_693_o|         |    6.785|         |         |
+measure/count_time/d_fin_d_type[3]_AND_695_o|         |    6.681|         |         |
+measure/count_time/d_fin_d_type[3]_AND_697_o|         |    6.914|         |         |
+measure/count_time/d_fin_d_type[3]_AND_699_o|         |    6.809|         |         |
+measure/count_time/d_fin_d_type[3]_AND_701_o|         |    6.705|         |         |
+measure/count_time/d_fin_d_type[3]_AND_703_o|         |    6.937|         |         |
+measure/count_time/d_fin_d_type[3]_AND_705_o|         |    6.832|         |         |
+measure/count_time/d_fin_d_type[3]_AND_707_o|         |    6.728|         |         |
+measure/count_time/d_fin_d_type[3]_AND_709_o|         |    6.960|         |         |
+measure/count_time/d_fin_d_type[3]_AND_711_o|         |    6.855|         |         |
+measure/count_time/d_fin_d_type[3]_AND_713_o|         |    6.751|         |         |
+measure/count_time/d_fin_d_type[3]_AND_715_o|         |    6.983|         |         |
+measure/count_time/d_fin_d_type[3]_AND_717_o|         |    6.878|         |         |
+measure/count_time/d_fin_d_type[3]_AND_719_o|         |    6.774|         |         |
+measure/count_time/d_fin_d_type[3]_AND_721_o|         |    7.007|         |         |
+measure/count_time/d_fin_d_type[3]_AND_723_o|         |    6.902|         |         |
+measure/count_time/d_fin_d_type[3]_AND_725_o|         |    6.798|         |         |
+measure/count_time/d_fin_d_type[3]_AND_727_o|         |    7.030|         |         |
+measure/count_time/d_fin_d_type[3]_AND_729_o|         |    6.925|         |         |
+measure/count_time/d_fin_d_type[3]_AND_731_o|         |    6.821|         |         |
+measure/count_time/d_fin_d_type[3]_AND_733_o|         |    6.615|         |         |
+measure/count_time/d_fin_d_type[3]_AND_735_o|         |    6.511|         |         |
+measure/count_time/d_fin_d_type[3]_AND_737_o|         |    6.744|         |         |
+measure/count_time/d_fin_d_type[3]_AND_739_o|         |    6.639|         |         |
+measure/count_time/d_fin_d_type[3]_AND_741_o|         |    6.535|         |         |
+measure/count_time/d_fin_d_type[3]_AND_743_o|         |    6.767|         |         |
+measure/count_time/d_fin_d_type[3]_AND_745_o|         |    6.662|         |         |
+measure/count_time/d_fin_d_type[3]_AND_747_o|         |    6.558|         |         |
+measure/count_time/d_fin_d_type[3]_AND_749_o|         |    6.790|         |         |
+measure/count_time/d_fin_d_type[3]_AND_751_o|         |    6.685|         |         |
+measure/count_time/d_fin_d_type[3]_AND_753_o|         |    6.581|         |         |
+measure/count_time/d_fin_d_type[3]_AND_755_o|         |    6.813|         |         |
+measure/count_time/d_fin_d_type[3]_AND_757_o|         |    6.708|         |         |
+measure/count_time/d_fin_d_type[3]_AND_759_o|         |    6.604|         |         |
+measure/count_time/d_fin_d_type[3]_AND_761_o|         |    6.837|         |         |
+measure/count_time/d_fin_d_type[3]_AND_763_o|         |    6.732|         |         |
+measure/count_time/d_fin_d_type[3]_AND_765_o|         |    6.628|         |         |
+measure/count_time/d_fin_d_type[3]_AND_767_o|         |    6.860|         |         |
+measure/count_time/d_fin_d_type[3]_AND_769_o|         |    6.755|         |         |
+measure/count_time/d_fin_d_type[3]_AND_771_o|         |    6.651|         |         |
+measure/count_time/d_fin_d_type[3]_AND_773_o|         |    6.883|         |         |
+measure/count_time/d_fin_d_type[3]_AND_775_o|         |    6.778|         |         |
+measure/count_time/d_fin_d_type[3]_AND_777_o|         |    6.674|         |         |
+measure/count_time/d_fin_d_type[3]_AND_779_o|         |    6.906|         |         |
+measure/count_time/d_fin_d_type[3]_AND_781_o|         |    6.801|         |         |
+measure/count_time/d_fin_d_type[3]_AND_783_o|         |    6.697|         |         |
+measure/count_time/d_fin_d_type[3]_AND_785_o|         |    6.930|         |         |
+measure/count_time/d_fin_d_type[3]_AND_787_o|         |    6.825|         |         |
+measure/count_time/d_fin_d_type[3]_AND_789_o|         |    6.721|         |         |
+measure/count_time/d_fin_d_type[3]_AND_791_o|         |    6.953|         |         |
+measure/count_time/d_fin_d_type[3]_AND_793_o|         |    6.848|         |         |
+measure/count_time/d_fin_d_type[3]_AND_795_o|         |    6.744|         |         |
+measure/count_time/d_fin_d_type[3]_AND_797_o|         |    6.797|         |         |
+measure/count_time/d_fin_d_type[3]_AND_799_o|         |    6.693|         |         |
+measure/count_time/d_fin_d_type[3]_AND_801_o|         |    6.926|         |         |
+measure/count_time/d_fin_d_type[3]_AND_803_o|         |    6.821|         |         |
+measure/count_time/d_fin_d_type[3]_AND_805_o|         |    6.717|         |         |
+measure/count_time/d_fin_d_type[3]_AND_807_o|         |    6.949|         |         |
+measure/count_time/d_fin_d_type[3]_AND_809_o|         |    6.844|         |         |
+measure/count_time/d_fin_d_type[3]_AND_811_o|         |    6.740|         |         |
+measure/count_time/d_fin_d_type[3]_AND_813_o|         |    6.972|         |         |
+measure/count_time/d_fin_d_type[3]_AND_815_o|         |    6.867|         |         |
+measure/count_time/d_fin_d_type[3]_AND_817_o|         |    6.763|         |         |
+measure/count_time/d_fin_d_type[3]_AND_819_o|         |    6.995|         |         |
+measure/count_time/d_fin_d_type[3]_AND_821_o|         |    6.890|         |         |
+measure/count_time/d_fin_d_type[3]_AND_823_o|         |    6.786|         |         |
+measure/count_time/d_fin_d_type[3]_AND_825_o|         |    7.019|         |         |
+measure/count_time/d_fin_d_type[3]_AND_827_o|         |    6.914|         |         |
+measure/count_time/d_fin_d_type[3]_AND_829_o|         |    6.810|         |         |
+measure/count_time/d_fin_d_type[3]_AND_831_o|         |    7.042|         |         |
+measure/count_time/d_fin_d_type[3]_AND_833_o|         |    6.937|         |         |
+measure/count_time/d_fin_d_type[3]_AND_835_o|         |    6.833|         |         |
+measure/count_time/d_fin_d_type[3]_AND_837_o|         |    7.065|         |         |
+measure/count_time/d_fin_d_type[3]_AND_839_o|         |    6.960|         |         |
+measure/count_time/d_fin_d_type[3]_AND_841_o|         |    6.856|         |         |
+measure/count_time/d_fin_d_type[3]_AND_843_o|         |    7.088|         |         |
+measure/count_time/d_fin_d_type[3]_AND_845_o|         |    6.983|         |         |
+measure/count_time/d_fin_d_type[3]_AND_847_o|         |    6.879|         |         |
+measure/count_time/d_fin_d_type[3]_AND_849_o|         |    7.112|         |         |
+measure/count_time/d_fin_d_type[3]_AND_851_o|         |    7.007|         |         |
+measure/count_time/d_fin_d_type[3]_AND_853_o|         |    6.903|         |         |
+measure/count_time/d_fin_d_type[3]_AND_855_o|         |    7.135|         |         |
+measure/count_time/d_fin_d_type[3]_AND_857_o|         |    7.030|         |         |
+measure/count_time/d_fin_d_type[3]_AND_859_o|         |    6.926|         |         |
+measure/count_time/d_fin_d_type[3]_AND_861_o|         |    6.990|         |         |
+measure/count_time/d_fin_d_type[3]_AND_863_o|         |    6.886|         |         |
+measure/count_time/d_fin_d_type[3]_AND_865_o|         |    7.119|         |         |
+measure/count_time/d_fin_d_type[3]_AND_867_o|         |    7.014|         |         |
+measure/count_time/d_fin_d_type[3]_AND_869_o|         |    6.910|         |         |
+measure/count_time/d_fin_d_type[3]_AND_871_o|         |    7.142|         |         |
+measure/count_time/d_fin_d_type[3]_AND_873_o|         |    7.037|         |         |
+measure/count_time/d_fin_d_type[3]_AND_875_o|         |    6.933|         |         |
+measure/count_time/d_fin_d_type[3]_AND_877_o|         |    7.165|         |         |
+measure/count_time/d_fin_d_type[3]_AND_879_o|         |    7.060|         |         |
+measure/count_time/d_fin_d_type[3]_AND_881_o|         |    6.956|         |         |
+measure/count_time/d_fin_d_type[3]_AND_883_o|         |    7.188|         |         |
+measure/count_time/d_fin_d_type[3]_AND_885_o|         |    7.083|         |         |
+measure/count_time/d_fin_d_type[3]_AND_887_o|         |    6.979|         |         |
+measure/count_time/d_fin_d_type[3]_AND_889_o|         |    7.212|         |         |
+measure/count_time/d_fin_d_type[3]_AND_891_o|         |    7.107|         |         |
+measure/count_time/d_fin_d_type[3]_AND_893_o|         |    7.003|         |         |
+measure/count_time/d_fin_d_type[3]_AND_895_o|         |    7.235|         |         |
+measure/count_time/d_fin_d_type[3]_AND_897_o|         |    7.130|         |         |
+measure/count_time/d_fin_d_type[3]_AND_899_o|         |    7.026|         |         |
+measure/count_time/d_fin_d_type[3]_AND_901_o|         |    7.258|         |         |
+measure/count_time/d_fin_d_type[3]_AND_903_o|         |    7.153|         |         |
+measure/count_time/d_fin_d_type[3]_AND_905_o|         |    7.049|         |         |
+measure/count_time/d_fin_d_type[3]_AND_907_o|         |    7.281|         |         |
+measure/count_time/d_fin_d_type[3]_AND_909_o|         |    7.176|         |         |
+measure/count_time/d_fin_d_type[3]_AND_911_o|         |    7.072|         |         |
+measure/count_time/d_fin_d_type[3]_AND_913_o|         |    7.305|         |         |
+measure/count_time/d_fin_d_type[3]_AND_915_o|         |    7.200|         |         |
+measure/count_time/d_fin_d_type[3]_AND_917_o|         |    7.096|         |         |
+measure/count_time/d_fin_d_type[3]_AND_919_o|         |    7.328|         |         |
+measure/count_time/d_fin_d_type[3]_AND_921_o|         |    7.223|         |         |
+measure/count_time/d_fin_d_type[3]_AND_923_o|         |    7.119|         |         |
+measure/count_time/d_fin_d_type[3]_AND_925_o|         |    6.836|         |         |
+measure/count_time/d_fin_d_type[3]_AND_927_o|         |    6.732|         |         |
+measure/count_time/d_fin_d_type[3]_AND_929_o|         |    6.964|         |         |
+measure/count_time/d_fin_d_type[3]_AND_931_o|         |    6.860|         |         |
+measure/count_time/d_fin_d_type[3]_AND_933_o|         |    6.756|         |         |
+measure/count_time/d_fin_d_type[3]_AND_935_o|         |    6.988|         |         |
+measure/count_time/d_fin_d_type[3]_AND_937_o|         |    6.883|         |         |
+measure/count_time/d_fin_d_type[3]_AND_939_o|         |    6.779|         |         |
+measure/count_time/d_fin_d_type[3]_AND_941_o|         |    7.011|         |         |
+measure/count_time/d_fin_d_type[3]_AND_943_o|         |    6.906|         |         |
+measure/count_time/d_fin_d_type[3]_AND_945_o|         |    6.802|         |         |
+measure/count_time/d_fin_d_type[3]_AND_947_o|         |    7.034|         |         |
+measure/count_time/d_fin_d_type[3]_AND_949_o|         |    6.929|         |         |
+measure/count_time/d_fin_d_type[3]_AND_951_o|         |    6.825|         |         |
+measure/count_time/d_fin_d_type[3]_AND_953_o|         |    7.058|         |         |
+measure/count_time/d_fin_d_type[3]_AND_955_o|         |    6.953|         |         |
+measure/count_time/d_fin_d_type[3]_AND_957_o|         |    6.849|         |         |
+measure/count_time/d_fin_d_type[3]_AND_959_o|         |    7.081|         |         |
+measure/count_time/d_fin_d_type[3]_AND_961_o|         |    6.976|         |         |
+measure/count_time/d_fin_d_type[3]_AND_963_o|         |    6.872|         |         |
+measure/count_time/d_fin_d_type[3]_AND_965_o|         |    7.104|         |         |
+measure/count_time/d_fin_d_type[3]_AND_967_o|         |    6.999|         |         |
+measure/count_time/d_fin_d_type[3]_AND_969_o|         |    6.895|         |         |
+measure/count_time/d_fin_d_type[3]_AND_971_o|         |    7.127|         |         |
+measure/count_time/d_fin_d_type[3]_AND_973_o|         |    7.022|         |         |
+measure/count_time/d_fin_d_type[3]_AND_975_o|         |    6.918|         |         |
+measure/count_time/d_fin_d_type[3]_AND_977_o|         |    7.151|         |         |
+measure/count_time/d_fin_d_type[3]_AND_979_o|         |    7.046|         |         |
+measure/count_time/d_fin_d_type[3]_AND_981_o|         |    6.942|         |         |
+measure/count_time/d_fin_d_type[3]_AND_983_o|         |    7.174|         |         |
+measure/count_time/d_fin_d_type[3]_AND_985_o|         |    7.069|         |         |
+measure/count_time/d_fin_d_type[3]_AND_987_o|         |    6.965|         |         |
+measure/count_time/dst_1_d_type[3]_MUX_588_o|         |    5.064|         |         |
+measure/count_time/dst_1_d_type[3]_MUX_597_o|         |    5.168|         |         |
+measure/count_time/dst_1_d_type[3]_MUX_606_o|         |    4.232|         |         |
+measure/count_time/dst_1_d_type[3]_MUX_615_o|         |    4.337|         |         |
+measure/count_time/dst_1_d_type[3]_MUX_624_o|         |    4.404|         |         |
+measure/count_time/dst_1_d_type[3]_MUX_633_o|         |    4.558|         |         |
+measure/count_time/dst_1_d_type[3]_MUX_642_o|         |    4.583|         |         |
+measure/count_time/dst_1_dst_7_AND_20_o     |         |    3.681|         |         |
+measure/count_time/preset_d_fin_AND_156_o   |         |    2.046|         |         |
+measure/count_time/preset_d_fin_AND_220_o   |         |    2.046|         |         |
+measure/count_time/preset_d_fin_AND_284_o   |         |    2.046|         |         |
+measure/count_time/preset_d_fin_AND_28_o    |         |    2.046|         |         |
+measure/count_time/preset_d_fin_AND_348_o   |         |    2.046|         |         |
+measure/count_time/preset_d_fin_AND_412_o   |         |    2.046|         |         |
+measure/count_time/preset_d_fin_AND_92_o    |         |    2.046|         |         |
+measure/count_time/rst_dst_1_MUX_584_o      |         |    4.741|         |         |
+measure/fetch/p_start_p_f_run_AND_14_o      |         |    4.183|         |         |
+--------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock ctrl/statep[8]_GND_36_o_Mux_83_o
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |         |         |    2.644|         |
+clk            |         |         |    2.678|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock measure/count_time/d_fin_d_type[3]_AND_541_o
@@ -9846,7 +9721,7 @@ clk                                         |         |         |    4.872|     
 measure/count_time/d_fin_d_type[3]_AND_987_o|         |         |    4.404|         |
 --------------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock measure/count_time/dst_1_d_type[3]_MUX_1128_o
+Clock to Setup on destination clock measure/count_time/dst_1_d_type[3]_MUX_588_o
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -9854,7 +9729,7 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 clk            |         |         |    3.545|         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock measure/count_time/dst_1_d_type[3]_MUX_1137_o
+Clock to Setup on destination clock measure/count_time/dst_1_d_type[3]_MUX_597_o
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -9862,7 +9737,7 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 clk            |         |         |    3.545|         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock measure/count_time/dst_1_d_type[3]_MUX_1146_o
+Clock to Setup on destination clock measure/count_time/dst_1_d_type[3]_MUX_606_o
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -9870,7 +9745,7 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 clk            |         |         |    3.545|         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock measure/count_time/dst_1_d_type[3]_MUX_1155_o
+Clock to Setup on destination clock measure/count_time/dst_1_d_type[3]_MUX_615_o
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -9878,7 +9753,7 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 clk            |         |         |    3.545|         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock measure/count_time/dst_1_d_type[3]_MUX_1164_o
+Clock to Setup on destination clock measure/count_time/dst_1_d_type[3]_MUX_624_o
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -9886,7 +9761,7 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 clk            |         |         |    3.545|         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock measure/count_time/dst_1_d_type[3]_MUX_1173_o
+Clock to Setup on destination clock measure/count_time/dst_1_d_type[3]_MUX_633_o
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -9894,7 +9769,7 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 clk            |         |         |    3.545|         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock measure/count_time/dst_1_d_type[3]_MUX_1182_o
+Clock to Setup on destination clock measure/count_time/dst_1_d_type[3]_MUX_642_o
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -9903,18 +9778,18 @@ clk            |         |         |    3.545|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock measure/count_time/dst_1_dst_7_AND_20_o
----------------------------------------------+---------+---------+---------+---------+
-                                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------------------------------------+---------+---------+---------+---------+
-measure/count_time/dst_1_d_type[3]_MUX_1128_o|         |         |    5.064|         |
-measure/count_time/dst_1_d_type[3]_MUX_1137_o|         |         |    5.168|         |
-measure/count_time/dst_1_d_type[3]_MUX_1146_o|         |         |    4.232|         |
-measure/count_time/dst_1_d_type[3]_MUX_1155_o|         |         |    4.337|         |
-measure/count_time/dst_1_d_type[3]_MUX_1164_o|         |         |    4.404|         |
-measure/count_time/dst_1_d_type[3]_MUX_1173_o|         |         |    4.558|         |
-measure/count_time/dst_1_d_type[3]_MUX_1182_o|         |         |    4.583|         |
----------------------------------------------+---------+---------+---------+---------+
+--------------------------------------------+---------+---------+---------+---------+
+                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------------------+---------+---------+---------+---------+
+measure/count_time/dst_1_d_type[3]_MUX_588_o|         |         |    5.064|         |
+measure/count_time/dst_1_d_type[3]_MUX_597_o|         |         |    5.168|         |
+measure/count_time/dst_1_d_type[3]_MUX_606_o|         |         |    4.232|         |
+measure/count_time/dst_1_d_type[3]_MUX_615_o|         |         |    4.337|         |
+measure/count_time/dst_1_d_type[3]_MUX_624_o|         |         |    4.404|         |
+measure/count_time/dst_1_d_type[3]_MUX_633_o|         |         |    4.558|         |
+measure/count_time/dst_1_d_type[3]_MUX_642_o|         |         |    4.583|         |
+--------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock measure/count_time/preset_d_fin_AND_156_o
 ---------------+---------+---------+---------+---------+
@@ -9972,21 +9847,21 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 clk            |         |         |    1.918|         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock measure/count_time/rst_dst_1_MUX_1124_o
----------------------------------------------+---------+---------+---------+---------+
-                                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------------------------------------+---------+---------+---------+---------+
-clk                                          |         |         |    3.478|         |
-measure/count_time/dst_1_d_type[3]_MUX_1128_o|         |         |    3.812|         |
-measure/count_time/dst_1_d_type[3]_MUX_1137_o|         |         |    3.916|         |
-measure/count_time/dst_1_d_type[3]_MUX_1146_o|         |         |    2.980|         |
-measure/count_time/dst_1_d_type[3]_MUX_1155_o|         |         |    3.085|         |
-measure/count_time/dst_1_d_type[3]_MUX_1164_o|         |         |    3.152|         |
-measure/count_time/dst_1_d_type[3]_MUX_1173_o|         |         |    3.306|         |
-measure/count_time/dst_1_d_type[3]_MUX_1182_o|         |         |    3.331|         |
-measure/count_time/rst_dst_1_MUX_1124_o      |         |         |    3.083|         |
----------------------------------------------+---------+---------+---------+---------+
+Clock to Setup on destination clock measure/count_time/rst_dst_1_MUX_584_o
+--------------------------------------------+---------+---------+---------+---------+
+                                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------------------+---------+---------+---------+---------+
+clk                                         |         |         |    3.478|         |
+measure/count_time/dst_1_d_type[3]_MUX_588_o|         |         |    3.812|         |
+measure/count_time/dst_1_d_type[3]_MUX_597_o|         |         |    3.916|         |
+measure/count_time/dst_1_d_type[3]_MUX_606_o|         |         |    2.980|         |
+measure/count_time/dst_1_d_type[3]_MUX_615_o|         |         |    3.085|         |
+measure/count_time/dst_1_d_type[3]_MUX_624_o|         |         |    3.152|         |
+measure/count_time/dst_1_d_type[3]_MUX_633_o|         |         |    3.306|         |
+measure/count_time/dst_1_d_type[3]_MUX_642_o|         |         |    3.331|         |
+measure/count_time/rst_dst_1_MUX_584_o      |         |         |    3.083|         |
+--------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock measure/decode/p_d_fin
 ----------------------+---------+---------+---------+---------+
@@ -10000,13 +9875,13 @@ measure/decode/p_d_fin|         |         |    2.278|         |
 
 
 Total REAL time to Xst completion: 25.00 secs
-Total CPU time to Xst completion: 25.42 secs
+Total CPU time to Xst completion: 25.65 secs
  
 --> 
 
-Total memory usage is 4565408 kilobytes
+Total memory usage is 4565252 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  650 (   0 filtered)
-Number of infos    :   21 (   0 filtered)
+Number of warnings :  525 (   0 filtered)
+Number of infos    :   23 (   0 filtered)
 

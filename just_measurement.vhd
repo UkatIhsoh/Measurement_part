@@ -119,7 +119,8 @@ architecture measure of just_measurement is
 				read_fin : in std_logic;
 				decode_wait : in std_logic;
 
-				data_out : out std_logic_vector(63 downto 0));
+				d_data_out : out std_logic_vector(39 downto 0);
+				c_data_out : out std_logic_vector(31 downto 0));
 	end component;
 
 	component timekeeper is
@@ -157,7 +158,8 @@ architecture measure of just_measurement is
 	signal s_req : std_logic;
 	signal addr : std_logic_vector(19 downto 0);
 	signal c_en : std_logic;
-	signal d_data : std_logic_vector(63 downto 0);
+	signal d_data : std_logic_vector(39 downto 0); --ddsデータ
+	signal c_data : std_logic_vector(31 downto 0); --マスターカウンタデータ
 	
 	--カウンター用
 	signal c_out : std_logic;
@@ -203,7 +205,8 @@ begin
 					 read_fin => rd_fin,
 					 decode_wait => d_wait,
 				
-					 data_out => d_data);
+					 d_data_out => d_data,
+					 c_data_out => c_data);
 
 	title : timekeeper 
 		port map( clk => clk,
@@ -220,7 +223,7 @@ begin
 					 d_type => d_type,
 					 rd_comp => rd_fin,
 					 data_full => d_wait,
-					 data => d_data(31 downto 0), 
+					 data => c_data, 
 
 					 output_rf => rf_out,
 					 output_dds => dds_set,
@@ -238,7 +241,7 @@ begin
 	cite_addr <= addr;
 	rf_pulse <= rf_out;
 	
-	test_dout <= d_data;
+	test_dout(31 downto 0) <= c_data;
 	test_bit <= led_blink;
 
 	end measure;
