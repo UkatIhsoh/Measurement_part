@@ -113,48 +113,44 @@ begin
 							when first => 
 								n.data(31 downto 0) <= data64(31 downto 0);
 								n.d_type <= first;
-								n.sequence <= second;
 								n.state <= count;
+								n.sequence <= second;
 								
 							when second =>
 								n.data(31 downto 0) <= data64(63 downto 32);
 								n.d_type <= second;
-								n.sequence <= third;
-								n.d_en <= '1'; --フェッチ再開を要求
 								n.state <= count;
+								n.sequence <= third;
 	
 							when third =>
 								n.data(31 downto 0) <= data64(31 downto 0);
 								n.d_type <= third;
-								n.sequence <= fourth;
 								n.state <= count;
+								n.sequence <= fourth;
 								
 							when fourth =>
 								n.data(31 downto 0) <= data64(63 downto 32);
 								n.d_type <= fourth;
-								n.sequence <= fifth;
-								n.d_en <= '1';
 								n.state <= count;
+								n.sequence <= fifth;
 								
 							when fifth =>
 								n.data(31 downto 0) <= data64(31 downto 0);
 								n.d_type <= fifth;
-								n.sequence <= sixth;
 								n.state <= count;
+								n.sequence <= sixth;
 								
 							when sixth =>
 								n.data(31 downto 0) <= data64(63 downto 32);
 								n.d_type <= sixth;
-								n.sequence <= seventh;
-								n.d_en <= '1';
 								n.state <= count;
+								n.sequence <= seventh;
 								
 							when seventh =>
 								n.data(31 downto 0) <= data64(31 downto 0);
 								n.d_type <= seventh;
-								n.sequence <= first;
-								n.d_en <= '1';
 								n.state <= count;
+								n.sequence <= first;
 								
 							when dds_A =>
 							
@@ -163,7 +159,6 @@ begin
 							when dds_C =>
 							
 							when others =>
-								n.sequence <= first;
 								n.state <= idle;	
 						end case;
 					end if;
@@ -177,11 +172,14 @@ begin
 				when count =>
 					if read_fin = '0' then --master_counterがデータを獲得するまで待機
 						if p.d_fin = '0' then --read_finがクロックと無関係なタイミングで入力されるため
-							n.d_fin <= '1';
+							n.d_fin <= '1'; --master_counterがデータの読み込みを開始
 						end if;
 					else
 						if p.d_fin = '1' then
 							n.d_fin <= '0';
+							if p.d_type = second or p.d_type = fourth or p.d_type = sixth or p.d_type = seventh then 
+								n.d_en <= '1';
+							end if;
 							n.state <= idle;
 						end if;
 					end if;

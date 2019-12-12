@@ -105,11 +105,9 @@ architecture fetch of data_fetch is
 	signal p : reg;
 	signal n : reg; 
 	
-	constant start_adr : std_logic_vector(19 downto 0):= X"00001";
+	constant start_adr : std_logic_vector(19 downto 0):= X"00000";
 	constant end_adr : std_logic_vector(19 downto 0):= X"00007";
 	constant ddsdata_adr : std_logic_vector(19 downto 0):= X"00F00";
-	
-	signal test : std_logic:= '0'; --test
 
 begin
 
@@ -121,22 +119,22 @@ begin
 	
 	msr_finish <= p.finish;
 	
-	test_pin <= test;
-	
 	process(n,p,msr_start,sdr_data,decode_en,n.state)
 	begin
 		n <= p;
 		
-		if msr_start = '1' then
-			n.start <= '1';
-		else
-			if p.addr = X"00003" then
-				n.start <= '0';
-				if p.finish = '0' then
-					n.finish <= '1';
-				else
-					n.finish <= '0';
-					n.addr <= X"00000";
+		if p.f_run <= '0' then
+			if msr_start = '1' then
+				n.start <= '1';
+			else
+				if p.addr = X"00002" then
+					n.start <= '0';
+					if p.finish = '0' then
+						n.finish <= '1';
+					else
+						n.finish <= '0';
+						n.addr <= X"00000";
+					end if;
 				end if;
 			end if;
 		end if;
@@ -165,7 +163,6 @@ begin
 						end if;
 						
 					when dt_aquire => 
-						if test = '0' then --test
 						if p.d_num = "00" then
 							n.data(15 downto 0) <= sdr_data(15 downto 0);
 							n.d_num <= "01";
@@ -180,12 +177,7 @@ begin
 							n.d_num <= "00";
 							n.f_fin <= '1';
 							n.state <= prepare;
-							test <= '1'; --test
 						end if;
-						else --test
-							n.f_fin <= '1'; --test
-							n.state <= prepare; --test
-						end if; --test
 						
 					when prepare => 
 						if decode_en = '1' then

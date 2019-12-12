@@ -121,7 +121,8 @@ begin
 	
 	output_rf <= rf_out;
 	output_dds <= dds_set;
-	output_ad <= ad_out;
+	--output_ad <= ad_out;
+	output_ad <= preset;
 		
 	process(clk,rst,data,d_fin,d_type)
 	begin
@@ -218,7 +219,7 @@ begin
 				end case;
 			else
 				comp_rd <= '0';
-				if dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' and dst_7 = '1' then
+				if dst_7 = '1' and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then
 					preset <= '1';
 					dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
 				end if;
@@ -271,7 +272,7 @@ begin
 				end case;
 			else
 				comp_rd <= '0';
-				if dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' and dst_7 = '1' then
+				if dst_7 = '1' and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then
 					full <= '1';
 					dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
 				end if;

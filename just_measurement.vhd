@@ -229,7 +229,7 @@ architecture measure of just_measurement is
 					 output_dds => dds_set,
 					 output_ad => ad_out);
 					 
-	process(d_fin)
+	process(ad_out)
 	begin
 		if ad_out = '1' then
 			led_blink <= not led_blink;
@@ -242,8 +242,8 @@ architecture measure of just_measurement is
 	rf_pulse <= rf_out;
 	adc_sig <= ad_out;
 	
-	test_dout(31 downto 0) <= c_data;
-	test_bit <= led_blink;
+	test_dout(3 downto 0) <= d_type;
+	test_bit <= ad_out;
 
 	end measure;
 

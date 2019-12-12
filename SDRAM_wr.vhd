@@ -60,7 +60,8 @@ end SDRAM_wr;
 
 architecture write_sec of SDRAM_wr is
 
-	constant smp_data : std_logic_vector(63 downto 0):= X"000186A0000186A0"; --カウント値
+	constant smp_data : std_logic_vector(63 downto 0):= X"00030D40000186A0"; --カウント値
+	constant smp_data_2 : std_logic_vector(63 downto 0):= X"00030D4000030D40"; --カウント値
 	--constant smp_data : std_logic_vector(63 downto 0):= X"0000FFFF05050A0A"; --テスト用
 	--constant smp_data : std_logic_vector(63 downto 0):= X"000000000000C350"; --テスト用2
 
@@ -76,6 +77,7 @@ architecture write_sec of SDRAM_wr is
 		pend : std_logic; 
 		state : state_t; --状態繊維用
 		comp : std_logic; --書き込みリピート防止
+		fresh : std_logic; --最初の処理かどうか
 	end record;
 	
 	signal p : reg;
@@ -96,10 +98,19 @@ begin
 			if p.comp = '0' then
 				n.pend <= '1';
 				n.comp <= '1';
-				if p.pend = '0' then
-					n.adr <= p.adr +1; --アドレス変更
-					n.data <= p.data + smp_data; --書き込みデータセット
-					n.state <= sd_request;
+				if p.fresh = '0' then
+					if p.pend = '0' then
+						n.adr <= X"00000"; --アドレス変更
+						n.data <= p.data; --書き込みデータセット
+						n.state <= sd_request;
+						n.fresh <= '1';
+					end if;
+				else
+					if p.pend = '0' then
+						n.adr <= p.adr +1; --アドレス変更
+						n.data <= p.data + smp_data_2; --書き込みデータセット
+						n.state <= sd_request;
+					end if;
 				end if;
 			end if;
 		else
@@ -139,7 +150,7 @@ begin
 			p.pend <= '0';
 			p.state <= idle;
 			p.comp <= '0';
-			v_data <= smp_data;
+			p.fresh <= '0';
 		elsif clk' event and clk = '1' then
 			p <= n;
 		end if;
