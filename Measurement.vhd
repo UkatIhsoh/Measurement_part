@@ -123,6 +123,7 @@ architecture connect of Measurement is
 			msr_start : in std_logic; 
 			msr_finish : out std_logic;
 			str_adr : in std_logic_vector(19 downto 0);
+			end_adr : in std_logic_vector(19 downto 0);
 			
 			sdr_req : out std_logic;
 			sdr_fin : in std_logic;
@@ -174,6 +175,7 @@ architecture connect of Measurement is
 	signal msr_start : std_logic;
 	signal m_fin : std_logic;
 	signal str_adr : std_logic_vector(19 downto 0);
+	signal end_adr : std_logic_vector(19 downto 0);
 	signal rf : std_logic;
 	signal adc : std_logic;
 	signal test_d : std_logic_vector(63 downto 0); --テスト用
@@ -248,6 +250,7 @@ begin
 					 msr_start => msr_start,
 					 msr_finish => m_fin,
 					 str_adr => str_adr,
+					 end_adr => end_adr,
 				
 					 sdr_req => re_sw,
 					 sdr_fin => sdr_d_o_valid,
@@ -268,6 +271,9 @@ begin
 					 fin_sig =>	fin_sig);
 	
 	req_adr_w <= X"00000"; --test
+	
+	str_adr <= X"00000";
+	end_adr <= X"00006";
 	
 	--ピン割り当て
 	DRAM_ADDR(12) <= '0';

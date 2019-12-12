@@ -111,46 +111,88 @@ begin
 					if p.d_en = '0' then --フェッチとのデータのやり取りがぐちゃぐちゃにならないようにするため
 						case p.sequence is --読み込んだ順で処理
 							when first => 
-								n.data(31 downto 0) <= data64(31 downto 0);
-								n.d_type <= first;
-								n.state <= count;
-								n.sequence <= second;
+								if p.d_num = "00" then
+									n.data(15 downto 0) <= data64(15 downto 0);
+									n.d_num <= "01";
+								else
+									n.data(31 downto 16) <= data64(31 downto 16);
+									n.d_num <= "00";
+									n.d_type <= first;
+									n.state <= count;
+									n.sequence <= second;
+								end if;
 								
 							when second =>
-								n.data(31 downto 0) <= data64(63 downto 32);
-								n.d_type <= second;
-								n.state <= count;
-								n.sequence <= third;
+								if p.d_num = "00" then
+									n.data(15 downto 0) <= data64(15 downto 0);
+									n.d_num <= "01";
+								else
+									n.data(31 downto 16) <= data64(31 downto 16);
+									n.d_num <= "00";
+									n.d_type <= second;
+									n.state <= count;
+									n.sequence <= third;
+								end if;
 	
 							when third =>
-								n.data(31 downto 0) <= data64(31 downto 0);
-								n.d_type <= third;
-								n.state <= count;
-								n.sequence <= fourth;
+								if p.d_num = "00" then
+									n.data(15 downto 0) <= data64(15 downto 0);
+									n.d_num <= "01";
+								else
+									n.data(31 downto 16) <= data64(31 downto 16);
+									n.d_num <= "00";
+									n.d_type <= third;
+									n.state <= count;
+									n.sequence <= fourth;
+								end if;
 								
 							when fourth =>
-								n.data(31 downto 0) <= data64(63 downto 32);
-								n.d_type <= fourth;
-								n.state <= count;
-								n.sequence <= fifth;
+								if p.d_num = "00" then
+									n.data(15 downto 0) <= data64(15 downto 0);
+									n.d_num <= "01";
+								else
+									n.data(31 downto 16) <= data64(31 downto 16);
+									n.d_num <= "00";
+									n.d_type <= fourth;
+									n.state <= count;
+									n.sequence <= fifth;
+								end if;
 								
 							when fifth =>
-								n.data(31 downto 0) <= data64(31 downto 0);
-								n.d_type <= fifth;
-								n.state <= count;
-								n.sequence <= sixth;
+								if p.d_num = "00" then
+									n.data(15 downto 0) <= data64(15 downto 0);
+									n.d_num <= "01";
+								else
+									n.data(31 downto 16) <= data64(31 downto 16);
+									n.d_num <= "00";
+									n.d_type <= fifth;
+									n.state <= count;
+									n.sequence <= sixth;
+								end if;
 								
 							when sixth =>
-								n.data(31 downto 0) <= data64(63 downto 32);
-								n.d_type <= sixth;
-								n.state <= count;
-								n.sequence <= seventh;
+								if p.d_num = "00" then
+									n.data(15 downto 0) <= data64(15 downto 0);
+									n.d_num <= "01";
+								else
+									n.data(31 downto 16) <= data64(31 downto 16);
+									n.d_num <= "00";
+									n.d_type <= sixth;
+									n.state <= count;
+									n.sequence <= seventh;
+								end if;
 								
 							when seventh =>
-								n.data(31 downto 0) <= data64(31 downto 0);
-								n.d_type <= seventh;
-								n.state <= count;
-								n.sequence <= first;
+								if p.d_num = "00" then
+									n.data(15 downto 0) <= data64(15 downto 0);
+									n.d_num <= "01";
+								else
+									n.data(31 downto 16) <= data64(31 downto 16);
+									n.d_num <= "00";
+									n.d_type <= seventh;
+									n.state <= count;
+									n.sequence <= first;
+								end if;		
 								
 							when dds_A =>
 							
@@ -177,9 +219,9 @@ begin
 					else
 						if p.d_fin = '1' then
 							n.d_fin <= '0';
-							if p.d_type = second or p.d_type = fourth or p.d_type = sixth or p.d_type = seventh then 
+							--if p.d_type = second or p.d_type = fourth or p.d_type = sixth or p.d_type = seventh then 
 								n.d_en <= '1';
-							end if;
+							--end if;
 							n.state <= idle;
 						end if;
 					end if;

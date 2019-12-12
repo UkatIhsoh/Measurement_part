@@ -73,6 +73,7 @@ entity just_measurement is
 			msr_start : in std_logic; --measurement start
 			msr_finish : out std_logic; --mesurement finish
 			str_adr : in std_logic_vector(19 downto 0); --フェッチを開始するアドレス指定入力
+			end_adr : in std_logic_vector(19 downto 0);
 			
 			sdr_req : out std_logic; --sdram読み込みリクエスト
 			sdr_fin : in std_logic; --sdram読み込み終了
@@ -94,6 +95,7 @@ architecture measure of just_measurement is
 				msr_start : in std_logic;
 				msr_finish : out std_logic;
 				str_adr : in std_logic_vector(19 downto 0);
+				end_adr : in std_logic_vector(19 downto 0);
 				
 				data64 : out std_logic_vector(63 downto 0);
 				fetch_fin : out std_logic; 
@@ -181,6 +183,7 @@ architecture measure of just_measurement is
 					 msr_start => msr_start, 
 					 msr_finish => m_fin,
 					 str_adr => str_adr,
+					 end_adr => end_adr, 
 				
 					 data64 => data64,
 					 fetch_fin => f_fin, 

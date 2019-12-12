@@ -72,6 +72,7 @@ entity data_fetch is
 			msr_start : in std_logic; 
 			msr_finish : out std_logic;
 			str_adr : in std_logic_vector(19 downto 0);
+			end_adr : in std_logic_vector(19 downto 0);
 			
 			data64 : out std_logic_vector(63 downto 0);
 			fetch_fin : out std_logic; 
@@ -104,10 +105,6 @@ architecture fetch of data_fetch is
 
 	signal p : reg;
 	signal n : reg; 
-	
-	constant start_adr : std_logic_vector(19 downto 0):= X"00000";
-	constant end_adr : std_logic_vector(19 downto 0):= X"00007";
-	constant ddsdata_adr : std_logic_vector(19 downto 0):= X"00F00";
 
 begin
 
@@ -127,13 +124,13 @@ begin
 			if msr_start = '1' then
 				n.start <= '1';
 			else
-				if p.addr = X"00002" then
+				if p.addr = end_adr then
 					n.start <= '0';
 					if p.finish = '0' then
 						n.finish <= '1';
 					else
 						n.finish <= '0';
-						n.addr <= X"00000";
+						n.addr <= str_adr;
 					end if;
 				end if;
 			end if;
@@ -143,7 +140,7 @@ begin
 			if p.f_run = '0' then --fetch回路始動
 				n.f_run <= '1';
 				if p.fresh = '0' then --freshでないならstart_addressを読み込み
-					n.addr <= start_adr;
+					n.addr <= str_adr;
 					n.d_req <= '1';	--ｓｄｒamへリクエスト
 					n.fresh <= '1';
 				else
