@@ -136,15 +136,6 @@ architecture connect of Measurement is
 			rf_pulse : out std_logic;
 			adc_sig : out std_logic);
 	end component;
-	
-	component counter is
-		port( clk : in std_logic;
-				rst : in std_logic;
-				
-				start : in std_logic;
-				fin_sig : out std_logic	
-		);
-	end component;
 
 	--common
 	signal rst : std_Logic;
@@ -180,10 +171,6 @@ architecture connect of Measurement is
 	signal adc : std_logic;
 	signal test_d : std_logic_vector(63 downto 0); --テスト用
 	signal test_b : std_logic; --テスト用
-
-	--counter
-	signal start : std_logic;
-	signal fin_sig : std_logic;
 	
 begin
 
@@ -262,13 +249,6 @@ begin
 				
 					 rf_pulse => rf,
 					 adc_sig => adc);
-					 
-	count_test : counter 
-		port map( clk => clk100,
-					 rst => rst,
-				
-					 start => start,
-					 fin_sig =>	fin_sig);
 	
 	req_adr_w <= X"00000"; --test
 	

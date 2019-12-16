@@ -62,6 +62,7 @@ use work.data_types.all;
 entity data_decode is
 	port( clk : in std_logic;
 			rst : in std_logic;
+			msr_fin : in std_logic;
 			
 			data64 : in std_logic_vector(63 downto 0);
 			fetch_fin : in std_logic;
@@ -70,6 +71,7 @@ entity data_decode is
 			data_type : out std_logic_vector(3 downto 0); --master_counterへデータがどこのデータだか伝える
 			read_fin : in std_logic; --master_counterがデータの読み込みを終了したことを知らせる
 			decode_wait : in std_logic; --master_counterは現在データが満タンです
+			count_end : out std_logic; --master_counterの動作を終了
 			
 			d_data_out : out std_logic_vector(39 downto 0); --dds用のデータ
 			c_data_out : out std_logic_vector(31 downto 0)); --マスターカウンタ用のデータ
@@ -84,6 +86,8 @@ architecture decode of data_decode is
 		d_type : std_logic_vector(3 downto 0); --data_type
 		d_en : std_logic; --decode_enable
 		d_fin : std_logic; --decode_fin
+		m_fin : std_logic; --count_endを変化させるために必要な判別用
+		c_end : std_logic; --count_end
 		state : state_t;
 		sequence : std_logic_vector(3 downto 0);
 		d_num : std_logic_vector(1 downto 0); --データの受け取りを小分けにする
@@ -102,124 +106,123 @@ begin
 	c_data_out <= p.data(31 downto 0);
 	decode_fin <= p.d_fin;
 	data_type <= p.d_type;
+	count_end <= p.c_end;
 
-	process(n,p,data64,fetch_fin,read_fin,decode_wait)
+	process(n,p,data64,fetch_fin,read_fin,decode_wait,msr_fin)
 		begin
 			n <= p;
 			
-			if fetch_fin = '1' then --フェッチが終了していることがデコード開始の条件
-				if decode_wait = '0' then --master_counterがおなか一杯の時は休憩
-					if p.d_en = '0' then --フェッチとのデータのやり取りがぐちゃぐちゃにならないようにするため
-						if p.loading = '0' then
-							case p.sequence is --読み込んだ順で処理
-								when first => 
-									if p.d_num = "00" then
-										n.data(15 downto 0) <= data64(15 downto 0);
-										n.d_num <= "01";
-									else
-										n.data(31 downto 16) <= data64(31 downto 16);
-										n.d_num <= "00";
-										n.d_type <= first;
-										n.state <= count;
-										n.sequence <= second;
-										n.loading <= '1';
-									end if;
-									
-								when second =>
-									if p.d_num = "00" then
-										n.data(15 downto 0) <= data64(15 downto 0);
-										n.d_num <= "01";
-									else
-										n.data(31 downto 16) <= data64(31 downto 16);
-										n.d_num <= "00";
-										n.d_type <= second;
-										n.state <= count;
-										n.sequence <= third;
-										n.loading <= '1';
-									end if;
-		
-								when third =>
-									if p.d_num = "00" then
-										n.data(15 downto 0) <= data64(15 downto 0);
-										n.d_num <= "01";
-									else
-										n.data(31 downto 16) <= data64(31 downto 16);
-										n.d_num <= "00";
-										n.d_type <= third;
-										n.state <= count;
-										n.sequence <= fourth;
-										n.loading <= '1';
-									end if;
-									
-								when fourth =>
-									if p.d_num = "00" then
-										n.data(15 downto 0) <= data64(15 downto 0);
-										n.d_num <= "01";
-									else
-										n.data(31 downto 16) <= data64(31 downto 16);
-										n.d_num <= "00";
-										n.d_type <= fourth;
-										n.state <= count;
-										n.sequence <= fifth;
-										n.loading <= '1';
-									end if;
-									
-								when fifth =>
-									if p.d_num = "00" then
-										n.data(15 downto 0) <= data64(15 downto 0);
-										n.d_num <= "01";
-									else
-										n.data(31 downto 16) <= data64(31 downto 16);
-										n.d_num <= "00";
-										n.d_type <= fifth;
-										n.state <= count;
-										n.sequence <= sixth;
-										n.loading <= '1';
-									end if;
-									
-								when sixth =>
-									if p.d_num = "00" then
-										n.data(15 downto 0) <= data64(15 downto 0);
-										n.d_num <= "01";
-									else
-										n.data(31 downto 16) <= data64(31 downto 16);
-										n.d_num <= "00";
-										n.d_type <= sixth;
-										n.state <= count;
-										n.sequence <= seventh;
-										n.loading <= '1';
-									end if;
-									
-								when seventh =>
-									if p.d_num = "00" then
-										n.data(15 downto 0) <= data64(15 downto 0);
-										n.d_num <= "01";
-									else
-										n.data(31 downto 16) <= data64(31 downto 16);
-										n.d_num <= "00";
-										n.d_type <= seventh;
-										n.state <= count;
-										n.sequence <= first;
-										n.loading <= '1';
-									end if;		
-									
-								when dds_A =>
-								
-								when dds_B =>
-								
-								when dds_C =>
-								
-								when others =>
-									n.state <= idle;	
-							end case;
+			if fetch_fin = '1'  --フェッチが終了していることがデコード開始の条件
+			and decode_wait = '0'  --master_counterがおなか一杯の時は休憩
+			and p.d_en = '0'  --フェッチとのデータのやり取りがぐちゃぐちゃにならないようにするため
+			and p.loading = '0' then
+				case p.sequence is --読み込んだ順で処理
+					when first => 
+						if p.d_num = "00" then
+							n.data(15 downto 0) <= data64(15 downto 0);
+							n.d_num <= "01";
+						else
+							n.data(31 downto 16) <= data64(31 downto 16);
+							n.d_num <= "00";
+							n.d_type <= first;
+							n.state <= count;
+							n.sequence <= second;
+							n.loading <= '1';
 						end if;
-					end if;
-				end if;
+						
+					when second =>
+						if p.d_num = "00" then
+							n.data(15 downto 0) <= data64(15 downto 0);
+							n.d_num <= "01";
+						else
+							n.data(31 downto 16) <= data64(31 downto 16);
+							n.d_num <= "00";
+							n.d_type <= second;
+							n.state <= count;
+							n.sequence <= third;
+							n.loading <= '1';
+						end if;
+
+					when third =>
+						if p.d_num = "00" then
+							n.data(15 downto 0) <= data64(15 downto 0);
+							n.d_num <= "01";
+						else
+							n.data(31 downto 16) <= data64(31 downto 16);
+							n.d_num <= "00";
+							n.d_type <= third;
+							n.state <= count;
+							n.sequence <= fourth;
+							n.loading <= '1';
+						end if;
+						
+					when fourth =>
+						if p.d_num = "00" then
+							n.data(15 downto 0) <= data64(15 downto 0);
+							n.d_num <= "01";
+						else
+							n.data(31 downto 16) <= data64(31 downto 16);
+							n.d_num <= "00";
+							n.d_type <= fourth;
+							n.state <= count;
+							n.sequence <= fifth;
+							n.loading <= '1';
+						end if;
+						
+					when fifth =>
+						if p.d_num = "00" then
+							n.data(15 downto 0) <= data64(15 downto 0);
+							n.d_num <= "01";
+						else
+							n.data(31 downto 16) <= data64(31 downto 16);
+							n.d_num <= "00";
+							n.d_type <= fifth;
+							n.state <= count;
+							n.sequence <= sixth;
+							n.loading <= '1';
+						end if;
+						
+					when sixth =>
+						if p.d_num = "00" then
+							n.data(15 downto 0) <= data64(15 downto 0);
+							n.d_num <= "01";
+						else
+							n.data(31 downto 16) <= data64(31 downto 16);
+							n.d_num <= "00";
+							n.d_type <= sixth;
+							n.state <= count;
+							n.sequence <= seventh;
+							n.loading <= '1';
+						end if;
+						
+					when seventh =>
+						if p.d_num = "00" then
+							n.data(15 downto 0) <= data64(15 downto 0);
+							n.d_num <= "01";
+						else
+							n.data(31 downto 16) <= data64(31 downto 16);
+							n.d_num <= "00";
+							n.d_type <= seventh;
+							n.state <= count;
+							n.sequence <= first;
+							n.loading <= '1';
+						end if;		
+						
+					when dds_A =>
+					
+					when dds_B =>
+					
+					when dds_C =>
+					
+					when others =>
+						n.state <= idle;	
+				end case;
 			end if;
 			
 			case p.state is
 				when idle =>
 					n.d_en <= '0';
+					n.c_end <= '0';
 					
 				when count =>
 					if read_fin = '0' then --master_counterがデータを獲得するまで待機
@@ -231,8 +234,12 @@ begin
 							n.d_fin <= '0';
 							n.loading <= '0';
 							--if p.d_type = second or p.d_type = fourth or p.d_type = sixth or p.d_type = seventh then 
-								n.d_en <= '1';
+							n.d_en <= '1';
 							--end if;
+							if p.m_fin = '1' then --decodeが終了するので、master_counterも終了させる
+								n.m_fin <= '0';
+								n.c_end <= '1';
+							end if;
 							n.state <= idle;
 						end if;
 					end if;
@@ -240,6 +247,10 @@ begin
 				when others =>
 					n.state <= idle;
 			end case;
+			
+			if msr_fin = '1' then --fetchからのmsr_finに反応してdecodeも終了させる方向にもっていく
+				n.m_fin <= '1';
+			end if;
 		
 		end process;
 
@@ -250,6 +261,8 @@ begin
 				p.d_type <= (others => '0');
 				p.d_en <= '0';
 				p.d_fin <= '0';
+				p.m_fin <= '0';
+				p.c_end <= '0';
 				p.state <= idle;
 				p.sequence <= first;
 				p.d_num <= "00";

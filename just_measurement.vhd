@@ -112,6 +112,7 @@ architecture measure of just_measurement is
 	component data_decode is
 		port( clk : in std_logic;
 				rst : in std_logic;
+				msr_fin : in std_logic;
 				
 				data64 : in std_logic_vector(63 downto 0);
 				fetch_fin : in std_logic;
@@ -120,22 +121,16 @@ architecture measure of just_measurement is
 				data_type : out std_logic_vector(3 downto 0);
 				read_fin : in std_logic;
 				decode_wait : in std_logic;
+				count_end : out std_logic;
 
 				d_data_out : out std_logic_vector(39 downto 0);
 				c_data_out : out std_logic_vector(31 downto 0));
-	end component;
-
-	component timekeeper is
-		port( clk : in std_logic;
-				rst : in std_logic;
-				cnt_start : in std_logic;
-				data : in std_logic_vector(63 downto 0); 
-				output : out std_logic);
 	end component;
 		
 	component master_counter is
 		port( clk : in std_logic;
 				rst : in std_logic;
+				msr_fin : in std_logic;
 
 				d_fin : in std_logic; 
 				d_type : in std_logic_vector(3 downto 0); 
@@ -163,13 +158,11 @@ architecture measure of just_measurement is
 	signal d_data : std_logic_vector(39 downto 0); --ddsデータ
 	signal c_data : std_logic_vector(31 downto 0); --マスターカウンタデータ
 	
-	--カウンター用
-	signal c_out : std_logic;
-	
 	--マスターカウンタ用
 	signal rf_out : std_logic;
 	signal dds_set : std_logic;
 	signal ad_out : std_logic;
+	signal c_end : std_logic;
 	
 	--テスト用
 	signal test : std_logic:='0';
@@ -199,6 +192,7 @@ architecture measure of just_measurement is
 	decode : data_decode 
 		port map( clk => clk,
 					 rst => rst,
+					 msr_fin => m_fin,
 				
 					 data64 => data64,
 					 fetch_fin => f_fin,
@@ -207,20 +201,15 @@ architecture measure of just_measurement is
 					 data_type => d_type,
 					 read_fin => rd_fin,
 					 decode_wait => d_wait,
+					 count_end => c_end,
 				
 					 d_data_out => d_data,
 					 c_data_out => c_data);
-
-	title : timekeeper 
-		port map( clk => clk,
-					 rst => rst,
-					 cnt_start => '0',
-					 data => (others => '0'), 
-					 output => c_out);
 					 
 	count_time : master_counter 
 		port map( clk => clk,
 					 rst => rst,
+					 msr_fin => c_end,
 
 					 d_fin => d_fin, 
 					 d_type => d_type,

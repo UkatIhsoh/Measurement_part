@@ -68,6 +68,7 @@ use work.data_types.all;
 entity master_counter is
 	port( clk : in std_logic;
 			rst : in std_logic;
+			msr_fin : in std_logic; --計測終了したらこの回路の動作を停止
 			
 			d_fin : in std_logic; --デコードが終わったかどうかみる
 			d_type : in std_logic_vector(3 downto 0); --どのタイプのでーたが来るのかを確認
@@ -91,11 +92,14 @@ architecture count_time of master_counter is
 		t_6 : std_logic_vector(31 downto 0);		--カウント上限
 		t_7 : std_logic_vector(31 downto 0);		--カウント上限
 		t_0 : std_logic_vector(31 downto 0);		--カウント上限
+		m_fin : std_logic; --msr_finの変化によってカウンターの終了を制御する
 	end record;	
 	
 	signal p : reg;
 	signal n : reg;
-
+	
+	signal count_end : std_logic; --カウンター終了時にhigh
+	
 	signal counter : std_logic_vector(31 downto 0):= (others => '0'); 		--カウンター
 
 	signal preset : std_logic:= '0'; --プリセットしているかどうかチェック
@@ -121,24 +125,30 @@ begin
 	
 	output_rf <= rf_out;
 	output_dds <= dds_set;
-	--output_ad <= ad_out;
-	output_ad <= preset;
+	output_ad <= ad_out;
 		
-	process(clk,rst,data,d_fin,d_type)
+	process(clk,rst,data,d_fin,d_type,msr_fin)
 	begin
 	
-		if rst = '1' then
+		if rst = '1' or count_end = '1' then
 			counter <= (others => '0');
+			p.m_fin <= '0';
+			n.m_fin <= '0';
+			count_end <= '0';
 			preset <= '0';
 			full <= '0';
 			comp_rd <= '0';
 			rf_out <= '0';
 			dds_set <= '0';
 			ad_out <= '0';
+			p.t_1 <= (others => '0'); p.t_2 <= (others => '0'); p.t_3 <= (others => '0'); p.t_4 <= (others => '0'); 
+			p.t_5 <= (others => '0'); p.t_6 <= (others => '0'); p.t_7 <= (others => '0'); 
+			n.t_1 <= (others => '0'); n.t_2 <= (others => '0'); n.t_3 <= (others => '0'); n.t_4 <= (others => '0'); 
+			n.t_5 <= (others => '0'); n.t_6 <= (others => '0'); n.t_7 <= (others => '0'); 
 			dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
 		elsif clk' event and clk = '1' then
-			if preset = '1' then
-				if counter = p.t_1 then	
+			if preset = '1' then --事前のデータセットが終わらなければカウントは始まらない
+				if counter = p.t_1 then	--データによって指定された時刻になったらイベントを起こす
 					counter <= counter +1;	
 					rf_out <= '1';
 				elsif counter = p.t_2 then	
@@ -159,16 +169,20 @@ begin
 				elsif counter = p.t_7 then
 					counter <= (others => '0');
 					ad_out <= '1';
-					p <= n;
+					if p.m_fin = '1' then --p.m_finがhighならカウント終了。lowならセットされた次のデータを読み込む
+						count_end <= '1';
+					else
+						p <= n;
+					end if;
 					full <= '0';									
-				else	
+				else	--イベントが起きる時刻以外では、釈然とカウントを続ける
 					counter <= counter +1;
 					dds_set <= '0';
 					ad_out <= '0';
 				end if;
 			end if;
-			if preset = '0' then
-				if d_fin = '1' then
+			if preset = '0' then --最初のデータセット
+				if d_fin = '1' then --decodeからのデータがavailableならデータをセットする
 					case d_type is
 						when first =>		
 							p.t_1 <= data;	
@@ -210,13 +224,13 @@ begin
 					end case;
 				else
 					comp_rd <= '0';
-					if dst_7 = '1' and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then
+					if dst_7 = '1' and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then --パルスシーケンス1回分のデータが集まればカウント開始
 						preset <= '1';
 						dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
 					end if;
 				end if;
 			else
-				if d_fin = '1' then
+				if d_fin = '1' then --最初以降のデータセット
 					case d_type is
 						when first =>		
 							n.t_1 <= data;	
@@ -258,12 +272,16 @@ begin
 					end case;
 				else
 					comp_rd <= '0';
-					if dst_7 = '1' and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then
+					if dst_7 = '1' and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then --nのほうまでデータが満タンになったらdecodeを一旦停止
 						full <= '1';
 						dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
 					end if;
 				end if;
 			end if;
+		end if;
+		
+		if msr_fin = '1' then
+			n.m_fin <= '1'; --ここでnのほうをhighにしているのは、decodeからmsr_finが来るタイミングではまだデータがnのほうに存在するので、そのデータを実行し終わってからカウントを終了させるため
 		end if;
 					
 	end process;
