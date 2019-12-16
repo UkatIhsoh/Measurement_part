@@ -221,10 +221,11 @@ architecture measure of just_measurement is
 					 output_dds => dds_set,
 					 output_ad => ad_out);
 					 
-	process(ad_out)
+	process(rf_out)
 	begin
-		if rising_edge(ad_out) then
+		if rf_out = '1' then
 			led_blink <= not led_blink;
+			--led_blink <= '1';
 		end if;
 	end process;
 					 
