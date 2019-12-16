@@ -167,108 +167,105 @@ begin
 					ad_out <= '0';
 				end if;
 			end if;
-		end if;
-		
-		if preset = '0' then
-			if d_fin = '1' then
-				case d_type is
-					when first =>		
-						p.t_1 <= data;	
-						comp_rd <= '1';	
-						dst_1 <= '1';
-					
-					when second =>		
-						p.t_2 <= data;	
-						comp_rd <= '1';	
-						dst_2 <= '1';
+			if preset = '0' then
+				if d_fin = '1' then
+					case d_type is
+						when first =>		
+							p.t_1 <= data;	
+							comp_rd <= '1';	
+							dst_1 <= '1';
 						
-					when third =>		
-						p.t_3 <= data;	
-						comp_rd <= '1';	
-						dst_3 <= '1';
-					
-					when fourth =>		
-						p.t_4 <= data;	
-						comp_rd <= '1';	
-						dst_4 <= '1';
+						when second =>		
+							p.t_2 <= data;	
+							comp_rd <= '1';	
+							dst_2 <= '1';
+							
+						when third =>		
+							p.t_3 <= data;	
+							comp_rd <= '1';	
+							dst_3 <= '1';
 						
-					when fifth =>		
-						p.t_5 <= data;
-						comp_rd <= '1';
-						dst_5 <= '1';
-					
-					when sixth =>		
-						p.t_6 <= data;	
-						comp_rd <= '1';	
-						dst_6 <= '1';
+						when fourth =>		
+							p.t_4 <= data;	
+							comp_rd <= '1';	
+							dst_4 <= '1';
+							
+						when fifth =>		
+							p.t_5 <= data;
+							comp_rd <= '1';
+							dst_5 <= '1';
 						
-					when seventh =>	
-						p.t_7 <= data;	
-						comp_rd <= '1';	
-						dst_7 <= '1';
-						
-					when others =>		
-						comp_rd <= '1';
-				end case;
-			else
-				comp_rd <= '0';
-				if dst_7 = '1' then
-				--and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then
-					preset <= '1';
-					dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
+						when sixth =>		
+							p.t_6 <= data;	
+							comp_rd <= '1';	
+							dst_6 <= '1';
+							
+						when seventh =>	
+							p.t_7 <= data;	
+							comp_rd <= '1';	
+							dst_7 <= '1';
+							
+						when others =>		
+							comp_rd <= '1';
+					end case;
+				else
+					comp_rd <= '0';
+					if dst_7 = '1' and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then
+						preset <= '1';
+						dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
+					end if;
 				end if;
-			end if;
-		else
-			if d_fin = '1' then
-				case d_type is
-					when first =>		
-						n.t_1 <= data;	
-						comp_rd <= '1';	
-						dst_1 <= '1';
-					
-					when second =>		
-						n.t_2 <= data;
-						comp_rd <= '1';	
-						dst_2 <= '1';
-						
-					when third =>		
-						n.t_3 <= data;	
-						comp_rd <= '1';	
-						dst_3 <= '1';
-					
-					when fourth =>		
-						n.t_4 <= data;
-						comp_rd <= '1';	
-						dst_4 <= '1';
-						
-					when fifth =>		
-						n.t_5 <= data;	
-						comp_rd <= '1';	
-						dst_5 <= '1';
-					
-					when sixth =>		
-						n.t_6 <= data;	
-						comp_rd <= '1';	
-						dst_6 <= '1';
-						
-					when seventh =>	
-						n.t_7 <= data;
-						comp_rd <= '1';	
-						dst_7 <= '1';
-						
-					when others =>		
-						comp_rd <= '1';
-				end case;
 			else
-				comp_rd <= '0';
-				if dst_7 = '1' then
-				--nd dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then
-					full <= '1';
-					dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
+				if d_fin = '1' then
+					case d_type is
+						when first =>		
+							n.t_1 <= data;	
+							comp_rd <= '1';	
+							dst_1 <= '1';
+						
+						when second =>		
+							n.t_2 <= data;
+							comp_rd <= '1';	
+							dst_2 <= '1';
+							
+						when third =>		
+							n.t_3 <= data;	
+							comp_rd <= '1';	
+							dst_3 <= '1';
+						
+						when fourth =>		
+							n.t_4 <= data;
+							comp_rd <= '1';	
+							dst_4 <= '1';
+							
+						when fifth =>		
+							n.t_5 <= data;	
+							comp_rd <= '1';	
+							dst_5 <= '1';
+						
+						when sixth =>		
+							n.t_6 <= data;	
+							comp_rd <= '1';	
+							dst_6 <= '1';
+							
+						when seventh =>	
+							n.t_7 <= data;
+							comp_rd <= '1';	
+							dst_7 <= '1';
+							
+						when others =>		
+							comp_rd <= '1';
+					end case;
+				else
+					comp_rd <= '0';
+					if dst_7 = '1' and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then
+						full <= '1';
+						dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
+					end if;
 				end if;
 			end if;
 		end if;
-				
+					
 	end process;
 
 end count_time;
