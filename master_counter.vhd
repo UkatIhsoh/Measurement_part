@@ -160,9 +160,7 @@ begin
 					counter <= (others => '0');
 					ad_out <= '1';
 					p <= n;
-					full <= '0';					
-				elsif counter = p.t_0 then
-					counter <= counter +1;					
+					full <= '0';									
 				else	
 					counter <= counter +1;
 					dds_set <= '0';
@@ -208,18 +206,14 @@ begin
 						p.t_7 <= data;	
 						comp_rd <= '1';	
 						dst_7 <= '1';
-					
-					when eighth =>		
-						p.t_0 <= data;	
-						comp_rd <= '1';	
-						dst_0 <= '1';
 						
 					when others =>		
 						comp_rd <= '1';
 				end case;
 			else
 				comp_rd <= '0';
-				if dst_7 = '1' and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then
+				if dst_7 = '1' then
+				--and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then
 					preset <= '1';
 					dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
 				end if;
@@ -261,18 +255,14 @@ begin
 						n.t_7 <= data;
 						comp_rd <= '1';	
 						dst_7 <= '1';
-					
-					when eighth =>		
-						n.t_0 <= data;	
-						comp_rd <= '1';	
-						dst_0 <= '1';
 						
 					when others =>		
 						comp_rd <= '1';
 				end case;
 			else
 				comp_rd <= '0';
-				if dst_7 = '1' and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then
+				if dst_7 = '1' then
+				--nd dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then
 					full <= '1';
 					dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
 				end if;

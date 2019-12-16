@@ -234,7 +234,7 @@ architecture measure of just_measurement is
 					 
 	process(ad_out)
 	begin
-		if ad_out = '1' then
+		if rising_edge(ad_out) then
 			led_blink <= not led_blink;
 		end if;
 	end process;
@@ -246,7 +246,7 @@ architecture measure of just_measurement is
 	adc_sig <= ad_out;
 	
 	test_dout(3 downto 0) <= d_type;
-	test_bit <= ad_out;
+	test_bit <= led_blink;
 
 	end measure;
 

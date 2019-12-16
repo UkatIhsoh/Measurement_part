@@ -101,14 +101,14 @@ begin
 				if p.fresh = '0' then
 					if p.pend = '0' then
 						n.adr <= X"00000"; --アドレス変更
-						n.data <= p.data; --書き込みデータセット
+						n.data <= smp_data; --書き込みデータセット
 						n.state <= sd_request;
 						n.fresh <= '1';
 					end if;
 				else
 					if p.pend = '0' then
 						n.adr <= p.adr +1; --アドレス変更
-						n.data <= p.data + smp_data_2; --書き込みデータセット
+						n.data <= p.data + smp_data; --書き込みデータセット
 						n.state <= sd_request;
 					end if;
 				end if;

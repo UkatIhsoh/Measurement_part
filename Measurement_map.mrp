@@ -11,23 +11,23 @@ Target Device  : xc6slx9
 Target Package : tqg144
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : THU 12 DEC 13:57:59 2019
+Mapped Date    : FRI 13 DEC 17:15:52 2019
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:  235
+Number of warnings:  228
 Slice Logic Utilization:
-  Number of Slice Registers:                 1,291 out of  11,440   11%
-    Number used as Flip Flops:                 817
-    Number used as Latches:                    474
+  Number of Slice Registers:                 1,289 out of  11,440   11%
+    Number used as Flip Flops:                 821
+    Number used as Latches:                    468
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      1,401 out of   5,720   24%
-    Number used as logic:                    1,397 out of   5,720   24%
-      Number using O6 output only:           1,185
-      Number using O5 output only:             113
-      Number using O5 and O6:                   99
+  Number of Slice LUTs:                      1,425 out of   5,720   24%
+    Number used as logic:                    1,421 out of   5,720   24%
+      Number using O6 output only:           1,180
+      Number using O5 output only:             114
+      Number using O5 and O6:                  127
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   1,440    0%
     Number used exclusively as route-thrus:      4
@@ -36,15 +36,15 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   891 out of   1,430   62%
+  Number of occupied Slices:                   890 out of   1,430   62%
   Number of MUXCYs used:                       240 out of   2,860    8%
-  Number of LUT Flip Flop pairs used:        2,011
-    Number with an unused Flip Flop:           763 out of   2,011   37%
-    Number with an unused LUT:                 610 out of   2,011   30%
-    Number of fully used LUT-FF pairs:         638 out of   2,011   31%
-    Number of unique control sets:             705
+  Number of LUT Flip Flop pairs used:        2,111
+    Number with an unused Flip Flop:           893 out of   2,111   42%
+    Number with an unused LUT:                 686 out of   2,111   32%
+    Number of fully used LUT-FF pairs:         532 out of   2,111   25%
+    Number of unique control sets:             700
     Number of slice register sites lost
-      to control set restrictions:           4,829 out of  11,440   42%
+      to control set restrictions:           4,799 out of  11,440   41%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -92,11 +92,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                3.48
+Average Fanout of Non-Clock Nets:                3.42
 
 Peak Memory Usage:  4558 MB
-Total REAL time to MAP completion:  26 secs 
-Total CPU time to MAP completion:   22 secs 
+Total REAL time to MAP completion:  21 secs 
+Total CPU time to MAP completion:   21 secs 
 
 Table of Contents
 -----------------
@@ -120,7 +120,11 @@ Section 1 - Errors
 Section 2 - Warnings
 --------------------
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/dst_7_dst_6_AND_14_o is sourced by a combinatorial pin.
+   measure/count_time/dst_7_d_type[3]_MUX_841_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/preset_d_fin_AND_74_o is sourced by a combinatorial pin.
    This is not good design practice. Use the CE pin to control the loading of
    data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -128,43 +132,23 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    not good design practice. Use the CE pin to control the loading of data into
    the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/dst_7_d_type[3]_MUX_856_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_521_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/preset_d_fin_AND_86_o is sourced by a combinatorial pin.
-   This is not good design practice. Use the CE pin to control the loading of
-   data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_597_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_519_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_595_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_517_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_593_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_515_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_591_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_589_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_661_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_587_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_659_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_513_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -172,7 +156,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_657_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_511_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -180,7 +164,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_655_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_509_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -188,11 +172,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_653_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_725_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_507_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -200,227 +180,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_651_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_723_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_649_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_721_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_647_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_719_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_645_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_717_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_789_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_643_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_715_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_787_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_713_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_785_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_711_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_783_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_709_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_781_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_853_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_707_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_779_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_851_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_777_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_849_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_775_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_847_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_773_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_845_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_917_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_771_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_843_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_915_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_841_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_913_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_839_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_911_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_837_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_909_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_981_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_835_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_907_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_979_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_905_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_977_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_903_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_975_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_901_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_973_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_899_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_971_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_969_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_967_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_965_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_963_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/dst_7_d_type[3]_MUX_829_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/dst_7_d_type[3]_MUX_847_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_505_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -428,11 +188,19 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_649_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_503_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
    measure/count_time/d_fin_d_type[3]_AND_575_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_557_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_647_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -440,7 +208,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_555_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_645_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -448,11 +216,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_537_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_553_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_643_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -460,11 +224,11 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_535_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_641_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_551_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_713_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -472,7 +236,251 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_549_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_639_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_711_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_637_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_709_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_635_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_707_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_633_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_705_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_777_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_631_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_703_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_775_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_701_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_773_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_699_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_771_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_697_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_769_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_841_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_695_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_767_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_839_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_765_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_837_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_763_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_835_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_761_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_833_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_905_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_759_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_831_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_903_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_829_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_901_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_827_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_899_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_825_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_897_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_823_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_895_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_893_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_891_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_889_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_887_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_501_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_499_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_481_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_497_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_479_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_495_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_461_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_477_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_493_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_459_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_475_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_491_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_473_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_489_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_471_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_487_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_469_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_485_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -480,11 +488,19 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_547_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_467_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_483_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
    measure/count_time/d_fin_d_type[3]_AND_563_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_465_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -496,7 +512,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_641_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_463_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -508,7 +524,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_639_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_525_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -516,11 +532,11 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_621_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_557_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_637_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_523_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -528,39 +544,31 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_619_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_555_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_635_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_537_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_601_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_553_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_617_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_535_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_633_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_551_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_599_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_533_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_615_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_631_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_613_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_549_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -568,11 +576,19 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_611_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_531_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_547_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
    measure/count_time/d_fin_d_type[3]_AND_627_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_529_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -584,7 +600,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_705_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_527_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -596,7 +612,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_703_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_589_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -604,11 +620,11 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_685_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_621_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_701_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_587_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -616,39 +632,31 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_683_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_619_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_699_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_601_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_665_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_617_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_681_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_599_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_697_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_615_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_663_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_597_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_679_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_695_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_677_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_613_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -656,11 +664,19 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_675_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_595_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_611_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
    measure/count_time/d_fin_d_type[3]_AND_691_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_593_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -672,7 +688,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_769_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_591_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -684,7 +700,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_767_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_653_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -692,11 +708,11 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_749_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_685_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_765_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_651_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -704,39 +720,31 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_747_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_683_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_763_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_665_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_729_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_681_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_745_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_663_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_761_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_679_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_727_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_661_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_743_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_759_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_741_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_677_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -744,11 +752,19 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_739_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_659_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_675_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
    measure/count_time/d_fin_d_type[3]_AND_755_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_657_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -760,7 +776,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_833_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_655_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -772,7 +788,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_831_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_717_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -780,11 +796,11 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_813_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_749_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_829_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_715_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -792,39 +808,31 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_811_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_747_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_827_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_729_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_793_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_745_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_809_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_727_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_825_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_743_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_791_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_725_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_807_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_823_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_805_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_741_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -832,11 +840,19 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_803_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_723_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_739_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
    measure/count_time/d_fin_d_type[3]_AND_819_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_721_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -848,7 +864,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_897_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_719_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -860,7 +876,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_895_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_781_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -868,11 +884,11 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_877_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_813_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_893_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_779_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -880,39 +896,31 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_875_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_811_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_891_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_793_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_857_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_809_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_873_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_791_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_889_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_807_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_855_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_789_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_871_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_887_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_869_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_805_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -920,11 +928,19 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_867_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_787_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_803_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
    measure/count_time/d_fin_d_type[3]_AND_883_o is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   measure/count_time/d_fin_d_type[3]_AND_785_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -936,7 +952,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_961_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_783_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -948,7 +964,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_959_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_845_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -956,11 +972,11 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_941_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_877_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_957_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_843_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -968,108 +984,64 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_939_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_875_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_955_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_857_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_921_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_873_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_937_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_855_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_953_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_871_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_919_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_853_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_935_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_869_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_951_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_851_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_933_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_867_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_949_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_849_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_931_o is sourced by a combinatorial
+   measure/count_time/d_fin_d_type[3]_AND_847_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_947_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_929_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_945_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_927_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_943_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_925_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/d_fin_d_type[3]_AND_923_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/dst_7_d_type[3]_MUX_802_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/dst_7_d_type[3]_MUX_811_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/rst_dst_7_MUX_798_o is sourced by a combinatorial pin.
+   measure/count_time/rst_dst_7_MUX_837_o is sourced by a combinatorial pin.
    This is not good design practice. Use the CE pin to control the loading of
    data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/dst_7_d_type[3]_MUX_820_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/dst_7_d_type[3]_MUX_838_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network WING_A<11>_IBUF has no load.
+INFO:LIT:243 - Logical network WING_A<15>_IBUF has no load.
 INFO:LIT:395 - The above info message is repeated 37 more times for the
    following (max. 5 shown):
-   WING_A<10>_IBUF,
-   WING_A<9>_IBUF,
-   WING_A<8>_IBUF,
-   WING_A<7>_IBUF,
-   WING_A<6>_IBUF
+   WING_A<14>_IBUF,
+   WING_A<13>_IBUF,
+   WING_A<12>_IBUF,
+   WING_A<11>_IBUF,
+   WING_A<10>_IBUF
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:MapLib:159 - Net Timing constraints on signal clk are pushed forward
@@ -1163,11 +1135,11 @@ Section 6 - IOB Properties
 | DRAM_RAS_N                         | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | OFF          |          |          |
 | DRAM_WE_N                          | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | OFF          |          |          |
 | LED                                | IOB              | OUTPUT    | LVTTL                |       | 8        | SLOW |              |          |          |
-| WING_A<0>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| WING_A<0>                          | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
 | WING_A<1>                          | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| WING_A<2>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
-| WING_A<3>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
-| WING_A<4>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| WING_A<2>                          | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| WING_A<3>                          | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| WING_A<4>                          | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
 | WING_A<5>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
 | WING_A<6>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
 | WING_A<7>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
@@ -1175,10 +1147,10 @@ Section 6 - IOB Properties
 | WING_A<9>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
 | WING_A<10>                         | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
 | WING_A<11>                         | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
-| WING_A<12>                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| WING_A<13>                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| WING_A<14>                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| WING_A<15>                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| WING_A<12>                         | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| WING_A<13>                         | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| WING_A<14>                         | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| WING_A<15>                         | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
 | WING_B<0>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
 | WING_B<1>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
 | WING_B<2>                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |

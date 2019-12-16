@@ -86,7 +86,8 @@ architecture decode of data_decode is
 		d_fin : std_logic; --decode_fin
 		state : state_t;
 		sequence : std_logic_vector(3 downto 0);
-		d_num : std_logic_vector(1 downto 0);
+		d_num : std_logic_vector(1 downto 0); --データの受け取りを小分けにする
+		loading : std_logic; --master_counterがデータを読み込み終わるまで待機
 	end record;
 
 	signal p : reg;
@@ -109,100 +110,109 @@ begin
 			if fetch_fin = '1' then --フェッチが終了していることがデコード開始の条件
 				if decode_wait = '0' then --master_counterがおなか一杯の時は休憩
 					if p.d_en = '0' then --フェッチとのデータのやり取りがぐちゃぐちゃにならないようにするため
-						case p.sequence is --読み込んだ順で処理
-							when first => 
-								if p.d_num = "00" then
-									n.data(15 downto 0) <= data64(15 downto 0);
-									n.d_num <= "01";
-								else
-									n.data(31 downto 16) <= data64(31 downto 16);
-									n.d_num <= "00";
-									n.d_type <= first;
-									n.state <= count;
-									n.sequence <= second;
-								end if;
+						if p.loading = '0' then
+							case p.sequence is --読み込んだ順で処理
+								when first => 
+									if p.d_num = "00" then
+										n.data(15 downto 0) <= data64(15 downto 0);
+										n.d_num <= "01";
+									else
+										n.data(31 downto 16) <= data64(31 downto 16);
+										n.d_num <= "00";
+										n.d_type <= first;
+										n.state <= count;
+										n.sequence <= second;
+										n.loading <= '1';
+									end if;
+									
+								when second =>
+									if p.d_num = "00" then
+										n.data(15 downto 0) <= data64(15 downto 0);
+										n.d_num <= "01";
+									else
+										n.data(31 downto 16) <= data64(31 downto 16);
+										n.d_num <= "00";
+										n.d_type <= second;
+										n.state <= count;
+										n.sequence <= third;
+										n.loading <= '1';
+									end if;
+		
+								when third =>
+									if p.d_num = "00" then
+										n.data(15 downto 0) <= data64(15 downto 0);
+										n.d_num <= "01";
+									else
+										n.data(31 downto 16) <= data64(31 downto 16);
+										n.d_num <= "00";
+										n.d_type <= third;
+										n.state <= count;
+										n.sequence <= fourth;
+										n.loading <= '1';
+									end if;
+									
+								when fourth =>
+									if p.d_num = "00" then
+										n.data(15 downto 0) <= data64(15 downto 0);
+										n.d_num <= "01";
+									else
+										n.data(31 downto 16) <= data64(31 downto 16);
+										n.d_num <= "00";
+										n.d_type <= fourth;
+										n.state <= count;
+										n.sequence <= fifth;
+										n.loading <= '1';
+									end if;
+									
+								when fifth =>
+									if p.d_num = "00" then
+										n.data(15 downto 0) <= data64(15 downto 0);
+										n.d_num <= "01";
+									else
+										n.data(31 downto 16) <= data64(31 downto 16);
+										n.d_num <= "00";
+										n.d_type <= fifth;
+										n.state <= count;
+										n.sequence <= sixth;
+										n.loading <= '1';
+									end if;
+									
+								when sixth =>
+									if p.d_num = "00" then
+										n.data(15 downto 0) <= data64(15 downto 0);
+										n.d_num <= "01";
+									else
+										n.data(31 downto 16) <= data64(31 downto 16);
+										n.d_num <= "00";
+										n.d_type <= sixth;
+										n.state <= count;
+										n.sequence <= seventh;
+										n.loading <= '1';
+									end if;
+									
+								when seventh =>
+									if p.d_num = "00" then
+										n.data(15 downto 0) <= data64(15 downto 0);
+										n.d_num <= "01";
+									else
+										n.data(31 downto 16) <= data64(31 downto 16);
+										n.d_num <= "00";
+										n.d_type <= seventh;
+										n.state <= count;
+										n.sequence <= first;
+										n.loading <= '1';
+									end if;		
+									
+								when dds_A =>
 								
-							when second =>
-								if p.d_num = "00" then
-									n.data(15 downto 0) <= data64(15 downto 0);
-									n.d_num <= "01";
-								else
-									n.data(31 downto 16) <= data64(31 downto 16);
-									n.d_num <= "00";
-									n.d_type <= second;
-									n.state <= count;
-									n.sequence <= third;
-								end if;
-	
-							when third =>
-								if p.d_num = "00" then
-									n.data(15 downto 0) <= data64(15 downto 0);
-									n.d_num <= "01";
-								else
-									n.data(31 downto 16) <= data64(31 downto 16);
-									n.d_num <= "00";
-									n.d_type <= third;
-									n.state <= count;
-									n.sequence <= fourth;
-								end if;
+								when dds_B =>
 								
-							when fourth =>
-								if p.d_num = "00" then
-									n.data(15 downto 0) <= data64(15 downto 0);
-									n.d_num <= "01";
-								else
-									n.data(31 downto 16) <= data64(31 downto 16);
-									n.d_num <= "00";
-									n.d_type <= fourth;
-									n.state <= count;
-									n.sequence <= fifth;
-								end if;
+								when dds_C =>
 								
-							when fifth =>
-								if p.d_num = "00" then
-									n.data(15 downto 0) <= data64(15 downto 0);
-									n.d_num <= "01";
-								else
-									n.data(31 downto 16) <= data64(31 downto 16);
-									n.d_num <= "00";
-									n.d_type <= fifth;
-									n.state <= count;
-									n.sequence <= sixth;
-								end if;
-								
-							when sixth =>
-								if p.d_num = "00" then
-									n.data(15 downto 0) <= data64(15 downto 0);
-									n.d_num <= "01";
-								else
-									n.data(31 downto 16) <= data64(31 downto 16);
-									n.d_num <= "00";
-									n.d_type <= sixth;
-									n.state <= count;
-									n.sequence <= seventh;
-								end if;
-								
-							when seventh =>
-								if p.d_num = "00" then
-									n.data(15 downto 0) <= data64(15 downto 0);
-									n.d_num <= "01";
-								else
-									n.data(31 downto 16) <= data64(31 downto 16);
-									n.d_num <= "00";
-									n.d_type <= seventh;
-									n.state <= count;
-									n.sequence <= first;
-								end if;		
-								
-							when dds_A =>
-							
-							when dds_B =>
-							
-							when dds_C =>
-							
-							when others =>
-								n.state <= idle;	
-						end case;
+								when others =>
+									n.state <= idle;	
+							end case;
+						end if;
 					end if;
 				end if;
 			end if;
@@ -219,6 +229,7 @@ begin
 					else
 						if p.d_fin = '1' then
 							n.d_fin <= '0';
+							n.loading <= '0';
 							--if p.d_type = second or p.d_type = fourth or p.d_type = sixth or p.d_type = seventh then 
 								n.d_en <= '1';
 							--end if;
@@ -242,6 +253,7 @@ begin
 				p.state <= idle;
 				p.sequence <= first;
 				p.d_num <= "00";
+				p.loading <= '0';
 				fresh <= '0';
 			elsif clk' event and clk = '1' then
 				p <= n;
