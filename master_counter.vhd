@@ -127,7 +127,7 @@ begin
 	output_dds <= dds_set;
 	output_ad <= ad_out;
 		
-	process(clk,rst,data,d_fin,d_type,msr_fin)
+	process(clk,rst,data,d_fin,d_type,msr_fin,count_end)
 	begin
 	
 		if rst = '1' or count_end = '1' then
@@ -180,56 +180,6 @@ begin
 					dds_set <= '0';
 					ad_out <= '0';
 				end if;
-			end if;
-			if preset = '0' then --最初のデータセット
-				if d_fin = '1' then --decodeからのデータがavailableならデータをセットする
-					case d_type is
-						when first =>		
-							p.t_1 <= data;	
-							comp_rd <= '1';	
-							dst_1 <= '1';
-						
-						when second =>		
-							p.t_2 <= data;	
-							comp_rd <= '1';	
-							dst_2 <= '1';
-							
-						when third =>		
-							p.t_3 <= data;	
-							comp_rd <= '1';	
-							dst_3 <= '1';
-						
-						when fourth =>		
-							p.t_4 <= data;	
-							comp_rd <= '1';	
-							dst_4 <= '1';
-							
-						when fifth =>		
-							p.t_5 <= data;
-							comp_rd <= '1';
-							dst_5 <= '1';
-						
-						when sixth =>		
-							p.t_6 <= data;	
-							comp_rd <= '1';	
-							dst_6 <= '1';
-							
-						when seventh =>	
-							p.t_7 <= data;	
-							comp_rd <= '1';	
-							dst_7 <= '1';
-							
-						when others =>		
-							comp_rd <= '1';
-					end case;
-				else
-					comp_rd <= '0';
-					if dst_7 = '1' and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then --パルスシーケンス1回分のデータが集まればカウント開始
-						preset <= '1';
-						dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
-					end if;
-				end if;
-			else
 				if d_fin = '1' then --最初以降のデータセット
 					case d_type is
 						when first =>		
@@ -274,6 +224,54 @@ begin
 					comp_rd <= '0';
 					if dst_7 = '1' and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then --nのほうまでデータが満タンになったらdecodeを一旦停止
 						full <= '1';
+						dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
+					end if;
+				end if;
+			else  --最初のデータセット
+				if d_fin = '1' then --decodeからのデータがavailableならデータをセットする
+					case d_type is
+						when first =>		
+							p.t_1 <= data;	
+							comp_rd <= '1';	
+							dst_1 <= '1';
+						
+						when second =>		
+							p.t_2 <= data;	
+							comp_rd <= '1';	
+							dst_2 <= '1';
+							
+						when third =>		
+							p.t_3 <= data;	
+							comp_rd <= '1';	
+							dst_3 <= '1';
+						
+						when fourth =>		
+							p.t_4 <= data;	
+							comp_rd <= '1';	
+							dst_4 <= '1';
+							
+						when fifth =>		
+							p.t_5 <= data;
+							comp_rd <= '1';
+							dst_5 <= '1';
+						
+						when sixth =>		
+							p.t_6 <= data;	
+							comp_rd <= '1';	
+							dst_6 <= '1';
+							
+						when seventh =>	
+							p.t_7 <= data;	
+							comp_rd <= '1';	
+							dst_7 <= '1';
+							
+						when others =>		
+							comp_rd <= '1';
+					end case;
+				else
+					comp_rd <= '0';
+					if dst_7 = '1' and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then --パルスシーケンス1回分のデータが集まればカウント開始
+						preset <= '1';
 						dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
 					end if;
 				end if;

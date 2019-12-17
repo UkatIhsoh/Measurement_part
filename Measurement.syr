@@ -169,7 +169,6 @@ INFO:HDLCompiler:679 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_f
 Elaborating entity <data_decode> (architecture <decode>) from library <work>.
 
 Elaborating entity <master_counter> (architecture <count_time>) from library <work>.
-WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\master_counter.vhd" Line 133: count_end should be on the sensitivity list of the process
 WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" Line 227: led_blink should be on the sensitivity list of the process
 WARNING:HDLCompiler:1127 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 253: Assignment to req_adr_w ignored, since the identifier is never used
 WARNING:HDLCompiler:634 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 149: Net <sdr_addr[19]> does not have a driver.
@@ -517,7 +516,7 @@ WARNING:Xst:737 - Found 1-bit latch for signal <n_m_fin>. Latches may be generat
 	inferred 495 D-type flip-flop(s).
 	inferred   1 Latch(s).
 	inferred   7 Comparator(s).
-	inferred  33 Multiplexer(s).
+	inferred  18 Multiplexer(s).
 Unit <master_counter> synthesized.
 
 =========================================================================
@@ -543,12 +542,12 @@ Macro Statistics
 # Comparators                                          : 8
  2-bit comparator equal                                : 1
  32-bit comparator equal                               : 7
-# Multiplexers                                         : 172
- 1-bit 2-to-1 multiplexer                              : 112
+# Multiplexers                                         : 157
+ 1-bit 2-to-1 multiplexer                              : 111
  12-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 3
  20-bit 2-to-1 multiplexer                             : 4
- 32-bit 2-to-1 multiplexer                             : 31
+ 32-bit 2-to-1 multiplexer                             : 17
  4-bit 2-to-1 multiplexer                              : 14
  64-bit 2-to-1 multiplexer                             : 2
 # Tristates                                            : 16
@@ -585,12 +584,12 @@ Macro Statistics
 # Comparators                                          : 8
  2-bit comparator equal                                : 1
  32-bit comparator equal                               : 7
-# Multiplexers                                         : 265
- 1-bit 2-to-1 multiplexer                              : 208
+# Multiplexers                                         : 250
+ 1-bit 2-to-1 multiplexer                              : 207
  12-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 3
  20-bit 2-to-1 multiplexer                             : 3
- 32-bit 2-to-1 multiplexer                             : 30
+ 32-bit 2-to-1 multiplexer                             : 16
  4-bit 2-to-1 multiplexer                              : 14
  64-bit 2-to-1 multiplexer                             : 1
 # FSMs                                                 : 8
@@ -1043,7 +1042,7 @@ INFO:Xst:2261 - The FF/Latch <ctrl/r_req_data_write_16> in Unit <Measurement> is
 Mapping all equations...
 Building and optimizing final netlist ...
 INFO:Xst:2261 - The FF/Latch <ctrl/n_data_w_5> in Unit <Measurement> is equivalent to the following 4 FFs/Latches, which will be removed : <ctrl/n_data_w_7> <ctrl/n_data_w_9> <ctrl/n_data_w_10> <ctrl/n_data_w_15> 
-Found area constraint ratio of 100 (+ 5) on block Measurement, actual ratio is 23.
+Found area constraint ratio of 100 (+ 5) on block Measurement, actual ratio is 22.
 WARNING:Xst:1426 - The value init of the FF/Latch ctrl/r_rf_counter_31_LD hinder the constant cleaning in the block Measurement.
    You should achieve better results by setting this init to 0.
 Replicating register ctrl/r_address_10 to handle IOB=TRUE attribute
@@ -1085,24 +1084,24 @@ Top Level Output File Name         : Measurement.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 972
+# BELS                             : 965
 #      GND                         : 1
 #      INV                         : 20
 #      LUT1                        : 73
 #      LUT2                        : 43
 #      LUT3                        : 70
-#      LUT4                        : 91
-#      LUT5                        : 63
-#      LUT6                        : 355
-#      MUXCY                       : 163
+#      LUT4                        : 77
+#      LUT5                        : 69
+#      LUT6                        : 357
+#      MUXCY                       : 162
 #      MUXF7                       : 3
 #      VCC                         : 1
 #      XORCY                       : 89
 # FlipFlops/Latches                : 752
 #      FD                          : 2
 #      FD_1                        : 16
-#      FDC                         : 280
-#      FDCE                        : 437
+#      FDC                         : 281
+#      FDCE                        : 436
 #      FDE                         : 7
 #      FDP                         : 4
 #      LD                          : 5
@@ -1125,14 +1124,14 @@ Selected Device : 6slx9tqg144-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:             721  out of  11440     6%  
- Number of Slice LUTs:                  715  out of   5720    12%  
-    Number used as Logic:               715  out of   5720    12%  
+ Number of Slice LUTs:                  709  out of   5720    12%  
+    Number used as Logic:               709  out of   5720    12%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1017
-   Number with an unused Flip Flop:     296  out of   1017    29%  
-   Number with an unused LUT:           302  out of   1017    29%  
-   Number of fully used LUT-FF pairs:   419  out of   1017    41%  
+ Number of LUT Flip Flop pairs used:   1010
+   Number with an unused Flip Flop:     289  out of   1010    28%  
+   Number with an unused LUT:           301  out of   1010    29%  
+   Number of fully used LUT-FF pairs:   420  out of   1010    41%  
    Number of unique control sets:        25
 
 IO Utilization: 
@@ -1183,9 +1182,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 21.373ns (Maximum Frequency: 46.787MHz)
+   Minimum period: 21.477ns (Maximum Frequency: 46.562MHz)
    Minimum input arrival time before clock: 7.025ns
-   Maximum output required time after clock: 4.923ns
+   Maximum output required time after clock: 4.794ns
    Maximum combinational path delay: 5.043ns
 
 Timing Details:
@@ -1208,7 +1207,7 @@ Delay:               2.278ns (Levels of Logic = 1)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      LD:G->Q               2   0.581   0.725  measure/led_blink (measure/led_blink)
-     INV:I->O              1   0.255   0.681  measure/led_blink_INV_70_o1_INV_0 (measure/led_blink_INV_70_o)
+     INV:I->O              1   0.255   0.681  measure/led_blink_INV_69_o1_INV_0 (measure/led_blink_INV_69_o)
      LD:D                      0.036          measure/led_blink
     ----------------------------------------
     Total                      2.278ns (0.872ns logic, 1.406ns route)
@@ -1216,39 +1215,39 @@ Delay:               2.278ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 21.373ns (frequency: 46.787MHz)
-  Total number of paths / destination ports: 128140 / 1654
+  Clock period: 21.477ns (frequency: 46.562MHz)
+  Total number of paths / destination ports: 126138 / 1653
 -------------------------------------------------------------------------
-Delay:               6.840ns (Levels of Logic = 15)
-  Source:            measure/count_time/p_t_2_2 (FF)
-  Destination:       measure/count_time/p_t_7_31 (FF)
+Delay:               6.873ns (Levels of Logic = 15)
+  Source:            measure/count_time/p_t_3_2 (FF)
+  Destination:       measure/count_time/p_t_5_17 (FF)
   Source Clock:      clk rising 3.1X
   Destination Clock: clk rising 3.1X
 
-  Data Path: measure/count_time/p_t_2_2 to measure/count_time/p_t_7_31
+  Data Path: measure/count_time/p_t_3_2 to measure/count_time/p_t_5_17
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.525   1.181  measure/count_time/p_t_2_2 (measure/count_time/p_t_2_2)
-     LUT6:I0->O            1   0.254   0.000  measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_lut<0> (measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<0> (measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<1> (measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<2> (measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<3> (measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<4> (measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<5> (measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<6> (measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<7> (measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<8> (measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<9> (measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<9>)
-     MUXCY:CI->O          14   0.235   1.235  measure/count_time/Mcompar_counter[31]_p_t_2[31]_equal_3_o_cy<10> (measure/count_time/counter[31]_p_t_2[31]_equal_3_o)
-     LUT2:I0->O            8   0.250   0.944  measure/count_time/_n0515_SW1 (N66)
-     LUT6:I5->O           17   0.254   1.209  measure/count_time/_n0991_inv1 (measure/count_time/_n0991_inv)
-     LUT6:I5->O            1   0.254   0.000  measure/count_time/p_t_5_31_rstpot (measure/count_time/p_t_5_31_rstpot)
-     FDC:D                     0.074          measure/count_time/p_t_5_31
+     FDC:C->Q              2   0.525   1.181  measure/count_time/p_t_3_2 (measure/count_time/p_t_3_2)
+     LUT6:I0->O            1   0.254   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_lut<0> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<0> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<1> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<2> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<3> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<4> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<5> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<6> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<7> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<8> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<9> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<9>)
+     MUXCY:CI->O          11   0.235   1.147  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<10> (measure/count_time/counter[31]_p_t_3[31]_equal_5_o)
+     LUT3:I1->O           11   0.250   1.039  measure/count_time/Mmux_counter[31]_counter[31]_mux_28_OUT101_SW1 (N62)
+     LUT6:I5->O           18   0.254   1.235  measure/count_time/_n0585_inv1_cepot_5 (measure/count_time/_n0585_inv1_cepot5)
+     LUT6:I5->O            1   0.254   0.000  measure/count_time/p_t_5_17_rstpot (measure/count_time/p_t_5_17_rstpot)
+     FDC:D                     0.074          measure/count_time/p_t_5_17
     ----------------------------------------
-    Total                      6.840ns (2.271ns logic, 4.569ns route)
-                                       (33.2% logic, 66.8% route)
+    Total                      6.873ns (2.271ns logic, 4.602ns route)
+                                       (33.0% logic, 67.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -1265,7 +1264,7 @@ Offset:              7.025ns (Levels of Logic = 2)
     ----------------------------------------  ------------
      IBUF:I->O           232   1.328   2.534  WING_B_0_IBUF (WING_B_0_IBUF)
      LUT2:I0->O          494   0.250   2.455  measure/count_time/rst_count_end_OR_105_o1 (measure/count_time/rst_count_end_OR_105_o)
-     FDCE:CLR                  0.459          measure/count_time/n_t_3_0
+     FDCE:CLR                  0.459          measure/count_time/n_t_1_0
     ----------------------------------------
     Total                      7.025ns (2.037ns logic, 4.988ns route)
                                        (29.0% logic, 71.0% route)
@@ -1274,7 +1273,7 @@ Offset:              7.025ns (Levels of Logic = 2)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 36 / 30
 -------------------------------------------------------------------------
-Offset:              4.923ns (Levels of Logic = 1)
+Offset:              4.794ns (Levels of Logic = 1)
   Source:            measure/decode/p_d_type_2 (FF)
   Destination:       WING_A<3> (PAD)
   Source Clock:      clk rising 3.1X
@@ -1283,11 +1282,11 @@ Offset:              4.923ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            30   0.525   1.486  measure/decode/p_d_type_2 (measure/decode/p_d_type_2)
+     FDCE:C->Q            23   0.525   1.357  measure/decode/p_d_type_2 (measure/decode/p_d_type_2)
      OBUF:I->O                 2.912          WING_A_3_OBUF (WING_A<3>)
     ----------------------------------------
-    Total                      4.923ns (3.437ns logic, 1.486ns route)
-                                       (69.8% logic, 30.2% route)
+    Total                      4.794ns (3.437ns logic, 1.357ns route)
+                                       (71.7% logic, 28.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'measure/count_time/rf_out'
@@ -1337,9 +1336,9 @@ Clock to Setup on destination clock clk
 Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------+---------+---------+---------+---------+
 WING_B<0>                       |         |    4.651|         |         |
-clk                             |    6.840|    1.324|         |         |
+clk                             |    6.873|    1.324|         |         |
 ctrl/statep[8]_GND_36_o_Mux_83_o|         |    1.495|         |         |
-measure/count_time/n_m_fin_G    |         |    2.631|         |         |
+measure/count_time/n_m_fin_G    |         |    1.867|         |         |
 --------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock ctrl/statep[8]_GND_36_o_Mux_83_o
@@ -1370,13 +1369,13 @@ measure/count_time/rf_out|         |         |    2.278|         |
 
 
 Total REAL time to Xst completion: 16.00 secs
-Total CPU time to Xst completion: 16.03 secs
+Total CPU time to Xst completion: 15.79 secs
  
 --> 
 
 Total memory usage is 4526792 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  329 (   0 filtered)
+Number of warnings :  328 (   0 filtered)
 Number of infos    :   15 (   0 filtered)
 
