@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: Measurement.prj
 
@@ -151,7 +151,7 @@ Elaborating entity <DCM_100M> (architecture <xilinx>) from library <work>.
 Elaborating entity <SDRAM_ctrl> (architecture <Behavioral>) with generics from library <work>.
 
 Elaborating entity <SDRAM_wr> (architecture <write_sec>) from library <work>.
-INFO:HDLCompiler:679 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\SDRAM_wr.vhd" Line 128. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\SDRAM_wr.vhd" Line 130. Case statement is complete. others clause is never selected
 
 Elaborating entity <SDRAM_rd> (architecture <read_sec>) from library <work>.
 WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\SDRAM_rd.vhd" Line 136: sdr_data should be on the sensitivity list of the process
@@ -179,9 +179,11 @@ WARNING:HDLCompiler:634 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Mea
 
 Synthesizing Unit <Measurement>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd".
+WARNING:Xst:647 - Input <WING_B<15:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 212: Output port <sdr_adr> of the instance <write_sec> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 221: Output port <sdr_adr> of the instance <read_sec> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 221: Output port <fetch_en> of the instance <read_sec> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 233: Output port <test_dout> of the instance <measure> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 233: Output port <msr_finish> of the instance <measure> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <sdr_addr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
@@ -312,9 +314,10 @@ Synthesizing Unit <SDRAM_wr>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 20-bit adder for signal <p_adr[19]_GND_51_o_add_5_OUT> created at line 104.
+    Found 20-bit adder for signal <p_adr[19]_GND_51_o_add_5_OUT> created at line 106.
+    Found 64-bit adder for signal <p_data[63]_GND_51_o_add_6_OUT> created at line 107.
     Summary:
-	inferred   1 Adder/Subtractor(s).
+	inferred   2 Adder/Subtractor(s).
 	inferred  88 D-type flip-flop(s).
 	inferred   3 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
@@ -352,11 +355,9 @@ Synthesizing Unit <just_measurement>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd".
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 173: Output port <test_pin> of the instance <fetch> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 192: Output port <d_data_out> of the instance <decode> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 209: Output port <output_dds> of the instance <count_time> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <test_dout<63:4>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:737 - Found 1-bit latch for signal <led_blink>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
-	inferred   1 Latch(s).
+	no macro.
 Unit <just_measurement> synthesized.
 
 Synthesizing Unit <data_fetch>.
@@ -409,9 +410,9 @@ Unit <data_fetch> synthesized.
 
 Synthesizing Unit <data_decode>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd".
-WARNING:Xst:647 - Input <data64<63:32>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <data64<63:35>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:653 - Signal <d_data_out> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-    Found 32-bit register for signal <c_data_out>.
+    Found 35-bit register for signal <c_data_out>.
     Found 4-bit register for signal <p_d_type>.
     Found 2-bit register for signal <p_state>.
     Found 2-bit register for signal <p_d_num>.
@@ -424,10 +425,10 @@ WARNING:Xst:653 - Signal <d_data_out> is used but never assigned. This sourceles
     Found 1-bit register for signal <fresh>.
     Found finite state machine <FSM_6> for signal <p_d_num>.
     -----------------------------------------------------------------------
-    | States             | 2                                              |
-    | Transitions        | 12                                             |
+    | States             | 3                                              |
+    | Transitions        | 18                                             |
     | Inputs             | 5                                              |
-    | Outputs            | 1                                              |
+    | Outputs            | 3                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | asynchronous                                   |
@@ -463,30 +464,30 @@ INFO:Xst:1799 - State cycle_end is never reached in FSM <p_state>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    WARNING:Xst:2404 -  FFs/Latches <p_data<39:32>> (without init value) have a constant value of 0 in block <data_decode>.
+    WARNING:Xst:2404 -  FFs/Latches <p_data<39:35>> (without init value) have a constant value of 0 in block <data_decode>.
     Summary:
-	inferred  42 D-type flip-flop(s).
-	inferred  17 Multiplexer(s).
+	inferred  45 D-type flip-flop(s).
+	inferred  29 Multiplexer(s).
 	inferred   3 Finite State Machine(s).
 Unit <data_decode> synthesized.
 
 Synthesizing Unit <master_counter>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\master_counter.vhd".
-    Found 32-bit register for signal <p_t_1>.
-    Found 32-bit register for signal <p_t_2>.
-    Found 32-bit register for signal <p_t_3>.
-    Found 32-bit register for signal <p_t_4>.
-    Found 32-bit register for signal <p_t_5>.
-    Found 32-bit register for signal <p_t_6>.
-    Found 32-bit register for signal <p_t_7>.
+    Found 35-bit register for signal <p_t_1>.
+    Found 35-bit register for signal <p_t_2>.
+    Found 35-bit register for signal <p_t_3>.
+    Found 35-bit register for signal <p_t_4>.
+    Found 35-bit register for signal <p_t_5>.
+    Found 35-bit register for signal <p_t_6>.
+    Found 35-bit register for signal <p_t_7>.
     Found 1-bit register for signal <p_m_fin>.
-    Found 32-bit register for signal <n_t_1>.
-    Found 32-bit register for signal <n_t_2>.
-    Found 32-bit register for signal <n_t_3>.
-    Found 32-bit register for signal <n_t_4>.
-    Found 32-bit register for signal <n_t_5>.
-    Found 32-bit register for signal <n_t_6>.
-    Found 32-bit register for signal <n_t_7>.
+    Found 35-bit register for signal <n_t_1>.
+    Found 35-bit register for signal <n_t_2>.
+    Found 35-bit register for signal <n_t_3>.
+    Found 35-bit register for signal <n_t_4>.
+    Found 35-bit register for signal <n_t_5>.
+    Found 35-bit register for signal <n_t_6>.
+    Found 35-bit register for signal <n_t_7>.
     Found 1-bit register for signal <count_end>.
     Found 1-bit register for signal <preset>.
     Found 1-bit register for signal <full>.
@@ -502,31 +503,32 @@ Synthesizing Unit <master_counter>.
     Found 1-bit register for signal <dst_6>.
     Found 1-bit register for signal <dst_7>.
     Found 32-bit register for signal <counter>.
-    Found 32-bit adder for signal <counter[31]_GND_58_o_add_21_OUT> created at line 179.
+    Found 32-bit adder for signal <counter[31]_GND_58_o_add_21_OUT> created at line 193.
 WARNING:Xst:737 - Found 1-bit latch for signal <n_m_fin>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Found 32-bit comparator equal for signal <counter[31]_p_t_1[31]_equal_1_o> created at line 151
-    Found 32-bit comparator equal for signal <counter[31]_p_t_2[31]_equal_3_o> created at line 154
-    Found 32-bit comparator equal for signal <counter[31]_p_t_3[31]_equal_5_o> created at line 157
-    Found 32-bit comparator equal for signal <counter[31]_p_t_4[31]_equal_7_o> created at line 160
-    Found 32-bit comparator equal for signal <counter[31]_p_t_5[31]_equal_9_o> created at line 163
-    Found 32-bit comparator equal for signal <counter[31]_p_t_6[31]_equal_11_o> created at line 166
-    Found 32-bit comparator equal for signal <counter[31]_p_t_7[31]_equal_13_o> created at line 169
+    Found 32-bit comparator equal for signal <counter[31]_p_t_2[31]_equal_3_o> created at line 156
+    Found 32-bit comparator equal for signal <counter[31]_p_t_3[31]_equal_5_o> created at line 161
+    Found 32-bit comparator equal for signal <counter[31]_p_t_4[31]_equal_7_o> created at line 166
+    Found 32-bit comparator equal for signal <counter[31]_p_t_5[31]_equal_9_o> created at line 171
+    Found 32-bit comparator equal for signal <counter[31]_p_t_6[31]_equal_11_o> created at line 176
+    Found 32-bit comparator equal for signal <counter[31]_p_t_7[31]_equal_13_o> created at line 181
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred 495 D-type flip-flop(s).
+	inferred 537 D-type flip-flop(s).
 	inferred   1 Latch(s).
 	inferred   7 Comparator(s).
-	inferred  18 Multiplexer(s).
+	inferred  35 Multiplexer(s).
 Unit <master_counter> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 5
+# Adders/Subtractors                                   : 6
  15-bit subtractor                                     : 1
  20-bit adder                                          : 2
  32-bit adder                                          : 2
+ 64-bit adder                                          : 1
 # Registers                                            : 73
  1-bit register                                        : 40
  12-bit register                                       : 1
@@ -534,21 +536,23 @@ Macro Statistics
  16-bit register                                       : 5
  2-bit register                                        : 1
  20-bit register                                       : 3
- 32-bit register                                       : 17
+ 32-bit register                                       : 2
+ 35-bit register                                       : 15
  4-bit register                                        : 1
  64-bit register                                       : 4
-# Latches                                              : 18
- 1-bit latch                                           : 18
+# Latches                                              : 17
+ 1-bit latch                                           : 17
 # Comparators                                          : 8
  2-bit comparator equal                                : 1
  32-bit comparator equal                               : 7
-# Multiplexers                                         : 157
- 1-bit 2-to-1 multiplexer                              : 111
+# Multiplexers                                         : 186
+ 1-bit 2-to-1 multiplexer                              : 147
  12-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 3
  20-bit 2-to-1 multiplexer                             : 4
- 32-bit 2-to-1 multiplexer                             : 17
- 4-bit 2-to-1 multiplexer                              : 14
+ 32-bit 2-to-1 multiplexer                             : 9
+ 35-bit 2-to-1 multiplexer                             : 8
+ 4-bit 2-to-1 multiplexer                              : 7
  64-bit 2-to-1 multiplexer                             : 2
 # Tristates                                            : 16
  1-bit tristate buffer                                 : 16
@@ -573,24 +577,26 @@ Unit <SDRAM_wr> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 3
+# Adders/Subtractors                                   : 4
  20-bit adder                                          : 1
  32-bit adder                                          : 2
+ 64-bit adder                                          : 1
 # Counters                                             : 2
  15-bit down counter                                   : 1
  20-bit up counter                                     : 1
-# Registers                                            : 978
- Flip-Flops                                            : 978
+# Registers                                            : 1023
+ Flip-Flops                                            : 1023
 # Comparators                                          : 8
  2-bit comparator equal                                : 1
  32-bit comparator equal                               : 7
-# Multiplexers                                         : 250
- 1-bit 2-to-1 multiplexer                              : 207
+# Multiplexers                                         : 282
+ 1-bit 2-to-1 multiplexer                              : 246
  12-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 3
  20-bit 2-to-1 multiplexer                             : 3
- 32-bit 2-to-1 multiplexer                             : 16
- 4-bit 2-to-1 multiplexer                              : 14
+ 32-bit 2-to-1 multiplexer                             : 9
+ 35-bit 2-to-1 multiplexer                             : 7
+ 4-bit 2-to-1 multiplexer                              : 7
  64-bit 2-to-1 multiplexer                             : 1
 # FSMs                                                 : 8
 
@@ -599,65 +605,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <measure/fetch/FSM_4> on signal <p_d_num[1:2]> with user encoding.
--------------------
- State | Encoding
--------------------
- 00    | 00
- 01    | 01
- 10    | 10
- 11    | 11
--------------------
-Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <measure/fetch/FSM_3> on signal <p_state[1:2]> with user encoding.
------------------------
- State     | Encoding
------------------------
- idle      | 00
- dt_wait   | 01
- dt_aquire | 10
- prepare   | 11
------------------------
-Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <measure/decode/FSM_6> on signal <p_d_num[1:1]> with sequential encoding.
--------------------
- State | Encoding
--------------------
- 00    | 0
- 01    | 1
--------------------
-Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <measure/decode/FSM_7> on signal <p_sequence[1:3]> with sequential encoding.
--------------------
- State | Encoding
--------------------
- 0001  | 000
- 0010  | 001
- 0011  | 010
- 0100  | 011
- 0101  | 100
- 0110  | 101
- 0111  | 110
--------------------
-Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <measure/decode/FSM_5> on signal <p_state[1:1]> with sequential encoding.
------------------------
- State     | Encoding
------------------------
- idle      | 0
- count     | 1
- cycle_end | unreached
------------------------
-Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <write_sec/FSM_1> on signal <p_state[1:2]> with user encoding.
-------------------------
- State      | Encoding
-------------------------
- idle       | 00
- sd_request | 01
- cycle_end  | 10
-------------------------
 Optimizing FSM <ctrl/FSM_0> on signal <statep[1:9]> with user encoding.
 ------------------------
  State     | Encoding
@@ -691,6 +638,15 @@ Optimizing FSM <ctrl/FSM_0> on signal <statep[1:9]> with user encoding.
  011110111 | 011110111
 ------------------------
 Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <write_sec/FSM_1> on signal <p_state[1:2]> with user encoding.
+------------------------
+ State      | Encoding
+------------------------
+ idle       | 00
+ sd_request | 01
+ cycle_end  | 10
+------------------------
+Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <read_sec/FSM_2> on signal <p_state[1:2]> with user encoding.
 ------------------------
  State      | Encoding
@@ -700,64 +656,57 @@ Optimizing FSM <read_sec/FSM_2> on signal <p_state[1:2]> with user encoding.
  dt_aquire  | 10
  cycle_end  | 11
 ------------------------
-WARNING:Xst:1710 - FF/Latch <p_data_35> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_36> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_37> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_38> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_39> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_40> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_41> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_42> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_43> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_44> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_45> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_46> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_47> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_48> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_49> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_50> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_51> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_52> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_53> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_54> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_55> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_56> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_57> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_58> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_59> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_60> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_61> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_62> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_63> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_0> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_1> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_2> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_3> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_4> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_6> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_8> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_11> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_12> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_13> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_14> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_17> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_18> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_19> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_20> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_21> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_22> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_23> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_24> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_25> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_26> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_27> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_28> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_29> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_30> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_31> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_32> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_33> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_34> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <measure/fetch/FSM_4> on signal <p_d_num[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+ 11    | 11
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <measure/fetch/FSM_3> on signal <p_state[1:2]> with user encoding.
+-----------------------
+ State     | Encoding
+-----------------------
+ idle      | 00
+ dt_wait   | 01
+ dt_aquire | 10
+ prepare   | 11
+-----------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <measure/decode/FSM_6> on signal <p_d_num[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <measure/decode/FSM_7> on signal <p_sequence[1:3]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0001  | 000
+ 0010  | 001
+ 0011  | 010
+ 0100  | 011
+ 0101  | 100
+ 0110  | 101
+ 0111  | 110
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <measure/decode/FSM_5> on signal <p_state[1:1]> with sequential encoding.
+-----------------------
+ State     | Encoding
+-----------------------
+ idle      | 0
+ count     | 1
+ cycle_end | unreached
+-----------------------
 WARNING:Xst:1710 - FF/Latch <r_address_0> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_2> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_3> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
@@ -766,6 +715,13 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_7> (witho
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_8> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_9> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_11> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <p_data_0> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_1> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_2> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_3> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_4> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_5> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_6> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
    incompatible with the Spartan6 architecture. The two primary causes of this is
    either a register or latch described with both an asynchronous set and
@@ -798,94 +754,23 @@ WARNING:Xst:3002 - This design contains one or more registers/latches that are d
 
 Optimizing unit <Measurement> ...
 
+Optimizing unit <SDRAM_wr> ...
+
+Optimizing unit <SDRAM_rd> ...
+
 Optimizing unit <data_fetch> ...
 
 Optimizing unit <data_decode> ...
 WARNING:Xst:1710 - FF/Latch <p_d_type_3> (without init value) has a constant value of 0 in block <data_decode>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <master_counter> ...
-
-Optimizing unit <SDRAM_wr> ...
-
-Optimizing unit <SDRAM_rd> ...
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_26> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_27> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_28> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_29> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_30> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_31> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_32> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_33> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_34> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_35> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_36> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_37> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_38> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_39> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_40> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_41> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_42> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_43> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_44> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_0> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_1> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_2> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_3> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_4> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_6> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_8> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_11> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_12> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_13> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_14> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_17> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_18> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_19> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_20> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_21> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_22> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_23> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_24> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_25> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/n_data_w_1> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/n_data_w_2> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/n_data_w_3> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/n_data_w_4> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/n_data_w_8> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/n_data_w_6> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/n_data_w_11> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/n_data_w_12> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/n_data_w_13> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/n_data_w_14> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_63> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_62> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_61> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_60> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_45> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_46> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_47> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_48> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_49> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_50> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_51> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_52> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_53> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_54> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_55> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_56> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_57> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_58> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_59> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_14> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_13> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_12> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_11> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_8> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_6> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_4> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_3> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_2> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ctrl/p_data_w_1> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_5> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_4> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_3> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_2> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_1> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_0> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <ctrl/r_data_out_2_15> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <ctrl/r_data_out_2_14> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <ctrl/r_data_out_2_13> of sequential type is unconnected in block <Measurement>.
@@ -899,9 +784,6 @@ WARNING:Xst:2677 - Node <ctrl/r_data_out_2_6> of sequential type is unconnected 
 WARNING:Xst:2677 - Node <ctrl/r_data_out_2_5> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <ctrl/r_data_out_2_4> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <ctrl/r_data_out_2_3> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_2> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_1> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <ctrl/r_data_out_2_0> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <ctrl/r_data_out_1_15> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <ctrl/r_data_out_1_14> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <ctrl/r_data_out_1_13> of sequential type is unconnected in block <Measurement>.
@@ -918,39 +800,6 @@ WARNING:Xst:2677 - Node <ctrl/r_data_out_1_3> of sequential type is unconnected 
 WARNING:Xst:2677 - Node <ctrl/r_data_out_1_2> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <ctrl/r_data_out_1_1> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <ctrl/r_data_out_1_0> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_63> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_62> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_61> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_60> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_59> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_58> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_57> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_56> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_55> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_54> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_53> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_52> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_51> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_50> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_49> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_48> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_47> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_46> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_45> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_44> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_43> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_42> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_41> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_40> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_39> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_38> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_37> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_36> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_35> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_33> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/fetch/p_data_32> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/dds_set> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <write_sec/p_adr_19> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <write_sec/p_adr_18> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <write_sec/p_adr_17> of sequential type is unconnected in block <Measurement>.
@@ -1001,9 +850,6 @@ WARNING:Xst:2677 - Node <read_sec/p_data_38> of sequential type is unconnected i
 WARNING:Xst:2677 - Node <read_sec/p_data_37> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_data_36> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_data_35> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_33> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <read_sec/p_data_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_adr_19> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_adr_18> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_adr_17> of sequential type is unconnected in block <Measurement>.
@@ -1024,6 +870,35 @@ WARNING:Xst:2677 - Node <read_sec/p_adr_3> of sequential type is unconnected in 
 WARNING:Xst:2677 - Node <read_sec/p_adr_2> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_adr_1> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <read_sec/p_adr_0> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_63> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_62> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_61> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_60> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_59> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_58> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_57> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_56> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_55> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_54> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_53> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_52> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_51> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_50> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_49> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_48> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_47> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_46> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_45> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_44> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_43> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_42> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_41> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_40> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_39> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_37> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_36> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/fetch/p_data_35> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:1293 - FF/Latch <ctrl/r_rf_counter_30> has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ctrl/r_rf_counter_29> has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ctrl/r_rf_counter_28> has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
@@ -1035,14 +910,11 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ctrl/r_rf_counter_2
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ctrl/r_rf_counter_22> has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ctrl/r_rf_counter_21> has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <write_sec/p_req> in Unit <Measurement> is equivalent to the following FF/Latch, which will be removed : <write_sec/p_state_FSM_FFd1> 
-INFO:Xst:2261 - The FF/Latch <measure/decode/p_loading> in Unit <Measurement> is equivalent to the following FF/Latch, which will be removed : <measure/decode/p_state_FSM_FFd1> 
-INFO:Xst:2261 - The FF/Latch <write_sec/p_data_16> in Unit <Measurement> is equivalent to the following 6 FFs/Latches, which will be removed : <write_sec/p_data_15> <write_sec/p_data_10> <write_sec/p_data_9> <write_sec/p_data_7> <write_sec/p_data_5> <write_sec/p_fresh> 
-INFO:Xst:2261 - The FF/Latch <ctrl/r_req_data_write_16> in Unit <Measurement> is equivalent to the following 5 FFs/Latches, which will be removed : <ctrl/r_req_data_write_15> <ctrl/r_req_data_write_10> <ctrl/r_req_data_write_9> <ctrl/r_req_data_write_7> <ctrl/r_req_data_write_5> 
+INFO:Xst:2261 - The FF/Latch <measure/decode/p_state_FSM_FFd1> in Unit <Measurement> is equivalent to the following FF/Latch, which will be removed : <measure/decode/p_loading> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-INFO:Xst:2261 - The FF/Latch <ctrl/n_data_w_5> in Unit <Measurement> is equivalent to the following 4 FFs/Latches, which will be removed : <ctrl/n_data_w_7> <ctrl/n_data_w_9> <ctrl/n_data_w_10> <ctrl/n_data_w_15> 
-Found area constraint ratio of 100 (+ 5) on block Measurement, actual ratio is 22.
+Found area constraint ratio of 100 (+ 5) on block Measurement, actual ratio is 28.
 WARNING:Xst:1426 - The value init of the FF/Latch ctrl/r_rf_counter_31_LD hinder the constant cleaning in the block Measurement.
    You should achieve better results by setting this init to 0.
 Replicating register ctrl/r_address_10 to handle IOB=TRUE attribute
@@ -1060,8 +932,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 746
- Flip-Flops                                            : 746
+# Registers                                            : 925
+ Flip-Flops                                            : 925
 
 =========================================================================
 
@@ -1084,35 +956,35 @@ Top Level Output File Name         : Measurement.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 965
+# BELS                             : 1257
 #      GND                         : 1
-#      INV                         : 20
-#      LUT1                        : 73
-#      LUT2                        : 43
-#      LUT3                        : 70
-#      LUT4                        : 77
-#      LUT5                        : 69
-#      LUT6                        : 357
-#      MUXCY                       : 162
+#      INV                         : 31
+#      LUT1                        : 117
+#      LUT2                        : 67
+#      LUT3                        : 94
+#      LUT4                        : 119
+#      LUT5                        : 195
+#      LUT6                        : 266
+#      MUXCY                       : 217
 #      MUXF7                       : 3
 #      VCC                         : 1
-#      XORCY                       : 89
-# FlipFlops/Latches                : 752
-#      FD                          : 2
+#      XORCY                       : 146
+# FlipFlops/Latches                : 944
+#      FD                          : 1
 #      FD_1                        : 16
-#      FDC                         : 281
-#      FDCE                        : 436
-#      FDE                         : 7
+#      FDC                         : 191
+#      FDCE                        : 639
+#      FDE                         : 74
 #      FDP                         : 4
-#      LD                          : 5
+#      LD                          : 18
 #      ODDR2                       : 1
 # Clock Buffers                    : 3
 #      BUFG                        : 3
-# IO Buffers                       : 51
+# IO Buffers                       : 47
 #      IBUF                        : 3
 #      IBUFG                       : 1
 #      IOBUF                       : 16
-#      OBUF                        : 31
+#      OBUF                        : 27
 # DCMs                             : 1
 #      DCM_SP                      : 1
 
@@ -1123,21 +995,21 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             721  out of  11440     6%  
- Number of Slice LUTs:                  709  out of   5720    12%  
-    Number used as Logic:               709  out of   5720    12%  
+ Number of Slice Registers:             903  out of  11440     7%  
+ Number of Slice LUTs:                  889  out of   5720    15%  
+    Number used as Logic:               889  out of   5720    15%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1010
-   Number with an unused Flip Flop:     289  out of   1010    28%  
-   Number with an unused LUT:           301  out of   1010    29%  
-   Number of fully used LUT-FF pairs:   420  out of   1010    41%  
-   Number of unique control sets:        25
+ Number of LUT Flip Flop pairs used:   1364
+   Number with an unused Flip Flop:     461  out of   1364    33%  
+   Number with an unused LUT:           475  out of   1364    34%  
+   Number of fully used LUT-FF pairs:   428  out of   1364    31%  
+   Number of unique control sets:        27
 
 IO Utilization: 
  Number of IOs:                          89
- Number of bonded IOBs:                  51  out of    102    50%  
-    IOB Flip Flops/Latches:              31
+ Number of bonded IOBs:                  47  out of    102    46%  
+    IOB Flip Flops/Latches:              41
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
@@ -1163,9 +1035,8 @@ Clock Information:
 ---------------------------------------------------------------------------+------------------------------------+-------+
 Clock Signal                                                               | Clock buffer(FF name)              | Load  |
 ---------------------------------------------------------------------------+------------------------------------+-------+
-measure/count_time/rf_out                                                  | NONE(measure/led_blink)            | 1     |
-clk                                                                        | DCM_SP:CLKFX                       | 748   |
-ctrl/statep[8]_GND_36_o_Mux_83_o(ctrl/Mmux_statep[8]_GND_36_o_Mux_83_o11:O)| NONE(*)(ctrl/n_data_w_0)           | 2     |
+clk                                                                        | DCM_SP:CLKFX                       | 927   |
+ctrl/statep[8]_GND_36_o_Mux_83_o(ctrl/Mmux_statep[8]_GND_36_o_Mux_83_o11:O)| NONE(*)(ctrl/n_data_w_0)           | 16    |
 WING_B<0>                                                                  | IBUF+BUFG                          | 1     |
 measure/count_time/n_m_fin_G(measure/count_time/n_m_fin_G:O)               | NONE(*)(measure/count_time/n_m_fin)| 1     |
 ---------------------------------------------------------------------------+------------------------------------+-------+
@@ -1182,9 +1053,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 21.477ns (Maximum Frequency: 46.562MHz)
-   Minimum input arrival time before clock: 7.025ns
-   Maximum output required time after clock: 4.794ns
+   Minimum period: 24.861ns (Maximum Frequency: 40.224MHz)
+   Minimum input arrival time before clock: 7.048ns
+   Maximum output required time after clock: 4.618ns
    Maximum combinational path delay: 5.043ns
 
 Timing Details:
@@ -1192,120 +1063,78 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'measure/count_time/rf_out'
-  Clock period: 2.278ns (frequency: 438.982MHz)
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Delay:               2.278ns (Levels of Logic = 1)
-  Source:            measure/led_blink (LATCH)
-  Destination:       measure/led_blink (LATCH)
-  Source Clock:      measure/count_time/rf_out falling
-  Destination Clock: measure/count_time/rf_out falling
-
-  Data Path: measure/led_blink to measure/led_blink
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               2   0.581   0.725  measure/led_blink (measure/led_blink)
-     INV:I->O              1   0.255   0.681  measure/led_blink_INV_69_o1_INV_0 (measure/led_blink_INV_69_o)
-     LD:D                      0.036          measure/led_blink
-    ----------------------------------------
-    Total                      2.278ns (0.872ns logic, 1.406ns route)
-                                       (38.3% logic, 61.7% route)
-
-=========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 21.477ns (frequency: 46.562MHz)
-  Total number of paths / destination ports: 126138 / 1653
+  Clock period: 24.861ns (frequency: 40.224MHz)
+  Total number of paths / destination ports: 140336 / 2125
 -------------------------------------------------------------------------
-Delay:               6.873ns (Levels of Logic = 15)
-  Source:            measure/count_time/p_t_3_2 (FF)
-  Destination:       measure/count_time/p_t_5_17 (FF)
+Delay:               7.956ns (Levels of Logic = 14)
+  Source:            measure/count_time/p_t_6_2 (FF)
+  Destination:       measure/count_time/p_t_4_19 (FF)
   Source Clock:      clk rising 3.1X
   Destination Clock: clk rising 3.1X
 
-  Data Path: measure/count_time/p_t_3_2 to measure/count_time/p_t_5_17
+  Data Path: measure/count_time/p_t_6_2 to measure/count_time/p_t_4_19
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.525   1.181  measure/count_time/p_t_3_2 (measure/count_time/p_t_3_2)
-     LUT6:I0->O            1   0.254   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_lut<0> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<0> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<1> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<2> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<3> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<4> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<5> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<6> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<7> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<8> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<9> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<9>)
-     MUXCY:CI->O          11   0.235   1.147  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<10> (measure/count_time/counter[31]_p_t_3[31]_equal_5_o)
-     LUT3:I1->O           11   0.250   1.039  measure/count_time/Mmux_counter[31]_counter[31]_mux_28_OUT101_SW1 (N62)
-     LUT6:I5->O           18   0.254   1.235  measure/count_time/_n0585_inv1_cepot_5 (measure/count_time/_n0585_inv1_cepot5)
-     LUT6:I5->O            1   0.254   0.000  measure/count_time/p_t_5_17_rstpot (measure/count_time/p_t_5_17_rstpot)
-     FDC:D                     0.074          measure/count_time/p_t_5_17
+     FDC:C->Q              2   0.525   1.181  measure/count_time/p_t_6_2 (measure/count_time/p_t_6_2)
+     LUT6:I0->O            1   0.254   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_lut<0> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<0> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<1> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<2> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<3> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<4> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<5> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<6> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<7> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<8> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<9> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<9>)
+     MUXCY:CI->O           7   0.235   1.365  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<10> (measure/count_time/counter[31]_p_t_6[31]_equal_11_o)
+     LUT6:I0->O            6   0.254   0.876  measure/count_time/_n0497111_1 (measure/count_time/_n0497111)
+     LUT4:I3->O          125   0.254   2.285  measure/count_time/_n0588_inv1_cepot (measure/count_time/_n0498_inv1_cepot)
+     FDCE:CE                   0.302          measure/count_time/p_t_1_0
     ----------------------------------------
-    Total                      6.873ns (2.271ns logic, 4.602ns route)
-                                       (33.0% logic, 67.0% route)
+    Total                      7.956ns (2.249ns logic, 5.707ns route)
+                                       (28.3% logic, 71.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 771 / 770
+  Total number of paths / destination ports: 1007 / 1006
 -------------------------------------------------------------------------
-Offset:              7.025ns (Levels of Logic = 2)
+Offset:              7.048ns (Levels of Logic = 2)
   Source:            WING_B<0> (PAD)
-  Destination:       measure/count_time/counter_31 (FF)
+  Destination:       measure/count_time/ad_out (FF)
   Destination Clock: clk rising 3.1X
 
-  Data Path: WING_B<0> to measure/count_time/counter_31
+  Data Path: WING_B<0> to measure/count_time/ad_out
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           232   1.328   2.534  WING_B_0_IBUF (WING_B_0_IBUF)
-     LUT2:I0->O          494   0.250   2.455  measure/count_time/rst_count_end_OR_105_o1 (measure/count_time/rst_count_end_OR_105_o)
-     FDCE:CLR                  0.459          measure/count_time/n_t_1_0
+     IBUF:I->O           302   1.328   2.545  WING_B_0_IBUF (WING_B_0_IBUF)
+     LUT2:I0->O          537   0.250   2.465  measure/count_time/rst_count_end_OR_105_o1 (measure/count_time/rst_count_end_OR_105_o)
+     FDCE:CLR                  0.459          measure/count_time/n_t_3_0
     ----------------------------------------
-    Total                      7.025ns (2.037ns logic, 4.988ns route)
-                                       (29.0% logic, 71.0% route)
+    Total                      7.048ns (2.037ns logic, 5.011ns route)
+                                       (28.9% logic, 71.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 36 / 30
+  Total number of paths / destination ports: 44 / 28
 -------------------------------------------------------------------------
-Offset:              4.794ns (Levels of Logic = 1)
-  Source:            measure/decode/p_d_type_2 (FF)
-  Destination:       WING_A<3> (PAD)
+Offset:              4.618ns (Levels of Logic = 1)
+  Source:            ctrl/r_tristate (FF)
+  Destination:       DRAM_DQ<15> (PAD)
   Source Clock:      clk rising 3.1X
 
-  Data Path: measure/decode/p_d_type_2 to WING_A<3>
+  Data Path: ctrl/r_tristate to DRAM_DQ<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            23   0.525   1.357  measure/decode/p_d_type_2 (measure/decode/p_d_type_2)
-     OBUF:I->O                 2.912          WING_A_3_OBUF (WING_A<3>)
+     FDP:C->Q             16   0.525   1.181  ctrl/r_tristate (ctrl/r_tristate)
+     IOBUF:T->IO               2.912          DRAM_DQ_15_IOBUF (DRAM_DQ<15>)
     ----------------------------------------
-    Total                      4.794ns (3.437ns logic, 1.357ns route)
-                                       (71.7% logic, 28.3% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'measure/count_time/rf_out'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              4.218ns (Levels of Logic = 1)
-  Source:            measure/led_blink (LATCH)
-  Destination:       WING_A<0> (PAD)
-  Source Clock:      measure/count_time/rf_out falling
-
-  Data Path: measure/led_blink to WING_A<0>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               2   0.581   0.725  measure/led_blink (measure/led_blink)
-     OBUF:I->O                 2.912          WING_A_0_OBUF (WING_A<0>)
-    ----------------------------------------
-    Total                      4.218ns (3.493ns logic, 0.725ns route)
-                                       (82.8% logic, 17.2% route)
+    Total                      4.618ns (3.437ns logic, 1.181ns route)
+                                       (74.4% logic, 25.6% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -1335,10 +1164,10 @@ Clock to Setup on destination clock clk
                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------+---------+---------+---------+---------+
-WING_B<0>                       |         |    4.651|         |         |
-clk                             |    6.873|    1.324|         |         |
-ctrl/statep[8]_GND_36_o_Mux_83_o|         |    1.495|         |         |
-measure/count_time/n_m_fin_G    |         |    1.867|         |         |
+WING_B<0>                       |         |    5.309|         |         |
+clk                             |    7.956|    1.364|         |         |
+ctrl/statep[8]_GND_36_o_Mux_83_o|         |    1.336|         |         |
+measure/count_time/n_m_fin_G    |         |    2.021|         |         |
 --------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock ctrl/statep[8]_GND_36_o_Mux_83_o
@@ -1346,7 +1175,7 @@ Clock to Setup on destination clock ctrl/statep[8]_GND_36_o_Mux_83_o
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |         |         |    2.611|         |
+clk            |         |         |    3.923|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock measure/count_time/n_m_fin_G
@@ -1357,25 +1186,17 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 clk            |         |         |    1.326|         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock measure/count_time/rf_out
--------------------------+---------+---------+---------+---------+
-                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock             |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
--------------------------+---------+---------+---------+---------+
-measure/count_time/rf_out|         |         |    2.278|         |
--------------------------+---------+---------+---------+---------+
-
 =========================================================================
 
 
-Total REAL time to Xst completion: 16.00 secs
-Total CPU time to Xst completion: 15.79 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 13.75 secs
  
 --> 
 
-Total memory usage is 4526792 kilobytes
+Total memory usage is 4527652 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  328 (   0 filtered)
-Number of infos    :   15 (   0 filtered)
+Number of warnings :  196 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
 

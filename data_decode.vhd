@@ -74,7 +74,7 @@ entity data_decode is
 			count_end : out std_logic; --master_counterの動作を終了
 			
 			d_data_out : out std_logic_vector(39 downto 0); --dds用のデータ
-			c_data_out : out std_logic_vector(31 downto 0)); --マスターカウンタ用のデータ
+			c_data_out : out std_logic_vector(34 downto 0)); --マスターカウンタ用のデータ
 end data_decode;
 
 architecture decode of data_decode is
@@ -103,7 +103,7 @@ begin
 
 	decode_en <= p.d_en;
 
-	c_data_out <= p.data(31 downto 0);
+	c_data_out <= p.data(34 downto 0);
 	decode_fin <= p.d_fin;
 	data_type <= p.d_type;
 	count_end <= p.c_end;
@@ -121,8 +121,11 @@ begin
 						if p.d_num = "00" then
 							n.data(15 downto 0) <= data64(15 downto 0);
 							n.d_num <= "01";
-						else
+						elsif p.d_num = "01" then
 							n.data(31 downto 16) <= data64(31 downto 16);
+							n.d_num <= "10";
+						else
+							n.data(34 downto 32) <= data64(34 downto 32);
 							n.d_num <= "00";
 							n.d_type <= first;
 							n.state <= count;
@@ -134,8 +137,11 @@ begin
 						if p.d_num = "00" then
 							n.data(15 downto 0) <= data64(15 downto 0);
 							n.d_num <= "01";
-						else
+						elsif p.d_num = "01" then
 							n.data(31 downto 16) <= data64(31 downto 16);
+							n.d_num <= "10";
+						else
+							n.data(34 downto 32) <= data64(34 downto 32);
 							n.d_num <= "00";
 							n.d_type <= second;
 							n.state <= count;
@@ -147,8 +153,11 @@ begin
 						if p.d_num = "00" then
 							n.data(15 downto 0) <= data64(15 downto 0);
 							n.d_num <= "01";
-						else
+						elsif p.d_num = "01" then
 							n.data(31 downto 16) <= data64(31 downto 16);
+							n.d_num <= "10";
+						else
+							n.data(34 downto 32) <= data64(34 downto 32);
 							n.d_num <= "00";
 							n.d_type <= third;
 							n.state <= count;
@@ -160,8 +169,11 @@ begin
 						if p.d_num = "00" then
 							n.data(15 downto 0) <= data64(15 downto 0);
 							n.d_num <= "01";
-						else
+						elsif p.d_num = "01" then
 							n.data(31 downto 16) <= data64(31 downto 16);
+							n.d_num <= "10";
+						else
+							n.data(34 downto 32) <= data64(34 downto 32);
 							n.d_num <= "00";
 							n.d_type <= fourth;
 							n.state <= count;
@@ -173,8 +185,11 @@ begin
 						if p.d_num = "00" then
 							n.data(15 downto 0) <= data64(15 downto 0);
 							n.d_num <= "01";
-						else
+						elsif p.d_num = "01" then
 							n.data(31 downto 16) <= data64(31 downto 16);
+							n.d_num <= "10";
+						else
+							n.data(34 downto 32) <= data64(34 downto 32);
 							n.d_num <= "00";
 							n.d_type <= fifth;
 							n.state <= count;
@@ -186,8 +201,11 @@ begin
 						if p.d_num = "00" then
 							n.data(15 downto 0) <= data64(15 downto 0);
 							n.d_num <= "01";
-						else
+						elsif p.d_num = "01" then
 							n.data(31 downto 16) <= data64(31 downto 16);
+							n.d_num <= "10";
+						else
+							n.data(34 downto 32) <= data64(34 downto 32);
 							n.d_num <= "00";
 							n.d_type <= sixth;
 							n.state <= count;
@@ -199,8 +217,11 @@ begin
 						if p.d_num = "00" then
 							n.data(15 downto 0) <= data64(15 downto 0);
 							n.d_num <= "01";
-						else
+						elsif p.d_num = "01" then
 							n.data(31 downto 16) <= data64(31 downto 16);
+							n.d_num <= "10";
+						else
+							n.data(34 downto 32) <= data64(34 downto 32);
 							n.d_num <= "00";
 							n.d_type <= seventh;
 							n.state <= count;

@@ -124,7 +124,7 @@ architecture measure of just_measurement is
 				count_end : out std_logic;
 
 				d_data_out : out std_logic_vector(39 downto 0);
-				c_data_out : out std_logic_vector(31 downto 0));
+				c_data_out : out std_logic_vector(34 downto 0));
 	end component;
 		
 	component master_counter is
@@ -136,7 +136,7 @@ architecture measure of just_measurement is
 				d_type : in std_logic_vector(3 downto 0); 
 				rd_comp : out std_logic;
 				data_full : out std_logic; 
-				data : in std_logic_vector(31 downto 0); 
+				data : in std_logic_vector(34 downto 0); 
 
 				output_rf : out std_logic;
 				output_dds : out std_logic;
@@ -156,7 +156,7 @@ architecture measure of just_measurement is
 	signal addr : std_logic_vector(19 downto 0);
 	signal c_en : std_logic;
 	signal d_data : std_logic_vector(39 downto 0); --ddsデータ
-	signal c_data : std_logic_vector(31 downto 0); --マスターカウンタデータ
+	signal c_data : std_logic_vector(34 downto 0); --マスターカウンタデータ
 	
 	--マスターカウンタ用
 	signal rf_out : std_logic;
@@ -221,9 +221,9 @@ architecture measure of just_measurement is
 					 output_dds => dds_set,
 					 output_ad => ad_out);
 					 
-	process(rf_out)
+	process(dds_set)
 	begin
-		if rf_out = '1' then
+		if dds_set = '1' then
 			led_blink <= not led_blink;
 			--led_blink <= '1';
 		end if;
@@ -236,7 +236,7 @@ architecture measure of just_measurement is
 	adc_sig <= ad_out;
 	
 	test_dout(3 downto 0) <= d_type;
-	test_bit <= led_blink;
+	test_bit <= dds_set;
 
 	end measure;
 

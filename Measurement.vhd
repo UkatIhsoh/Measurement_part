@@ -263,12 +263,12 @@ begin
 	msr_start <= WING_B(2);
 	--start <= WING_A(1);
 	
-	WING_A(4 downto 1) <= test_d(3 downto 0); --テスト用
-	WING_A(0) <= test_b; --テスト用
+	--WING_A(4 downto 1) <= test_d(3 downto 0); --テスト用
+	WING_A(0) <= rf;
+	WING_A(1) <= test_b; --テスト用
+	WING_A(2) <= adc;
 	--WING_A(15 downto 0) <= data64(15 downto 0); --テスト用
 	--WING_A(0) <= fin_sig;
-	WING_B(4) <= rf;
-	WING_B(5) <= adc;
 	LED <= msr_start;
 
 end connect;
