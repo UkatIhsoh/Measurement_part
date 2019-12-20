@@ -34,6 +34,37 @@ use IEEE.NUMERIC_STD.ALL;
 library work;
 use work.data_types.all;
 
+--componwnt DDS_data is
+--	port( clk : in std_logic;
+--			rst : in std_logic;
+--			msr_fin : in std_logic;
+--			
+--			d_fin : in std_logic; --デコードが終わったかどうかみる
+--			d_type : in std_logic_vector(3 downto 0); --どのタイプのでーたが来るのかを確認
+--			rd_comp : out std_logic; --データの読み取りが終わったかどうか見る
+--			data : in std_logic_vector(39 downto 0);
+--			
+--			wr_en_a : out std_logic; --fifoのWR_EN
+--			full_a : in std_logic; --fifoのFULL
+--			data_out : out std_logic_vector(39 downto 0);
+--			data_end : out std_logic);
+--end component;
+--dds_DATA : DDS_data 
+--	port map( clk => ,
+--				 rst => ,
+--			  	 msr_fin => ,
+--			
+--				 d_fin => ,
+--				 d_type => ,
+--				 rd_comp => ,
+--				 data => ,
+--			
+--				 wr_en_a => ,
+--				 full_a => ,
+--				 data_out => ,
+--				 data_end => );
+
+
 entity DDS_data is
 	port( clk : in std_logic;
 			rst : in std_logic;
@@ -77,7 +108,7 @@ begin
 				d_end <= '0';
 				d_num <= "00";
 				d_out <= (others => '0');
-				tr_pemd_a <= '0';
+				tr_pend_a <= '0';
 				comp_rd <= '0';
 			elsif clk' event and clk = '1' then
 				if counter = X"0000" then
@@ -106,14 +137,20 @@ begin
 									d_num <= "10";
 								else
 									if full_a = '0' then
-										tr_pend_a <= '1';
-										comp_rd <= '1';
+										if tr_pend_a <= '0' then 
+											tr_pend_a <= '1';
+										else
+											tr_pend_a <= '0';
+										end if;
 										if counter = count_end then
 											d_end <= '1';
 										else
 											counter <= counter +1;
 										end if;
+										comp_rd <= '1';
 										d_num <= "00";
+									else
+										tr_pend_a <= '0';
 									end if;
 								end if;
 								

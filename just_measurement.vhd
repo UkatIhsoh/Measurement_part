@@ -122,6 +122,8 @@ architecture measure of just_measurement is
 				read_fin : in std_logic;
 				decode_wait : in std_logic;
 				count_end : out std_logic;
+				
+				data_change : in std_logic;
 
 				d_data_out : out std_logic_vector(39 downto 0);
 				c_data_out : out std_logic_vector(34 downto 0));
@@ -143,12 +145,40 @@ architecture measure of just_measurement is
 				output_ad : out std_logic);
 	end component;
 	
+	component DDS_data is
+		port( clk : in std_logic;
+				rst : in std_logic;
+				msr_fin : in std_logic;
+				
+				d_fin : in std_logic; 
+				d_type : in std_logic_vector(3 downto 0); 
+				rd_comp : out std_logic; 
+				data : in std_logic_vector(39 downto 0);
+				
+				wr_en_a : out std_logic; 
+				full_a : in std_logic;				
+				data_out : out std_logic_vector(39 downto 0);
+				data_end : out std_logic);
+	end component;
+	
+	component FIFO_A is
+		port( CLK : in std_logic;
+				RST : in std_logic;
+				DIN : in std_logic_vector(39 downto 0);
+				DOUT : out std_logic_vector(39 downto 0);
+				WR_EN : in std_logic;
+				RD_EN : in std_logic;
+				FULL : out std_logic;
+				EMPTY : out std_logic);
+	end component;
+	
 	--フェッチ-デコード用
 	signal data64 : std_logic_vector(63 downto 0);
 	signal m_fin : std_logic; --msr_finishに対応
 	signal f_fin : std_logic; --fetch_fin
 	signal d_en : std_logic; --decode_en
-	signal d_fin : std_logic; --decode_fin
+	signal d_fin_c : std_logic; --decode_fin(master_counter)
+	signal d_fin : std_logic;
 	signal d_type : std_logic_vector(3 downto 0); --data_type
 	signal rd_fin : std_logic; --read_fin
 	signal d_wait : std_logic; --decoede_wait	
@@ -157,12 +187,27 @@ architecture measure of just_measurement is
 	signal c_en : std_logic;
 	signal d_data : std_logic_vector(39 downto 0); --ddsデータ
 	signal c_data : std_logic_vector(34 downto 0); --マスターカウンタデータ
+	signal d_change : std_logic;
 	
 	--マスターカウンタ用
 	signal rf_out : std_logic;
 	signal dds_set : std_logic;
 	signal ad_out : std_logic;
 	signal c_end : std_logic;
+	signal rd_fin_c : std_logic; --read_fin
+	
+	--DDS_data用
+	signal dds_dat : std_logic_vector(39 downto 0);
+	signal rd_fin_d : std_logic; --read_fin
+	
+	--DDS用
+	signal data40 : std_logic_vector(39 downto 0);
+	
+	--fifo用
+	signal wr_en : std_logic;
+	signal rd_en : std_logic;
+	signal full : std_logic;
+	signal empty : std_logic;
 	
 	--テスト用
 	signal test : std_logic:='0';
@@ -202,6 +247,8 @@ architecture measure of just_measurement is
 					 read_fin => rd_fin,
 					 decode_wait => d_wait,
 					 count_end => c_end,
+					 
+					 data_change => d_change,
 				
 					 d_data_out => d_data,
 					 c_data_out => c_data);
@@ -213,7 +260,7 @@ architecture measure of just_measurement is
 
 					 d_fin => d_fin, 
 					 d_type => d_type,
-					 rd_comp => rd_fin,
+					 rd_comp => rd_fin_c,
 					 data_full => d_wait,
 					 data => c_data, 
 
@@ -221,9 +268,36 @@ architecture measure of just_measurement is
 					 output_dds => dds_set,
 					 output_ad => ad_out);
 					 
-	process(dds_set)
+	data_acquire : DDS_data 
+		port map( clk => clk,
+					 rst => rst,
+				  	 msr_fin => c_end,
+				
+					 d_fin => d_fin,
+					 d_type => d_type,
+					 rd_comp => rd_fin_d,
+					 data => d_data,
+				
+					 wr_en_a => wr_en,
+					 full_a => full,
+					 data_out => dds_dat,
+					 data_end => d_change);
+					 
+	FIFO : FIFO_A 
+		port map( CLK => clk,
+					 RST => rst,
+					 DIN => dds_dat,
+					 DOUT => data40,
+					 WR_EN => wr_en,
+					 RD_EN => rd_en,
+					 FULL => full,
+					 EMPTY => empty);
+					 
+	rd_fin <= rd_fin_c or rd_fin_d;
+					 
+	process(wr_en)
 	begin
-		if dds_set = '1' then
+		if wr_en = '1' then
 			led_blink <= not led_blink;
 			--led_blink <= '1';
 		end if;
@@ -235,8 +309,8 @@ architecture measure of just_measurement is
 	rf_pulse <= rf_out;
 	adc_sig <= ad_out;
 	
-	test_dout(3 downto 0) <= d_type;
-	test_bit <= dds_set;
+	test_dout(15 downto 0) <= c_data(15 downto 0);
+	test_bit <= led_blink;
 
 	end measure;
 

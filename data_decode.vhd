@@ -107,6 +107,7 @@ begin
 	decode_en <= p.d_en;
 
 	c_data_out <= p.data(34 downto 0);
+	d_data_out <= p.data(39 downto 0);
 	decode_fin <= p.d_fin;
 	data_type <= p.d_type;
 	count_end <= p.c_end;

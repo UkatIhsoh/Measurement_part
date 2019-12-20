@@ -63,6 +63,8 @@ architecture write_sec of SDRAM_wr is
 	constant smp_data : std_logic_vector(63 downto 0):= X"00000007000186A0"; --カウント値
 	constant smp_data_1 : std_logic_vector(63 downto 0):= X"0000000702FAF080"; --カウント値
 	constant smp_data_2 : std_logic_vector(63 downto 0):= X"0000000002FAF080"; --カウント値
+	constant smp_data_3 : std_logic_vector(63 downto 0):= X"0000000000000002"; --カウント値
+	constant smp_data_4 : std_logic_vector(63 downto 0):= X"00000AFF05050A0A"; --カウント値
 
 	type state_t is (idle, sd_request, cycle_end); --状態名（アイドル状態、sdram動作、処理サイクル終了） 
 
@@ -97,14 +99,14 @@ begin
 				if p.fresh = '0' then
 					if p.pend = '0' then
 						n.adr <= X"00000"; --アドレス変更
-						n.data <= smp_data_1; --書き込みデータセット
+						n.data <= smp_data_3; --書き込みデータセット
 						n.state <= sd_request;
 						n.fresh <= '1';
 					end if;
 				else
 					if p.pend = '0' then
 						n.adr <= p.adr +1; --アドレス変更
-						n.data <= p.data + smp_data_2; --書き込みデータセット
+						n.data <= smp_data_4; --書き込みデータセット
 						n.state <= sd_request;
 					end if;
 				end if;

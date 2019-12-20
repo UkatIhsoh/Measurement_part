@@ -8,6 +8,7 @@ Measurement.ngc Measurement.ngd
 
 Reading NGO file
 "E:/hoshino_Data/SotsuKen/ISE/measurement_part_git/Measurement.ngc" ...
+Loading design module "ipcore_dir/FIFO_A.ngc"...
 Gathering constraint information from source properties...
 Done.
 
@@ -36,19 +37,6 @@ WARNING:NgdBuild:470 - bidirect pad net 'WING_B<6>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'WING_B<5>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'WING_B<4>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'WING_B<3>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'WING_A<15>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'WING_A<14>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'WING_A<13>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'WING_A<12>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'WING_A<11>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'WING_A<10>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'WING_A<9>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'WING_A<8>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'WING_A<7>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'WING_A<6>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'WING_A<5>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'WING_A<4>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'WING_A<3>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'WING_C<15>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'WING_C<14>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'WING_C<13>' has no legal driver
@@ -75,9 +63,9 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:  42
+  Number of warnings:  29
 
-Total memory usage is 4421656 kilobytes
+Total memory usage is 4421684 kilobytes
 
 Writing NGD file "Measurement.ngd" ...
 Total REAL time to NGDBUILD completion:  4 sec
