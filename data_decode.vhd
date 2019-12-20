@@ -82,7 +82,7 @@ end data_decode;
 
 architecture decode of data_decode is
 
-	type state_t is (idle, count, cycle_end); --状態名（アイドル、カウンター、処理サイクル終了）
+	type state_t is (idle, count, dds, cycle_end); --状態名（アイドル、カウンター、処理サイクル終了）
 
 	type reg is record
 		data : std_logic_vector(39 downto 0);
@@ -128,10 +128,15 @@ begin
 							n.data(31 downto 16) <= data64(31 downto 16);
 							n.d_num <= "10";
 						else
-							n.data(34 downto 32) <= data64(34 downto 32);
+							n.data(39 downto 32) <= data64(39 downto 32);
 							n.d_num <= "00";
-							n.d_type <= first;
-							n.state <= count;
+							if data_change = '1' then
+								n.d_type <= first;
+								n.state <= count;
+							else
+								n.d_type <= data64(43 downto 40);
+								n.state <= dds;
+							end if;
 							n.sequence <= second;
 							n.loading <= '1';
 						end if;
@@ -144,10 +149,15 @@ begin
 							n.data(31 downto 16) <= data64(31 downto 16);
 							n.d_num <= "10";
 						else
-							n.data(34 downto 32) <= data64(34 downto 32);
+							n.data(39 downto 32) <= data64(39 downto 32);
 							n.d_num <= "00";
-							n.d_type <= second;
-							n.state <= count;
+							if data_change = '1' then
+								n.d_type <= first;
+								n.state <= count;
+							else
+								n.d_type <= data64(43 downto 40);
+								n.state <= dds;
+							end if;
 							n.sequence <= third;
 							n.loading <= '1';
 						end if;
@@ -160,10 +170,15 @@ begin
 							n.data(31 downto 16) <= data64(31 downto 16);
 							n.d_num <= "10";
 						else
-							n.data(34 downto 32) <= data64(34 downto 32);
+							n.data(39 downto 32) <= data64(39 downto 32);
 							n.d_num <= "00";
-							n.d_type <= third;
-							n.state <= count;
+							if data_change = '1' then
+								n.d_type <= first;
+								n.state <= count;
+							else
+								n.d_type <= data64(43 downto 40);
+								n.state <= dds;
+							end if;
 							n.sequence <= fourth;
 							n.loading <= '1';
 						end if;
@@ -176,10 +191,15 @@ begin
 							n.data(31 downto 16) <= data64(31 downto 16);
 							n.d_num <= "10";
 						else
-							n.data(34 downto 32) <= data64(34 downto 32);
+							n.data(39 downto 32) <= data64(39 downto 32);
 							n.d_num <= "00";
-							n.d_type <= fourth;
-							n.state <= count;
+							if data_change = '1' then
+								n.d_type <= first;
+								n.state <= count;
+							else
+								n.d_type <= data64(43 downto 40);
+								n.state <= dds;
+							end if;
 							n.sequence <= fifth;
 							n.loading <= '1';
 						end if;
@@ -192,10 +212,15 @@ begin
 							n.data(31 downto 16) <= data64(31 downto 16);
 							n.d_num <= "10";
 						else
-							n.data(34 downto 32) <= data64(34 downto 32);
+							n.data(39 downto 32) <= data64(39 downto 32);
 							n.d_num <= "00";
-							n.d_type <= fifth;
-							n.state <= count;
+							if data_change = '1' then
+								n.d_type <= first;
+								n.state <= count;
+							else
+								n.d_type <= data64(43 downto 40);
+								n.state <= dds;
+							end if;
 							n.sequence <= sixth;
 							n.loading <= '1';
 						end if;
@@ -208,10 +233,15 @@ begin
 							n.data(31 downto 16) <= data64(31 downto 16);
 							n.d_num <= "10";
 						else
-							n.data(34 downto 32) <= data64(34 downto 32);
+							n.data(39 downto 32) <= data64(39 downto 32);
 							n.d_num <= "00";
-							n.d_type <= sixth;
-							n.state <= count;
+							if data_change = '1' then
+								n.d_type <= first;
+								n.state <= count;
+							else
+								n.d_type <= data64(43 downto 40);
+								n.state <= dds;
+							end if;
 							n.sequence <= seventh;
 							n.loading <= '1';
 						end if;
@@ -224,19 +254,18 @@ begin
 							n.data(31 downto 16) <= data64(31 downto 16);
 							n.d_num <= "10";
 						else
-							n.data(34 downto 32) <= data64(34 downto 32);
+							n.data(39 downto 32) <= data64(39 downto 32);
 							n.d_num <= "00";
-							n.d_type <= seventh;
-							n.state <= count;
+							if data_change = '1' then
+								n.d_type <= first;
+								n.state <= count;
+							else
+								n.d_type <= data64(43 downto 40);
+								n.state <= dds;
+							end if;
 							n.sequence <= first;
 							n.loading <= '1';
 						end if;		
-						
-					when dds_A =>
-					
-					when dds_B =>
-					
-					when dds_C =>
 					
 					when others =>
 						n.state <= idle;	
@@ -257,10 +286,26 @@ begin
 						if p.d_fin = '1' then
 							n.d_fin <= '0';
 							n.loading <= '0';
-							--if p.d_type = second or p.d_type = fourth or p.d_type = sixth or p.d_type = seventh then 
 							n.d_en <= '1';
-							--end if;
 							if p.m_fin = '1' then --decodeが終了するので、master_counterも終了させる
+								n.m_fin <= '0';
+								n.c_end <= '1';
+							end if;
+							n.state <= idle;
+						end if;
+					end if;
+				
+				when dds =>
+					if read_fin = '0' then --dds_dataがデータを獲得するまで待機
+						if p.d_fin = '0' then --read_finがクロックと無関係なタイミングで入力されるため
+							n.d_fin <= '1'; --dds_dataがデータの読み込みを開始
+						end if;
+					else
+						if p.d_fin = '1' then
+							n.d_fin <= '0';
+							n.loading <= '0';
+							n.d_en <= '1';
+							if p.m_fin = '1' then --decodeが終了するので、dds_dataも終了させる
 								n.m_fin <= '0';
 								n.c_end <= '1';
 							end if;
