@@ -67,11 +67,14 @@ entity data_decode is
 			data64 : in std_logic_vector(63 downto 0);
 			fetch_fin : in std_logic;
 			decode_en : out std_logic;
+			
 			decode_fin : out std_logic; --master_couterへデコードが終わったことを知らせる
 			data_type : out std_logic_vector(3 downto 0); --master_counterへデータがどこのデータだか伝える
 			read_fin : in std_logic; --master_counterがデータの読み込みを終了したことを知らせる
 			decode_wait : in std_logic; --master_counterは現在データが満タンです
 			count_end : out std_logic; --master_counterの動作を終了
+			
+			data_change : in std_logic; --counterのデータかddsのデータか判別する
 			
 			d_data_out : out std_logic_vector(39 downto 0); --dds用のデータ
 			c_data_out : out std_logic_vector(34 downto 0)); --マスターカウンタ用のデータ
