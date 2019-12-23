@@ -1483,7 +1483,7 @@ Speed Grade: -2
 
    Minimum period: 24.283ns (Maximum Frequency: 41.181MHz)
    Minimum input arrival time before clock: 7.037ns
-   Maximum output required time after clock: 4.671ns
+   Maximum output required time after clock: 5.693ns
    Maximum combinational path delay: 5.043ns
 
 Timing Details:
@@ -1571,20 +1571,22 @@ Offset:              7.037ns (Levels of Logic = 2)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 52 / 40
 -------------------------------------------------------------------------
-Offset:              4.671ns (Levels of Logic = 1)
-  Source:            measure/decode/p_data_15 (FF)
+Offset:              5.693ns (Levels of Logic = 2)
+  Source:            measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAM)
   Destination:       WING_A<15> (PAD)
   Source Clock:      clk rising 3.1X
 
-  Data Path: measure/decode/p_data_15 to WING_A<15>
+  Data Path: measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram to WING_A<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            18   0.525   1.234  measure/decode/p_data_15 (measure/decode/p_data_15)
+     RAMB8BWER:CLKAWRCLK->DOADO14    1   2.100   0.681  ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (DOUTB<15>)
+     end scope: 'measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr:DOUTB<15>'
+     end scope: 'measure/FIFO:dout<15>'
      OBUF:I->O                 2.912          WING_A_15_OBUF (WING_A<15>)
     ----------------------------------------
-    Total                      4.671ns (3.437ns logic, 1.234ns route)
-                                       (73.6% logic, 26.4% route)
+    Total                      5.693ns (5.012ns logic, 0.681ns route)
+                                       (88.0% logic, 12.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'measure/data_acquire/tr_pend_a'
@@ -1666,12 +1668,12 @@ measure/data_acquire/tr_pend_a|         |         |    2.278|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 19.00 secs
-Total CPU time to Xst completion: 18.64 secs
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 16.89 secs
  
 --> 
 
-Total memory usage is 4544060 kilobytes
+Total memory usage is 4544052 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  479 (   0 filtered)

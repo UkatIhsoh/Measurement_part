@@ -349,7 +349,7 @@ architecture measure of just_measurement is
 	rf_pulse <= rf_out;
 	adc_sig <= ad_out;
 	
-	test_dout(15 downto 0) <= c_data(15 downto 0);
+	test_dout(15 downto 0) <= data40(15 downto 0);
 	test_bit <= led_blink;
 
 	end measure;
