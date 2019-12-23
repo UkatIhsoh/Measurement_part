@@ -78,6 +78,7 @@ entity DDS_data is
 			wr_en_a : out std_logic; --fifoのWR_EN
 			full_a : in std_logic; --fifoのFULL
 			data_out : out std_logic_vector(39 downto 0);
+			first_data : out std_logic_vector(39 downto 0); --DDS最初のデータ
 			data_end : out std_logic);
 end DDS_data;
 
@@ -89,6 +90,7 @@ architecture data_read of DDS_data is
 	signal d_end : std_logic:='0'; --data_end
 	signal d_num : std_logic_vector(1 downto 0):= "00";  
 	signal d_out : std_logic_vector(39 downto 0); --data_out
+	signal first_d : std_logic_vector(39 downto 0); --first?data
 	
 	signal tr_pend_a : std_logic:= '0'; --wr_en_a
 	signal comp_rd : std_logic:= '0'; --rd_comp
@@ -98,6 +100,7 @@ begin
 	rd_comp <= comp_rd;
 	wr_en_a <= tr_pend_a;
 	data_out <= d_out;
+	first_data <= first_d;
 	data_end <= d_end;
 
 	process(clk,rst,msr_fin,d_fin,full_a)
@@ -136,21 +139,37 @@ begin
 									d_out(39 downto 20) <= data(39 downto 20);
 									d_num <= "10";
 								else
-									if full_a = '0' then
-										if tr_pend_a <= '0' then 
-											tr_pend_a <= '1';
+									if counter = count_end then
+										if full_a = '0' then
+											if tr_pend_a <= '0' then 
+												tr_pend_a <= '1';
+											else
+												tr_pend_a <= '0';
+											end if;
+											d_end <= '1';
+											comp_rd <= '1';
+											d_num <= "00";
 										else
 											tr_pend_a <= '0';
 										end if;
-										if counter = count_end then
-											d_end <= '1';
-										else
-											counter <= counter +1;
-										end if;
+									elsif counter = X"0001" then --一つ目のデータだけはFIFOを介さず直接DDSコントローラに送る
+										first_d <= data;
 										comp_rd <= '1';
 										d_num <= "00";
+										counter <= counter +1;
 									else
-										tr_pend_a <= '0';
+										if full_a = '0' then
+											if tr_pend_a <= '0' then 
+												tr_pend_a <= '1';
+											else
+												tr_pend_a <= '0';
+											end if;
+											comp_rd <= '1';
+											d_num <= "00";
+											counter <= counter +1;
+										else
+											tr_pend_a <= '0';
+										end if;
 									end if;
 								end if;
 								

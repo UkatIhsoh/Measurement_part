@@ -3,13 +3,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: Measurement.prj
@@ -129,6 +129,9 @@ Parsing architecture <fetch> of entity <data_fetch>.
 Parsing VHDL file "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" into library work
 Parsing entity <data_decode>.
 Parsing architecture <decode> of entity <data_decode>.
+Parsing VHDL file "E:\hoshino_Data\SotsuKen\ISE\integ_100\AD9851_ctrl.vhd" into library work
+Parsing entity <AD9851_ctrl>.
+Parsing architecture <DDS> of entity <ad9851_ctrl>.
 Parsing VHDL file "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\SDRAM_wr.vhd" into library work
 Parsing entity <SDRAM_wr>.
 Parsing architecture <write_sec> of entity <sdram_wr>.
@@ -150,7 +153,7 @@ Parsing architecture <connect> of entity <measurement>.
 =========================================================================
 
 Elaborating entity <Measurement> (architecture <connect>) from library <work>.
-WARNING:HDLCompiler:871 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 150: Using initial value "11" for sdr_mask since it is never assigned
+WARNING:HDLCompiler:871 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 154: Using initial value "11" for sdr_mask since it is never assigned
 
 Elaborating entity <DCM_100M> (architecture <xilinx>) from library <work>.
 
@@ -185,11 +188,16 @@ Elaborating entity <master_counter> (architecture <count_time>) from library <wo
 
 Elaborating entity <DDS_data> (architecture <data_read>) from library <work>.
 
+Elaborating entity <AD9851_ctrl> (architecture <DDS>) from library <work>.
+WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\integ_100\AD9851_ctrl.vhd" Line 96: preset should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\integ_100\AD9851_ctrl.vhd" Line 99: first_data should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\integ_100\AD9851_ctrl.vhd" Line 108: d_change should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\integ_100\AD9851_ctrl.vhd" Line 524: msr_fin should be on the sensitivity list of the process
+
 Elaborating entity <FIFO_A> (architecture <FIFO_A_a>) from library <work>.
-WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" Line 301: led_blink should be on the sensitivity list of the process
-WARNING:HDLCompiler:634 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" Line 208: Net <rd_en> does not have a driver.
-WARNING:HDLCompiler:1127 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 253: Assignment to req_adr_w ignored, since the identifier is never used
-WARNING:HDLCompiler:634 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 149: Net <sdr_addr[19]> does not have a driver.
+WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" Line 341: led_blink should be on the sensitivity list of the process
+WARNING:HDLCompiler:1127 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 265: Assignment to req_adr_w ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" Line 153: Net <sdr_addr[19]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -198,12 +206,16 @@ WARNING:HDLCompiler:634 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Mea
 Synthesizing Unit <Measurement>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd".
 WARNING:Xst:647 - Input <WING_B<15:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 212: Output port <sdr_adr> of the instance <write_sec> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 221: Output port <sdr_adr> of the instance <read_sec> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 221: Output port <fetch_en> of the instance <read_sec> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 233: Output port <msr_finish> of the instance <measure> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 233: Output port <rf_pulse> of the instance <measure> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 233: Output port <adc_sig> of the instance <measure> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 220: Output port <sdr_adr> of the instance <write_sec> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 229: Output port <sdr_adr> of the instance <read_sec> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 229: Output port <fetch_en> of the instance <read_sec> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 241: Output port <msr_finish> of the instance <measure> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 241: Output port <rf_pulse> of the instance <measure> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 241: Output port <data> of the instance <measure> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 241: Output port <fqud> of the instance <measure> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 241: Output port <reset> of the instance <measure> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 241: Output port <w_clk> of the instance <measure> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 241: Output port <adc_sig> of the instance <measure> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <sdr_addr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
@@ -371,12 +383,9 @@ Unit <SDRAM_rd> synthesized.
 
 Synthesizing Unit <just_measurement>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd".
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 218: Output port <test_pin> of the instance <fetch> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 256: Output port <output_dds> of the instance <count_time> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 286: Output port <dout> of the instance <FIFO> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 286: Output port <empty> of the instance <FIFO> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 242: Output port <test_pin> of the instance <fetch> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\just_measurement.vhd" line 326: Output port <empty> of the instance <FIFO> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <test_dout<63:16>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <rd_en> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:737 - Found 1-bit latch for signal <led_blink>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
 	inferred   1 Latch(s).
@@ -523,15 +532,15 @@ Synthesizing Unit <master_counter>.
     Found 1-bit register for signal <dst_6>.
     Found 1-bit register for signal <dst_7>.
     Found 32-bit register for signal <counter>.
-    Found 32-bit adder for signal <counter[31]_GND_58_o_add_21_OUT> created at line 193.
+    Found 32-bit adder for signal <counter[31]_GND_58_o_add_21_OUT> created at line 197.
 WARNING:Xst:737 - Found 1-bit latch for signal <n_m_fin>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 32-bit comparator equal for signal <counter[31]_p_t_1[31]_equal_1_o> created at line 151
-    Found 32-bit comparator equal for signal <counter[31]_p_t_2[31]_equal_3_o> created at line 156
-    Found 32-bit comparator equal for signal <counter[31]_p_t_3[31]_equal_5_o> created at line 161
-    Found 32-bit comparator equal for signal <counter[31]_p_t_4[31]_equal_7_o> created at line 166
-    Found 32-bit comparator equal for signal <counter[31]_p_t_5[31]_equal_9_o> created at line 171
-    Found 32-bit comparator equal for signal <counter[31]_p_t_6[31]_equal_11_o> created at line 176
-    Found 32-bit comparator equal for signal <counter[31]_p_t_7[31]_equal_13_o> created at line 181
+    Found 32-bit comparator equal for signal <counter[31]_p_t_1[31]_equal_1_o> created at line 155
+    Found 32-bit comparator equal for signal <counter[31]_p_t_2[31]_equal_3_o> created at line 160
+    Found 32-bit comparator equal for signal <counter[31]_p_t_3[31]_equal_5_o> created at line 165
+    Found 32-bit comparator equal for signal <counter[31]_p_t_4[31]_equal_7_o> created at line 170
+    Found 32-bit comparator equal for signal <counter[31]_p_t_5[31]_equal_9_o> created at line 175
+    Found 32-bit comparator equal for signal <counter[31]_p_t_6[31]_equal_11_o> created at line 180
+    Found 32-bit comparator equal for signal <counter[31]_p_t_7[31]_equal_13_o> created at line 185
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred 537 D-type flip-flop(s).
@@ -547,13 +556,14 @@ Synthesizing Unit <DDS_data>.
     Found 40-bit register for signal <d_out>.
     Found 1-bit register for signal <tr_pend_a>.
     Found 1-bit register for signal <comp_rd>.
+    Found 40-bit register for signal <first_d>.
     Found 16-bit register for signal <counter>.
     Found 16-bit register for signal <count_end>.
     Found finite state machine <FSM_8> for signal <d_num>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
-    | Transitions        | 16                                             |
-    | Inputs             | 5                                              |
+    | Transitions        | 17                                             |
+    | Inputs             | 6                                              |
     | Outputs            | 3                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst_msr_fin_OR_107_o (positive)                |
@@ -563,27 +573,95 @@ Synthesizing Unit <DDS_data>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 16-bit adder for signal <counter[15]_GND_60_o_add_10_OUT> created at line 148.
-    Found 16-bit comparator equal for signal <counter[15]_count_end[15]_equal_7_o> created at line 145
+    Found 16-bit adder for signal <counter[15]_GND_60_o_add_14_OUT> created at line 169.
+    Found 16-bit comparator equal for signal <counter[15]_count_end[15]_equal_11_o> created at line 142
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  75 D-type flip-flop(s).
+	inferred 115 D-type flip-flop(s).
 	inferred   1 Comparator(s).
 	inferred  24 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <DDS_data> synthesized.
 
+Synthesizing Unit <AD9851_ctrl>.
+    Related source file is "E:\hoshino_Data\SotsuKen\ISE\integ_100\AD9851_ctrl.vhd".
+    Found 1-bit register for signal <p_rst_pend>.
+    Found 1-bit register for signal <p_dds_pend>.
+    Found 1-bit register for signal <p_data_set>.
+    Found 1-bit register for signal <p_fqud_set>.
+    Found 1-bit register for signal <p_w_clk_set>.
+    Found 1-bit register for signal <p_rst_set>.
+    Found 1-bit register for signal <p_c_w>.
+    Found 1-bit register for signal <state_p<6>>.
+    Found 1-bit register for signal <state_p<5>>.
+    Found 1-bit register for signal <state_p<4>>.
+    Found 1-bit register for signal <state_p<3>>.
+    Found 1-bit register for signal <state_p<2>>.
+    Found 1-bit register for signal <state_p<1>>.
+    Found 1-bit register for signal <state_p<0>>.
+    Found 128x4-bit Read Only RAM for signal <_n0555>
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<39>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<38>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<37>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<36>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<35>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<34>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<33>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<32>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<27>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<26>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<25>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<24>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<23>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<21>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<20>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<19>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <data32<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <preset>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <d_change>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  14 D-type flip-flop(s).
+	inferred  42 Latch(s).
+	inferred 259 Multiplexer(s).
+Unit <AD9851_ctrl> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
+# RAMs                                                 : 1
+ 128x4-bit single-port Read Only RAM                   : 1
 # Adders/Subtractors                                   : 6
  15-bit subtractor                                     : 1
  16-bit adder                                          : 1
  20-bit adder                                          : 2
  32-bit adder                                          : 2
-# Registers                                            : 79
- 1-bit register                                        : 43
+# Registers                                            : 94
+ 1-bit register                                        : 57
  12-bit register                                       : 1
  15-bit register                                       : 1
  16-bit register                                       : 7
@@ -592,16 +670,16 @@ Macro Statistics
  32-bit register                                       : 2
  35-bit register                                       : 14
  4-bit register                                        : 1
- 40-bit register                                       : 2
+ 40-bit register                                       : 3
  64-bit register                                       : 4
-# Latches                                              : 18
- 1-bit latch                                           : 18
+# Latches                                              : 60
+ 1-bit latch                                           : 60
 # Comparators                                          : 9
  16-bit comparator equal                               : 1
  2-bit comparator equal                                : 1
  32-bit comparator equal                               : 7
-# Multiplexers                                         : 214
- 1-bit 2-to-1 multiplexer                              : 181
+# Multiplexers                                         : 473
+ 1-bit 2-to-1 multiplexer                              : 387
  12-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 3
  20-bit 2-to-1 multiplexer                             : 4
@@ -610,6 +688,7 @@ Macro Statistics
  4-bit 2-to-1 multiplexer                              : 1
  40-bit 2-to-1 multiplexer                             : 2
  64-bit 2-to-1 multiplexer                             : 1
+ 7-bit 2-to-1 multiplexer                              : 53
 # Tristates                                            : 16
  1-bit tristate buffer                                 : 16
 # FSMs                                                 : 9
@@ -622,6 +701,8 @@ Macro Statistics
 
 Reading core <ipcore_dir/FIFO_A.ngc>.
 Loading core <FIFO_A> for timing and area information for instance <FIFO>.
+WARNING:Xst:1290 - Hierarchical block <DDS> is unconnected in block <measure>.
+   It will be removed from the design.
 INFO:Xst:2261 - The FF/Latch <p_data_3> in Unit <write_sec> is equivalent to the following 16 FFs/Latches, which will be removed : <p_data_9> <p_data_11> <p_data_16> <p_data_18> <p_data_24> <p_data_26> <p_data_32> <p_data_33> <p_data_34> <p_data_35> <p_data_36> <p_data_37> <p_data_38> <p_data_39> <p_data_41> <p_data_43> 
 INFO:Xst:2261 - The FF/Latch <p_data_0> in Unit <write_sec> is equivalent to the following 45 FFs/Latches, which will be removed : <p_data_2> <p_data_4> <p_data_5> <p_data_6> <p_data_7> <p_data_8> <p_data_10> <p_data_12> <p_data_13> <p_data_14> <p_data_15> <p_data_17> <p_data_19> <p_data_20> <p_data_21> <p_data_22> <p_data_23> <p_data_25> <p_data_27> <p_data_28> <p_data_29> <p_data_30> <p_data_31> <p_data_40> <p_data_42> <p_data_44> <p_data_45> <p_data_46> <p_data_47> <p_data_48> <p_data_49> <p_data_50> <p_data_51> <p_data_52> <p_data_53> <p_data_54> <p_data_55> <p_data_56> <p_data_57> <p_data_58> <p_data_59> <p_data_60> <p_data_61> <p_data_62> <p_data_63> 
 WARNING:Xst:1710 - FF/Latch <r_req_data_write_40> (without init value) has a constant value of 0 in block <ctrl>. This FF/Latch will be trimmed during the optimization process.
@@ -672,27 +753,34 @@ WARNING:Xst:1710 - FF/Latch <r_req_data_write_29> (without init value) has a con
 WARNING:Xst:1710 - FF/Latch <r_req_data_write_30> (without init value) has a constant value of 0 in block <ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <r_req_data_write_31> (without init value) has a constant value of 0 in block <ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <p_t_1_32> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_1_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_1_34> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_2_32> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_2_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_2_34> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_5_32> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_5_33> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_5_34> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_3_32> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_3_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_3_34> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_4_32> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_4_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_4_34> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_32> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_34> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_6_32> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_6_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_6_34> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_7_32> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_7_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_7_34> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2404 -  FFs/Latches <p_data<63:44>> (without init value) have a constant value of 0 in block <SDRAM_wr>.
+
+Synthesizing (advanced) Unit <AD9851_ctrl>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0555> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 128-word x 4-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <state_p>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <AD9851_ctrl> synthesized (advanced).
 
 Synthesizing (advanced) Unit <DDS_data>.
 The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
@@ -710,6 +798,8 @@ Unit <SDRAM_wr> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
+# RAMs                                                 : 1
+ 128x4-bit single-port distributed Read Only RAM       : 1
 # Adders/Subtractors                                   : 3
  20-bit adder                                          : 1
  32-bit adder                                          : 2
@@ -717,14 +807,14 @@ Macro Statistics
  15-bit down counter                                   : 1
  16-bit up counter                                     : 1
  20-bit up counter                                     : 1
-# Registers                                            : 1067
- Flip-Flops                                            : 1067
+# Registers                                            : 1121
+ Flip-Flops                                            : 1121
 # Comparators                                          : 9
  16-bit comparator equal                               : 1
  2-bit comparator equal                                : 1
  32-bit comparator equal                               : 7
-# Multiplexers                                         : 315
- 1-bit 2-to-1 multiplexer                              : 285
+# Multiplexers                                         : 574
+ 1-bit 2-to-1 multiplexer                              : 491
  12-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 3
  20-bit 2-to-1 multiplexer                             : 3
@@ -732,6 +822,7 @@ Macro Statistics
  35-bit 2-to-1 multiplexer                             : 7
  4-bit 2-to-1 multiplexer                              : 1
  40-bit 2-to-1 multiplexer                             : 1
+ 7-bit 2-to-1 multiplexer                              : 53
 # FSMs                                                 : 9
 
 =========================================================================
@@ -765,6 +856,8 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_5> (without 
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_4> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_2> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_0> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <preset> (without init value) has a constant value of 1 in block <AD9851_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_rst_pend> (without init value) has a constant value of 0 in block <AD9851_ctrl>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <p_data_3> in Unit <SDRAM_wr> is equivalent to the following 16 FFs/Latches, which will be removed : <p_data_9> <p_data_11> <p_data_16> <p_data_18> <p_data_24> <p_data_26> <p_data_32> <p_data_33> <p_data_34> <p_data_35> <p_data_36> <p_data_37> <p_data_38> <p_data_39> <p_data_41> <p_data_43> 
 Optimizing FSM <ctrl/FSM_0> on signal <statep[1:9]> with user encoding.
 ------------------------
@@ -886,6 +979,7 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_7> (witho
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_8> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_9> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_11> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <state_p_6> has a constant value of 0 in block <AD9851_ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
    incompatible with the Spartan6 architecture. The two primary causes of this is
    either a register or latch described with both an asynchronous set and
@@ -914,6 +1008,7 @@ WARNING:Xst:3002 - This design contains one or more registers/latches that are d
 
   List of register instances with asynchronous set or reset and opposite initialization value:
     ctrl/r_rf_counter_31 in unit <Measurement>
+    state_p_0 in unit <AD9851_ctrl>
 
 
 Optimizing unit <Measurement> ...
@@ -935,6 +1030,8 @@ WARNING:Xst:2677 - Node <p_sequence_FSM_FFd1> of sequential type is unconnected 
 Optimizing unit <master_counter> ...
 
 Optimizing unit <DDS_data> ...
+
+Optimizing unit <AD9851_ctrl> ...
 WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_44> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_42> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_40> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
@@ -1091,50 +1188,128 @@ WARNING:Xst:2677 - Node <measure/fetch/p_data_46> of sequential type is unconnec
 WARNING:Xst:2677 - Node <measure/fetch/p_data_45> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/fetch/p_data_44> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/ad_out> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/dds_set> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/rf_out> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_6_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_6_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_6_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_5_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_5_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_5_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_7_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_7_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_7_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_4_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_4_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_4_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_3_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_3_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_3_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_2_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_2_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_2_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_1_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_1_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_1_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_7_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_7_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_7_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_6_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_6_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_6_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_5_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_5_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_5_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_4_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_4_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_4_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_2_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_2_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_2_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_1_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_1_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_1_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_3_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_3_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_3_32> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_39> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_37> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_36> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_35> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_34> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_32> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_31> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_30> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_29> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_28> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_27> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_26> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_25> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_24> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_23> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_22> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_21> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_20> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_19> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_18> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_17> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_16> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_15> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_14> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_13> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_12> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_11> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_10> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_9> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_8> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_7> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_6> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_5> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_4> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_3> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_2> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_1> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/data_acquire/first_d_0> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/p_c_w> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/p_rst_set> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/p_fqud_set> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/p_w_clk_set> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/state_p_0> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/state_p_1> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/state_p_2> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/state_p_3> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/state_p_5> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/state_p_4> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/p_data_set> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_0> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_1> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_2> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_3> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_4> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_5> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_6> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_7> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_8> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_9> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_10> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_11> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_12> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_13> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_14> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_15> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_16> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_17> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_18> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_19> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_20> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_21> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_22> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_23> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_24> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_25> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_26> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_27> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_28> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_29> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_30> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_31> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_32> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_34> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_35> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_36> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_37> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/data32_39> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/d_change> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/p_dds_pend> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:1293 - FF/Latch <ctrl/r_rf_counter_30> has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ctrl/r_rf_counter_29> has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ctrl/r_rf_counter_28> has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
@@ -1179,8 +1354,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 873
- Flip-Flops                                            : 873
+# Registers                                            : 888
+ Flip-Flops                                            : 888
 
 =========================================================================
 
@@ -1203,24 +1378,24 @@ Top Level Output File Name         : Measurement.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1149
+# BELS                             : 1152
 #      GND                         : 3
 #      INV                         : 23
 #      LUT1                        : 87
-#      LUT2                        : 29
-#      LUT3                        : 114
-#      LUT4                        : 157
-#      LUT5                        : 162
-#      LUT6                        : 283
-#      MUXCY                       : 182
-#      MUXF7                       : 3
+#      LUT2                        : 28
+#      LUT3                        : 92
+#      LUT4                        : 146
+#      LUT5                        : 210
+#      LUT6                        : 270
+#      MUXCY                       : 183
+#      MUXF7                       : 4
 #      VCC                         : 1
 #      XORCY                       : 105
-# FlipFlops/Latches                : 925
+# FlipFlops/Latches                : 940
 #      FD                          : 5
 #      FD_1                        : 16
-#      FDC                         : 183
-#      FDCE                        : 665
+#      FDC                         : 206
+#      FDCE                        : 657
 #      FDE                         : 15
 #      FDP                         : 16
 #      FDPE                        : 16
@@ -1245,16 +1420,16 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             888  out of  11440     7%  
- Number of Slice LUTs:                  855  out of   5720    14%  
-    Number used as Logic:               855  out of   5720    14%  
+ Number of Slice Registers:             903  out of  11440     7%  
+ Number of Slice LUTs:                  856  out of   5720    14%  
+    Number used as Logic:               856  out of   5720    14%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1343
-   Number with an unused Flip Flop:     455  out of   1343    33%  
-   Number with an unused LUT:           488  out of   1343    36%  
-   Number of fully used LUT-FF pairs:   400  out of   1343    29%  
-   Number of unique control sets:        41
+ Number of LUT Flip Flop pairs used:   1370
+   Number with an unused Flip Flop:     467  out of   1370    34%  
+   Number with an unused LUT:           514  out of   1370    37%  
+   Number of fully used LUT-FF pairs:   389  out of   1370    28%  
+   Number of unique control sets:        40
 
 IO Utilization: 
  Number of IOs:                          89
@@ -1287,7 +1462,7 @@ Clock Information:
 ---------------------------------------------------------------------------+------------------------------------+-------+
 Clock Signal                                                               | Clock buffer(FF name)              | Load  |
 ---------------------------------------------------------------------------+------------------------------------+-------+
-clk                                                                        | DCM_SP:CLKFX                       | 920   |
+clk                                                                        | DCM_SP:CLKFX                       | 935   |
 ctrl/statep[8]_GND_36_o_Mux_83_o(ctrl/Mmux_statep[8]_GND_36_o_Mux_83_o11:O)| NONE(*)(ctrl/n_data_w_0)           | 5     |
 measure/data_acquire/tr_pend_a                                             | NONE(measure/led_blink)            | 1     |
 WING_B<0>                                                                  | IBUF+BUFG                          | 1     |
@@ -1306,8 +1481,8 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 24.433ns (Maximum Frequency: 40.928MHz)
-   Minimum input arrival time before clock: 7.035ns
+   Minimum period: 24.283ns (Maximum Frequency: 41.181MHz)
+   Minimum input arrival time before clock: 7.037ns
    Maximum output required time after clock: 4.671ns
    Maximum combinational path delay: 5.043ns
 
@@ -1317,38 +1492,38 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 24.433ns (frequency: 40.928MHz)
-  Total number of paths / destination ports: 130310 / 2250
+  Clock period: 24.283ns (frequency: 41.181MHz)
+  Total number of paths / destination ports: 134331 / 2272
 -------------------------------------------------------------------------
-Delay:               7.819ns (Levels of Logic = 14)
-  Source:            measure/count_time/p_t_3_2 (FF)
-  Destination:       measure/count_time/p_t_4_18 (FF)
+Delay:               7.771ns (Levels of Logic = 14)
+  Source:            measure/count_time/p_t_6_2 (FF)
+  Destination:       measure/count_time/p_t_7_6 (FF)
   Source Clock:      clk rising 3.1X
   Destination Clock: clk rising 3.1X
 
-  Data Path: measure/count_time/p_t_3_2 to measure/count_time/p_t_4_18
+  Data Path: measure/count_time/p_t_6_2 to measure/count_time/p_t_7_6
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             2   0.525   1.181  measure/count_time/p_t_3_2 (measure/count_time/p_t_3_2)
-     LUT6:I0->O            1   0.254   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_lut<0> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<0> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<1> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<2> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<3> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<4> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<5> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<6> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<7> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<8> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<9> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<9>)
-     MUXCY:CI->O           4   0.235   1.259  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<10> (measure/count_time/counter[31]_p_t_3[31]_equal_5_o)
-     LUT6:I0->O            6   0.254   0.876  measure/count_time/_n0497111_1 (measure/count_time/_n0497111)
-     LUT4:I3->O          115   0.254   2.254  measure/count_time/_n0678_inv1_cepot (measure/count_time/_n0498_inv1_cepot)
+     FDC:C->Q              2   0.525   1.181  measure/count_time/p_t_6_2 (measure/count_time/p_t_6_2)
+     LUT6:I0->O            1   0.254   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_lut<0> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<0> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<1> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<2> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<3> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<4> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<5> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<6> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<7> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<8> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<9> (measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<9>)
+     MUXCY:CI->O           6   0.235   1.331  measure/count_time/Mcompar_counter[31]_p_t_6[31]_equal_11_o_cy<10> (measure/count_time/counter[31]_p_t_6[31]_equal_11_o)
+     LUT6:I0->O            1   0.254   0.682  measure/count_time/_n0499111_1 (measure/count_time/_n0499111)
+     LUT4:I3->O          139   0.254   2.328  measure/count_time/_n0680_inv1_cepot (measure/count_time/_n0500_inv1_cepot)
      FDCE:CE                   0.302          measure/count_time/p_t_1_0
     ----------------------------------------
-    Total                      7.819ns (2.249ns logic, 5.570ns route)
-                                       (28.8% logic, 71.2% route)
+    Total                      7.771ns (2.249ns logic, 5.522ns route)
+                                       (28.9% logic, 71.1% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'measure/data_acquire/tr_pend_a'
@@ -1366,7 +1541,7 @@ Delay:               2.278ns (Levels of Logic = 1)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      LD:G->Q               2   0.581   0.725  measure/led_blink (measure/led_blink)
-     INV:I->O              1   0.255   0.681  measure/led_blink_INV_76_o1_INV_0 (measure/led_blink_INV_76_o)
+     INV:I->O              1   0.255   0.681  measure/led_blink_INV_89_o1_INV_0 (measure/led_blink_INV_89_o)
      LD:D                      0.036          measure/led_blink
     ----------------------------------------
     Total                      2.278ns (0.872ns logic, 1.406ns route)
@@ -1374,23 +1549,23 @@ Delay:               2.278ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 905 / 904
+  Total number of paths / destination ports: 920 / 919
 -------------------------------------------------------------------------
-Offset:              7.035ns (Levels of Logic = 2)
+Offset:              7.037ns (Levels of Logic = 2)
   Source:            WING_B<0> (PAD)
-  Destination:       measure/count_time/counter_31 (FF)
+  Destination:       measure/count_time/dds_set (FF)
   Destination Clock: clk rising 3.1X
 
-  Data Path: WING_B<0> to measure/count_time/counter_31
+  Data Path: WING_B<0> to measure/count_time/dds_set
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O           284   1.328   2.543  WING_B_0_IBUF (WING_B_0_IBUF)
-     LUT2:I0->O          492   0.250   2.455  measure/count_time/rst_count_end_OR_105_o1 (measure/count_time/rst_count_end_OR_105_o)
+     LUT2:I0->O          507   0.250   2.457  measure/count_time/rst_count_end_OR_105_o1 (measure/count_time/rst_count_end_OR_105_o)
      FDCE:CLR                  0.459          measure/count_time/n_t_3_0
     ----------------------------------------
-    Total                      7.035ns (2.037ns logic, 4.998ns route)
-                                       (29.0% logic, 71.0% route)
+    Total                      7.037ns (2.037ns logic, 5.000ns route)
+                                       (28.9% logic, 71.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -1459,7 +1634,7 @@ Clock to Setup on destination clock clk
 Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------+---------+---------+---------+---------+
 WING_B<0>                       |         |    5.309|         |         |
-clk                             |    7.819|    1.364|         |         |
+clk                             |    7.771|    1.364|         |         |
 ctrl/statep[8]_GND_36_o_Mux_83_o|         |    1.458|         |         |
 measure/count_time/n_m_fin_G    |         |    2.021|         |         |
 --------------------------------+---------+---------+---------+---------+
@@ -1491,14 +1666,14 @@ measure/data_acquire/tr_pend_a|         |         |    2.278|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 15.00 secs
-Total CPU time to Xst completion: 15.21 secs
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 18.64 secs
  
 --> 
 
-Total memory usage is 4543856 kilobytes
+Total memory usage is 4544060 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  360 (   0 filtered)
-Number of infos    :   29 (   0 filtered)
+Number of warnings :  479 (   0 filtered)
+Number of infos    :   32 (   0 filtered)
 

@@ -84,6 +84,10 @@ entity just_measurement is
 			test_bit : out std_logic; --テスト用1bit信号
 			
 			rf_pulse : out std_logic; --RFパルス信号
+			data : out std_logic; --DDS用信号
+			fqud : out std_logic;
+			reset : out std_logic;
+			w_clk : out std_logic;
 			adc_sig : out std_logic); --ADC用信号
 end just_measurement;
 
@@ -142,6 +146,8 @@ architecture measure of just_measurement is
 
 				output_rf : out std_logic;
 				output_dds : out std_logic;
+				dds_start : out std_logic;
+				dds_fin : out std_logic;
 				output_ad : out std_logic);
 	end component;
 	
@@ -158,7 +164,22 @@ architecture measure of just_measurement is
 				wr_en_a : out std_logic; 
 				full_a : in std_logic;				
 				data_out : out std_logic_vector(39 downto 0);
+				first_data : out std_logic_vector(39 downto 0);
 				data_end : out std_logic);
+	end component;
+	
+	component AD9851_ctrl is
+	port( clk 		: 	in		std_logic;
+			rst		:	in		std_logic;
+			first_data 	: 	in		std_logic_vector(39 downto 0); 
+			data40 	: 	in		std_logic_vector(39 downto 0);
+			start		:	in		std_logic;	
+			data_change : 	in 	std_logic; 
+			data	 	:	out	std_logic;
+			fqud	 	:	out	std_logic;
+			reset	 	:	out	std_logic;
+			w_clk	 	:	out	std_logic;
+			msr_fin 	: 	in		std_logic); 
 	end component;
 	
 	component FIFO_A is
@@ -202,6 +223,9 @@ architecture measure of just_measurement is
 	
 	--DDS用
 	signal data40 : std_logic_vector(39 downto 0);
+	signal f_data : std_logic_vector(39 downto 0); --first_data
+	signal dds_f : std_logic;
+	signal dds_s : std_logic; 
 	
 	--fifo用
 	signal wr_en : std_logic;
@@ -266,6 +290,8 @@ architecture measure of just_measurement is
 
 					 output_rf => rf_out,
 					 output_dds => dds_set,
+					 dds_start => dds_s,
+					 dds_fin => dds_f,
 					 output_ad => ad_out);
 					 
 	data_acquire : DDS_data 
@@ -281,7 +307,21 @@ architecture measure of just_measurement is
 					 wr_en_a => wr_en,
 					 full_a => full,
 					 data_out => dds_dat,
+					 first_data => f_data,
 					 data_end => d_change);
+	
+	DDS : AD9851_ctrl 
+		port map( clk => clk,
+					 rst	=> rst,
+					 first_data => f_data, 
+					 data40 	=> data40,
+					 start	=> dds_s,	
+					 data_change => dds_set, 
+					 data	=> data,
+					 fqud	 => fqud,
+					 reset	=> reset,
+					 w_clk	=> w_clk,
+					 msr_fin => dds_f);
 					 
 	FIFO : FIFO_A 
 		port map( CLK => clk,
@@ -289,7 +329,7 @@ architecture measure of just_measurement is
 					 DIN => dds_dat,
 					 DOUT => data40,
 					 WR_EN => wr_en,
-					 RD_EN => rd_en,
+					 RD_EN => dds_set,
 					 FULL => full,
 					 EMPTY => empty);
 					 

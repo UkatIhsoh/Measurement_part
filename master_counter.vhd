@@ -78,6 +78,8 @@ entity master_counter is
 			
 			output_rf : out std_logic; --出力
 			output_dds : out std_logic;
+			dds_start : out std_logic; --DDS開始
+			dds_fin : out std_logic; --DDS終了
 			output_ad : out std_logic);
 end master_counter;
 
@@ -125,6 +127,8 @@ begin
 	
 	output_rf <= rf_out;
 	output_dds <= dds_set;
+	dds_start <= preset;
+	dds_fin <= count_end;
 	output_ad <= ad_out;
 		
 	process(clk,rst,data,d_fin,d_type,msr_fin,count_end)
