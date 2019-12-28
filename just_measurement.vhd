@@ -69,6 +69,7 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 entity just_measurement is
 	port( clk : in std_logic;
 			rst : in std_logic;
+			test_in : in std_logic; --test“ü—Í—p
 			
 			msr_start : in std_logic; --measurement start
 			msr_finish : out std_logic; --mesurement finish
@@ -329,7 +330,7 @@ architecture measure of just_measurement is
 					 DIN => dds_dat,
 					 DOUT => data40,
 					 WR_EN => wr_en,
-					 RD_EN => dds_set,
+					 RD_EN => test_in,--dds_set,
 					 FULL => full,
 					 EMPTY => empty);
 					 

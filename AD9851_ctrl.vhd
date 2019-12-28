@@ -124,12 +124,10 @@ begin
 			end if;
 		end if;
 		
-		if d_change = '1' then
-			if p.rst_pend = '0' and p.dds_pend = '0' then 
-				n.dds_pend <= '1';
-				data32	<= data40;
-				d_change <= '0';
-			end if;
+		if d_change = '1' and p.rst_pend = '0' and p.dds_pend = '0' then 
+			n.dds_pend <= '1';
+			data32	<= data40;
+			d_change <= '0';
 		end if;
 		
 		case state_p is

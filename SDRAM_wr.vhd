@@ -63,7 +63,7 @@ architecture write_sec of SDRAM_wr is
 	constant smp_data : std_logic_vector(63 downto 0):= X"00000007000186A0"; --カウント値
 	constant smp_data_1 : std_logic_vector(63 downto 0):= X"0000000702FAF080"; --カウント値
 	constant smp_data_2 : std_logic_vector(63 downto 0):= X"0000000002FAF080"; --カウント値
-	constant smp_data_3 : std_logic_vector(63 downto 0):= X"0000000000000002"; --カウント値
+	constant smp_data_3 : std_logic_vector(63 downto 0):= X"0000000000000003"; --カウント値
 	constant smp_data_4 : std_logic_vector(63 downto 0):= X"00000AFF05050A0A"; --カウント値
 
 	type state_t is (idle, sd_request, cycle_end); --状態名（アイドル状態、sdram動作、処理サイクル終了） 

@@ -36,7 +36,6 @@ WARNING:NgdBuild:470 - bidirect pad net 'WING_B<7>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'WING_B<6>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'WING_B<5>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'WING_B<4>' has no legal driver
-WARNING:NgdBuild:470 - bidirect pad net 'WING_B<3>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'WING_C<15>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'WING_C<14>' has no legal driver
 WARNING:NgdBuild:470 - bidirect pad net 'WING_C<13>' has no legal driver
@@ -63,9 +62,9 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:  29
+  Number of warnings:  28
 
-Total memory usage is 4421828 kilobytes
+Total memory usage is 4421708 kilobytes
 
 Writing NGD file "Measurement.ngd" ...
 Total REAL time to NGDBUILD completion:  4 sec

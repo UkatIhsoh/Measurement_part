@@ -119,6 +119,7 @@ architecture connect of Measurement is
 	component just_measurement is
 	port( clk : in std_logic;
 			rst : in std_logic;
+			test_in : in std_logic;
 			
 			msr_start : in std_logic; 
 			msr_finish : out std_logic;
@@ -179,6 +180,7 @@ architecture connect of Measurement is
 	signal adc : std_logic;
 	signal test_d : std_logic_vector(63 downto 0); --テスト用
 	signal test_b : std_logic; --テスト用
+	signal test_i : std_logic;
 	
 begin
 
@@ -241,6 +243,7 @@ begin
 	measure : just_measurement 
 		port map( clk => clk100,
 					 rst => rst,
+					 test_in => test_i,
 				
 					 msr_start => msr_start,
 					 msr_finish => m_fin,
@@ -265,7 +268,7 @@ begin
 	req_adr_w <= X"00000"; --test
 	
 	str_adr <= X"00000";
-	end_adr <= X"00006";
+	end_adr <= X"00008";
 	
 	--ピン割り当て
 	DRAM_ADDR(12) <= '0';
@@ -273,6 +276,7 @@ begin
 	rst	<= WING_B(0);
 	tr_sw	<= WING_B(1);
 	msr_start <= WING_B(2);
+	test_i <= WING_B(3);
 	--start <= WING_A(1);
 	
 	--WING_A(4 downto 1) <= test_d(3 downto 0); --テスト用

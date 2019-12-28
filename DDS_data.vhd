@@ -153,7 +153,7 @@ begin
 											tr_pend_a <= '0';
 										end if;
 									elsif counter = X"0001" then --一つ目のデータだけはFIFOを介さず直接DDSコントローラに送る
-										first_d <= data;
+										first_d <= d_out;
 										comp_rd <= '1';
 										d_num <= "00";
 										counter <= counter +1;
