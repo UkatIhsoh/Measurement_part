@@ -502,22 +502,7 @@ Unit <data_decode> synthesized.
 
 Synthesizing Unit <master_counter>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\master_counter.vhd".
-    Found 35-bit register for signal <p_t_1>.
-    Found 35-bit register for signal <p_t_2>.
-    Found 35-bit register for signal <p_t_3>.
-    Found 35-bit register for signal <p_t_4>.
-    Found 35-bit register for signal <p_t_5>.
-    Found 35-bit register for signal <p_t_6>.
-    Found 35-bit register for signal <p_t_7>.
-    Found 1-bit register for signal <p_m_fin>.
-    Found 35-bit register for signal <n_t_1>.
-    Found 35-bit register for signal <n_t_2>.
-    Found 35-bit register for signal <n_t_3>.
-    Found 35-bit register for signal <n_t_4>.
-    Found 35-bit register for signal <n_t_5>.
-    Found 35-bit register for signal <n_t_6>.
-    Found 35-bit register for signal <n_t_7>.
-    Found 1-bit register for signal <n_m_fin>.
+    Found 1-bit register for signal <m_fin>.
     Found 1-bit register for signal <count_end>.
     Found 1-bit register for signal <preset>.
     Found 1-bit register for signal <full>.
@@ -525,6 +510,20 @@ Synthesizing Unit <master_counter>.
     Found 1-bit register for signal <rf_out>.
     Found 1-bit register for signal <dds_set>.
     Found 1-bit register for signal <ad_out>.
+    Found 35-bit register for signal <p_t_1>.
+    Found 35-bit register for signal <p_t_2>.
+    Found 35-bit register for signal <p_t_3>.
+    Found 35-bit register for signal <p_t_4>.
+    Found 35-bit register for signal <p_t_5>.
+    Found 35-bit register for signal <p_t_6>.
+    Found 35-bit register for signal <p_t_7>.
+    Found 35-bit register for signal <n_t_1>.
+    Found 35-bit register for signal <n_t_2>.
+    Found 35-bit register for signal <n_t_3>.
+    Found 35-bit register for signal <n_t_4>.
+    Found 35-bit register for signal <n_t_5>.
+    Found 35-bit register for signal <n_t_6>.
+    Found 35-bit register for signal <n_t_7>.
     Found 1-bit register for signal <dst_1>.
     Found 1-bit register for signal <dst_2>.
     Found 1-bit register for signal <dst_3>.
@@ -533,17 +532,17 @@ Synthesizing Unit <master_counter>.
     Found 1-bit register for signal <dst_6>.
     Found 1-bit register for signal <dst_7>.
     Found 32-bit register for signal <counter>.
-    Found 32-bit adder for signal <counter[31]_GND_58_o_add_21_OUT> created at line 199.
-    Found 32-bit comparator equal for signal <counter[31]_p_t_1[31]_equal_1_o> created at line 157
-    Found 32-bit comparator equal for signal <counter[31]_p_t_2[31]_equal_3_o> created at line 162
-    Found 32-bit comparator equal for signal <counter[31]_p_t_3[31]_equal_5_o> created at line 167
-    Found 32-bit comparator equal for signal <counter[31]_p_t_4[31]_equal_7_o> created at line 172
-    Found 32-bit comparator equal for signal <counter[31]_p_t_5[31]_equal_9_o> created at line 177
-    Found 32-bit comparator equal for signal <counter[31]_p_t_6[31]_equal_11_o> created at line 182
-    Found 32-bit comparator equal for signal <counter[31]_p_t_7[31]_equal_13_o> created at line 187
+    Found 32-bit adder for signal <counter[31]_GND_58_o_add_21_OUT> created at line 198.
+    Found 32-bit comparator equal for signal <counter[31]_p_t_1[31]_equal_1_o> created at line 156
+    Found 32-bit comparator equal for signal <counter[31]_p_t_2[31]_equal_3_o> created at line 161
+    Found 32-bit comparator equal for signal <counter[31]_p_t_3[31]_equal_5_o> created at line 166
+    Found 32-bit comparator equal for signal <counter[31]_p_t_4[31]_equal_7_o> created at line 171
+    Found 32-bit comparator equal for signal <counter[31]_p_t_5[31]_equal_9_o> created at line 176
+    Found 32-bit comparator equal for signal <counter[31]_p_t_6[31]_equal_11_o> created at line 181
+    Found 32-bit comparator equal for signal <counter[31]_p_t_7[31]_equal_13_o> created at line 186
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred 538 D-type flip-flop(s).
+	inferred 537 D-type flip-flop(s).
 	inferred   7 Comparator(s).
 	inferred  35 Multiplexer(s).
 Unit <master_counter> synthesized.
@@ -659,8 +658,8 @@ Macro Statistics
  16-bit adder                                          : 1
  20-bit adder                                          : 2
  32-bit adder                                          : 2
-# Registers                                            : 95
- 1-bit register                                        : 58
+# Registers                                            : 94
+ 1-bit register                                        : 57
  12-bit register                                       : 1
  15-bit register                                       : 1
  16-bit register                                       : 7
@@ -750,24 +749,24 @@ WARNING:Xst:1710 - FF/Latch <r_req_data_write_28> (without init value) has a con
 WARNING:Xst:1710 - FF/Latch <r_req_data_write_29> (without init value) has a constant value of 0 in block <ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <r_req_data_write_30> (without init value) has a constant value of 0 in block <ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <r_req_data_write_31> (without init value) has a constant value of 0 in block <ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <p_t_3_32> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_33> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_34> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_1_32> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_1_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_1_34> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_2_32> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_2_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_2_34> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_5_32> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_5_33> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_5_34> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_3_32> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_3_33> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_3_34> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_4_32> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_4_33> of sequential type is unconnected in block <count_time>.
-WARNING:Xst:2677 - Node <p_t_4_34> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_6_32> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_6_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_6_34> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_32> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_33> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_34> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_32> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_33> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_34> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_7_32> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_7_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_7_34> of sequential type is unconnected in block <count_time>.
@@ -812,8 +811,8 @@ Macro Statistics
  15-bit down counter                                   : 1
  16-bit up counter                                     : 1
  20-bit up counter                                     : 1
-# Registers                                            : 1122
- Flip-Flops                                            : 1122
+# Registers                                            : 1121
+ Flip-Flops                                            : 1121
 # Comparators                                          : 9
  16-bit comparator equal                               : 1
  2-bit comparator equal                                : 1
@@ -1186,18 +1185,18 @@ WARNING:Xst:2677 - Node <measure/fetch/p_data_47> of sequential type is unconnec
 WARNING:Xst:2677 - Node <measure/fetch/p_data_46> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/fetch/p_data_45> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/fetch/p_data_44> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/ad_out> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/dds_set> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/rf_out> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/ad_out> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_7_34> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_7_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_7_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_6_34> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_6_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_6_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_5_34> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_5_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_5_32> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_7_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_7_33> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_7_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_4_34> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_4_33> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_4_32> of sequential type is unconnected in block <Measurement>.
@@ -1367,8 +1366,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 876
- Flip-Flops                                            : 876
+# Registers                                            : 875
+ Flip-Flops                                            : 875
 
 =========================================================================
 
@@ -1391,24 +1390,24 @@ Top Level Output File Name         : Measurement.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1143
+# BELS                             : 1141
 #      GND                         : 3
 #      INV                         : 24
 #      LUT1                        : 87
 #      LUT2                        : 28
 #      LUT3                        : 92
 #      LUT4                        : 147
-#      LUT5                        : 206
+#      LUT5                        : 204
 #      LUT6                        : 263
 #      MUXCY                       : 183
 #      MUXF7                       : 4
 #      VCC                         : 1
 #      XORCY                       : 105
-# FlipFlops/Latches                : 928
+# FlipFlops/Latches                : 927
 #      FD                          : 5
 #      FD_1                        : 16
 #      FDC                         : 203
-#      FDCE                        : 647
+#      FDCE                        : 646
 #      FDE                         : 16
 #      FDP                         : 16
 #      FDPE                        : 16
@@ -1433,15 +1432,15 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             891  out of  11440     7%  
- Number of Slice LUTs:                  847  out of   5720    14%  
-    Number used as Logic:               847  out of   5720    14%  
+ Number of Slice Registers:             890  out of  11440     7%  
+ Number of Slice LUTs:                  845  out of   5720    14%  
+    Number used as Logic:               845  out of   5720    14%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1355
-   Number with an unused Flip Flop:     464  out of   1355    34%  
-   Number with an unused LUT:           508  out of   1355    37%  
-   Number of fully used LUT-FF pairs:   383  out of   1355    28%  
+ Number of LUT Flip Flop pairs used:   1352
+   Number with an unused Flip Flop:     462  out of   1352    34%  
+   Number with an unused LUT:           507  out of   1352    37%  
+   Number of fully used LUT-FF pairs:   383  out of   1352    28%  
    Number of unique control sets:        39
 
 IO Utilization: 
@@ -1475,7 +1474,7 @@ Clock Information:
 ---------------------------------------------------------------------------+-------------------------+-------+
 Clock Signal                                                               | Clock buffer(FF name)   | Load  |
 ---------------------------------------------------------------------------+-------------------------+-------+
-clk                                                                        | DCM_SP:CLKFX            | 923   |
+clk                                                                        | DCM_SP:CLKFX            | 922   |
 ctrl/statep[8]_GND_36_o_Mux_83_o(ctrl/Mmux_statep[8]_GND_36_o_Mux_83_o11:O)| NONE(*)(ctrl/n_data_w_0)| 6     |
 measure/data_acquire/tr_pend_a                                             | NONE(measure/led_blink) | 1     |
 WING_B<0>                                                                  | IBUF+BUFG               | 1     |
@@ -1493,7 +1492,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 24.145ns (Maximum Frequency: 41.417MHz)
+   Minimum period: 24.020ns (Maximum Frequency: 41.633MHz)
    Minimum input arrival time before clock: 7.035ns
    Maximum output required time after clock: 5.693ns
    Maximum combinational path delay: 5.043ns
@@ -1504,16 +1503,16 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 24.145ns (frequency: 41.417MHz)
-  Total number of paths / destination ports: 130386 / 2237
+  Clock period: 24.020ns (frequency: 41.633MHz)
+  Total number of paths / destination ports: 129934 / 2234
 -------------------------------------------------------------------------
-Delay:               7.726ns (Levels of Logic = 14)
+Delay:               7.686ns (Levels of Logic = 14)
   Source:            measure/count_time/p_t_3_2 (FF)
-  Destination:       measure/count_time/p_t_7_7 (FF)
+  Destination:       measure/count_time/p_t_5_6 (FF)
   Source Clock:      clk rising 3.1X
   Destination Clock: clk rising 3.1X
 
-  Data Path: measure/count_time/p_t_3_2 to measure/count_time/p_t_7_7
+  Data Path: measure/count_time/p_t_3_2 to measure/count_time/p_t_5_6
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -1529,13 +1528,13 @@ Delay:               7.726ns (Levels of Logic = 14)
      MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<7> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<7>)
      MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<8> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<8>)
      MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<9> (measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<9>)
-     MUXCY:CI->O           5   0.235   1.296  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<10> (measure/count_time/counter[31]_p_t_3[31]_equal_5_o)
-     LUT6:I0->O            1   0.254   0.682  measure/count_time/_n0496111_1 (measure/count_time/_n0496111)
-     LUT4:I3->O          136   0.254   2.319  measure/count_time/_n0677_inv1_cepot (measure/count_time/_n0497_inv1_cepot)
+     MUXCY:CI->O           4   0.235   1.259  measure/count_time/Mcompar_counter[31]_p_t_3[31]_equal_5_o_cy<10> (measure/count_time/counter[31]_p_t_3[31]_equal_5_o)
+     LUT6:I0->O            1   0.254   0.682  measure/count_time/_n0605111_1 (measure/count_time/_n0605111)
+     LUT4:I3->O          135   0.254   2.316  measure/count_time/_n0786_inv1_cepot (measure/count_time/_n0606_inv1_cepot)
      FDCE:CE                   0.302          measure/count_time/p_t_1_0
     ----------------------------------------
-    Total                      7.726ns (2.249ns logic, 5.478ns route)
-                                       (29.1% logic, 70.9% route)
+    Total                      7.686ns (2.249ns logic, 5.438ns route)
+                                       (29.3% logic, 70.7% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'measure/data_acquire/tr_pend_a'
@@ -1561,7 +1560,7 @@ Delay:               2.278ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 930 / 927
+  Total number of paths / destination ports: 929 / 926
 -------------------------------------------------------------------------
 Offset:              7.035ns (Levels of Logic = 2)
   Source:            WING_B<0> (PAD)
@@ -1573,7 +1572,7 @@ Offset:              7.035ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O           284   1.328   2.543  WING_B_0_IBUF (WING_B_0_IBUF)
-     LUT2:I0->O          493   0.250   2.455  measure/count_time/rst_count_end_OR_105_o1 (measure/count_time/rst_count_end_OR_105_o)
+     LUT2:I0->O          492   0.250   2.455  measure/count_time/rst_count_end_OR_105_o1 (measure/count_time/rst_count_end_OR_105_o)
      FDCE:CLR                  0.459          measure/count_time/n_t_3_0
     ----------------------------------------
     Total                      7.035ns (2.037ns logic, 4.998ns route)
@@ -1648,7 +1647,7 @@ Clock to Setup on destination clock clk
 Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------+---------+---------+---------+---------+
 WING_B<0>                       |         |    5.309|         |         |
-clk                             |    7.726|    1.364|         |         |
+clk                             |    7.686|    1.364|         |         |
 ctrl/statep[8]_GND_36_o_Mux_83_o|         |    1.458|         |         |
 --------------------------------+---------+---------+---------+---------+
 
@@ -1672,11 +1671,11 @@ measure/data_acquire/tr_pend_a|         |         |    2.278|         |
 
 
 Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 13.72 secs
+Total CPU time to Xst completion: 13.34 secs
  
 --> 
 
-Total memory usage is 4543720 kilobytes
+Total memory usage is 4543696 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  497 (   0 filtered)

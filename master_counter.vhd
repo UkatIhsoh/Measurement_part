@@ -95,7 +95,6 @@ architecture count_time of master_counter is
 		t_6 : std_logic_vector(34 downto 0);		--カウント上限
 		t_7 : std_logic_vector(34 downto 0);		--カウント上限
 		t_0 : std_logic_vector(34 downto 0);		--カウント上限
-		m_fin : std_logic; --msr_finの変化によってカウンターの終了を制御する
 	end record;	
 	
 	signal p : reg;
@@ -116,6 +115,7 @@ architecture count_time of master_counter is
 	signal dst_0 : std_logic:= '0'; 
 	signal full : std_logic:= '0'; --データが満タン状態を知らせる
 	signal comp_rd : std_logic:= '0'; --rd_compに対応
+	signal m_fin : std_logic; --msr_finの変化によってカウンターの終了を制御する
 	
 	signal rf_out : std_logic:='0';	--RFパルス用
 	signal dds_set : std_logic:='0'; --ddsの周波数を変える	
@@ -138,8 +138,7 @@ begin
 	
 		if rst = '1' or count_end = '1' then
 			counter <= (others => '0');
-			p.m_fin <= '0';
-			n.m_fin <= '0';
+			m_fin <= '0';
 			count_end <= '0';
 			preset <= '0';
 			full <= '0';
@@ -189,7 +188,7 @@ begin
 					rf_out <= p.t_7(34);
 					dds_set <= p.t_7(33);
 					ad_out <= p.t_7(32);
-					if p.m_fin = '1' then --p.m_finがhighならカウント終了。lowならセットされた次のデータを読み込む
+					if m_fin = '1' then --p.m_finがhighならカウント終了。lowならセットされた次のデータを読み込む
 						count_end <= '1';
 					else
 						p <= n;
@@ -297,7 +296,7 @@ begin
 				end if;
 			end if;
 			if msr_fin = '1' then
-				n.m_fin <= '1'; --ここでnのほうをhighにしているのは、decodeからmsr_finが来るタイミングではまだデータがnのほうに存在するので、そのデータを実行し終わってからカウントを終了させるため
+				m_fin <= '1'; --ここでnのほうをhighにしているのは、decodeからmsr_finが来るタイミングではまだデータがnのほうに存在するので、そのデータを実行し終わってからカウントを終了させるため
 			end if;
 		end if;
 			
