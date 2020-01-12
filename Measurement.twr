@@ -69,19 +69,19 @@ Timing constraint: PERIOD analysis for net "DCM/clkfx" derived from  NET
 cycle corrected to HIGH 5 nS  
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 129985 paths analyzed, 4029 endpoints analyzed, 0 failing endpoints
+ 129989 paths analyzed, 4033 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   8.714ns.
+ Minimum period is   8.993ns.
 --------------------------------------------------------------------------------
 
-Paths for end point ctrl/r_data_out_3_8 (SLICE_X3Y39.AX), 1 path
+Paths for end point ctrl/r_data_out_3_13 (SLICE_X0Y32.BX), 1 path
 --------------------------------------------------------------------------------
-Slack (setup path):     0.643ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ctrl/captured_8 (FF)
-  Destination:          ctrl/r_data_out_3_8 (FF)
+Slack (setup path):     0.579ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ctrl/captured_13 (FF)
+  Destination:          ctrl/r_data_out_3_13 (FF)
   Requirement:          5.000ns
-  Data Path Delay:      3.500ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.622ns (0.721 - 1.343)
+  Data Path Delay:      3.522ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.664ns (0.733 - 1.397)
   Source Clock:         clk100 falling at 5.000ns
   Destination Clock:    clk100 rising at 10.000ns
   Clock Uncertainty:    0.235ns
@@ -92,29 +92,29 @@ Slack (setup path):     0.643ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.400ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: ctrl/captured_8 to ctrl/r_data_out_3_8
+  Maximum Data Path at Slow Process Corner: ctrl/captured_13 to ctrl/r_data_out_3_13
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    ILOGIC_X0Y30.Q4      Tickq                 1.778   ctrl/captured<8>
-                                                       ctrl/captured_8
-    SLICE_X3Y39.AX       net (fanout=3)        1.608   ctrl/captured<8>
-    SLICE_X3Y39.CLK      Tdick                 0.114   ctrl/r_data_out_3<11>
-                                                       ctrl/r_data_out_3_8
+    ILOGIC_X0Y21.Q4      Tickq                 1.778   ctrl/captured<13>
+                                                       ctrl/captured_13
+    SLICE_X0Y32.BX       net (fanout=2)        1.659   ctrl/captured<13>
+    SLICE_X0Y32.CLK      Tdick                 0.085   ctrl/r_data_out_3<15>
+                                                       ctrl/r_data_out_3_13
     -------------------------------------------------  ---------------------------
-    Total                                      3.500ns (1.892ns logic, 1.608ns route)
-                                                       (54.1% logic, 45.9% route)
+    Total                                      3.522ns (1.863ns logic, 1.659ns route)
+                                                       (52.9% logic, 47.1% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point ctrl/r_data_out_3_4 (SLICE_X1Y50.AX), 1 path
+Paths for end point ctrl/r_data_out_3_0 (SLICE_X10Y46.AX), 1 path
 --------------------------------------------------------------------------------
-Slack (setup path):     0.695ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ctrl/captured_4 (FF)
-  Destination:          ctrl/r_data_out_3_4 (FF)
+Slack (setup path):     0.580ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ctrl/captured_0 (FF)
+  Destination:          ctrl/r_data_out_3_0 (FF)
   Requirement:          5.000ns
-  Data Path Delay:      3.531ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.539ns (0.706 - 1.245)
+  Data Path Delay:      3.511ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.674ns (0.628 - 1.302)
   Source Clock:         clk100 falling at 5.000ns
   Destination Clock:    clk100 rising at 10.000ns
   Clock Uncertainty:    0.235ns
@@ -125,29 +125,29 @@ Slack (setup path):     0.695ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.400ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: ctrl/captured_4 to ctrl/r_data_out_3_4
+  Maximum Data Path at Slow Process Corner: ctrl/captured_0 to ctrl/r_data_out_3_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    ILOGIC_X0Y34.Q4      Tickq                 1.778   ctrl/captured<4>
-                                                       ctrl/captured_4
-    SLICE_X1Y50.AX       net (fanout=2)        1.639   ctrl/captured<4>
-    SLICE_X1Y50.CLK      Tdick                 0.114   ctrl/r_data_out_3<7>
-                                                       ctrl/r_data_out_3_4
+    ILOGIC_X0Y46.Q4      Tickq                 1.778   ctrl/captured<0>
+                                                       ctrl/captured_0
+    SLICE_X10Y46.AX      net (fanout=3)        1.619   ctrl/captured<0>
+    SLICE_X10Y46.CLK     Tdick                 0.114   ctrl/r_data_out_3<3>
+                                                       ctrl/r_data_out_3_0
     -------------------------------------------------  ---------------------------
-    Total                                      3.531ns (1.892ns logic, 1.639ns route)
-                                                       (53.6% logic, 46.4% route)
+    Total                                      3.511ns (1.892ns logic, 1.619ns route)
+                                                       (53.9% logic, 46.1% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point read_sec/p_data_5 (SLICE_X2Y44.BX), 1 path
+Paths for end point ctrl/r_data_out_3_1 (SLICE_X10Y46.BX), 1 path
 --------------------------------------------------------------------------------
-Slack (setup path):     0.707ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               ctrl/captured_5 (FF)
-  Destination:          read_sec/p_data_5 (FF)
+Slack (setup path):     0.607ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ctrl/captured_1 (FF)
+  Destination:          ctrl/r_data_out_3_1 (FF)
   Requirement:          5.000ns
-  Data Path Delay:      3.463ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.595ns (0.338 - 0.933)
+  Data Path Delay:      3.484ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.674ns (0.628 - 1.302)
   Source Clock:         clk100 falling at 5.000ns
   Destination Clock:    clk100 rising at 10.000ns
   Clock Uncertainty:    0.235ns
@@ -158,18 +158,18 @@ Slack (setup path):     0.707ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.400ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: ctrl/captured_5 to read_sec/p_data_5
+  Maximum Data Path at Slow Process Corner: ctrl/captured_1 to ctrl/r_data_out_3_1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    ILOGIC_X0Y35.Q4      Tickq                 1.778   ctrl/captured<5>
-                                                       ctrl/captured_5
-    SLICE_X2Y44.BX       net (fanout=2)        1.571   ctrl/captured<5>
-    SLICE_X2Y44.CLK      Tdick                 0.114   read_sec/p_data<7>
-                                                       read_sec/p_data_5
+    ILOGIC_X0Y47.Q4      Tickq                 1.778   ctrl/captured<1>
+                                                       ctrl/captured_1
+    SLICE_X10Y46.BX      net (fanout=3)        1.592   ctrl/captured<1>
+    SLICE_X10Y46.CLK     Tdick                 0.114   ctrl/r_data_out_3<3>
+                                                       ctrl/r_data_out_3_1
     -------------------------------------------------  ---------------------------
-    Total                                      3.463ns (1.892ns logic, 1.571ns route)
-                                                       (54.6% logic, 45.4% route)
+    Total                                      3.484ns (1.892ns logic, 1.592ns route)
+                                                       (54.3% logic, 45.7% route)
 
 --------------------------------------------------------------------------------
 
@@ -179,14 +179,41 @@ Hold Paths: PERIOD analysis for net "DCM/clkfx" derived from
 
 --------------------------------------------------------------------------------
 
+Paths for end point measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAMB8_X1Y9.DIPBDIP0), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.297ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               measure/data_acquire/d_out_26 (FF)
+  Destination:          measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.303ns (Levels of Logic = 0)
+  Clock Path Skew:      0.006ns (0.076 - 0.070)
+  Source Clock:         clk100 rising at 10.000ns
+  Destination Clock:    clk100 rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: measure/data_acquire/d_out_26 to measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y20.CQ      Tcko                  0.198   measure/data_acquire/d_out<27>
+                                                       measure/data_acquire/d_out_26
+    RAMB8_X1Y9.DIPBDIP0  net (fanout=2)        0.158   measure/data_acquire/d_out<26>
+    RAMB8_X1Y9.CLKAWRCLK Trckd_DIPB  (-Th)     0.053   measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+                                                       measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+    -------------------------------------------------  ---------------------------
+    Total                                      0.303ns (0.145ns logic, 0.158ns route)
+                                                       (47.9% logic, 52.1% route)
+
+--------------------------------------------------------------------------------
+
 Paths for end point measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAMB8_X1Y9.DIBDI2), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.298ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      0.299ns (requirement - (clock path skew + uncertainty - data path))
   Source:               measure/data_acquire/d_out_20 (FF)
   Destination:          measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAM)
   Requirement:          0.000ns
   Data Path Delay:      0.305ns (Levels of Logic = 0)
-  Clock Path Skew:      0.007ns (0.076 - 0.069)
+  Clock Path Skew:      0.006ns (0.076 - 0.070)
   Source Clock:         clk100 rising at 10.000ns
   Destination Clock:    clk100 rising at 10.000ns
   Clock Uncertainty:    0.000ns
@@ -208,12 +235,12 @@ Slack (hold path):      0.298ns (requirement - (clock path skew + uncertainty - 
 
 Paths for end point measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAMB8_X1Y9.DIBDI3), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.298ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      0.299ns (requirement - (clock path skew + uncertainty - data path))
   Source:               measure/data_acquire/d_out_21 (FF)
   Destination:          measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAM)
   Requirement:          0.000ns
   Data Path Delay:      0.305ns (Levels of Logic = 0)
-  Clock Path Skew:      0.007ns (0.076 - 0.069)
+  Clock Path Skew:      0.006ns (0.076 - 0.070)
   Source Clock:         clk100 rising at 10.000ns
   Destination Clock:    clk100 rising at 10.000ns
   Clock Uncertainty:    0.000ns
@@ -230,33 +257,6 @@ Slack (hold path):      0.298ns (requirement - (clock path skew + uncertainty - 
     -------------------------------------------------  ---------------------------
     Total                                      0.305ns (0.147ns logic, 0.158ns route)
                                                        (48.2% logic, 51.8% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAMB8_X1Y9.DIADI14), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.307ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               measure/data_acquire/d_out_15 (FF)
-  Destination:          measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAM)
-  Requirement:          0.000ns
-  Data Path Delay:      0.311ns (Levels of Logic = 0)
-  Clock Path Skew:      0.004ns (0.076 - 0.072)
-  Source Clock:         clk100 rising at 10.000ns
-  Destination Clock:    clk100 rising at 10.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: measure/data_acquire/d_out_15 to measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X17Y18.DQ      Tcko                  0.198   measure/data_acquire/d_out<15>
-                                                       measure/data_acquire/d_out_15
-    RAMB8_X1Y9.DIADI14   net (fanout=2)        0.166   measure/data_acquire/d_out<15>
-    RAMB8_X1Y9.CLKAWRCLK Trckd_DIA   (-Th)     0.053   measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
-                                                       measure/FIFO/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
-    -------------------------------------------------  ---------------------------
-    Total                                      0.311ns (0.145ns logic, 0.166ns route)
-                                                       (46.6% logic, 53.4% route)
 
 --------------------------------------------------------------------------------
 
@@ -298,8 +298,8 @@ Derived Constraints for DCM/clkin1
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|DCM/clkin1                     |     31.250ns|     16.000ns|     27.231ns|            0|            0|            0|       129985|
-| DCM/clkfx                     |     10.000ns|      8.714ns|          N/A|            0|            0|       129985|            0|
+|DCM/clkin1                     |     31.250ns|     16.000ns|     28.103ns|            0|            0|            0|       129989|
+| DCM/clkfx                     |     10.000ns|      8.993ns|          N/A|            0|            0|       129989|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 All constraints were met.
@@ -314,7 +314,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    8.183|    4.357|         |         |
+clk            |    8.993|    4.421|         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -323,7 +323,7 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 129985 paths, 0 nets, and 4372 connections
+Constraints cover 129989 paths, 0 nets, and 4378 connections
 
 Design statistics:
    Minimum period:  16.000ns{1}   (Maximum frequency:  62.500MHz)
@@ -332,14 +332,14 @@ Design statistics:
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed SAT 28 DEC 12:41:54 2019 
+Analysis completed SUN 12 JAN 13:35:44 2020 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 4591 MB
+Peak Memory Usage: 4590 MB
 
 
 

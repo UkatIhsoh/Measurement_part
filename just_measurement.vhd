@@ -138,6 +138,7 @@ architecture measure of just_measurement is
 		port( clk : in std_logic;
 				rst : in std_logic;
 				msr_fin : in std_logic;
+				msr_allcomp : out std_logic;
 
 				d_fin : in std_logic; 
 				d_type : in std_logic_vector(3 downto 0); 
@@ -217,6 +218,7 @@ architecture measure of just_measurement is
 	signal ad_out : std_logic;
 	signal c_end : std_logic;
 	signal rd_fin_c : std_logic; --read_fin
+	signal msr_comp : std_logic;
 	
 	--DDS_data—p
 	signal dds_dat : std_logic_vector(39 downto 0);
@@ -282,6 +284,7 @@ architecture measure of just_measurement is
 		port map( clk => clk,
 					 rst => rst,
 					 msr_fin => c_end,
+					 msr_allcomp => msr_comp,
 
 					 d_fin => d_fin, 
 					 d_type => d_type,
@@ -344,7 +347,7 @@ architecture measure of just_measurement is
 		end if;
 	end process;
 					 
-	msr_finish <= m_fin;
+	msr_finish <= msr_comp;
 	sdr_req <= s_req;
 	cite_addr <= addr;
 	rf_pulse <= rf_out;

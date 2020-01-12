@@ -69,6 +69,7 @@ entity master_counter is
 	port( clk : in std_logic;
 			rst : in std_logic;
 			msr_fin : in std_logic; --計測終了したらこの回路の動作を停止
+			msr_allcomp : out std_logic; --完全な計測終了を伝える
 			
 			d_fin : in std_logic; --デコードが終わったかどうかみる
 			d_type : in std_logic_vector(3 downto 0); --どのタイプのでーたが来るのかを確認
@@ -124,6 +125,7 @@ begin
 
 	rd_comp <= comp_rd;
 	data_full <= full;
+	msr_allcomp <= count_end;
 	
 	output_rf <= rf_out;
 	output_dds <= dds_set;

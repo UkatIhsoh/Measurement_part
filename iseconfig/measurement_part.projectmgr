@@ -10,13 +10,13 @@
          <ClosedNode>/Measurement - connect E:|hoshino_Data|SotsuKen|ISE|measurement_part_git|Measurement.vhd/data_types</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>measure - just_measurement - measure (E:/hoshino_Data/SotsuKen/ISE/measurement_part_git/just_measurement.vhd)</SelectedItem>
+         <SelectedItem>count_time - master_counter - count_time (E:/hoshino_Data/SotsuKen/ISE/measurement_part_git/master_counter.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001bb000000020000000000000000000000000200000064ffffffff000000810000000300000002000001bb0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>measure - just_measurement - measure (E:/hoshino_Data/SotsuKen/ISE/measurement_part_git/just_measurement.vhd)</CurrentItem>
+      <CurrentItem>count_time - master_counter - count_time (E:/hoshino_Data/SotsuKen/ISE/measurement_part_git/master_counter.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>

@@ -11,7 +11,7 @@ Target Device  : xc6slx9
 Target Package : tqg144
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : SAT 28 DEC 12:41:17 2019
+Mapped Date    : SUN 12 JAN 13:35:9 2020
 
 Mapping design into LUTs...
 Running directed packing...
@@ -20,8 +20,8 @@ Updating timing models...
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 5 secs 
-Total CPU  time at the beginning of Placer: 5 secs 
+Total REAL time at the beginning of Placer: 4 secs 
+Total CPU  time at the beginning of Placer: 4 secs 
 
 Phase 1.1  Initial Placement Analysis
 Phase 1.1  Initial Placement Analysis (Checksum:7e809104) REAL time: 5 secs 
@@ -48,51 +48,47 @@ WARNING:Place:1109 - A clock IOB / BUFGMUX clock component pair have been found
    lead to very poor timing results. It is recommended that this error condition
    be corrected in the design.
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:50e2281f) REAL time: 8 secs 
+(Checksum:50e2281f) REAL time: 7 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:50e2281f) REAL time: 8 secs 
+Phase 5.36  Local Placement Optimization (Checksum:50e2281f) REAL time: 7 secs 
 
 Phase 6.30  Global Clock Region Assignment
-Phase 6.30  Global Clock Region Assignment (Checksum:50e2281f) REAL time: 8 secs 
+Phase 6.30  Global Clock Region Assignment (Checksum:50e2281f) REAL time: 7 secs 
 
 Phase 7.3  Local Placement Optimization
-Phase 7.3  Local Placement Optimization (Checksum:50e2281f) REAL time: 8 secs 
+Phase 7.3  Local Placement Optimization (Checksum:50e2281f) REAL time: 7 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:50e2281f) REAL time: 8 secs 
+Phase 8.5  Local Placement Optimization (Checksum:50e2281f) REAL time: 7 secs 
 
 Phase 9.8  Global Placement
-.....................
-..................................................................................................................................................................................
-....................................................................................................................................................................................................
-............
-Phase 9.8  Global Placement (Checksum:eca3c961) REAL time: 13 secs 
+...............................
+..................................................
+.........................................................................................
+.......................
+Phase 9.8  Global Placement (Checksum:eac72e36) REAL time: 11 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:eca3c961) REAL time: 13 secs 
+Phase 10.5  Local Placement Optimization (Checksum:eac72e36) REAL time: 11 secs 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:e8589bcb) REAL time: 14 secs 
+Phase 11.18  Placement Optimization (Checksum:279bf596) REAL time: 12 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:e8589bcb) REAL time: 14 secs 
+Phase 12.5  Local Placement Optimization (Checksum:279bf596) REAL time: 12 secs 
 
 Phase 13.34  Placement Validation
-Phase 13.34  Placement Validation (Checksum:9105730e) REAL time: 14 secs 
+Phase 13.34  Placement Validation (Checksum:f0232f3a) REAL time: 12 secs 
 
-Total REAL time to Placer completion: 14 secs 
-Total CPU  time to Placer completion: 14 secs 
+Total REAL time to Placer completion: 12 secs 
+Total CPU  time to Placer completion: 12 secs 
 Running post-placement packing...
 Writing output files...
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
    ctrl/statep[8]_GND_36_o_Mux_83_o is sourced by a combinatorial pin. This is
    not good design practice. Use the CE pin to control the loading of data into
    the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   measure/count_time/n_m_fin_G is sourced by a combinatorial pin. This is not
-   good design practice. Use the CE pin to control the loading of data into the
-   flip-flop.
 WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
    (RAMB8BWER).  9K Block RAM initialization data, both user defined and
    default, may be incorrect and should not be used.  For more information,
@@ -103,35 +99,35 @@ Design Summary
 
 Design Summary:
 Number of errors:      0
-Number of warnings:    4
+Number of warnings:    3
 Slice Logic Utilization:
   Number of Slice Registers:                   869 out of  11,440    7%
-    Number used as Flip Flops:                 860
-    Number used as Latches:                      9
+    Number used as Flip Flops:                 861
+    Number used as Latches:                      8
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        765 out of   5,720   13%
+  Number of Slice LUTs:                        764 out of   5,720   13%
     Number used as logic:                      743 out of   5,720   12%
       Number using O6 output only:             551
       Number using O5 output only:              82
       Number using O5 and O6:                  110
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   1,440    0%
-    Number used exclusively as route-thrus:     22
-      Number with same-slice register load:     18
+    Number used exclusively as route-thrus:     21
+      Number with same-slice register load:     17
       Number with same-slice carry load:         4
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   297 out of   1,430   20%
+  Number of occupied Slices:                   306 out of   1,430   21%
   Number of MUXCYs used:                       204 out of   2,860    7%
-  Number of LUT Flip Flop pairs used:        1,042
-    Number with an unused Flip Flop:           246 out of   1,042   23%
-    Number with an unused LUT:                 277 out of   1,042   26%
-    Number of fully used LUT-FF pairs:         519 out of   1,042   49%
-    Number of unique control sets:              37
+  Number of LUT Flip Flop pairs used:        1,060
+    Number with an unused Flip Flop:           263 out of   1,060   24%
+    Number with an unused LUT:                 296 out of   1,060   27%
+    Number of fully used LUT-FF pairs:         501 out of   1,060   47%
+    Number of unique control sets:              36
     Number of slice register sites lost
-      to control set restrictions:             107 out of  11,440    1%
+      to control set restrictions:              99 out of  11,440    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -182,8 +178,8 @@ Specific Feature Utilization:
 Average Fanout of Non-Clock Nets:                4.35
 
 Peak Memory Usage:  4540 MB
-Total REAL time to MAP completion:  15 secs 
-Total CPU time to MAP completion:   15 secs 
+Total REAL time to MAP completion:  13 secs 
+Total CPU time to MAP completion:   13 secs 
 
 Mapping completed.
 See MAP report file "Measurement_map.mrp" for details.
