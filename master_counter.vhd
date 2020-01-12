@@ -294,12 +294,11 @@ begin
 					end if;
 				end if;
 			end if;
+			if msr_fin = '1' then
+				n.m_fin <= '1'; --ここでnのほうをhighにしているのは、decodeからmsr_finが来るタイミングではまだデータがnのほうに存在するので、そのデータを実行し終わってからカウントを終了させるため
+			end if;
 		end if;
-		
-		if msr_fin = '1' then
-			n.m_fin <= '1'; --ここでnのほうをhighにしているのは、decodeからmsr_finが来るタイミングではまだデータがnのほうに存在するので、そのデータを実行し終わってからカウントを終了させるため
-		end if;
-					
+			
 	end process;
 
 end count_time;
