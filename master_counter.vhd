@@ -152,7 +152,22 @@ begin
 			n.t_5 <= (others => '0'); n.t_6 <= (others => '0'); n.t_7 <= (others => '0'); 
 			dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
 		elsif clk' event and clk = '1' then
-			if preset = '1' then --事前のデータセットが終わらなければカウントは始まらない
+			if count_end = '1' then
+				counter <= (others => '0');
+				m_fin <= '0';
+				count_end <= '0';
+				preset <= '0';
+				full <= '0';
+				comp_rd <= '0';
+				rf_out <= '0';
+				dds_set <= '0';
+				ad_out <= '0';
+				p.t_1 <= (others => '0'); p.t_2 <= (others => '0'); p.t_3 <= (others => '0'); p.t_4 <= (others => '0'); 
+				p.t_5 <= (others => '0'); p.t_6 <= (others => '0'); p.t_7 <= (others => '0'); 
+				n.t_1 <= (others => '0'); n.t_2 <= (others => '0'); n.t_3 <= (others => '0'); n.t_4 <= (others => '0'); 
+				n.t_5 <= (others => '0'); n.t_6 <= (others => '0'); n.t_7 <= (others => '0'); 
+				dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
+			elsif preset = '1' then --事前のデータセットが終わらなければカウントは始まらない
 				if counter = p.t_1(31 downto 0) then	--データによって指定された時刻になったらイベントを起こす
 					counter <= counter +1;	
 					rf_out <= p.t_1(34);

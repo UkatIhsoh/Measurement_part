@@ -11,40 +11,40 @@ Target Device  : xc6slx9
 Target Package : tqg144
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : SUN 12 JAN 13:48:14 2020
+Mapped Date    : SUN 12 JAN 14:51:44 2020
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    3
 Slice Logic Utilization:
-  Number of Slice Registers:                   868 out of  11,440    7%
-    Number used as Flip Flops:                 860
+  Number of Slice Registers:                   872 out of  11,440    7%
+    Number used as Flip Flops:                 864
     Number used as Latches:                      8
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        754 out of   5,720   13%
-    Number used as logic:                      741 out of   5,720   12%
-      Number using O6 output only:             549
-      Number using O5 output only:              82
-      Number using O5 and O6:                  110
+  Number of Slice LUTs:                        772 out of   5,720   13%
+    Number used as logic:                      765 out of   5,720   13%
+      Number using O6 output only:             541
+      Number using O5 output only:              83
+      Number using O5 and O6:                  141
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   1,440    0%
-    Number used exclusively as route-thrus:     13
-      Number with same-slice register load:      9
+    Number used exclusively as route-thrus:      7
+      Number with same-slice register load:      3
       Number with same-slice carry load:         4
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   312 out of   1,430   21%
-  Number of MUXCYs used:                       204 out of   2,860    7%
-  Number of LUT Flip Flop pairs used:        1,067
-    Number with an unused Flip Flop:           263 out of   1,067   24%
-    Number with an unused LUT:                 313 out of   1,067   29%
-    Number of fully used LUT-FF pairs:         491 out of   1,067   46%
-    Number of unique control sets:              36
+  Number of occupied Slices:                   311 out of   1,430   21%
+  Number of MUXCYs used:                       208 out of   2,860    7%
+  Number of LUT Flip Flop pairs used:        1,072
+    Number with an unused Flip Flop:           267 out of   1,072   24%
+    Number with an unused LUT:                 300 out of   1,072   27%
+    Number of fully used LUT-FF pairs:         505 out of   1,072   47%
+    Number of unique control sets:              37
     Number of slice register sites lost
-      to control set restrictions:             100 out of  11,440    1%
+      to control set restrictions:             104 out of  11,440    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -92,11 +92,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                4.35
+Average Fanout of Non-Clock Nets:                4.25
 
 Peak Memory Usage:  4539 MB
-Total REAL time to MAP completion:  13 secs 
-Total CPU time to MAP completion:   13 secs 
+Total REAL time to MAP completion:  15 secs 
+Total CPU time to MAP completion:   15 secs 
 
 Table of Contents
 -----------------
@@ -236,9 +236,10 @@ The signal "read_sec/p_data<36>" is unused and has been removed.
  Unused block "read_sec/p_data_36" (FF) removed.
 The signal "measure/data_acquire/d_out<36>" is unused and has been removed.
  Unused block "measure/data_acquire/d_out_36" (FF) removed.
-  The signal "measure/data_acquire/d_out_36_rstpot" is unused and has been
+  The signal "measure/data_acquire/d_out[39]_d_out[39]_mux_23_OUT<36>" is unused
+and has been removed.
+   Unused block "measure/data_acquire/Mmux_d_out[39]_d_out[39]_mux_23_OUT301" (ROM)
 removed.
-   Unused block "measure/data_acquire/d_out_36_rstpot" (ROM) removed.
     The signal "measure/decode/p_data<36>" is unused and has been removed.
      Unused block "measure/decode/p_data_36" (FF) removed.
       The signal "measure/decode/data64[39]_p_data[39]_mux_89_OUT<36>" is unused and
@@ -252,9 +253,10 @@ has been removed.
            Unused block "measure/fetch/mux2911" (ROM) removed.
 The signal "measure/data_acquire/d_out<37>" is unused and has been removed.
  Unused block "measure/data_acquire/d_out_37" (FF) removed.
-  The signal "measure/data_acquire/d_out_37_rstpot" is unused and has been
+  The signal "measure/data_acquire/d_out[39]_d_out[39]_mux_23_OUT<37>" is unused
+and has been removed.
+   Unused block "measure/data_acquire/Mmux_d_out[39]_d_out[39]_mux_23_OUT311" (ROM)
 removed.
-   Unused block "measure/data_acquire/d_out_37_rstpot" (ROM) removed.
     The signal "measure/decode/p_data<37>" is unused and has been removed.
      Unused block "measure/decode/p_data_37" (FF) removed.
       The signal "measure/decode/data64[39]_p_data[39]_mux_89_OUT<37>" is unused and
@@ -268,9 +270,10 @@ has been removed.
            Unused block "measure/fetch/mux3011" (ROM) removed.
 The signal "measure/data_acquire/d_out<38>" is unused and has been removed.
  Unused block "measure/data_acquire/d_out_38" (FF) removed.
-  The signal "measure/data_acquire/d_out_38_rstpot" is unused and has been
+  The signal "measure/data_acquire/d_out[39]_d_out[39]_mux_23_OUT<38>" is unused
+and has been removed.
+   Unused block "measure/data_acquire/Mmux_d_out[39]_d_out[39]_mux_23_OUT321" (ROM)
 removed.
-   Unused block "measure/data_acquire/d_out_38_rstpot" (ROM) removed.
     The signal "measure/decode/p_data<38>" is unused and has been removed.
      Unused block "measure/decode/p_data_38" (FF) removed.
       The signal "measure/decode/data64[39]_p_data[39]_mux_89_OUT<38>" is unused and
@@ -284,9 +287,10 @@ has been removed.
            Unused block "measure/fetch/mux3111" (ROM) removed.
 The signal "measure/data_acquire/d_out<39>" is unused and has been removed.
  Unused block "measure/data_acquire/d_out_39" (FF) removed.
-  The signal "measure/data_acquire/d_out_39_rstpot" is unused and has been
+  The signal "measure/data_acquire/d_out[39]_d_out[39]_mux_23_OUT<39>" is unused
+and has been removed.
+   Unused block "measure/data_acquire/Mmux_d_out[39]_d_out[39]_mux_23_OUT331" (ROM)
 removed.
-   Unused block "measure/data_acquire/d_out_39_rstpot" (ROM) removed.
     The signal "measure/decode/p_data<39>" is unused and has been removed.
      Unused block "measure/decode/p_data_39" (FF) removed.
       The signal "measure/decode/data64[39]_p_data[39]_mux_89_OUT<39>" is unused and

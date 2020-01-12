@@ -260,6 +260,9 @@ begin
 							if data_change = '1' then
 								n.d_type <= first;
 								n.state <= count;
+								if msr_fin = '1' then --fetchからのmsr_finに反応してdecodeも終了させる方向にもっていく
+									n.m_fin <= '1';
+								end if;
 							else
 								n.d_type <= data64(43 downto 40);
 								n.state <= dds;
@@ -306,10 +309,6 @@ begin
 							n.d_fin <= '0';
 							n.loading <= '0';
 							n.d_en <= '1';
-							if p.m_fin = '1' then --decodeが終了するので、dds_dataも終了させる
-								n.m_fin <= '0';
-								n.c_end <= '1';
-							end if;
 							n.state <= idle;
 						end if;
 					end if;
@@ -317,10 +316,6 @@ begin
 				when others =>
 					n.state <= idle;
 			end case;
-			
-			if msr_fin = '1' then --fetchからのmsr_finに反応してdecodeも終了させる方向にもっていく
-				n.m_fin <= '1';
-			end if;
 		
 		end process;
 

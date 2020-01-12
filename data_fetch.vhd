@@ -130,6 +130,7 @@ begin
 						n.finish <= '1';
 					else
 						n.finish <= '0';
+						n.fresh <= '0';
 						n.addr <= str_adr;
 					end if;
 				end if;
