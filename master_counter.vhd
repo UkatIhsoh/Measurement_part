@@ -304,14 +304,14 @@ begin
 					end case;
 				else
 					comp_rd <= '0';
-					if dst_7 = '1' and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then --パルスシーケンス1回分のデータが集まればカウント開始
+					if dst_7 = '1' and dst_1 = '1' and dst_2 = '1' and dst_3 = '1' and dst_4 = '1' and dst_5 = '1' and dst_6 = '1' then --パルスシーケンスのデータがある程度集まればカウント開始
 						preset <= '1';
 						dst_1 <= '0';	dst_2 <= '0';	dst_3 <= '0';	dst_4 <= '0';	dst_5 <= '0';	dst_6 <= '0';	dst_7 <= '0';
 					end if;
 				end if;
 			end if;
 			if msr_fin = '1' then
-				m_fin <= '1'; --ここでnのほうをhighにしているのは、decodeからmsr_finが来るタイミングではまだデータがnのほうに存在するので、そのデータを実行し終わってからカウントを終了させるため
+				m_fin <= '1'; 
 			end if;
 		end if;
 			
