@@ -347,7 +347,7 @@ architecture measure of just_measurement is
 		end if;
 	end process;
 					 
-	msr_finish <= msr_comp;
+	msr_finish <= c_end;
 	sdr_req <= s_req;
 	cite_addr <= addr;
 	rf_pulse <= rf_out;

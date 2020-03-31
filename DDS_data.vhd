@@ -111,6 +111,7 @@ begin
 				d_end <= '0';
 				d_num <= "00";
 				d_out <= (others => '0');
+				first_d <= (others => '0');
 				tr_pend_a <= '0';
 				comp_rd <= '0';
 			elsif clk' event and clk = '1' then
@@ -129,7 +130,7 @@ begin
 				elsif counter = count_end then
 					d_end <= '1';
 				else
-					if d_fin = '1' then
+					if d_fin = '1' and comp_rd = '0' then
 						case d_type is
 							when dds_A =>
 								if d_num = "00" then
@@ -139,31 +140,31 @@ begin
 									d_out(39 downto 20) <= data(39 downto 20);
 									d_num <= "10";
 								else
-									if counter = count_end then
-										if full_a = '0' then
-											if tr_pend_a <= '0' then 
-												tr_pend_a <= '1';
-											else
-												tr_pend_a <= '0';
-											end if;
-											d_end <= '1';
-											comp_rd <= '1';
-											d_num <= "00";
-										else
-											tr_pend_a <= '0';
-										end if;
-									elsif counter = X"0001" then --一つ目のデータだけはFIFOを介さず直接DDSコントローラに送る
+--									if counter = count_end then
+--										if full_a = '0' then
+--											if tr_pend_a <= '0' then 
+--												tr_pend_a <= '1';
+--											else
+--												tr_pend_a <= '0';
+--											end if;
+--											d_end <= '1';
+--											comp_rd <= '1';
+--											d_num <= "00";
+--										else
+--											tr_pend_a <= '0';
+--										end if;
+									if counter = X"0001" then --一つ目のデータだけはFIFOを介さず直接DDSコントローラに送る
 										first_d <= d_out;
 										comp_rd <= '1';
 										d_num <= "00";
 										counter <= counter +1;
 									else
 										if full_a = '0' then
-											if tr_pend_a <= '0' then 
+--											if tr_pend_a <= '0' then 
 												tr_pend_a <= '1';
-											else
-												tr_pend_a <= '0';
-											end if;
+--											else
+--												tr_pend_a <= '0';
+--											end if;
 											comp_rd <= '1';
 											d_num <= "00";
 											counter <= counter +1;
@@ -176,7 +177,7 @@ begin
 							when others =>
 								comp_rd <= '1';
 						end case;
-					else
+					elsif d_fin = '0' and comp_rd = '1' then
 						comp_rd <= '0';
 						tr_pend_a <= '0';
 					end if;

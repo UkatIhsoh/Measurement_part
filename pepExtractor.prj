@@ -1,1 +1,2 @@
-work	"master_counter.vhd"
+work	"DDS_data.vhd"
+work	"data_types.vhd"

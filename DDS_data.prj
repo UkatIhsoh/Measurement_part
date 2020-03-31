@@ -1,0 +1,2 @@
+vhdl work "data_types.vhd"
+vhdl work "DDS_data.vhd"

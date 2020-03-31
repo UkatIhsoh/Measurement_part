@@ -1,0 +1,3 @@
+vhdl work "data_types.vhd"
+vhdl work "DDS_data.vhd"
+vhdl work "data_acquire_test.vhd"

@@ -95,11 +95,13 @@ architecture decode of data_decode is
 		sequence : std_logic_vector(3 downto 0);
 		d_num : std_logic_vector(1 downto 0); --データの受け取りを小分けにする
 		loading : std_logic; --master_counterがデータを読み込み終わるまで待機
+		change_counter : std_logic_vector(3 downto 0); --data_changeしてから何回目か
 	end record;
 
 	signal p : reg;
 	signal n : reg;
 	
+
 	signal fresh : std_logic; --p.sequenceの値をfirstに最初はなるようにするためのもの
 
 begin
@@ -132,7 +134,28 @@ begin
 							n.data(39 downto 32) <= data64(39 downto 32);
 							n.d_num <= "00";
 							if data_change = '1' then
-								n.d_type <= first;
+								if p.change_counter = X"0" then
+									n.d_type <= first;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"1" then
+									n.d_type <= second;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"2" then
+									n.d_type <= third;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"3" then
+									n.d_type <= fourth;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"4" then
+									n.d_type <= fifth;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"5" then
+									n.d_type <= sixth;
+									n.change_counter <= p.ghange_counter +1;
+								else
+									n.d_type <= seventh;
+									n.change_counter <= X"0";
+								end if;
 								n.state <= count;
 							else
 								n.d_type <= data64(43 downto 40);
@@ -153,7 +176,29 @@ begin
 							n.data(39 downto 32) <= data64(39 downto 32);
 							n.d_num <= "00";
 							if data_change = '1' then
-								n.d_type <= first;
+								if p.change_counter = X"0" then
+									n.d_type <= first;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"1" then
+									n.d_type <= second;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"2" then
+									n.d_type <= third;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"3" then
+									n.d_type <= fourth;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"4" then
+									n.d_type <= fifth;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"5" then
+									n.d_type <= sixth;
+									n.change_counter <= p.ghange_counter +1;
+								else
+									n.d_type <= seventh;
+									n.change_counter <= X"0";
+								end if;
+
 								n.state <= count;
 							else
 								n.d_type <= data64(43 downto 40);
@@ -174,7 +219,29 @@ begin
 							n.data(39 downto 32) <= data64(39 downto 32);
 							n.d_num <= "00";
 							if data_change = '1' then
-								n.d_type <= first;
+								if p.change_counter = X"0" then
+									n.d_type <= first;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"1" then
+									n.d_type <= second;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"2" then
+									n.d_type <= third;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"3" then
+									n.d_type <= fourth;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"4" then
+									n.d_type <= fifth;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"5" then
+									n.d_type <= sixth;
+									n.change_counter <= p.ghange_counter +1;
+								else
+									n.d_type <= seventh;
+									n.change_counter <= X"0";
+								end if;
+
 								n.state <= count;
 							else
 								n.d_type <= data64(43 downto 40);
@@ -195,7 +262,29 @@ begin
 							n.data(39 downto 32) <= data64(39 downto 32);
 							n.d_num <= "00";
 							if data_change = '1' then
-								n.d_type <= first;
+								if p.change_counter = X"0" then
+									n.d_type <= first;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"1" then
+									n.d_type <= second;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"2" then
+									n.d_type <= third;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"3" then
+									n.d_type <= fourth;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"4" then
+									n.d_type <= fifth;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"5" then
+									n.d_type <= sixth;
+									n.change_counter <= p.ghange_counter +1;
+								else
+									n.d_type <= seventh;
+									n.change_counter <= X"0";
+								end if;
+
 								n.state <= count;
 							else
 								n.d_type <= data64(43 downto 40);
@@ -216,7 +305,29 @@ begin
 							n.data(39 downto 32) <= data64(39 downto 32);
 							n.d_num <= "00";
 							if data_change = '1' then
-								n.d_type <= first;
+								if p.change_counter = X"0" then
+									n.d_type <= first;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"1" then
+									n.d_type <= second;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"2" then
+									n.d_type <= third;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"3" then
+									n.d_type <= fourth;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"4" then
+									n.d_type <= fifth;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"5" then
+									n.d_type <= sixth;
+									n.change_counter <= p.ghange_counter +1;
+								else
+									n.d_type <= seventh;
+									n.change_counter <= X"0";
+								end if;
+
 								n.state <= count;
 							else
 								n.d_type <= data64(43 downto 40);
@@ -237,7 +348,29 @@ begin
 							n.data(39 downto 32) <= data64(39 downto 32);
 							n.d_num <= "00";
 							if data_change = '1' then
-								n.d_type <= first;
+								if p.change_counter = X"0" then
+									n.d_type <= first;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"1" then
+									n.d_type <= second;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"2" then
+									n.d_type <= third;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"3" then
+									n.d_type <= fourth;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"4" then
+									n.d_type <= fifth;
+									n.change_counter <= p.ghange_counter +1;
+								elsif p.change_counter = X"5" then
+									n.d_type <= sixth;
+									n.change_counter <= p.ghange_counter +1;
+								else
+									n.d_type <= seventh;
+									n.change_counter <= X"0";
+								end if;
+
 								n.state <= count;
 							else
 								n.d_type <= data64(43 downto 40);
@@ -258,11 +391,8 @@ begin
 							n.data(39 downto 32) <= data64(39 downto 32);
 							n.d_num <= "00";
 							if data_change = '1' then
-								n.d_type <= first;
+								n.d_type <= seventh;
 								n.state <= count;
-								if msr_fin = '1' then --fetchからのmsr_finに反応してdecodeも終了させる方向にもっていく
-									n.m_fin <= '1';
-								end if;
 							else
 								n.d_type <= data64(43 downto 40);
 								n.state <= dds;
@@ -332,6 +462,7 @@ begin
 				p.sequence <= first;
 				p.d_num <= "00";
 				p.loading <= '0';
+				p.change_counter <= (others => '0');
 				fresh <= '0';
 			elsif clk' event and clk = '1' then
 				p <= n;

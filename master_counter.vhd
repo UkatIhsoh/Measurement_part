@@ -136,7 +136,7 @@ begin
 	process(clk,rst,data,d_fin,d_type,msr_fin,count_end)
 	begin
 	
-		if rst = '1' or count_end = '1' then
+		if rst = '1' then
 			counter <= (others => '0');
 			m_fin <= '0';
 			count_end <= '0';
