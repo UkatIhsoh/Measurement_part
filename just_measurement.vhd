@@ -131,7 +131,7 @@ architecture measure of just_measurement is
 				data_change : in std_logic;
 
 				d_data_out : out std_logic_vector(39 downto 0);
-				c_data_out : out std_logic_vector(34 downto 0));
+				c_data_out : out std_logic_vector(63 downto 0));
 	end component;
 		
 	component master_counter is
@@ -144,7 +144,7 @@ architecture measure of just_measurement is
 				d_type : in std_logic_vector(3 downto 0); 
 				rd_comp : out std_logic;
 				data_full : out std_logic; 
-				data : in std_logic_vector(34 downto 0); 
+				data : in std_logic_vector(63 downto 0); 
 
 				output_rf : out std_logic;
 				output_dds : out std_logic;
@@ -209,7 +209,7 @@ architecture measure of just_measurement is
 	signal addr : std_logic_vector(19 downto 0);
 	signal c_en : std_logic;
 	signal d_data : std_logic_vector(39 downto 0); --ddsデータ
-	signal c_data : std_logic_vector(34 downto 0); --マスターカウンタデータ
+	signal c_data : std_logic_vector(63 downto 0); --マスターカウンタデータ
 	signal d_change : std_logic;
 	
 	--マスターカウンタ用

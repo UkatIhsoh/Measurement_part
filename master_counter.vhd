@@ -75,7 +75,7 @@ entity master_counter is
 			d_type : in std_logic_vector(3 downto 0); --どのタイプのでーたが来るのかを確認
 			rd_comp : out std_logic; --データの読み取りが終わったかどうか見る
 			data_full : out std_logic; --データが満タンなのを知らせる
-			data : in std_logic_vector(34 downto 0); 
+			data : in std_logic_vector(63 downto 0); 
 			
 			output_rf : out std_logic; --出力
 			output_dds : out std_logic;
@@ -87,14 +87,14 @@ end master_counter;
 architecture count_time of master_counter is
 
 	type reg is record
-		t_1 : std_logic_vector(34 downto 0);		--カウント上限
-		t_2 : std_logic_vector(34 downto 0);		--カウント上限
-		t_3 : std_logic_vector(34 downto 0);		--カウント上限
-		t_4 : std_logic_vector(34 downto 0);		--カウント上限
-		t_5 : std_logic_vector(34 downto 0);		--カウント上限
-		t_6 : std_logic_vector(34 downto 0);		--カウント上限
-		t_7 : std_logic_vector(34 downto 0);		--カウント上限
-		t_0 : std_logic_vector(34 downto 0);		--カウント上限
+		t_1 : std_logic_vector(63 downto 0);		--カウント上限
+		t_2 : std_logic_vector(63 downto 0);		--カウント上限
+		t_3 : std_logic_vector(63 downto 0);		--カウント上限
+		t_4 : std_logic_vector(63 downto 0);		--カウント上限
+		t_5 : std_logic_vector(63 downto 0);		--カウント上限
+		t_6 : std_logic_vector(63 downto 0);		--カウント上限
+		t_7 : std_logic_vector(63 downto 0);		--カウント上限
+		t_0 : std_logic_vector(63 downto 0);		--カウント上限
 	end record;	
 	
 	signal p : reg;
@@ -170,39 +170,39 @@ begin
 			elsif preset = '1' then --事前のデータセットが終わらなければカウントは始まらない
 				if counter = p.t_1(31 downto 0) then	--データによって指定された時刻になったらイベントを起こす
 					counter <= counter +1;	
-					rf_out <= p.t_1(34);
-					dds_set <= p.t_1(33);
-					ad_out <= p.t_1(32);
+					rf_out <= p.t_1(32);
+					dds_set <= p.t_1(38);
+					ad_out <= p.t_1(35);
 				elsif counter = p.t_2(31 downto 0) then	
 					counter <= counter +1;	
-					rf_out <= p.t_2(34);
-					dds_set <= p.t_2(33);
-					ad_out <= p.t_2(32);
+					rf_out <= p.t_2(32);
+					dds_set <= p.t_2(38);
+					ad_out <= p.t_2(35);
 				elsif counter = p.t_3(31 downto 0) then	
 					counter <= counter +1;	
-					rf_out <= p.t_3(34);
-					dds_set <= p.t_3(33);
-					ad_out <= p.t_3(32);
+					rf_out <= p.t_3(32);
+					dds_set <= p.t_3(38);
+					ad_out <= p.t_3(35);
 				elsif counter = p.t_4(31 downto 0) then	
 					counter <= counter +1;	
-					rf_out <= p.t_4(34);
-					dds_set <= p.t_4(33);
-					ad_out <= p.t_4(32);
+					rf_out <= p.t_4(32);
+					dds_set <= p.t_4(38);
+					ad_out <= p.t_4(35);
 				elsif counter = p.t_5(31 downto 0) then	
 					counter <= counter +1;	
-					rf_out <= p.t_5(34);
-					dds_set <= p.t_5(33);
-					ad_out <= p.t_5(32);
+					rf_out <= p.t_5(32);
+					dds_set <= p.t_5(38);
+					ad_out <= p.t_5(35);
 				elsif counter = p.t_6(31 downto 0) then	
 					counter <= counter +1;	
-					rf_out <= p.t_6(34);
-					dds_set <= p.t_6(33);
-					ad_out <= p.t_6(32);	
+					rf_out <= p.t_6(32);
+					dds_set <= p.t_6(38);
+					ad_out <= p.t_6(35);	
 				elsif counter = p.t_7(31 downto 0) then
 					counter <= (others => '0');
-					rf_out <= p.t_7(34);
-					dds_set <= p.t_7(33);
-					ad_out <= p.t_7(32);
+					rf_out <= p.t_7(32);
+					dds_set <= p.t_7(38);
+					ad_out <= p.t_7(35);
 					if m_fin = '1' then --p.m_finがhighならカウント終了。lowならセットされた次のデータを読み込む
 						count_end <= '1';
 					else

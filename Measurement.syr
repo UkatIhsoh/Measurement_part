@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: Measurement.prj
 
@@ -176,20 +176,19 @@ WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data
 INFO:HDLCompiler:679 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_fetch.vhd" Line 187. Case statement is complete. others clause is never selected
 
 Elaborating entity <data_decode> (architecture <decode>) from library <work>.
-WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" Line 136: data_change should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" Line 178: data_change should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" Line 220: data_change should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" Line 262: data_change should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" Line 304: data_change should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" Line 346: data_change should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" Line 388: data_change should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" Line 139: data_change should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" Line 184: data_change should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" Line 229: data_change should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" Line 274: data_change should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" Line 319: data_change should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" Line 364: data_change should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd" Line 409: data_change should be on the sensitivity list of the process
 
 Elaborating entity <master_counter> (architecture <count_time>) from library <work>.
 
 Elaborating entity <DDS_data> (architecture <data_read>) from library <work>.
 
 Elaborating entity <AD9851_ctrl> (architecture <DDS>) from library <work>.
-WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\AD9851_ctrl.vhd" Line 115: preset should be on the sensitivity list of the process
 WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\AD9851_ctrl.vhd" Line 118: first_data should be on the sensitivity list of the process
 WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\AD9851_ctrl.vhd" Line 127: d_change should be on the sensitivity list of the process
 WARNING:HDLCompiler:92 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\AD9851_ctrl.vhd" Line 541: msr_fin should be on the sensitivity list of the process
@@ -442,13 +441,12 @@ Unit <data_fetch> synthesized.
 
 Synthesizing Unit <data_decode>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd".
-WARNING:Xst:647 - Input <data64<63:44>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <msr_fin> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 4-bit register for signal <p_d_type>.
     Found 4-bit register for signal <p_change_counter>.
     Found 2-bit register for signal <p_state>.
     Found 2-bit register for signal <p_d_num>.
-    Found 40-bit register for signal <p_data>.
+    Found 64-bit register for signal <p_data>.
     Found 4-bit register for signal <p_sequence>.
     Found 1-bit register for signal <p_d_en>.
     Found 1-bit register for signal <p_d_fin>.
@@ -460,8 +458,8 @@ INFO:Xst:1799 - State cycle_end is never reached in FSM <p_state>.
     Found finite state machine <FSM_5> for signal <p_state>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
-    | Transitions        | 40                                             |
-    | Inputs             | 9                                              |
+    | Transitions        | 45                                             |
+    | Inputs             | 10                                             |
     | Outputs            | 4                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
@@ -473,10 +471,10 @@ INFO:Xst:1799 - State cycle_end is never reached in FSM <p_state>.
     -----------------------------------------------------------------------
     Found finite state machine <FSM_6> for signal <p_d_num>.
     -----------------------------------------------------------------------
-    | States             | 3                                              |
-    | Transitions        | 18                                             |
+    | States             | 4                                              |
+    | Transitions        | 24                                             |
     | Inputs             | 5                                              |
-    | Outputs            | 3                                              |
+    | Outputs            | 4                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | asynchronous                                   |
@@ -487,8 +485,8 @@ INFO:Xst:1799 - State cycle_end is never reached in FSM <p_state>.
     Found finite state machine <FSM_7> for signal <p_sequence>.
     -----------------------------------------------------------------------
     | States             | 7                                              |
-    | Transitions        | 49                                             |
-    | Inputs             | 6                                              |
+    | Transitions        | 56                                             |
+    | Inputs             | 7                                              |
     | Outputs            | 3                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
@@ -497,32 +495,32 @@ INFO:Xst:1799 - State cycle_end is never reached in FSM <p_state>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 4-bit adder for signal <p_change_counter[3]_GND_56_o_add_256_OUT> created at line 406.
-    Found 8x4-bit Read Only RAM for signal <_n0378>
+    Found 4-bit adder for signal <p_change_counter[3]_GND_56_o_add_293_OUT> created at line 427.
+    Found 8x4-bit Read Only RAM for signal <_n0452>
     Summary:
 	inferred   1 RAM(s).
 	inferred   1 Adder/Subtractor(s).
-	inferred  53 D-type flip-flop(s).
-	inferred  37 Multiplexer(s).
+	inferred  77 D-type flip-flop(s).
+	inferred  94 Multiplexer(s).
 	inferred   3 Finite State Machine(s).
 Unit <data_decode> synthesized.
 
 Synthesizing Unit <master_counter>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\master_counter.vhd".
-    Found 35-bit register for signal <p_t_1>.
-    Found 35-bit register for signal <p_t_2>.
-    Found 35-bit register for signal <p_t_3>.
-    Found 35-bit register for signal <p_t_4>.
-    Found 35-bit register for signal <p_t_5>.
-    Found 35-bit register for signal <p_t_6>.
-    Found 35-bit register for signal <p_t_7>.
-    Found 35-bit register for signal <n_t_1>.
-    Found 35-bit register for signal <n_t_2>.
-    Found 35-bit register for signal <n_t_3>.
-    Found 35-bit register for signal <n_t_4>.
-    Found 35-bit register for signal <n_t_5>.
-    Found 35-bit register for signal <n_t_6>.
-    Found 35-bit register for signal <n_t_7>.
+    Found 64-bit register for signal <p_t_1>.
+    Found 64-bit register for signal <p_t_2>.
+    Found 64-bit register for signal <p_t_3>.
+    Found 64-bit register for signal <p_t_4>.
+    Found 64-bit register for signal <p_t_5>.
+    Found 64-bit register for signal <p_t_6>.
+    Found 64-bit register for signal <p_t_7>.
+    Found 64-bit register for signal <n_t_1>.
+    Found 64-bit register for signal <n_t_2>.
+    Found 64-bit register for signal <n_t_3>.
+    Found 64-bit register for signal <n_t_4>.
+    Found 64-bit register for signal <n_t_5>.
+    Found 64-bit register for signal <n_t_6>.
+    Found 64-bit register for signal <n_t_7>.
     Found 32-bit register for signal <counter>.
     Found 1-bit register for signal <m_fin>.
     Found 1-bit register for signal <count_end>.
@@ -549,7 +547,7 @@ Synthesizing Unit <master_counter>.
     Found 32-bit comparator equal for signal <counter[31]_p_t_7[31]_equal_13_o> created at line 201
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred 537 D-type flip-flop(s).
+	inferred 943 D-type flip-flop(s).
 	inferred   7 Comparator(s).
 	inferred  62 Multiplexer(s).
 Unit <master_counter> synthesized.
@@ -597,6 +595,7 @@ Synthesizing Unit <AD9851_ctrl>.
     Found 1-bit register for signal <p_w_clk_set>.
     Found 1-bit register for signal <p_rst_set>.
     Found 1-bit register for signal <p_c_w>.
+    Found 1-bit register for signal <p_preset>.
     Found 1-bit register for signal <state_p<6>>.
     Found 1-bit register for signal <state_p<5>>.
     Found 1-bit register for signal <state_p<4>>.
@@ -604,7 +603,7 @@ Synthesizing Unit <AD9851_ctrl>.
     Found 1-bit register for signal <state_p<2>>.
     Found 1-bit register for signal <state_p<1>>.
     Found 1-bit register for signal <state_p<0>>.
-    Found 128x4-bit Read Only RAM for signal <_n0421>
+    Found 128x4-bit Read Only RAM for signal <_n0297>
 WARNING:Xst:737 - Found 1-bit latch for signal <data32<39>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <data32<38>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <data32<37>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -645,12 +644,11 @@ WARNING:Xst:737 - Found 1-bit latch for signal <data32<3>>. Latches may be gener
 WARNING:Xst:737 - Found 1-bit latch for signal <data32<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <data32<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <data32<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <preset>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <d_change>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
 	inferred   1 RAM(s).
-	inferred  14 D-type flip-flop(s).
-	inferred  42 Latch(s).
+	inferred  15 D-type flip-flop(s).
+	inferred  41 Latch(s).
 	inferred 136 Multiplexer(s).
 Unit <AD9851_ctrl> synthesized.
 
@@ -667,34 +665,32 @@ Macro Statistics
  20-bit adder                                          : 2
  32-bit adder                                          : 2
  4-bit adder                                           : 1
-# Registers                                            : 94
- 1-bit register                                        : 56
+# Registers                                            : 95
+ 1-bit register                                        : 57
  12-bit register                                       : 1
  15-bit register                                       : 1
  16-bit register                                       : 7
  2-bit register                                        : 1
  20-bit register                                       : 3
  32-bit register                                       : 2
- 35-bit register                                       : 14
  4-bit register                                        : 2
- 40-bit register                                       : 3
- 64-bit register                                       : 4
-# Latches                                              : 59
- 1-bit latch                                           : 59
+ 40-bit register                                       : 2
+ 64-bit register                                       : 19
+# Latches                                              : 58
+ 1-bit latch                                           : 58
 # Comparators                                          : 9
  16-bit comparator equal                               : 1
  2-bit comparator equal                                : 1
  32-bit comparator equal                               : 7
-# Multiplexers                                         : 381
- 1-bit 2-to-1 multiplexer                              : 277
+# Multiplexers                                         : 438
+ 1-bit 2-to-1 multiplexer                              : 334
  12-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 3
  20-bit 2-to-1 multiplexer                             : 4
  32-bit 2-to-1 multiplexer                             : 10
- 35-bit 2-to-1 multiplexer                             : 21
  4-bit 2-to-1 multiplexer                              : 4
- 40-bit 2-to-1 multiplexer                             : 2
- 64-bit 2-to-1 multiplexer                             : 1
+ 40-bit 2-to-1 multiplexer                             : 1
+ 64-bit 2-to-1 multiplexer                             : 23
  7-bit 2-to-1 multiplexer                              : 53
 # Tristates                                            : 16
  1-bit tristate buffer                                 : 16
@@ -761,28 +757,231 @@ WARNING:Xst:1710 - FF/Latch <r_req_data_write_31> (without init value) has a con
 WARNING:Xst:2677 - Node <p_t_1_32> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_1_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_1_34> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_35> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_36> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_37> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_38> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_39> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_40> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_41> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_42> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_43> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_44> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_45> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_46> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_47> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_48> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_49> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_50> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_51> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_52> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_53> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_54> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_55> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_56> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_57> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_58> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_59> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_60> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_61> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_62> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_1_63> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_2_32> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_2_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_2_34> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_35> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_36> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_37> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_38> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_39> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_40> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_41> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_42> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_43> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_44> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_45> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_46> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_47> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_48> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_49> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_50> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_51> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_52> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_53> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_54> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_55> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_56> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_57> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_58> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_59> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_60> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_61> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_62> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_2_63> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_3_32> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_3_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_3_34> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_35> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_36> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_37> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_38> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_39> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_40> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_41> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_42> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_43> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_44> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_45> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_46> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_47> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_48> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_49> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_50> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_51> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_52> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_53> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_54> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_55> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_56> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_57> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_58> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_59> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_60> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_61> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_62> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_3_63> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_4_32> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_4_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_4_34> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_35> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_36> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_37> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_38> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_39> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_40> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_41> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_42> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_43> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_44> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_45> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_46> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_47> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_48> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_49> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_50> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_51> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_52> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_53> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_54> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_55> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_56> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_57> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_58> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_59> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_60> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_61> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_62> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_4_63> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_7_32> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_7_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_7_34> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_35> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_36> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_37> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_38> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_39> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_40> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_41> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_42> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_43> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_44> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_45> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_46> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_47> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_48> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_49> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_50> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_51> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_52> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_53> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_54> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_55> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_56> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_57> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_58> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_59> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_60> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_61> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_62> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_7_63> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_5_32> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_5_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_5_34> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_35> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_36> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_37> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_38> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_39> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_40> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_41> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_42> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_43> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_44> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_45> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_46> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_47> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_48> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_49> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_50> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_51> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_52> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_53> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_54> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_55> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_56> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_57> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_58> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_59> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_60> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_61> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_62> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_5_63> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_6_32> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_6_33> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2677 - Node <p_t_6_34> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_35> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_36> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_37> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_38> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_39> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_40> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_41> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_42> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_43> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_44> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_45> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_46> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_47> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_48> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_49> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_50> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_51> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_52> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_53> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_54> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_55> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_56> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_57> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_58> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_59> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_60> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_61> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_62> of sequential type is unconnected in block <count_time>.
+WARNING:Xst:2677 - Node <p_t_6_63> of sequential type is unconnected in block <count_time>.
 WARNING:Xst:2404 -  FFs/Latches <p_data<63:44>> (without init value) have a constant value of 0 in block <SDRAM_wr>.
 
 Synthesizing (advanced) Unit <AD9851_ctrl>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0421> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0297> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -808,7 +1007,7 @@ The following registers are absorbed into counter <p_adr>: 1 register on signal 
 Unit <SDRAM_wr> synthesized (advanced).
 
 Synthesizing (advanced) Unit <data_decode>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0378> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0452> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -820,6 +1019,209 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0378> will be implemented on LUTs 
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
 Unit <data_decode> synthesized (advanced).
+WARNING:Xst:2677 - Node <p_t_1_33> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_34> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_36> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_37> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_39> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_40> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_41> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_42> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_43> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_44> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_45> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_46> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_47> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_48> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_49> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_50> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_51> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_52> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_53> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_54> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_55> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_56> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_57> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_58> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_59> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_60> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_61> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_62> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_1_63> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_33> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_34> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_36> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_37> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_39> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_40> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_41> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_42> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_43> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_44> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_45> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_46> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_47> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_48> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_49> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_50> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_51> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_52> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_53> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_54> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_55> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_56> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_57> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_58> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_59> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_60> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_61> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_62> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_4_63> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_33> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_34> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_36> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_37> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_39> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_40> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_41> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_42> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_43> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_44> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_45> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_46> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_47> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_48> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_49> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_50> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_51> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_52> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_53> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_54> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_55> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_56> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_57> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_58> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_59> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_60> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_61> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_62> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_2_63> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_33> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_34> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_36> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_37> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_39> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_40> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_41> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_42> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_43> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_44> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_45> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_46> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_47> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_48> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_49> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_50> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_51> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_52> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_53> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_54> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_55> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_56> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_57> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_58> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_59> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_60> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_61> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_62> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_3_63> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_33> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_34> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_36> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_37> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_39> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_40> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_41> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_42> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_43> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_44> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_45> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_46> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_47> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_48> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_49> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_50> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_51> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_52> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_53> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_54> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_55> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_56> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_57> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_58> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_59> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_60> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_61> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_62> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_7_63> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_33> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_34> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_36> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_37> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_39> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_40> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_41> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_42> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_43> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_44> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_45> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_46> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_47> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_48> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_49> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_50> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_51> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_52> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_53> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_54> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_55> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_56> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_57> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_58> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_59> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_60> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_61> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_62> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_5_63> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_33> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_34> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_36> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_37> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_39> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_40> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_41> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_42> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_43> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_44> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_45> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_46> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_47> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_48> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_49> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_50> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_51> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_52> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_53> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_54> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_55> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_56> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_57> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_58> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_59> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_60> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_61> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_62> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <p_t_6_63> of sequential type is unconnected in block <master_counter>.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -836,21 +1238,21 @@ Macro Statistics
  15-bit down counter                                   : 1
  16-bit up counter                                     : 1
  20-bit up counter                                     : 1
-# Registers                                            : 1124
- Flip-Flops                                            : 1124
+# Registers                                            : 1352
+ Flip-Flops                                            : 1352
 # Comparators                                          : 9
  16-bit comparator equal                               : 1
  2-bit comparator equal                                : 1
  32-bit comparator equal                               : 7
-# Multiplexers                                         : 443
- 1-bit 2-to-1 multiplexer                              : 341
+# Multiplexers                                         : 500
+ 1-bit 2-to-1 multiplexer                              : 398
  12-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 3
  20-bit 2-to-1 multiplexer                             : 3
  32-bit 2-to-1 multiplexer                             : 10
- 35-bit 2-to-1 multiplexer                             : 21
  4-bit 2-to-1 multiplexer                              : 4
- 40-bit 2-to-1 multiplexer                             : 2
+ 40-bit 2-to-1 multiplexer                             : 1
+ 64-bit 2-to-1 multiplexer                             : 22
  7-bit 2-to-1 multiplexer                              : 53
 # FSMs                                                 : 9
 
@@ -884,8 +1286,7 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_6> (without 
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_5> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_4> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_data_2> (without init value) has a constant value of 0 in block <SDRAM_wr>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <preset> (without init value) has a constant value of 1 in block <AD9851_ctrl>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <p_rst_pend> (without init value) has a constant value of 0 in block <AD9851_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <p_rst_pend> (without init value) has a constant value of 0 in block <AD9851_ctrl>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <p_data_3> in Unit <SDRAM_wr> is equivalent to the following 16 FFs/Latches, which will be removed : <p_data_9> <p_data_11> <p_data_16> <p_data_18> <p_data_24> <p_data_26> <p_data_32> <p_data_33> <p_data_34> <p_data_35> <p_data_36> <p_data_37> <p_data_38> <p_data_39> <p_data_41> <p_data_43> 
 Optimizing FSM <ctrl/FSM_0> on signal <statep[1:9]> with user encoding.
 ------------------------
@@ -966,6 +1367,7 @@ Optimizing FSM <measure/decode/FSM_6> on signal <p_d_num[1:2]> with user encodin
  00    | 00
  01    | 01
  10    | 10
+ 11    | 11
 -------------------
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <measure/decode/FSM_5> on signal <p_state[1:2]> with user encoding.
@@ -1007,6 +1409,209 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_7> (witho
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_8> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_9> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <r_address_11> (without init value) has a constant value of 0 in block <SDRAM_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <n_t_3_33> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_34> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_36> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_37> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_39> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_40> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_41> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_42> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_43> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_44> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_45> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_46> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_47> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_48> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_49> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_50> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_51> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_52> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_53> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_54> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_55> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_56> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_57> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_58> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_59> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_60> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_61> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_62> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_3_63> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_33> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_34> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_36> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_37> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_39> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_40> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_41> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_42> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_43> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_44> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_45> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_46> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_47> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_48> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_49> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_50> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_51> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_52> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_53> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_54> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_55> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_56> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_57> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_58> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_59> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_60> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_61> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_62> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_1_63> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_33> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_34> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_36> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_37> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_39> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_40> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_41> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_42> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_43> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_44> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_45> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_46> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_47> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_48> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_49> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_50> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_51> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_52> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_53> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_54> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_55> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_56> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_57> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_58> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_59> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_60> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_61> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_62> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_2_63> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_33> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_34> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_36> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_37> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_39> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_40> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_41> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_42> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_43> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_44> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_45> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_46> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_47> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_48> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_49> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_50> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_51> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_52> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_53> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_54> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_55> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_56> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_57> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_58> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_59> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_60> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_61> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_62> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_4_63> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_33> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_34> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_36> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_37> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_39> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_40> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_41> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_42> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_43> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_44> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_45> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_46> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_47> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_48> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_49> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_50> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_51> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_52> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_53> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_54> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_55> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_56> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_57> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_58> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_59> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_60> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_61> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_62> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_5_63> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_33> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_34> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_36> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_37> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_39> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_40> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_41> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_42> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_43> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_44> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_45> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_46> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_47> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_48> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_49> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_50> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_51> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_52> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_53> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_54> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_55> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_56> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_57> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_58> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_59> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_60> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_61> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_62> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_6_63> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_33> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_34> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_36> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_37> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_39> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_40> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_41> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_42> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_43> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_44> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_45> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_46> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_47> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_48> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_49> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_50> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_51> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_52> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_53> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_54> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_55> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_56> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_57> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_58> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_59> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_60> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_61> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_62> of sequential type is unconnected in block <master_counter>.
+WARNING:Xst:2677 - Node <n_t_7_63> of sequential type is unconnected in block <master_counter>.
 WARNING:Xst:1293 - FF/Latch <state_p_6> has a constant value of 0 in block <AD9851_ctrl>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
    incompatible with the Spartan6 architecture. The two primary causes of this is
@@ -1047,9 +1652,9 @@ Optimizing unit <data_fetch> ...
 
 Optimizing unit <data_decode> ...
 WARNING:Xst:2677 - Node <fresh> of sequential type is unconnected in block <data_decode>.
+WARNING:Xst:2677 - Node <p_sequence_FSM_FFd1> of sequential type is unconnected in block <data_decode>.
 WARNING:Xst:2677 - Node <p_sequence_FSM_FFd3> of sequential type is unconnected in block <data_decode>.
 WARNING:Xst:2677 - Node <p_sequence_FSM_FFd2> of sequential type is unconnected in block <data_decode>.
-WARNING:Xst:2677 - Node <p_sequence_FSM_FFd1> of sequential type is unconnected in block <data_decode>.
 WARNING:Xst:1710 - FF/Latch <p_change_counter_3> (without init value) has a constant value of 0 in block <data_decode>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <p_change_counter_3> (without init value) has a constant value of 0 in block <data_decode>. This FF/Latch will be trimmed during the optimization process.
 
@@ -1212,50 +1817,74 @@ WARNING:Xst:2677 - Node <measure/fetch/p_data_47> of sequential type is unconnec
 WARNING:Xst:2677 - Node <measure/fetch/p_data_46> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/fetch/p_data_45> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/fetch/p_data_44> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_63> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_62> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_61> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_60> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_59> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_58> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_57> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_56> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_55> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_54> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_53> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_52> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_51> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_50> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_49> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_48> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_47> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_46> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_45> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_44> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_43> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_42> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_41> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_data_40> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/ad_out> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/dds_set> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/rf_out> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_6_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_6_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_6_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_6_35> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_6_32> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_5_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_5_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_5_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_5_35> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_5_32> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_7_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_7_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_7_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_7_35> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_7_32> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_3_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_3_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_3_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_3_35> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_3_32> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_2_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_2_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_2_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_2_35> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_2_32> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_4_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_4_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_4_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_4_35> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_4_32> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_1_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/p_t_1_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_1_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/p_t_1_35> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/p_t_1_32> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_7_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_7_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/n_t_7_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/n_t_7_35> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_7_32> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_6_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_6_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/n_t_6_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/n_t_6_35> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_6_32> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_5_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_5_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/n_t_5_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/n_t_5_35> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_5_32> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_4_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_4_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/n_t_4_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/n_t_4_35> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_4_32> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_2_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_2_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/n_t_2_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/n_t_2_35> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_2_32> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_1_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_1_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/n_t_1_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/n_t_1_35> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_1_32> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_3_34> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/count_time/n_t_3_33> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/n_t_3_38> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/n_t_3_35> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/n_t_3_32> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/data_acquire/first_d_39> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/data_acquire/first_d_38> of sequential type is unconnected in block <Measurement>.
@@ -1350,6 +1979,7 @@ WARNING:Xst:2677 - Node <measure/DDS/data32_39> of sequential type is unconnecte
 WARNING:Xst:2677 - Node <measure/DDS/data32_38> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/DDS/d_change> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/DDS/p_dds_pend> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/DDS/p_preset> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:1293 - FF/Latch <ctrl/r_rf_counter_30> has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ctrl/r_rf_counter_29> has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ctrl/r_rf_counter_28> has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
@@ -1420,15 +2050,15 @@ Top Level Output File Name         : Measurement.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1147
+# BELS                             : 1146
 #      GND                         : 3
 #      INV                         : 24
 #      LUT1                        : 87
-#      LUT2                        : 22
-#      LUT3                        : 110
-#      LUT4                        : 144
-#      LUT5                        : 102
-#      LUT6                        : 361
+#      LUT2                        : 21
+#      LUT3                        : 95
+#      LUT4                        : 160
+#      LUT5                        : 100
+#      LUT6                        : 362
 #      MUXCY                       : 183
 #      MUXF7                       : 5
 #      VCC                         : 1
@@ -1463,14 +2093,14 @@ Selected Device : 6slx9tqg144-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:             889  out of  11440     7%  
- Number of Slice LUTs:                  850  out of   5720    14%  
-    Number used as Logic:               850  out of   5720    14%  
+ Number of Slice LUTs:                  849  out of   5720    14%  
+    Number used as Logic:               849  out of   5720    14%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1339
-   Number with an unused Flip Flop:     450  out of   1339    33%  
-   Number with an unused LUT:           489  out of   1339    36%  
-   Number of fully used LUT-FF pairs:   400  out of   1339    29%  
+ Number of LUT Flip Flop pairs used:   1337
+   Number with an unused Flip Flop:     448  out of   1337    33%  
+   Number with an unused LUT:           488  out of   1337    36%  
+   Number of fully used LUT-FF pairs:   401  out of   1337    29%  
    Number of unique control sets:        39
 
 IO Utilization: 
@@ -1534,7 +2164,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 24.533ns (frequency: 40.761MHz)
-  Total number of paths / destination ports: 128800 / 1686
+  Total number of paths / destination ports: 128830 / 1686
 -------------------------------------------------------------------------
 Delay:               7.851ns (Levels of Logic = 14)
   Source:            measure/count_time/p_t_5_2 (FF)
@@ -1559,7 +2189,7 @@ Delay:               7.851ns (Levels of Logic = 14)
      MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_5[31]_equal_9_o_cy<8> (measure/count_time/Mcompar_counter[31]_p_t_5[31]_equal_9_o_cy<8>)
      MUXCY:CI->O           1   0.023   0.000  measure/count_time/Mcompar_counter[31]_p_t_5[31]_equal_9_o_cy<9> (measure/count_time/Mcompar_counter[31]_p_t_5[31]_equal_9_o_cy<9>)
      MUXCY:CI->O           2   0.235   0.954  measure/count_time/Mcompar_counter[31]_p_t_5[31]_equal_9_o_cy<10> (measure/count_time/counter[31]_p_t_5[31]_equal_9_o)
-     LUT3:I0->O           18   0.235   1.235  measure/count_time/_n0530_SW0 (N18)
+     LUT3:I0->O           18   0.235   1.235  measure/count_time/_n0530_SW0 (N20)
      LUT6:I5->O          114   0.254   2.251  measure/count_time/_n0725_inv1_cepot (measure/count_time/_n0533_inv1_cepot)
      FDCE:CE                   0.302          measure/count_time/p_t_1_0
     ----------------------------------------
@@ -1700,14 +2330,14 @@ measure/data_acquire/tr_pend_a|         |         |    2.278|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 17.00 secs
-Total CPU time to Xst completion: 16.13 secs
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 18.72 secs
  
 --> 
 
 Total memory usage is 4543708 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  503 (   0 filtered)
+Number of warnings : 1133 (   0 filtered)
 Number of infos    :   33 (   0 filtered)
 

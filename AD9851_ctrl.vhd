@@ -77,7 +77,6 @@ architecture DDS of AD9851_ctrl is
 	--signal clk25		: std_logic:= '0';
 	signal counter3	: std_logic_vector(1 downto 0):=(others => '0');
 	signal data32		:	std_logic_vector(39 downto 0);
-	signal preset 		:	std_logic; --最初のデータセットかどうか判別するため
 	signal d_change	:	std_logic; --dataが変わったことに反応
 	
 	type reg is record
@@ -88,6 +87,7 @@ architecture DDS of AD9851_ctrl is
 		w_clk_set	: std_logic;
 		rst_set		: std_logic;
 		c_w			:	std_logic;
+		preset 		:	std_logic; --最初のデータセットかどうか判別するため
    end record;
 	
 	signal p : reg;
@@ -112,11 +112,11 @@ begin
 		state_n <= state_p;
 		n <= p;
 		
-		if preset = '0' then
+		if p.preset = '0' then
 			if start = '1' and p.rst_pend = '0' and p.dds_pend = '0' then --master_counter駆動と同時にスタート
 				n.dds_pend <= '1';
 				data32	<= first_data;
-				preset <= '1';
+				n.preset <= '1';
 			end if;
 		else
 			if data_change = '1' then
@@ -545,7 +545,7 @@ begin
 				p.rst_set		<= '0';
 				p.w_clk_set	<= '0';
 				p.c_w			<= '1';
-				preset <= '0';
+				p.preset <= '0';
 		elsif clk' event and clk = '0' then
 				state_p <= state_n;
 				p	<= n;
