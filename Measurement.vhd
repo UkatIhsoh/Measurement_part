@@ -119,7 +119,6 @@ architecture connect of Measurement is
 	component just_measurement is
 	port( clk : in std_logic;
 			rst : in std_logic;
-			test_in : in std_logic;
 			
 			msr_start : in std_logic; 
 			msr_finish : out std_logic;
@@ -243,7 +242,6 @@ begin
 	measure : just_measurement 
 		port map( clk => clk100,
 					 rst => rst,
-					 test_in => test_i,
 				
 					 msr_start => msr_start,
 					 msr_finish => m_fin,
