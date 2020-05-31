@@ -545,6 +545,7 @@ begin
 				p.rst_set		<= '0';
 				p.w_clk_set	<= '0';
 				p.c_w			<= '1';
+				preset <= '0';
 		elsif clk' event and clk = '0' then
 				state_p <= state_n;
 				p	<= n;

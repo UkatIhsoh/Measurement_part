@@ -22,6 +22,9 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="measurement_part.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="AD9851_ctrl.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="AD9851_ctrl.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="AD9851_ctrl.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DDS_data.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="DDS_data.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="DDS_data.xst"/>
