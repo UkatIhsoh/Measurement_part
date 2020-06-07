@@ -20,7 +20,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_arith.ALL;
-use IEEE.STD_LOGIC_unsigned.ALL;
+use IEEE.STD_LOGIC_unsigned.ALL; 
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -72,23 +72,23 @@ entity just_measurement is
 			
 			msr_start : in std_logic; --measurement start
 			msr_finish : out std_logic; --mesurement finish
-			str_adr : in std_logic_vector(19 downto 0); --ƒtƒFƒbƒ`‚ğŠJn‚·‚éƒAƒhƒŒƒXw’è“ü—Í
+			str_adr : in std_logic_vector(19 downto 0); --ï¿½tï¿½Fï¿½bï¿½`ï¿½ï¿½ï¿½Jï¿½nï¿½ï¿½ï¿½ï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½wï¿½ï¿½ï¿½ï¿½ï¿½
 			end_adr : in std_logic_vector(19 downto 0);
 			
-			sdr_req : out std_logic; --sdram“Ç‚İ‚İƒŠƒNƒGƒXƒg
-			sdr_fin : in std_logic; --sdram“Ç‚İ‚İI—¹
-			ctrl_data : in std_logic_vector(63 downto 0); --§Œä—pƒf[ƒ^
-			cite_addr : out std_logic_vector(19 downto 0); --QÆƒAƒhƒŒƒX
+			sdr_req : out std_logic; --sdramï¿½Ç‚İï¿½ï¿½İƒï¿½ï¿½Nï¿½Gï¿½Xï¿½g
+			sdr_fin : in std_logic; --sdramï¿½Ç‚İï¿½ï¿½İIï¿½ï¿½
+			ctrl_data : in std_logic_vector(63 downto 0); --ï¿½ï¿½ï¿½ï¿½pï¿½fï¿½[ï¿½^
+			cite_addr : out std_logic_vector(19 downto 0); --ï¿½Qï¿½ÆƒAï¿½hï¿½ï¿½ï¿½X
 			
-			test_dout : out std_logic_vector(63 downto 0); --ƒeƒXƒg—pLED“_“”—p
-			test_bit : out std_logic; --ƒeƒXƒg—p1bitM†
+			test_dout : out std_logic_vector(63 downto 0); --ï¿½eï¿½Xï¿½gï¿½pLEDï¿½_ï¿½ï¿½ï¿½p
+			test_bit : out std_logic; --ï¿½eï¿½Xï¿½gï¿½p1bitï¿½Mï¿½ï¿½
 			
-			rf_pulse : out std_logic; --RFƒpƒ‹ƒXM†
-			data : out std_logic; --DDS—pM†
+			rf_pulse : out std_logic; --RFï¿½pï¿½ï¿½ï¿½Xï¿½Mï¿½ï¿½
+			data : out std_logic; --DDSï¿½pï¿½Mï¿½ï¿½
 			fqud : out std_logic;
 			reset : out std_logic;
 			w_clk : out std_logic;
-			adc_sig : out std_logic); --ADC—pM†
+			adc_sig : out std_logic); --ADCï¿½pï¿½Mï¿½ï¿½
 end just_measurement;
 
 architecture measure of just_measurement is
@@ -194,9 +194,9 @@ architecture measure of just_measurement is
 				EMPTY : out std_logic);
 	end component;
 	
-	--ƒtƒFƒbƒ`-ƒfƒR[ƒh—p
+	--ï¿½tï¿½Fï¿½bï¿½`-ï¿½fï¿½Rï¿½[ï¿½hï¿½p
 	signal data64 : std_logic_vector(63 downto 0);
-	signal m_fin : std_logic; --msr_finish‚É‘Î‰
+	signal m_fin : std_logic; --msr_finishï¿½É‘Î‰ï¿½
 	signal f_fin : std_logic; --fetch_fin
 	signal d_en : std_logic; --decode_en
 	signal d_fin_c : std_logic; --decode_fin(master_counter)
@@ -207,11 +207,11 @@ architecture measure of just_measurement is
 	signal s_req : std_logic;
 	signal addr : std_logic_vector(19 downto 0);
 	signal c_en : std_logic;
-	signal d_data : std_logic_vector(39 downto 0); --ddsƒf[ƒ^
-	signal c_data : std_logic_vector(63 downto 0); --ƒ}ƒXƒ^[ƒJƒEƒ“ƒ^ƒf[ƒ^
+	signal d_data : std_logic_vector(39 downto 0); --ddsï¿½fï¿½[ï¿½^
+	signal c_data : std_logic_vector(63 downto 0); --ï¿½}ï¿½Xï¿½^ï¿½[ï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½fï¿½[ï¿½^
 	signal d_change : std_logic;
 	
-	--ƒ}ƒXƒ^[ƒJƒEƒ“ƒ^—p
+	--ï¿½}ï¿½Xï¿½^ï¿½[ï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½p
 	signal rf_out : std_logic;
 	signal dds_set : std_logic;
 	signal ad_out : std_logic;
@@ -219,23 +219,23 @@ architecture measure of just_measurement is
 	signal rd_fin_c : std_logic; --read_fin
 	signal msr_comp : std_logic;
 	
-	--DDS_data—p
+	--DDS_dataï¿½p
 	signal dds_dat : std_logic_vector(39 downto 0);
 	signal rd_fin_d : std_logic; --read_fin
 	
-	--DDS—p
+	--DDSï¿½p
 	signal data40 : std_logic_vector(39 downto 0);
 	signal f_data : std_logic_vector(39 downto 0); --first_data
 	signal dds_f : std_logic;
 	signal dds_s : std_logic; 
 	
-	--fifo—p
+	--fifoï¿½p
 	signal wr_en : std_logic;
 	signal rd_en : std_logic;
 	signal full : std_logic;
 	signal empty : std_logic;
 	
-	--ƒeƒXƒg—p
+	--ï¿½eï¿½Xï¿½gï¿½p
 	signal test : std_logic:='0';
 	signal led_blink : std_logic:='0';
 	
