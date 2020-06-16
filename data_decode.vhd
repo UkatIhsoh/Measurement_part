@@ -68,13 +68,14 @@ entity data_decode is
 			fetch_fin : in std_logic;
 			decode_en : out std_logic;
 			
-			decode_fin : out std_logic; --master_couterへデコードが終わったことを知らせる
+			decode_fin_m : out std_logic; --master_couterへデコードが終わったことを知らせる
+			decode_fin_d : out std_logic; --DDS_dataへデコードが終わったことを知らせる
 			data_type : out std_logic_vector(3 downto 0); --master_counterへデータがどこのデータだか伝える
 			read_fin : in std_logic; --master_counterがデータの読み込みを終了したことを知らせる
 			decode_wait : in std_logic; --master_counterは現在データが満タンです
 			count_end : out std_logic; --master_counterの動作を終了
 			
-			data_change : in std_logic; --counterのデータかddsのデータか判別する
+			--data_change : in std_logic; --counterのデータかddsのデータか判別する
 			
 			d_data_out : out std_logic_vector(39 downto 0); --dds用のデータ
 			c_data_out : out std_logic_vector(63 downto 0)); --マスターカウンタ用のデータ
@@ -83,12 +84,14 @@ end data_decode;
 architecture decode of data_decode is
 
 	type state_t is (idle, count, dds, cycle_end); --状態名（アイドル、カウンター、処理サイクル終了）
-
+	constant	DDS_patt:std_logic_vector(3 downto 0):="0101";	--DDSのデータのパターン数（外部入力にしても可）
+ 
 	type reg is record
 		data : std_logic_vector(63 downto 0);
 		d_type : std_logic_vector(3 downto 0); --data_type
 		d_en : std_logic; --decode_enable
-		d_fin : std_logic; --decode_fin
+		d_fin_m : std_logic; --decode_fin(Master_counter)
+		d_fin_d : std_logic; --decode_fin(DDS_data)
 		m_fin : std_logic; --count_endを変化させるために必要な判別用
 		c_end : std_logic; --count_end
 		state : state_t;
@@ -96,6 +99,7 @@ architecture decode of data_decode is
 		d_num : std_logic_vector(1 downto 0); --データの受け取りを小分けにする
 		loading : std_logic; --master_counterがデータを読み込み終わるまで待機
 		change_counter : std_logic_vector(3 downto 0); --data_changeしてから何回目か
+		patt_counter	:	std_logic_vector(3 downto 0); --DDS_dataのパターンをカウントしていく
 	end record;
 
 	signal p : reg;
@@ -103,6 +107,7 @@ architecture decode of data_decode is
 	
 
 	signal fresh : std_logic; --p.sequenceの値をfirstに最初はなるようにするためのもの
+	
 
 begin
 
@@ -110,7 +115,8 @@ begin
 
 	c_data_out <= p.data(63 downto 0);
 	d_data_out <= p.data(39 downto 0);
-	decode_fin <= p.d_fin;
+	decode_fin_m <= p.d_fin_m;
+	decode_fin_d <= p.d_fin_d;
 	data_type <= p.d_type;
 	count_end <= p.c_end;
 
@@ -136,7 +142,35 @@ begin
 						else
 							n.data(63 downto 48) <= data64(63 downto 48);
 							n.d_num <= "00";
-							if data_change = '1' then
+--							if data_change = '1' then
+--								if p.change_counter = X"0" then
+--									n.d_type <= first;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"1" then
+--									n.d_type <= second;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"2" then
+--									n.d_type <= third;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"3" then
+--									n.d_type <= fourth;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"4" then
+--									n.d_type <= fifth;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"5" then
+--									n.d_type <= sixth;
+--									n.change_counter <= p.change_counter +1;
+--								else
+--									n.d_type <= seventh;
+--									n.change_counter <= X"0";
+--								end if;
+--								n.state <= count;
+--							else
+--								n.d_type <= data64(43 downto 40);
+--								n.state <= dds;
+--							end if;
+							if p.patt_counter = DDS_patt then
 								if p.change_counter = X"0" then
 									n.d_type <= first;
 									n.change_counter <= p.change_counter +1;
@@ -163,6 +197,7 @@ begin
 							else
 								n.d_type <= data64(43 downto 40);
 								n.state <= dds;
+								n.patt_counetr <= p.patt_counter +1;
 							end if;
 							n.sequence <= second;
 							n.loading <= '1';
@@ -181,7 +216,35 @@ begin
 						else
 							n.data(63 downto 48) <= data64(63 downto 48);
 							n.d_num <= "00";
-							if data_change = '1' then
+--							if data_change = '1' then
+--								if p.change_counter = X"0" then
+--									n.d_type <= first;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"1" then
+--									n.d_type <= second;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"2" then
+--									n.d_type <= third;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"3" then
+--									n.d_type <= fourth;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"4" then
+--									n.d_type <= fifth;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"5" then
+--									n.d_type <= sixth;
+--									n.change_counter <= p.change_counter +1;
+--								else
+--									n.d_type <= seventh;
+--									n.change_counter <= X"0";
+--								end if;
+--								n.state <= count;
+--							else
+--								n.d_type <= data64(43 downto 40);
+--								n.state <= dds;
+--							end if;
+							if p.patt_counter = DDS_patt then
 								if p.change_counter = X"0" then
 									n.d_type <= first;
 									n.change_counter <= p.change_counter +1;
@@ -208,7 +271,8 @@ begin
 							else
 								n.d_type <= data64(43 downto 40);
 								n.state <= dds;
-							end if;
+								n.patt_counetr <= p.patt_counter +1;
+							end if;		
 							n.sequence <= third;
 							n.loading <= '1';
 						end if;
@@ -226,7 +290,35 @@ begin
 						else
 							n.data(63 downto 48) <= data64(63 downto 48);
 							n.d_num <= "00";
-							if data_change = '1' then
+--							if data_change = '1' then
+--								if p.change_counter = X"0" then
+--									n.d_type <= first;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"1" then
+--									n.d_type <= second;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"2" then
+--									n.d_type <= third;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"3" then
+--									n.d_type <= fourth;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"4" then
+--									n.d_type <= fifth;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"5" then
+--									n.d_type <= sixth;
+--									n.change_counter <= p.change_counter +1;
+--								else
+--									n.d_type <= seventh;
+--									n.change_counter <= X"0";
+--								end if;
+--								n.state <= count;
+--							else
+--								n.d_type <= data64(43 downto 40);
+--								n.state <= dds;
+--							end if;
+							if p.patt_counter = DDS_patt then
 								if p.change_counter = X"0" then
 									n.d_type <= first;
 									n.change_counter <= p.change_counter +1;
@@ -253,6 +345,7 @@ begin
 							else
 								n.d_type <= data64(43 downto 40);
 								n.state <= dds;
+								n.patt_counetr <= p.patt_counter +1;
 							end if;
 							n.sequence <= fourth;
 							n.loading <= '1';
@@ -271,7 +364,35 @@ begin
 						else
 							n.data(63 downto 48) <= data64(63 downto 48);
 							n.d_num <= "00";
-							if data_change = '1' then
+--							if data_change = '1' then
+--								if p.change_counter = X"0" then
+--									n.d_type <= first;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"1" then
+--									n.d_type <= second;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"2" then
+--									n.d_type <= third;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"3" then
+--									n.d_type <= fourth;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"4" then
+--									n.d_type <= fifth;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"5" then
+--									n.d_type <= sixth;
+--									n.change_counter <= p.change_counter +1;
+--								else
+--									n.d_type <= seventh;
+--									n.change_counter <= X"0";
+--								end if;
+--								n.state <= count;
+--							else
+--								n.d_type <= data64(43 downto 40);
+--								n.state <= dds;
+--							end if;
+							if p.patt_counter = DDS_patt then
 								if p.change_counter = X"0" then
 									n.d_type <= first;
 									n.change_counter <= p.change_counter +1;
@@ -298,6 +419,7 @@ begin
 							else
 								n.d_type <= data64(43 downto 40);
 								n.state <= dds;
+								n.patt_counetr <= p.patt_counter +1;
 							end if;
 							n.sequence <= fifth;
 							n.loading <= '1';
@@ -316,7 +438,35 @@ begin
 						else
 							n.data(63 downto 48) <= data64(63 downto 48);
 							n.d_num <= "00";
-							if data_change = '1' then
+--							if data_change = '1' then
+--								if p.change_counter = X"0" then
+--									n.d_type <= first;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"1" then
+--									n.d_type <= second;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"2" then
+--									n.d_type <= third;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"3" then
+--									n.d_type <= fourth;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"4" then
+--									n.d_type <= fifth;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"5" then
+--									n.d_type <= sixth;
+--									n.change_counter <= p.change_counter +1;
+--								else
+--									n.d_type <= seventh;
+--									n.change_counter <= X"0";
+--								end if;
+--								n.state <= count;
+--							else
+--								n.d_type <= data64(43 downto 40);
+--								n.state <= dds;
+--							end if;
+							if p.patt_counter = DDS_patt then
 								if p.change_counter = X"0" then
 									n.d_type <= first;
 									n.change_counter <= p.change_counter +1;
@@ -343,6 +493,7 @@ begin
 							else
 								n.d_type <= data64(43 downto 40);
 								n.state <= dds;
+								n.patt_counetr <= p.patt_counter +1;
 							end if;
 							n.sequence <= sixth;
 							n.loading <= '1';
@@ -361,7 +512,35 @@ begin
 						else
 							n.data(63 downto 48) <= data64(63 downto 48);
 							n.d_num <= "00";
-							if data_change = '1' then
+--							if data_change = '1' then
+--								if p.change_counter = X"0" then
+--									n.d_type <= first;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"1" then
+--									n.d_type <= second;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"2" then
+--									n.d_type <= third;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"3" then
+--									n.d_type <= fourth;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"4" then
+--									n.d_type <= fifth;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"5" then
+--									n.d_type <= sixth;
+--									n.change_counter <= p.change_counter +1;
+--								else
+--									n.d_type <= seventh;
+--									n.change_counter <= X"0";
+--								end if;
+--								n.state <= count;
+--							else
+--								n.d_type <= data64(43 downto 40);
+--								n.state <= dds;
+--							end if;
+							if p.patt_counter = DDS_patt then
 								if p.change_counter = X"0" then
 									n.d_type <= first;
 									n.change_counter <= p.change_counter +1;
@@ -388,6 +567,7 @@ begin
 							else
 								n.d_type <= data64(43 downto 40);
 								n.state <= dds;
+								n.patt_counetr <= p.patt_counter +1;
 							end if;
 							n.sequence <= seventh;
 							n.loading <= '1';
@@ -406,7 +586,35 @@ begin
 						else
 							n.data(63 downto 48) <= data64(63 downto 48);
 							n.d_num <= "00";
-							if data_change = '1' then
+--							if data_change = '1' then
+--								if p.change_counter = X"0" then
+--									n.d_type <= first;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"1" then
+--									n.d_type <= second;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"2" then
+--									n.d_type <= third;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"3" then
+--									n.d_type <= fourth;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"4" then
+--									n.d_type <= fifth;
+--									n.change_counter <= p.change_counter +1;
+--								elsif p.change_counter = X"5" then
+--									n.d_type <= sixth;
+--									n.change_counter <= p.change_counter +1;
+--								else
+--									n.d_type <= seventh;
+--									n.change_counter <= X"0";
+--								end if;
+--								n.state <= count;
+--							else
+--								n.d_type <= data64(43 downto 40);
+--								n.state <= dds;
+--							end if;
+							if p.patt_counter = DDS_patt then
 								if p.change_counter = X"0" then
 									n.d_type <= first;
 									n.change_counter <= p.change_counter +1;
@@ -433,6 +641,7 @@ begin
 							else
 								n.d_type <= data64(43 downto 40);
 								n.state <= dds;
+								n.patt_counetr <= p.patt_counter +1;
 							end if;
 							n.sequence <= first;
 							n.loading <= '1';
@@ -450,12 +659,12 @@ begin
 					
 				when count =>
 					if read_fin = '0' then --master_counterがデータを獲得するまで待機
-						if p.d_fin = '0' then --read_finがクロックと無関係なタイミングで入力されるため
-							n.d_fin <= '1'; --master_counterがデータの読み込みを開始
+						if p.d_fin_m = '0' then --read_finがクロックと無関係なタイミングで入力されるため
+							n.d_fin_m <= '1'; --master_counterがデータの読み込みを開始
 						end if;
 					else
-						if p.d_fin = '1' then
-							n.d_fin <= '0';
+						if p.d_fin_m = '1' then
+							n.d_fin_m <= '0';
 							n.loading <= '0';
 							n.d_en <= '1';
 							if p.m_fin = '1' then --decodeが終了するので、master_counterも終了させる
@@ -468,12 +677,12 @@ begin
 				
 				when dds =>
 					if read_fin = '0' then --dds_dataがデータを獲得するまで待機
-						if p.d_fin = '0' then --read_finがクロックと無関係なタイミングで入力されるため
-							n.d_fin <= '1'; --dds_dataがデータの読み込みを開始
+						if p.d_fin_d = '0' then --read_finがクロックと無関係なタイミングで入力されるため
+							n.d_fin_d <= '1'; --dds_dataがデータの読み込みを開始
 						end if;
 					else
-						if p.d_fin = '1' then
-							n.d_fin <= '0';
+						if p.d_fin_d = '1' then
+							n.d_fin_d <= '0';
 							n.loading <= '0';
 							n.d_en <= '1';
 							n.state <= idle;
@@ -492,7 +701,8 @@ begin
 				p.data <= (others => '0');
 				p.d_type <= (others => '0');
 				p.d_en <= '0';
-				p.d_fin <= '0';
+				p.d_fin_d <= '0';
+				p.d_fin_m <= '0';
 				p.m_fin <= '0';
 				p.c_end <= '0';
 				p.state <= idle;
@@ -500,6 +710,7 @@ begin
 				p.d_num <= "00";
 				p.loading <= '0';
 				p.change_counter <= (others => '0');
+				p.patt_counter <= (others => '0');
 				fresh <= '0';
 			elsif clk' event and clk = '1' then
 				p <= n;

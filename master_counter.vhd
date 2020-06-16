@@ -78,7 +78,8 @@ entity master_counter is
 			data : in std_logic_vector(63 downto 0); 
 			
 			output_rf : out std_logic; --出力
-			output_dds : out std_logic;
+			output_dds_1 : out std_logic_vector(7 downto 0);
+			output_dds_2 : out std_logic_vector(7 downto 0);
 			dds_start : out std_logic; --DDS開始
 			dds_fin : out std_logic; --DDS終了
 			output_ad : out std_logic);
@@ -118,7 +119,8 @@ architecture count_time of master_counter is
 	signal m_fin : std_logic; --msr_finの変化によってカウンターの終了を制御する
 	
 	signal rf_out : std_logic:='0';	--RFパルス用
-	signal dds_set : std_logic:='0'; --ddsの周波数を変える	
+	signal dds_set_1 : std_logic:='0'; --ddsの周波数を変える
+	signal dds_set_2 : std_logic:='0'; --ddsの周波数を変える
 	signal ad_out : std_logic:='0'; --AD用
 		
 begin
@@ -128,7 +130,8 @@ begin
 	msr_allcomp <= count_end;
 	
 	output_rf <= rf_out;
-	output_dds <= dds_set;
+	output_dds_1 <= dds_set_1;
+	output_dds_2 <= dds_set_2;
 	dds_start <= preset;
 	dds_fin <= count_end;
 	output_ad <= ad_out;
@@ -171,37 +174,44 @@ begin
 				if counter = p.t_1(31 downto 0) then	--データによって指定された時刻になったらイベントを起こす
 					counter <= counter +1;	
 					rf_out <= p.t_1(32);
-					dds_set <= p.t_1(38);
+					dds_set_1 <= p.t_1(45 downto 38);
+					dds_set_2 <= p.t_1(53 downto 46);
 					ad_out <= p.t_1(35);
 				elsif counter = p.t_2(31 downto 0) then	
 					counter <= counter +1;	
 					rf_out <= p.t_2(32);
-					dds_set <= p.t_2(38);
+					dds_set_1 <= p.t_2(45 downto 38);
+					dds_set_2 <= p.t_2(53 downto 46);
 					ad_out <= p.t_2(35);
 				elsif counter = p.t_3(31 downto 0) then	
 					counter <= counter +1;	
 					rf_out <= p.t_3(32);
-					dds_set <= p.t_3(38);
+					dds_set_1 <= p.t_3(45 downto 38);
+					dds_set_2 <= p.t_3(53 downto 46);
 					ad_out <= p.t_3(35);
 				elsif counter = p.t_4(31 downto 0) then	
 					counter <= counter +1;	
 					rf_out <= p.t_4(32);
-					dds_set <= p.t_4(38);
+					dds_set_1 <= p.t_4(45 downto 38);
+					dds_set_2 <= p.t_4(53 downto 46);
 					ad_out <= p.t_4(35);
 				elsif counter = p.t_5(31 downto 0) then	
 					counter <= counter +1;	
 					rf_out <= p.t_5(32);
-					dds_set <= p.t_5(38);
+					dds_set_1 <= p.t_5(45 downto 38);
+					dds_set_2 <= p.t_5(53 downto 46);
 					ad_out <= p.t_5(35);
 				elsif counter = p.t_6(31 downto 0) then	
 					counter <= counter +1;	
 					rf_out <= p.t_6(32);
-					dds_set <= p.t_6(38);
+					dds_set_1 <= p.t_6(45 downto 38);
+					dds_set_2 <= p.t_6(53 downto 46);
 					ad_out <= p.t_6(35);	
 				elsif counter = p.t_7(31 downto 0) then
 					counter <= (others => '0');
 					rf_out <= p.t_7(32);
-					dds_set <= p.t_7(38);
+					dds_set_1 <= p.t_7(45 downto 38);
+					dds_set_2 <= p.t_7(53 downto 46);
 					ad_out <= p.t_7(35);
 					if m_fin = '1' then --p.m_finがhighならカウント終了。lowならセットされた次のデータを読み込む
 						count_end <= '1';
