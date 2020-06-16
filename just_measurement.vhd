@@ -20,7 +20,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_arith.ALL;
-use IEEE.STD_LOGIC_unsigned.ALL;
+use IEEE.STD_LOGIC_unsigned.ALL; 
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -72,23 +72,23 @@ entity just_measurement is
 			
 			msr_start : in std_logic; --measurement start
 			msr_finish : out std_logic; --mesurement finish
-			str_adr : in std_logic_vector(19 downto 0); --フェッチを開始するアドレス指定入力
+			str_adr : in std_logic_vector(19 downto 0); --・ｽt・ｽF・ｽb・ｽ`・ｽ・ｽ・ｽJ・ｽn・ｽ・ｽ・ｽ・ｽA・ｽh・ｽ・ｽ・ｽX・ｽw・ｽ・ｽ・ｽ・ｽ・ｽ
 			end_adr : in std_logic_vector(19 downto 0);
 			
-			sdr_req : out std_logic; --sdram読み込みリクエスト
-			sdr_fin : in std_logic; --sdram読み込み終了
-			ctrl_data : in std_logic_vector(63 downto 0); --制御用データ
-			cite_addr : out std_logic_vector(19 downto 0); --参照アドレス
+			sdr_req : out std_logic; --sdram・ｽﾇみ搾ｿｽ・ｽﾝ・ｿｽ・ｽN・ｽG・ｽX・ｽg
+			sdr_fin : in std_logic; --sdram・ｽﾇみ搾ｿｽ・ｽﾝ終・ｽ・ｽ
+			ctrl_data : in std_logic_vector(63 downto 0); --・ｽ・ｽ・ｽ・ｽp・ｽf・ｽ[・ｽ^
+			cite_addr : out std_logic_vector(19 downto 0); --・ｽQ・ｽﾆア・ｽh・ｽ・ｽ・ｽX
 			
-			test_dout : out std_logic_vector(63 downto 0); --テスト用LED点灯用
-			test_bit : out std_logic; --テスト用1bit信号
+			test_dout : out std_logic_vector(63 downto 0); --・ｽe・ｽX・ｽg・ｽpLED・ｽ_・ｽ・ｽ・ｽp
+			test_bit : out std_logic; --・ｽe・ｽX・ｽg・ｽp1bit・ｽM・ｽ・ｽ
 			
-			rf_pulse : out std_logic; --RFパルス信号
-			data : out std_logic; --DDS用信号
+			rf_pulse : out std_logic; --RF・ｽp・ｽ・ｽ・ｽX・ｽM・ｽ・ｽ
+			data : out std_logic; --DDS・ｽp・ｽM・ｽ・ｽ
 			fqud : out std_logic;
 			reset : out std_logic;
 			w_clk : out std_logic;
-			adc_sig : out std_logic); --ADC用信号
+			adc_sig : out std_logic); --ADC・ｽp・ｽM・ｽ・ｽ
 end just_measurement;
 
 architecture measure of just_measurement is
@@ -211,9 +211,9 @@ architecture measure of just_measurement is
 --				EMPTY : out std_logic);
 --	end component;
 	
-	--フェッチ-デコード用
+	--・ｽt・ｽF・ｽb・ｽ`-・ｽf・ｽR・ｽ[・ｽh・ｽp
 	signal data64 : std_logic_vector(63 downto 0);
-	signal m_fin : std_logic; --msr_finishに対応
+	signal m_fin : std_logic; --msr_finish・ｽﾉ対会ｿｽ
 	signal f_fin : std_logic; --fetch_fin
 	signal d_en : std_logic; --decode_en
 	signal d_fin_c : std_logic; --decode_fin(master_counter)
@@ -225,11 +225,11 @@ architecture measure of just_measurement is
 	signal s_req : std_logic;
 	signal addr : std_logic_vector(19 downto 0);
 	signal c_en : std_logic;
-	signal d_data : std_logic_vector(39 downto 0); --ddsデータ
-	signal c_data : std_logic_vector(63 downto 0); --マスターカウンタデータ
+	signal d_data : std_logic_vector(39 downto 0); --dds・ｽf・ｽ[・ｽ^
+	signal c_data : std_logic_vector(63 downto 0); --・ｽ}・ｽX・ｽ^・ｽ[・ｽJ・ｽE・ｽ・ｽ・ｽ^・ｽf・ｽ[・ｽ^
 	signal d_change : std_logic;
 	
-	--マスターカウンタ用
+	--・ｽ}・ｽX・ｽ^・ｽ[・ｽJ・ｽE・ｽ・ｽ・ｽ^・ｽp
 	signal rf_out : std_logic;
 	signal dds_set : std_logic;
 	signal ad_out : std_logic;
@@ -237,7 +237,7 @@ architecture measure of just_measurement is
 	signal rd_fin_c : std_logic; --read_fin
 	signal msr_comp : std_logic;
 	
-	--DDS_data用
+	--DDS_data・ｽp
 	signal dds_dat : std_logic_vector(39 downto 0);
 	signal rd_fin_d : std_logic; --read_fin
 	signal en_dat	:	std_logic;
@@ -249,20 +249,27 @@ architecture measure of just_measurement is
 	signal dds1_data : std_logic_vector(7 downto 0);
 	signal dds2_data : std_logic_vector(7 downto 0);
 	
+
 	--DDS用
 	signal data40_1 : std_logic_vector(39 downto 0);
 	signal data40_2 : std_logic_vector(39 downto 0);
+
+
+
 	signal f_data : std_logic_vector(39 downto 0); --first_data
 	signal dds_f : std_logic;
 	signal dds_s : std_logic; 
 	
+
 --	--fifo用
 --	signal wr_en : std_logic;
 --	signal rd_en : std_logic;
 --	signal full : std_logic;
 --	signal empty : std_logic;
+
+
 	
-	--テスト用
+	--・ｽe・ｽX・ｽg・ｽp
 	signal test : std_logic:='0';
 	signal led_blink : std_logic:='0';
 	
