@@ -8,7 +8,6 @@ Measurement.ngc Measurement.ngd
 
 Reading NGO file
 "E:/hoshino_Data/SotsuKen/ISE/measurement_part_git/Measurement.ngc" ...
-Loading design module "ipcore_dir/FIFO_A.ngc"...
 Gathering constraint information from source properties...
 Done.
 
@@ -65,10 +64,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:  29
 
-Total memory usage is 4421520 kilobytes
+Total memory usage is 4405312 kilobytes
 
 Writing NGD file "Measurement.ngd" ...
-Total REAL time to NGDBUILD completion:  3 sec
+Total REAL time to NGDBUILD completion:  4 sec
 Total CPU time to NGDBUILD completion:   3 sec
 
 Writing NGDBUILD log file "Measurement.bld"...

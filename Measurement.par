@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-L548H6P::  Sun May 31 14:41:55 2020
+DESKTOP-L548H6P::  Tue Jun 16 15:17:18 2020
 
 par -w -intstyle ise -ol high -mt off Measurement_map.ncd Measurement.ncd
 Measurement.pcf 
@@ -22,30 +22,30 @@ Device speed data version:  "PRODUCTION 1.23 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                   886 out of  11,440    7%
-    Number used as Flip Flops:                 878
-    Number used as Latches:                      8
+  Number of Slice Registers:                    82 out of  11,440    1%
+    Number used as Flip Flops:                  75
+    Number used as Latches:                      7
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        788 out of   5,720   13%
-    Number used as logic:                      768 out of   5,720   13%
-      Number using O6 output only:             578
-      Number using O5 output only:              82
-      Number using O5 and O6:                  108
+  Number of Slice LUTs:                        150 out of   5,720    2%
+    Number used as logic:                      149 out of   5,720    2%
+      Number using O6 output only:             100
+      Number using O5 output only:              20
+      Number using O5 and O6:                   29
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   1,440    0%
-    Number used exclusively as route-thrus:     20
-      Number with same-slice register load:     16
-      Number with same-slice carry load:         4
+    Number used exclusively as route-thrus:      1
+      Number with same-slice register load:      0
+      Number with same-slice carry load:         1
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   329 out of   1,430   23%
-  Number of MUXCYs used:                       204 out of   2,860    7%
-  Number of LUT Flip Flop pairs used:        1,071
-    Number with an unused Flip Flop:           255 out of   1,071   23%
-    Number with an unused LUT:                 283 out of   1,071   26%
-    Number of fully used LUT-FF pairs:         533 out of   1,071   49%
+  Number of occupied Slices:                    58 out of   1,430    4%
+  Number of MUXCYs used:                        44 out of   2,860    1%
+  Number of LUT Flip Flop pairs used:          161
+    Number with an unused Flip Flop:            83 out of     161   51%
+    Number with an unused LUT:                  11 out of     161    6%
+    Number of fully used LUT-FF pairs:          67 out of     161   41%
     Number of slice register sites lost
       to control set restrictions:               0 out of  11,440    0%
 
@@ -58,11 +58,11 @@ Slice Logic Distribution:
 IO Utilization:
   Number of bonded IOBs:                        89 out of     102   87%
     Number of LOCed IOBs:                       89 out of      89  100%
-    IOB Flip Flops:                             38
+    IOB Flip Flops:                             22
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
-  Number of RAMB8BWERs:                          1 out of      64    1%
+  Number of RAMB8BWERs:                          0 out of      64    0%
   Number of BUFIO2/BUFIO2_2CLKs:                 1 out of      32    3%
     Number used as BUFIO2s:                      1
     Number used as BUFIO2_2CLKs:                 0
@@ -75,9 +75,7 @@ Specific Feature Utilization:
   Number of DCM/DCM_CLKGENs:                     1 out of       4   25%
     Number used as DCMs:                         1
     Number used as DCM_CLKGENs:                  0
-  Number of ILOGIC2/ISERDES2s:                  16 out of     200    8%
-    Number used as ILOGIC2s:                    16
-    Number used as ISERDES2s:                    0
+  Number of ILOGIC2/ISERDES2s:                   0 out of     200    0%
   Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     200    0%
   Number of OLOGIC2/OSERDES2s:                  22 out of     200   11%
     Number used as OLOGIC2s:                    22
@@ -102,18 +100,6 @@ Router effort level (-rl):    High
 Starting initial Timing Analysis.  REAL time: 3 secs 
 Finished initial Timing Analysis.  REAL time: 3 secs 
 
-WARNING:Par:288 - The signal WING_B<10>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal WING_B<11>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal WING_B<12>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal WING_B<13>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal WING_B<14>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal WING_B<15>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal WING_C<10>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal WING_C<11>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal WING_C<12>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal WING_C<13>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal WING_C<14>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal WING_C<15>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal WING_B<3>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal WING_C<0>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal WING_B<4>_IBUF has no load.  PAR will not attempt to route this signal.
@@ -131,32 +117,44 @@ WARNING:Par:288 - The signal WING_C<6>_IBUF has no load.  PAR will not attempt t
 WARNING:Par:288 - The signal WING_C<7>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal WING_C<8>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal WING_C<9>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal WING_B<10>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal WING_B<11>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal WING_B<12>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal WING_B<13>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal WING_B<14>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal WING_B<15>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal WING_C<10>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal WING_C<11>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal WING_C<12>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal WING_C<13>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal WING_C<14>_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal WING_C<15>_IBUF has no load.  PAR will not attempt to route this signal.
 Starting Router
 
 
-Phase  1  : 5189 unrouted;      REAL time: 3 secs 
+Phase  1  : 912 unrouted;      REAL time: 3 secs 
 
-Phase  2  : 4604 unrouted;      REAL time: 4 secs 
+Phase  2  : 799 unrouted;      REAL time: 3 secs 
 
-Phase  3  : 1967 unrouted;      REAL time: 6 secs 
+Phase  3  : 252 unrouted;      REAL time: 4 secs 
 
-Phase  4  : 1973 unrouted; (Setup:1205, Hold:129, Component Switching Limit:0)     REAL time: 7 secs 
+Phase  4  : 252 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
 
 Updating file: Measurement.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:1180, Hold:108, Component Switching Limit:0)     REAL time: 10 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
 
-Phase  6  : 0 unrouted; (Setup:1180, Hold:108, Component Switching Limit:0)     REAL time: 10 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:108, Component Switching Limit:0)     REAL time: 16 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:108, Component Switching Limit:0)     REAL time: 16 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 16 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
 
-Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 16 secs 
-Total REAL time to Router completion: 16 secs 
-Total CPU time to Router completion: 17 secs 
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
+Total REAL time to Router completion: 4 secs 
+Total CPU time to Router completion: 4 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -174,15 +172,12 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|              clk100 |  BUFGMUX_X2Y3| No   |  294 |  0.748     |  2.139      |
+|              clk100 |  BUFGMUX_X2Y2| No   |   57 |  0.748     |  2.139      |
 +---------------------+--------------+------+------+------------+-------------+
-|  WING_B_0_IBUF_BUFG | BUFGMUX_X3Y15| No   |    1 |  0.000     |  1.462      |
-+---------------------+--------------+------+------+------------+-------------+
-|measure/data_acquire |              |      |      |            |             |
-|          /tr_pend_a |         Local|      |    5 |  0.000     |  1.717      |
+|  WING_B_0_IBUF_BUFG |  BUFGMUX_X2Y3| No   |    1 |  0.000     |  1.421      |
 +---------------------+--------------+------+------+------------+-------------+
 |ctrl/statep[8]_GND_3 |              |      |      |            |             |
-|        6_o_Mux_83_o |         Local|      |    2 |  0.258     |  0.978      |
+|        6_o_Mux_83_o |         Local|      |    2 |  0.183     |  0.767      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -204,8 +199,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  PERIOD analysis for net "DCM/clkfx" deriv | SETUP       |     0.571ns|     9.107ns|       0|           0
-  ed from  NET "DCM/clkin1" PERIOD = 31.25  | HOLD        |     0.303ns|            |       0|           0
+  PERIOD analysis for net "DCM/clkfx" deriv | SETUP       |     2.410ns|     7.590ns|       0|           0
+  ed from  NET "DCM/clkin1" PERIOD = 31.25  | HOLD        |     0.437ns|            |       0|           0
   ns HIGH 50%                               |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
   NET "DCM/clkin1" PERIOD = 31.25 ns HIGH 5 | MINLOWPULSE |    15.250ns|    16.000ns|       0|           0
@@ -223,8 +218,8 @@ Derived Constraints for DCM/clkin1
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|DCM/clkin1                     |     31.250ns|     16.000ns|     28.459ns|            0|            0|            0|       132393|
-| DCM/clkfx                     |     10.000ns|      9.107ns|          N/A|            0|            0|       132393|            0|
+|DCM/clkin1                     |     31.250ns|     16.000ns|     23.719ns|            0|            0|            0|         2737|
+| DCM/clkfx                     |     10.000ns|      7.590ns|          N/A|            0|            0|         2737|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 All constraints were met.
@@ -236,10 +231,10 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 29 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 17 secs 
-Total CPU time to PAR completion: 17 secs 
+Total REAL time to PAR completion: 5 secs 
+Total CPU time to PAR completion: 4 secs 
 
-Peak Memory Usage:  4491 MB
+Peak Memory Usage:  4464 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

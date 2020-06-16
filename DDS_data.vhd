@@ -104,17 +104,15 @@ begin
 	enable <= en_sig;
 	data_out <= d_out;
 	--first_data <= first_d;
-	data_end <= d_end;
+
 
 	process(clk,rst,msr_fin,d_fin,recieve)
 		begin
 			if rst = '1' or msr_fin = '1' then
 				counter <= (others => '0');
 				count_end <= X"FFFF";
-				d_end <= '0';
 				d_num <= "00";
 				d_out <= (others => '0');
-				first_d <= (others => '0');
 				en_sig <= '0';
 				comp_rd <= '0';
 			elsif clk' event and clk = '1' then
@@ -127,7 +125,7 @@ begin
 						en_sig <= '1';
 						d_num <= "10";
 					else
-						if recieve = 1 then
+						if recieve = '1' then
 							en_sig <= '0';
 							comp_rd <= '1';
 							d_num <= "00";

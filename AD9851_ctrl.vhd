@@ -77,7 +77,7 @@ begin
 	w_clk		<=	p.w_clk_set when p.c_w = '1' else
 					clk2  after 5ns when p.c_w = '0';
 	
-	receieve <= p.rec;
+	recieve <= p.rec;
 	
 	
 	process(state_p,data32,req_dds,state_n,data40,rst,req_dds,rst,p) begin

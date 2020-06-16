@@ -197,7 +197,7 @@ begin
 							else
 								n.d_type <= data64(43 downto 40);
 								n.state <= dds;
-								n.patt_counetr <= p.patt_counter +1;
+								n.patt_counter <= p.patt_counter +1;
 							end if;
 							n.sequence <= second;
 							n.loading <= '1';
@@ -271,7 +271,7 @@ begin
 							else
 								n.d_type <= data64(43 downto 40);
 								n.state <= dds;
-								n.patt_counetr <= p.patt_counter +1;
+								n.patt_counter <= p.patt_counter +1;
 							end if;		
 							n.sequence <= third;
 							n.loading <= '1';
@@ -345,7 +345,7 @@ begin
 							else
 								n.d_type <= data64(43 downto 40);
 								n.state <= dds;
-								n.patt_counetr <= p.patt_counter +1;
+								n.patt_counter <= p.patt_counter +1;
 							end if;
 							n.sequence <= fourth;
 							n.loading <= '1';
@@ -419,7 +419,7 @@ begin
 							else
 								n.d_type <= data64(43 downto 40);
 								n.state <= dds;
-								n.patt_counetr <= p.patt_counter +1;
+								n.patt_counter <= p.patt_counter +1;
 							end if;
 							n.sequence <= fifth;
 							n.loading <= '1';
@@ -493,7 +493,7 @@ begin
 							else
 								n.d_type <= data64(43 downto 40);
 								n.state <= dds;
-								n.patt_counetr <= p.patt_counter +1;
+								n.patt_counter <= p.patt_counter +1;
 							end if;
 							n.sequence <= sixth;
 							n.loading <= '1';
@@ -567,7 +567,7 @@ begin
 							else
 								n.d_type <= data64(43 downto 40);
 								n.state <= dds;
-								n.patt_counetr <= p.patt_counter +1;
+								n.patt_counter <= p.patt_counter +1;
 							end if;
 							n.sequence <= seventh;
 							n.loading <= '1';
@@ -641,7 +641,7 @@ begin
 							else
 								n.d_type <= data64(43 downto 40);
 								n.state <= dds;
-								n.patt_counetr <= p.patt_counter +1;
+								n.patt_counter <= p.patt_counter +1;
 							end if;
 							n.sequence <= first;
 							n.loading <= '1';

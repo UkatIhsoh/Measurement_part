@@ -188,7 +188,7 @@ architecture measure of just_measurement is
 	component AD9851_ctrl is
 		port(
 			clk1 		: 	in		std_logic;
---			clk2 		: 	in		std_logic;
+			clk2 		: 	in		std_logic;
 			rst		:	in		std_logic;
 			data40 	: 	in		std_logic_vector(39 downto 0);
 			data	 	:	out	std_logic;
@@ -325,7 +325,8 @@ architecture measure of just_measurement is
 					 data => c_data, 
 
 					 output_rf => rf_out,
-					 output_dds => dds_set,
+					 output_dds_1 => dds1_data,
+					 output_dds_2 => dds2_data,
 					 dds_start => dds_s,
 					 dds_fin => dds_f,
 					 output_ad => ad_out);
@@ -341,12 +342,11 @@ architecture measure of just_measurement is
 					 data => d_data,
 				
 					 enable => en_dat,
-					 receive => re_dat,
+					 recieve => re_dat,
 					 data_out => dds_dat);
 	
-	DDS_data_drive : data_save
-    Port map 
-				( clk => clk,
+	data_save : DDS_data_drive 
+    Port map( clk => clk,
            rst => rst,
            data_in => dds_dat,
            enable => en_dat,
@@ -362,6 +362,7 @@ architecture measure of just_measurement is
 	
 	DDS : AD9851_ctrl 
 		port map( clk1 => clk,
+					 clk2 => clk,
 					 rst	=> rst, 
 					 data40 	=> data40_1,	
 					 data	=> data,
@@ -369,7 +370,7 @@ architecture measure of just_measurement is
 					 reset	=> reset,
 					 w_clk	=> w_clk,
 					 req_dds => req_1,
-					 receive => en_1);
+					 recieve => en_1);
 					 
 --	FIFO : FIFO_A 
 --		port map( CLK => clk,
@@ -383,13 +384,6 @@ architecture measure of just_measurement is
 					 
 	rd_fin <= rd_fin_c or rd_fin_d;
 					 
-	process(wr_en)
-	begin
-		if wr_en = '1' then
-			led_blink <= not led_blink;
-			--led_blink <= '1';
-		end if;
-	end process;
 					 
 	msr_finish <= c_end;
 	sdr_req <= s_req;
@@ -397,7 +391,7 @@ architecture measure of just_measurement is
 	rf_pulse <= rf_out;
 	adc_sig <= ad_out;
 	
-	test_dout(15 downto 0) <= data40(15 downto 0);
+	test_dout(15 downto 0) <= data40_1(15 downto 0);
 	test_bit <= led_blink;
 
 	end measure;

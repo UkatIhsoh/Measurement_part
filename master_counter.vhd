@@ -119,8 +119,8 @@ architecture count_time of master_counter is
 	signal m_fin : std_logic; --msr_finの変化によってカウンターの終了を制御する
 	
 	signal rf_out : std_logic:='0';	--RFパルス用
-	signal dds_set_1 : std_logic:='0'; --ddsの周波数を変える
-	signal dds_set_2 : std_logic:='0'; --ddsの周波数を変える
+	signal dds_set_1 : std_logic_vector(7 downto 0); --ddsの周波数を変える
+	signal dds_set_2 : std_logic_vector(7 downto 0); --ddsの周波数を変える
 	signal ad_out : std_logic:='0'; --AD用
 		
 begin
@@ -147,7 +147,8 @@ begin
 			full <= '0';
 			comp_rd <= '0';
 			rf_out <= '0';
-			dds_set <= '0';
+			dds_set_1 <= (others => '0');
+			dds_set_2 <= (others => '0');
 			ad_out <= '0';
 			p.t_1 <= (others => '0'); p.t_2 <= (others => '0'); p.t_3 <= (others => '0'); p.t_4 <= (others => '0'); 
 			p.t_5 <= (others => '0'); p.t_6 <= (others => '0'); p.t_7 <= (others => '0'); 
@@ -163,7 +164,8 @@ begin
 				full <= '0';
 				comp_rd <= '0';
 				rf_out <= '0';
-				dds_set <= '0';
+				dds_set_1 <= (others => '0');
+				dds_set_2 <= (others => '0');
 				ad_out <= '0';
 				p.t_1 <= (others => '0'); p.t_2 <= (others => '0'); p.t_3 <= (others => '0'); p.t_4 <= (others => '0'); 
 				p.t_5 <= (others => '0'); p.t_6 <= (others => '0'); p.t_7 <= (others => '0'); 
@@ -221,7 +223,8 @@ begin
 					full <= '0';									
 				else	--イベントが起きる時刻以外では、釈然とカウントを続ける
 					counter <= counter +1;
-					dds_set <= '0';
+					dds_set_1 <= (others => '0');
+					dds_set_2 <= (others => '0');
 					ad_out <= '0';
 				end if;
 				if d_fin = '1' then --最初以降のデータセット

@@ -117,13 +117,11 @@ begin
 process(clk,rst)
 begin
 
-	if rst = 1 then
+	if rst = '1' then
 		rec <= '0';
-		d_out_1 <= (others => '0');
-		d_out_2 <= (others => '0');
 		d_num	<= '0';
 		counter <= (others => '0');
-	elsif clk' event and clk = 1 then
+	elsif clk' event and clk = '1' then
 		if enable = '1' then
 			if counter = X"0" then
 				if d_num = '0' then
@@ -295,7 +293,7 @@ end process;
 process(dds1_data,enable_1)
 begin
 	
-	if enable_1 = '1' then
+	if enable_1 = '0' then
 		if req_1 = '0' then
 			req_1 <= '1';
 		end if;
