@@ -83,12 +83,12 @@ entity just_measurement is
 			test_dout : out std_logic_vector(63 downto 0); --・ｽe・ｽX・ｽg・ｽpLED・ｽ_・ｽ・ｽ・ｽp
 			test_bit : out std_logic; --・ｽe・ｽX・ｽg・ｽp1bit・ｽM・ｽ・ｽ
 			
-			rf_pulse : out std_logic; --RF・ｽp・ｽ・ｽ・ｽX・ｽM・ｽ・ｽ
+			rf_pulse : out std_logic_vector(2 downto 0); --RF・ｽp・ｽ・ｽ・ｽX・ｽM・ｽ・ｽ
 			data : out std_logic; --DDS・ｽp・ｽM・ｽ・ｽ
 			fqud : out std_logic;
 			reset : out std_logic;
 			w_clk : out std_logic;
-			adc_sig : out std_logic); --ADC・ｽp・ｽM・ｽ・ｽ
+			adc_sig : out std_logic_vector(2 downto 0)); --ADC・ｽp・ｽM・ｽ・ｽ
 end just_measurement;
 
 architecture measure of just_measurement is
@@ -146,12 +146,12 @@ architecture measure of just_measurement is
 				data_full : out std_logic; 
 				data : in std_logic_vector(63 downto 0); 
 
-				output_rf : out std_logic;
+				output_rf : out std_logic_vector(2 downto 0);
 				output_dds_1 : out std_logic_vector(7 downto 0);
 				output_dds_2 : out std_logic_vector(7 downto 0);
 				dds_start : out std_logic;
 				dds_fin : out std_logic;
-				output_ad : out std_logic);
+				output_ad : out std_logic_vector(2 downto 0));
 	end component;
 	
 	component DDS_data is
@@ -230,9 +230,9 @@ architecture measure of just_measurement is
 	signal d_change : std_logic;
 	
 	--・ｽ}・ｽX・ｽ^・ｽ[・ｽJ・ｽE・ｽ・ｽ・ｽ^・ｽp
-	signal rf_out : std_logic;
+	signal rf_out : std_logic_vector(2 downto 0);
 	signal dds_set : std_logic;
-	signal ad_out : std_logic;
+	signal ad_out : std_logic_vector(2 downto 0);
 	signal c_end : std_logic;
 	signal rd_fin_c : std_logic; --read_fin
 	signal msr_comp : std_logic;

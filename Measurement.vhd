@@ -133,12 +133,12 @@ architecture connect of Measurement is
 			test_dout : out std_logic_vector(63 downto 0);
 			test_bit : out std_logic;
 			
-			rf_pulse : out std_logic;
+			rf_pulse : out std_logic_vector(2 downto 0);
 			data : out std_logic;
 			fqud : out std_logic;
 			reset : out std_logic;
 			w_clk : out std_logic;
-			adc_sig : out std_logic);
+			adc_sig : out std_logic_vector(2 downto 0));
 	end component;
 
 	--common
@@ -171,12 +171,12 @@ architecture connect of Measurement is
 	signal m_fin : std_logic;
 	signal str_adr : std_logic_vector(19 downto 0);
 	signal end_adr : std_logic_vector(19 downto 0);
-	signal rf : std_logic;
+	signal rf : std_logic_vector(2 downto 0);
 	signal data : std_logic;
 	signal fqud : std_logic;
 	signal reset : std_logic;
 	signal w_clk : std_logic;
-	signal adc : std_logic;
+	signal adc : std_logic_vector(2 downto 0);
 	signal test_d : std_logic_vector(63 downto 0); --テスト用
 	signal test_b : std_logic; --テスト用
 	signal test_i : std_logic;

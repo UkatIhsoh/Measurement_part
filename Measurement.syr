@@ -3,13 +3,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: Measurement.prj
@@ -220,13 +220,13 @@ WARNING:Xst:647 - Input <WING_B<15:3>> is never used. This port will be preserve
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 221: Output port <sdr_adr> of the instance <write_sec> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 230: Output port <sdr_adr> of the instance <read_sec> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 230: Output port <fetch_en> of the instance <read_sec> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 242: Output port <msr_finish> of the instance <measure> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 242: Output port <rf_pulse> of the instance <measure> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 242: Output port <adc_sig> of the instance <measure> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 242: Output port <msr_finish> of the instance <measure> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 242: Output port <data> of the instance <measure> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 242: Output port <fqud> of the instance <measure> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 242: Output port <reset> of the instance <measure> is unconnected or connected to loadless signal.
 INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 242: Output port <w_clk> of the instance <measure> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\Measurement.vhd" line 242: Output port <adc_sig> of the instance <measure> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <sdr_addr> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
@@ -529,6 +529,8 @@ Unit <data_decode> synthesized.
 
 Synthesizing Unit <master_counter>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\master_counter.vhd".
+    Found 3-bit register for signal <rf_out>.
+    Found 3-bit register for signal <ad_out>.
     Found 8-bit register for signal <dds_set_1>.
     Found 8-bit register for signal <dds_set_2>.
     Found 64-bit register for signal <p_t_1>.
@@ -550,8 +552,6 @@ Synthesizing Unit <master_counter>.
     Found 1-bit register for signal <count_end>.
     Found 1-bit register for signal <preset>.
     Found 1-bit register for signal <full>.
-    Found 1-bit register for signal <rf_out>.
-    Found 1-bit register for signal <ad_out>.
     Found 1-bit register for signal <dst_1>.
     Found 1-bit register for signal <dst_2>.
     Found 1-bit register for signal <dst_3>.
@@ -559,7 +559,7 @@ Synthesizing Unit <master_counter>.
     Found 1-bit register for signal <dst_5>.
     Found 1-bit register for signal <dst_6>.
     Found 1-bit register for signal <dst_7>.
-    Found 32-bit adder for signal <counter[31]_GND_58_o_add_23_OUT> created at line 225.
+    Found 32-bit adder for signal <counter[31]_GND_58_o_add_25_OUT> created at line 225.
     WARNING:Xst:2404 -  FFs/Latches <comp_rd<0:0>> (without init value) have a constant value of 0 in block <master_counter>.
     Summary:
 	inferred   1 Adder/Subtractor(s).
@@ -3026,12 +3026,12 @@ clk            |         |         |    2.745|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 18.00 secs
-Total CPU time to Xst completion: 18.64 secs
+Total REAL time to Xst completion: 21.00 secs
+Total CPU time to Xst completion: 20.18 secs
  
 --> 
 
-Total memory usage is 4542624 kilobytes
+Total memory usage is 4534200 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings : 1860 (   0 filtered)

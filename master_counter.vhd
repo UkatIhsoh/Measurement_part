@@ -77,12 +77,12 @@ entity master_counter is
 			data_full : out std_logic; --データが満タンなのを知らせる
 			data : in std_logic_vector(63 downto 0); 
 			
-			output_rf : out std_logic; --出力
+			output_rf : out std_logic_vector(2 downto 0); --出力
 			output_dds_1 : out std_logic_vector(7 downto 0);
 			output_dds_2 : out std_logic_vector(7 downto 0);
 			dds_start : out std_logic; --DDS開始
 			dds_fin : out std_logic; --DDS終了
-			output_ad : out std_logic);
+			output_ad : out std_logic_vector(2 downto 0));
 end master_counter;
 
 architecture count_time of master_counter is
@@ -118,10 +118,10 @@ architecture count_time of master_counter is
 	signal comp_rd : std_logic:= '0'; --rd_compに対応
 	signal m_fin : std_logic; --msr_finの変化によってカウンターの終了を制御する
 	
-	signal rf_out : std_logic:='0';	--RFパルス用
+	signal rf_out : std_logic_vector(2 downto 0);	--RFパルス用
 	signal dds_set_1 : std_logic_vector(7 downto 0); --ddsの周波数を変える
 	signal dds_set_2 : std_logic_vector(7 downto 0); --ddsの周波数を変える
-	signal ad_out : std_logic:='0'; --AD用
+	signal ad_out : std_logic_vector(2 downto 0); --AD用
 		
 begin
 
@@ -146,10 +146,10 @@ begin
 			preset <= '0';
 			full <= '0';
 			comp_rd <= '0';
-			rf_out <= '0';
+			rf_out <= (others => '0');
 			dds_set_1 <= (others => '0');
 			dds_set_2 <= (others => '0');
-			ad_out <= '0';
+			ad_out <= (others => '0');
 			p.t_1 <= (others => '0'); p.t_2 <= (others => '0'); p.t_3 <= (others => '0'); p.t_4 <= (others => '0'); 
 			p.t_5 <= (others => '0'); p.t_6 <= (others => '0'); p.t_7 <= (others => '0'); 
 			n.t_1 <= (others => '0'); n.t_2 <= (others => '0'); n.t_3 <= (others => '0'); n.t_4 <= (others => '0'); 
@@ -163,10 +163,10 @@ begin
 				preset <= '0';
 				full <= '0';
 				comp_rd <= '0';
-				rf_out <= '0';
+				rf_out <= (others => '0');
 				dds_set_1 <= (others => '0');
 				dds_set_2 <= (others => '0');
-				ad_out <= '0';
+				ad_out <= (others => '0');
 				p.t_1 <= (others => '0'); p.t_2 <= (others => '0'); p.t_3 <= (others => '0'); p.t_4 <= (others => '0'); 
 				p.t_5 <= (others => '0'); p.t_6 <= (others => '0'); p.t_7 <= (others => '0'); 
 				n.t_1 <= (others => '0'); n.t_2 <= (others => '0'); n.t_3 <= (others => '0'); n.t_4 <= (others => '0'); 
@@ -175,46 +175,46 @@ begin
 			elsif preset = '1' then --事前のデータセットが終わらなければカウントは始まらない
 				if counter = p.t_1(31 downto 0) then	--データによって指定された時刻になったらイベントを起こす
 					counter <= counter +1;	
-					rf_out <= p.t_1(32);
+					rf_out <= p.t_1(34 downto 32);
 					dds_set_1 <= p.t_1(45 downto 38);
 					dds_set_2 <= p.t_1(53 downto 46);
-					ad_out <= p.t_1(35);
+					ad_out <= p.t_1(37 downto 35);
 				elsif counter = p.t_2(31 downto 0) then	
 					counter <= counter +1;	
-					rf_out <= p.t_2(32);
+					rf_out <= p.t_2(34 downto 32);
 					dds_set_1 <= p.t_2(45 downto 38);
 					dds_set_2 <= p.t_2(53 downto 46);
-					ad_out <= p.t_2(35);
+					ad_out <= p.t_2(37 downto 35);
 				elsif counter = p.t_3(31 downto 0) then	
 					counter <= counter +1;	
-					rf_out <= p.t_3(32);
+					rf_out <= p.t_3(34 downto 32);
 					dds_set_1 <= p.t_3(45 downto 38);
 					dds_set_2 <= p.t_3(53 downto 46);
-					ad_out <= p.t_3(35);
+					ad_out <= p.t_3(37 downto 35);
 				elsif counter = p.t_4(31 downto 0) then	
 					counter <= counter +1;	
-					rf_out <= p.t_4(32);
+					rf_out <= p.t_4(34 downto 32);
 					dds_set_1 <= p.t_4(45 downto 38);
 					dds_set_2 <= p.t_4(53 downto 46);
-					ad_out <= p.t_4(35);
+					ad_out <= p.t_4(37 downto 35);
 				elsif counter = p.t_5(31 downto 0) then	
 					counter <= counter +1;	
-					rf_out <= p.t_5(32);
+					rf_out <= p.t_5(34 downto 32);
 					dds_set_1 <= p.t_5(45 downto 38);
 					dds_set_2 <= p.t_5(53 downto 46);
-					ad_out <= p.t_5(35);
+					ad_out <= p.t_5(37 downto 35);
 				elsif counter = p.t_6(31 downto 0) then	
 					counter <= counter +1;	
-					rf_out <= p.t_6(32);
+					rf_out <= p.t_6(34 downto 32);
 					dds_set_1 <= p.t_6(45 downto 38);
 					dds_set_2 <= p.t_6(53 downto 46);
-					ad_out <= p.t_6(35);	
+					ad_out <= p.t_6(37 downto 35);	
 				elsif counter = p.t_7(31 downto 0) then
 					counter <= (others => '0');
-					rf_out <= p.t_7(32);
+					rf_out <= p.t_7(34 downto 32);
 					dds_set_1 <= p.t_7(45 downto 38);
 					dds_set_2 <= p.t_7(53 downto 46);
-					ad_out <= p.t_7(35);
+					ad_out <= p.t_7(37 downto 35);
 					if m_fin = '1' then --p.m_finがhighならカウント終了。lowならセットされた次のデータを読み込む
 						count_end <= '1';
 					else
@@ -225,7 +225,7 @@ begin
 					counter <= counter +1;
 					dds_set_1 <= (others => '0');
 					dds_set_2 <= (others => '0');
-					ad_out <= '0';
+					ad_out <= (others => '0');
 				end if;
 				if d_fin = '1' then --最初以降のデータセット
 					case d_type is
