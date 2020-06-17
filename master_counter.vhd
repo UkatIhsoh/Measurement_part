@@ -179,36 +179,54 @@ begin
 					dds_set_1 <= p.t_1(45 downto 38);
 					dds_set_2 <= p.t_1(53 downto 46);
 					ad_out <= p.t_1(37 downto 35);
+					if m_fin = '1' then --p.m_finがhighならカウント終了。lowならセットされた次のデータを読み込む
+						count_end <= '1';
+					end if;
 				elsif counter = p.t_2(31 downto 0) then	
 					counter <= counter +1;	
 					rf_out <= p.t_2(34 downto 32);
 					dds_set_1 <= p.t_2(45 downto 38);
 					dds_set_2 <= p.t_2(53 downto 46);
 					ad_out <= p.t_2(37 downto 35);
+					if m_fin = '1' then --p.m_finがhighならカウント終了。lowならセットされた次のデータを読み込む
+						count_end <= '1';
+					end if;
 				elsif counter = p.t_3(31 downto 0) then	
 					counter <= counter +1;	
 					rf_out <= p.t_3(34 downto 32);
 					dds_set_1 <= p.t_3(45 downto 38);
 					dds_set_2 <= p.t_3(53 downto 46);
 					ad_out <= p.t_3(37 downto 35);
+					if m_fin = '1' then --p.m_finがhighならカウント終了。lowならセットされた次のデータを読み込む
+						count_end <= '1';
+					end if;
 				elsif counter = p.t_4(31 downto 0) then	
 					counter <= counter +1;	
 					rf_out <= p.t_4(34 downto 32);
 					dds_set_1 <= p.t_4(45 downto 38);
 					dds_set_2 <= p.t_4(53 downto 46);
 					ad_out <= p.t_4(37 downto 35);
+					if m_fin = '1' then --p.m_finがhighならカウント終了。lowならセットされた次のデータを読み込む
+						count_end <= '1';
+					end if;
 				elsif counter = p.t_5(31 downto 0) then	
 					counter <= counter +1;	
 					rf_out <= p.t_5(34 downto 32);
 					dds_set_1 <= p.t_5(45 downto 38);
 					dds_set_2 <= p.t_5(53 downto 46);
 					ad_out <= p.t_5(37 downto 35);
+					if m_fin = '1' then --p.m_finがhighならカウント終了。lowならセットされた次のデータを読み込む
+						count_end <= '1';
+					end if;
 				elsif counter = p.t_6(31 downto 0) then	
 					counter <= counter +1;	
 					rf_out <= p.t_6(34 downto 32);
 					dds_set_1 <= p.t_6(45 downto 38);
 					dds_set_2 <= p.t_6(53 downto 46);
 					ad_out <= p.t_6(37 downto 35);	
+					if m_fin = '1' then --p.m_finがhighならカウント終了。lowならセットされた次のデータを読み込む
+						count_end <= '1';
+					end if;
 				elsif counter = p.t_7(31 downto 0) then
 					counter <= (others => '0');
 					rf_out <= p.t_7(34 downto 32);

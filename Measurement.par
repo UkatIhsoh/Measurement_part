@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-L548H6P::  Wed Jun 17 15:40:08 2020
+DESKTOP-L548H6P::  Wed Jun 17 17:36:39 2020
 
 par -w -intstyle ise -ol high -mt off Measurement_map.ncd Measurement.ncd
 Measurement.pcf 
@@ -97,8 +97,8 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 3 secs 
-Finished initial Timing Analysis.  REAL time: 3 secs 
+Starting initial Timing Analysis.  REAL time: 2 secs 
+Finished initial Timing Analysis.  REAL time: 2 secs 
 
 WARNING:Par:288 - The signal WING_B<3>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal WING_C<0>_IBUF has no load.  PAR will not attempt to route this signal.

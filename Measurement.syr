@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.46 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.46 secs
  
 --> Reading design: Measurement.prj
 
@@ -459,7 +459,6 @@ Unit <data_fetch> synthesized.
 
 Synthesizing Unit <data_decode>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd".
-WARNING:Xst:647 - Input <msr_fin> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 4-bit register for signal <p_d_type>.
     Found 4-bit register for signal <p_change_counter>.
     Found 4-bit register for signal <p_patt_counter>.
@@ -515,15 +514,15 @@ INFO:Xst:1799 - State cycle_end is never reached in FSM <p_state>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 4-bit adder for signal <p_change_counter[3]_GND_56_o_add_330_OUT> created at line 635.
-    Found 4-bit adder for signal <p_patt_counter[3]_GND_56_o_add_343_OUT> created at line 644.
-    Found 8x4-bit Read Only RAM for signal <_n0517>
-    Found 1-bit 4-to-1 multiplexer for signal <n_loading> created at line 655.
+    Found 4-bit adder for signal <p_change_counter[3]_GND_56_o_add_330_OUT> created at line 641.
+    Found 4-bit adder for signal <p_patt_counter[3]_GND_56_o_add_343_OUT> created at line 650.
+    Found 8x4-bit Read Only RAM for signal <_n0519>
+    Found 1-bit 4-to-1 multiplexer for signal <n_loading> created at line 661.
     Summary:
 	inferred   1 RAM(s).
 	inferred   2 Adder/Subtractor(s).
-	inferred  82 D-type flip-flop(s).
-	inferred  93 Multiplexer(s).
+	inferred  83 D-type flip-flop(s).
+	inferred  96 Multiplexer(s).
 	inferred   3 Finite State Machine(s).
 Unit <data_decode> synthesized.
 
@@ -559,7 +558,7 @@ Synthesizing Unit <master_counter>.
     Found 1-bit register for signal <dst_5>.
     Found 1-bit register for signal <dst_6>.
     Found 1-bit register for signal <dst_7>.
-    Found 32-bit adder for signal <counter[31]_GND_58_o_add_25_OUT> created at line 225.
+    Found 32-bit adder for signal <counter[31]_GND_58_o_add_25_OUT> created at line 243.
     WARNING:Xst:2404 -  FFs/Latches <comp_rd<0:0>> (without init value) have a constant value of 0 in block <master_counter>.
     Summary:
 	inferred   1 Adder/Subtractor(s).
@@ -770,8 +769,8 @@ Macro Statistics
  20-bit adder                                          : 2
  32-bit adder                                          : 2
  4-bit adder                                           : 3
-# Registers                                            : 78
- 1-bit register                                        : 39
+# Registers                                            : 79
+ 1-bit register                                        : 40
  12-bit register                                       : 1
  15-bit register                                       : 1
  16-bit register                                       : 5
@@ -785,8 +784,8 @@ Macro Statistics
  1-bit latch                                           : 137
 # Comparators                                          : 1
  2-bit comparator equal                                : 1
-# Multiplexers                                         : 839
- 1-bit 2-to-1 multiplexer                              : 797
+# Multiplexers                                         : 842
+ 1-bit 2-to-1 multiplexer                              : 800
  1-bit 4-to-1 multiplexer                              : 1
  12-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 3
@@ -1251,7 +1250,7 @@ Unit <SDRAM_wr> synthesized (advanced).
 
 Synthesizing (advanced) Unit <data_decode>.
 The following registers are absorbed into counter <p_patt_counter>: 1 register on signal <p_patt_counter>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0517> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0519> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -1283,12 +1282,12 @@ Macro Statistics
  20-bit up counter                                     : 1
  32-bit up counter                                     : 1
  4-bit up counter                                      : 1
-# Registers                                            : 1197
- Flip-Flops                                            : 1197
+# Registers                                            : 1198
+ Flip-Flops                                            : 1198
 # Comparators                                          : 1
  2-bit comparator equal                                : 1
-# Multiplexers                                         : 1524
- 1-bit 2-to-1 multiplexer                              : 1501
+# Multiplexers                                         : 1527
+ 1-bit 2-to-1 multiplexer                              : 1504
  1-bit 4-to-1 multiplexer                              : 1
  12-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 3
@@ -2317,40 +2316,6 @@ WARNING:Xst:1710 - FF/Latch <p_change_counter_3> (without init value) has a cons
 WARNING:Xst:1710 - FF/Latch <p_change_counter_3> (without init value) has a constant value of 0 in block <data_decode>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <master_counter> ...
-WARNING:Xst:2677 - Node <m_fin> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_0> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_1> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_2> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_3> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_4> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_5> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_6> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_7> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_8> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_9> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_10> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_11> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_12> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_13> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_14> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_15> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_16> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_17> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_18> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_19> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_20> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_21> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_22> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_23> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_24> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_25> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_26> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_27> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_28> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_29> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_30> of sequential type is unconnected in block <master_counter>.
-WARNING:Xst:2677 - Node <counter_31> of sequential type is unconnected in block <master_counter>.
-INFO:Xst:2261 - The FF/Latch <preset> in Unit <master_counter> is equivalent to the following FF/Latch, which will be removed : <count_end> 
 
 Optimizing unit <AD9851_ctrl> ...
 WARNING:Xst:1710 - FF/Latch <ctrl/r_req_data_write_44> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
@@ -2707,11 +2672,46 @@ WARNING:Xst:2677 - Node <measure/decode/p_data_3> of sequential type is unconnec
 WARNING:Xst:2677 - Node <measure/decode/p_data_2> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/decode/p_data_1> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/decode/p_data_0> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_m_fin> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/decode/p_c_end> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/decode/p_change_counter_2> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/decode/p_change_counter_1> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/decode/p_change_counter_0> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_31> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_30> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_29> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_28> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_27> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_26> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_25> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_24> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_23> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_22> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_21> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_20> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_19> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_18> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_17> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_16> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_15> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_14> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_13> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_12> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_11> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_10> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_9> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_8> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_7> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_6> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_5> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_4> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_3> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_2> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_1> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/counter_0> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/preset> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/count_end> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/count_time/m_fin> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:1710 - FF/Latch <measure/fetch/p_finish> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <measure/fetch/p_addr_10> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <measure/fetch/p_addr_9> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
@@ -3026,14 +3026,14 @@ clk            |         |         |    2.745|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 21.00 secs
-Total CPU time to Xst completion: 20.18 secs
+Total REAL time to Xst completion: 20.00 secs
+Total CPU time to Xst completion: 19.84 secs
  
 --> 
 
 Total memory usage is 4534200 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 1860 (   0 filtered)
-Number of infos    :   32 (   0 filtered)
+Number of warnings : 1861 (   0 filtered)
+Number of infos    :   31 (   0 filtered)
 

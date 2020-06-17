@@ -124,6 +124,12 @@ begin
 		begin
 			n <= p;
 			
+			if msr_fin = '1' then
+				if p.m_fin = '0' then
+					n.m_fin <= '1';
+				end if;
+			end if;
+			
 			if fetch_fin = '1'  --フェッチが終了していることがデコード開始の条件
 			and decode_wait = '0'  --master_counterがおなか一杯の時は休憩
 			and p.d_en = '0'  --フェッチとのデータのやり取りがぐちゃぐちゃにならないようにするため
