@@ -72,23 +72,23 @@ entity just_measurement is
 			
 			msr_start : in std_logic; --measurement start
 			msr_finish : out std_logic; --mesurement finish
-			str_adr : in std_logic_vector(19 downto 0); --・ｽt・ｽF・ｽb・ｽ`・ｽ・ｽ・ｽJ・ｽn・ｽ・ｽ・ｽ・ｽA・ｽh・ｽ・ｽ・ｽX・ｽw・ｽ・ｽ・ｽ・ｽ・ｽ
+			str_adr : in std_logic_vector(19 downto 0); --フェッチを開始するアドレス指定入力
 			end_adr : in std_logic_vector(19 downto 0);
 			
-			sdr_req : out std_logic; --sdram・ｽﾇみ搾ｿｽ・ｽﾝ・ｿｽ・ｽN・ｽG・ｽX・ｽg
-			sdr_fin : in std_logic; --sdram・ｽﾇみ搾ｿｽ・ｽﾝ終・ｽ・ｽ
-			ctrl_data : in std_logic_vector(63 downto 0); --・ｽ・ｽ・ｽ・ｽp・ｽf・ｽ[・ｽ^
-			cite_addr : out std_logic_vector(19 downto 0); --・ｽQ・ｽﾆア・ｽh・ｽ・ｽ・ｽX
+			sdr_req : out std_logic; --sdram読み込みリクエスト
+			sdr_fin : in std_logic; --sdram読み込み終了
+			ctrl_data : in std_logic_vector(63 downto 0); --制御用データ
+			cite_addr : out std_logic_vector(19 downto 0); --参照アドレス
 			
-			test_dout : out std_logic_vector(63 downto 0); --・ｽe・ｽX・ｽg・ｽpLED・ｽ_・ｽ・ｽ・ｽp
-			test_bit : out std_logic; --・ｽe・ｽX・ｽg・ｽp1bit・ｽM・ｽ・ｽ
+			test_dout : out std_logic_vector(63 downto 0); --テスト用LED点灯用
+			test_bit : out std_logic; --テスト用1bit信号
 			
-			rf_pulse : out std_logic_vector(2 downto 0); --RF・ｽp・ｽ・ｽ・ｽX・ｽM・ｽ・ｽ
-			data : out std_logic; --DDS・ｽp・ｽM・ｽ・ｽ
+			rf_pulse : out std_logic_vector(2 downto 0); --RFパルス信号
+			data : out std_logic; --DDS用信号
 			fqud : out std_logic;
 			reset : out std_logic;
 			w_clk : out std_logic;
-			adc_sig : out std_logic_vector(2 downto 0)); --ADC・ｽp・ｽM・ｽ・ｽ
+			adc_sig : out std_logic_vector(2 downto 0)); --ADC用信号
 end just_measurement;
 
 architecture measure of just_measurement is
@@ -211,9 +211,9 @@ architecture measure of just_measurement is
 --				EMPTY : out std_logic);
 --	end component;
 	
-	--・ｽt・ｽF・ｽb・ｽ`-・ｽf・ｽR・ｽ[・ｽh・ｽp
+	--フェッチ-デコード用
 	signal data64 : std_logic_vector(63 downto 0);
-	signal m_fin : std_logic; --msr_finish・ｽﾉ対会ｿｽ
+	signal m_fin : std_logic; --msr_finishに対応
 	signal f_fin : std_logic; --fetch_fin
 	signal d_en : std_logic; --decode_en
 	signal d_fin_c : std_logic; --decode_fin(master_counter)
@@ -225,11 +225,11 @@ architecture measure of just_measurement is
 	signal s_req : std_logic;
 	signal addr : std_logic_vector(19 downto 0);
 	signal c_en : std_logic;
-	signal d_data : std_logic_vector(39 downto 0); --dds・ｽf・ｽ[・ｽ^
-	signal c_data : std_logic_vector(63 downto 0); --・ｽ}・ｽX・ｽ^・ｽ[・ｽJ・ｽE・ｽ・ｽ・ｽ^・ｽf・ｽ[・ｽ^
+	signal d_data : std_logic_vector(39 downto 0); --ddsデータ
+	signal c_data : std_logic_vector(63 downto 0); --マスターカウンタデータ
 	signal d_change : std_logic;
 	
-	--・ｽ}・ｽX・ｽ^・ｽ[・ｽJ・ｽE・ｽ・ｽ・ｽ^・ｽp
+	--マスターカウンタ用
 	signal rf_out : std_logic_vector(2 downto 0);
 	signal dds_set : std_logic;
 	signal ad_out : std_logic_vector(2 downto 0);
@@ -237,7 +237,7 @@ architecture measure of just_measurement is
 	signal rd_fin_c : std_logic; --read_fin
 	signal msr_comp : std_logic;
 	
-	--DDS_data・ｽp
+	--DDS_data用
 	signal dds_dat : std_logic_vector(39 downto 0);
 	signal rd_fin_d : std_logic; --read_fin
 	signal en_dat	:	std_logic;
@@ -269,7 +269,7 @@ architecture measure of just_measurement is
 
 
 	
-	--・ｽe・ｽX・ｽg・ｽp
+	--テスト用
 	signal test : std_logic:='0';
 	signal led_blink : std_logic:='0';
 	
