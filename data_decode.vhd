@@ -84,7 +84,7 @@ end data_decode;
 architecture decode of data_decode is
 
 	type state_t is (idle, count, dds, cycle_end); --状態名（アイドル、カウンター、処理サイクル終了）
-	constant	DDS_patt:std_logic_vector(3 downto 0):="0101";	--DDSのデータのパターン数（外部入力にしても可）
+	constant	DDS_patt:std_logic_vector(3 downto 0):="1111";	--DDSのデータのパターン数（外部入力にしても可）
  
 	type reg is record
 		data : std_logic_vector(63 downto 0);

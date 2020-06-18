@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.46 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.46 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: Measurement.prj
 
@@ -460,7 +460,6 @@ Unit <data_fetch> synthesized.
 Synthesizing Unit <data_decode>.
     Related source file is "E:\hoshino_Data\SotsuKen\ISE\measurement_part_git\data_decode.vhd".
     Found 4-bit register for signal <p_d_type>.
-    Found 4-bit register for signal <p_change_counter>.
     Found 4-bit register for signal <p_patt_counter>.
     Found 2-bit register for signal <p_state>.
     Found 2-bit register for signal <p_d_num>.
@@ -514,15 +513,12 @@ INFO:Xst:1799 - State cycle_end is never reached in FSM <p_state>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 4-bit adder for signal <p_change_counter[3]_GND_56_o_add_330_OUT> created at line 641.
-    Found 4-bit adder for signal <p_patt_counter[3]_GND_56_o_add_343_OUT> created at line 650.
-    Found 8x4-bit Read Only RAM for signal <_n0519>
-    Found 1-bit 4-to-1 multiplexer for signal <n_loading> created at line 661.
+    Found 4-bit adder for signal <p_patt_counter[3]_GND_56_o_add_319_OUT> created at line 453.
+    Found 1-bit 4-to-1 multiplexer for signal <n_loading> created at line 464.
     Summary:
-	inferred   1 RAM(s).
-	inferred   2 Adder/Subtractor(s).
-	inferred  83 D-type flip-flop(s).
-	inferred  96 Multiplexer(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  79 D-type flip-flop(s).
+	inferred 105 Multiplexer(s).
 	inferred   3 Finite State Machine(s).
 Unit <data_decode> synthesized.
 
@@ -762,14 +758,12 @@ Unit <AD9851_ctrl> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
- 8x4-bit single-port Read Only RAM                     : 1
-# Adders/Subtractors                                   : 8
+# Adders/Subtractors                                   : 7
  15-bit subtractor                                     : 1
  20-bit adder                                          : 2
  32-bit adder                                          : 2
- 4-bit adder                                           : 3
-# Registers                                            : 79
+ 4-bit adder                                           : 2
+# Registers                                            : 78
  1-bit register                                        : 40
  12-bit register                                       : 1
  15-bit register                                       : 1
@@ -777,21 +771,21 @@ Macro Statistics
  2-bit register                                        : 1
  20-bit register                                       : 3
  32-bit register                                       : 2
- 4-bit register                                        : 4
+ 4-bit register                                        : 3
  40-bit register                                       : 17
  64-bit register                                       : 5
 # Latches                                              : 137
  1-bit latch                                           : 137
 # Comparators                                          : 1
  2-bit comparator equal                                : 1
-# Multiplexers                                         : 842
+# Multiplexers                                         : 851
  1-bit 2-to-1 multiplexer                              : 800
  1-bit 4-to-1 multiplexer                              : 1
  12-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 3
  20-bit 2-to-1 multiplexer                             : 4
  32-bit 2-to-1 multiplexer                             : 3
- 4-bit 2-to-1 multiplexer                              : 7
+ 4-bit 2-to-1 multiplexer                              : 16
  40-bit 2-to-1 multiplexer                             : 16
  64-bit 2-to-1 multiplexer                             : 2
 # Tristates                                            : 16
@@ -1248,21 +1242,6 @@ Synthesizing (advanced) Unit <SDRAM_wr>.
 The following registers are absorbed into counter <p_adr>: 1 register on signal <p_adr>.
 Unit <SDRAM_wr> synthesized (advanced).
 
-Synthesizing (advanced) Unit <data_decode>.
-The following registers are absorbed into counter <p_patt_counter>: 1 register on signal <p_patt_counter>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0519> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 8-word x 4-bit                      |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <p_change_counter<2:0>> |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-Unit <data_decode> synthesized (advanced).
-
 Synthesizing (advanced) Unit <master_counter>.
 The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
 Unit <master_counter> synthesized (advanced).
@@ -1271,29 +1250,26 @@ Unit <master_counter> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
- 8x4-bit single-port distributed Read Only RAM         : 1
 # Adders/Subtractors                                   : 4
  20-bit adder                                          : 1
  32-bit adder                                          : 1
  4-bit adder                                           : 2
-# Counters                                             : 4
+# Counters                                             : 3
  15-bit down counter                                   : 1
  20-bit up counter                                     : 1
  32-bit up counter                                     : 1
- 4-bit up counter                                      : 1
 # Registers                                            : 1198
  Flip-Flops                                            : 1198
 # Comparators                                          : 1
  2-bit comparator equal                                : 1
-# Multiplexers                                         : 1527
+# Multiplexers                                         : 1536
  1-bit 2-to-1 multiplexer                              : 1504
  1-bit 4-to-1 multiplexer                              : 1
  12-bit 2-to-1 multiplexer                             : 6
  2-bit 2-to-1 multiplexer                              : 3
  20-bit 2-to-1 multiplexer                             : 3
  32-bit 2-to-1 multiplexer                             : 2
- 4-bit 2-to-1 multiplexer                              : 7
+ 4-bit 2-to-1 multiplexer                              : 16
  64-bit 2-to-1 multiplexer                             : 1
 # FSMs                                                 : 9
 
@@ -2312,8 +2288,6 @@ WARNING:Xst:2677 - Node <fresh> of sequential type is unconnected in block <data
 WARNING:Xst:2677 - Node <p_sequence_FSM_FFd1> of sequential type is unconnected in block <data_decode>.
 WARNING:Xst:2677 - Node <p_sequence_FSM_FFd3> of sequential type is unconnected in block <data_decode>.
 WARNING:Xst:2677 - Node <p_sequence_FSM_FFd2> of sequential type is unconnected in block <data_decode>.
-WARNING:Xst:1710 - FF/Latch <p_change_counter_3> (without init value) has a constant value of 0 in block <data_decode>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <p_change_counter_3> (without init value) has a constant value of 0 in block <data_decode>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <master_counter> ...
 
@@ -2674,9 +2648,6 @@ WARNING:Xst:2677 - Node <measure/decode/p_data_1> of sequential type is unconnec
 WARNING:Xst:2677 - Node <measure/decode/p_data_0> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/decode/p_m_fin> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/decode/p_c_end> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_change_counter_2> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_change_counter_1> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_change_counter_0> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/counter_31> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/counter_30> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/count_time/counter_29> of sequential type is unconnected in block <Measurement>.
@@ -2751,10 +2722,10 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <measure/fetch/p_add
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <measure/fetch/p_addr_11> (without init value) has a constant value of 0 in block <Measurement>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <measure/fetch/p_f_fin> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/fetch/p_fresh> of sequential type is unconnected in block <Measurement>.
-WARNING:Xst:2677 - Node <measure/decode/p_patt_counter_0> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/decode/p_state_FSM_FFd1> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/decode/p_d_num_FSM_FFd1> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/decode/p_d_num_FSM_FFd2> of sequential type is unconnected in block <Measurement>.
+WARNING:Xst:2677 - Node <measure/decode/p_patt_counter_0> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/decode/p_loading> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/decode/p_d_fin_d> of sequential type is unconnected in block <Measurement>.
 WARNING:Xst:2677 - Node <measure/fetch/p_state_FSM_FFd2> of sequential type is unconnected in block <Measurement>.
@@ -2936,7 +2907,7 @@ Delay:               5.541ns (Levels of Logic = 4)
      FDC:C->Q              3   0.525   1.196  ctrl/r_rf_counter_17 (ctrl/r_rf_counter_17)
      LUT5:I0->O            2   0.254   0.954  ctrl/GND_14_o_r_rf_counter[31]_equal_20_o<31>2 (ctrl/GND_14_o_r_rf_counter[31]_equal_20_o<31>1)
      LUT6:I3->O            2   0.235   0.726  ctrl/GND_14_o_r_rf_counter[31]_equal_20_o<31>5_1 (ctrl/GND_14_o_r_rf_counter[31]_equal_20_o<31>5)
-     LUT6:I5->O           12   0.254   1.069  ctrl/_n0467_inv (ctrl/_n0467_inv)
+     LUT6:I5->O           12   0.254   1.069  ctrl/_n0481_inv (ctrl/_n0481_inv)
      LUT5:I4->O            1   0.254   0.000  ctrl/r_rf_counter_20_rstpot (ctrl/r_rf_counter_20_rstpot)
      FDC:D                     0.074          ctrl/r_rf_counter_20
     ----------------------------------------
@@ -3026,14 +2997,14 @@ clk            |         |         |    2.745|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 20.00 secs
-Total CPU time to Xst completion: 19.84 secs
+Total REAL time to Xst completion: 18.00 secs
+Total CPU time to Xst completion: 17.88 secs
  
 --> 
 
 Total memory usage is 4534200 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 1861 (   0 filtered)
-Number of infos    :   31 (   0 filtered)
+Number of warnings : 1856 (   0 filtered)
+Number of infos    :   30 (   0 filtered)
 
