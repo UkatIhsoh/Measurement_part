@@ -15,10 +15,7 @@
   <version xil_pn:ise_version="14.7" xil_pn:schema_version="2"/>
 
   <files>
-    <file xil_pn:name="../integ_100_st_fifocheck/SDRAM_ctrl.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="12"/>
-    </file>
+    <file xil_pn:name="../integ_100_st_fifocheck/SDRAM_ctrl.vhd" xil_pn:type="FILE_VHDL"/>
     <file xil_pn:name="SDRAM_wr.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="8"/>
@@ -37,9 +34,7 @@
       <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="12"/>
       <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="12"/>
     </file>
-    <file xil_pn:name="../integ_100/SDRAM_top.ucf" xil_pn:type="FILE_UCF">
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
-    </file>
+    <file xil_pn:name="../integ_100/SDRAM_top.ucf" xil_pn:type="FILE_UCF"/>
     <file xil_pn:name="SDRAM_rd.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="9"/>
